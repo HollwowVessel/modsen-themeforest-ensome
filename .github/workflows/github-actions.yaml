@@ -3,18 +3,21 @@ name: 'Lint checker, deploy'
 on: [push]
 
 jobs:
-  runs-on: ubuntu-latest
-  defaults:
-    run:
-      working-directory: ./modsen-themeforest-ensome-hollow
+  
   lint:
     runs-on: ubuntu-latest
     steps:
+      - uses: mskelton/setup-yarn@v1
+        with:
+          node-version: '16.x'
       - run: yarn install
       - run: yarn lint
   deploy:
     needs: lint
     runs-on: ubuntu-latest
     steps:
+    - uses: mskelton/setup-yarn@v1
+        with:
+          node-version: '16.x'
       - run: yarn install
       - run: yarn deploy
