@@ -3,7 +3,6 @@ name: 'Lint checker, deploy'
 on: [push]
 
 jobs:
-  
   lint:
     runs-on: ubuntu-latest
     steps:
@@ -16,7 +15,7 @@ jobs:
     needs: lint
     runs-on: ubuntu-latest
     steps:
-    - uses: mskelton/setup-yarn@v1
+      - uses: mskelton/setup-yarn@v1
         with:
           node-version: '16.x'
       - run: yarn install
