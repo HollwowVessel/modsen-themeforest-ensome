@@ -1,12 +1,16 @@
 {
   "name": "modsen-themeforest-ensome-hollow",
+  "homepage": "https://gitname.github.io/react-gh-pages",
   "version": "1.0.0",
   "description": "",
   "main": "src/index.tsx",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "webpack serve --mode development",
     "build": "webpack --mode production",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "test": "",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -45,6 +49,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-storybook": "^0.6.8",
     "file-loader": "^6.2.0",
+    "gh-pages": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
     "prettier": "^2.8.2",
     "ts-loader": "^9.4.2",
