@@ -1,6 +1,6 @@
 {
   "name": "modsen-themeforest-ensome-hollow",
-  "homepage": "https://gitname.github.io/react-gh-pages",
+  "homepage": "https://HollwowVessel.github.io/modsen-themeforest-ensome",
   "version": "1.0.0",
   "description": "",
   "main": "src/index.tsx",
@@ -68,5 +68,17 @@
     "react-dom": "^18.2.0",
     "storybook": "^6.5.15",
     "styled-components": "^5.3.6"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

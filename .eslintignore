@@ -6,3 +6,4 @@ package.json
 tsconfig.json
 /cypress
 cypress.config.ts
+/build

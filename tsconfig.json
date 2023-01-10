@@ -13,16 +13,16 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
+
     "jsx": "react-jsx",
-    "baseUrl": "./src",
+
     "paths": {
-      "components": ["./components"],
-      "containers": ["./containers"],
-      "assets": ["./assets"],
-      "utils": ["./utils"],
-      "store": ["./store"],
-      "constants": ["./constants"]
+      "components": ["./src/components"],
+      "containers": ["./src/containers"],
+      "assets": ["./src/assets"],
+      "utils": ["./src/utils"],
+      "store": ["./src/store"],
+      "constants": ["./src/constants"]
     }
   },
   "include": ["src"]
