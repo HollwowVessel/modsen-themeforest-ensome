@@ -17,12 +17,15 @@
     "jsx": "react-jsx",
     "baseUrl": "./src",
     "paths": {
+      "src": ["."],
       "components": ["/components"],
       "containers": ["/containers"],
       "assets": ["/assets"],
+      "images": ["/assets/images"],
       "utils": ["/utils"],
       "store": ["/store"],
-      "constants": ["/constants"]
+      "constants": ["/constants"],
+      "ui": ["/ui"]
     }
   },
   "include": ["src"]

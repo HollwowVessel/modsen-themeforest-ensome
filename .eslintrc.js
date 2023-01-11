@@ -29,6 +29,7 @@ module.exports = {
       },
       alias: {
         map: [
+          ['src', 'src'],
           ['components', '/components'],
           ['containers', '/containers'],
           ['pages', '/pages'],
