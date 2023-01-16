@@ -1,7 +1,8 @@
 /* eslint-disable react/no-unknown-property */
 import { menuItems } from 'constants/navigation';
 import React from 'react';
-import { FillBtn } from 'ui/Buttons/FillBtn';
+import { FillButton } from 'ui/Buttons/FillButton';
+import blueLogo from 'assets/images/logo_blue.jpg';
 
 import { Header, Logo, MenuItem, MenuLink, Nav, NavMenu } from './styled';
 
@@ -11,7 +12,7 @@ export const Navigation = () => {
   return (
     <Header>
       <Nav>
-        <Logo src="./blueLogo.svg" />
+        <Logo src={require("assets/images/logo_blue.jpg")} />
         <NavMenu>
           {menuItems.map((el, id) => (
             <MenuItem key={id}>
@@ -19,7 +20,7 @@ export const Navigation = () => {
             </MenuItem>
           ))}
         </NavMenu>
-        <FillBtn text="Watch the demo" />
+        <FillButton text="Watch the demo" />
       </Nav>
     </Header>
   );

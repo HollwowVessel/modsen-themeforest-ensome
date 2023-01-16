@@ -17,7 +17,6 @@ export const Logo = styled.img``;
 export const NavMenu = styled.ul`
   display: flex;
   gap: 40px;
-  list-style-type: none;
 `;
 
 export const MenuItem = styled.li``;

@@ -1,12 +1,12 @@
-import { HomeHero } from 'components/HomeHero';
-import { Navigation } from 'components/Navigation';
+import { theme } from 'constants/theme';
+import { HomePage } from 'pages/Home';
+import { ThemeProvider } from 'styled-components';
 
 import { GlobalStyles } from './GlobalStyles';
 
 export const App = () => (
-  <div>
+  <ThemeProvider theme={theme}>
     <GlobalStyles />
-    <Navigation />
-    <HomeHero />
-  </div>
+    <HomePage />
+  </ThemeProvider>
 );

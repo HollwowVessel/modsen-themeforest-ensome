@@ -27,11 +27,11 @@ module.exports = {
       {
         test: /\.(svg|png|jpg|jpeg|gif)$/,
         exclude: /fonts/,
-        loader: 'file-loader',
+        type: "asset/resource"
       },
       {
         test: /\.(ttf|eot|woff|svg|woff2)$/,
-        loader: 'file-loader',
+        type: "asset/resource"
       },
     ],
   },
