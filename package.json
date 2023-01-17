@@ -1,6 +1,5 @@
 {
   "name": "modsen-themeforest-ensome-hollow",
-  "homepage": "https://HollwowVessel.github.io/modsen-themeforest-ensome",
   "version": "1.0.0",
   "description": "",
   "main": "src/index.tsx",
@@ -52,8 +51,10 @@
     "gh-pages": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
     "prettier": "^2.8.2",
+    "raw-loader": "^4.0.2",
     "ts-loader": "^9.4.2",
     "typescript": "*",
+    "url-loader": "^4.1.1",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.11.1"
@@ -66,19 +67,8 @@
     "@types/styled-components": "^5.1.26",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.6.2",
     "storybook": "^6.5.15",
     "styled-components": "^5.3.6"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
   }
 }

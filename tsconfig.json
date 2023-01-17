@@ -15,15 +15,18 @@
     "isolatedModules": true,
 
     "jsx": "react-jsx",
-
+    "baseUrl": "./src",
     "paths": {
-      "components": ["./src/components"],
-      "containers": ["./src/containers"],
-      "assets": ["./src/assets"],
-      "utils": ["./src/utils"],
-      "store": ["./src/store"],
-      "constants": ["./src/constants"]
+      "src": ["."],
+      "components": ["/components"],
+      "containers": ["/containers"],
+      "assets": ["/assets"],
+      "images": ["/assets/images"],
+      "utils": ["/utils"],
+      "store": ["/store"],
+      "constants": ["/constants"],
+      "ui": ["/ui"]
     }
   },
-  "include": ["src"]
+  "include": ["src", "./index.d.ts"]
 }
