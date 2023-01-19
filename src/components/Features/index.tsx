@@ -1,6 +1,6 @@
 import React from 'react';
-import { FillButton } from 'ui/Buttons/FillButton';
-import features from 'assets/images/features.png';
+import { FillButton } from '@/ui/Buttons/FillButton';
+import features from '@/assets/images/features.png';
 import {
   Container,
   Description,
@@ -33,7 +33,9 @@ export const Features = () => (
     </Info>
     <Solutions>
       <SolutionsImage src={features} alt="features" />
+
       <SolutionsInfo>
+        <SolutionsImage src={features} alt="features" />
         <SolutionsHeading>Radically new solutions for data</SolutionsHeading>
         <SolutionsDescription>
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem

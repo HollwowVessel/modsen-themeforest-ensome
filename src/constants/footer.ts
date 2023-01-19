@@ -1,9 +1,9 @@
-import social1 from './../assets/images/icons/social/social1.png';
-import social2 from './../assets/images/icons/social/social2.png';
-import social3 from './../assets/images/icons/social/social3.png';
-import social4 from './../assets/images/icons/social/social4.png';
-import social5 from './../assets/images/icons/social/social5.png';
-import social6 from './../assets/images/icons/social/social6.png';
+import social1 from '@/assets/images/icons/social/social1.svg';
+import social2 from '@/assets/images/icons/social/social2.svg';
+import social3 from '@/assets/images/icons/social/social3.svg';
+import social4 from '@/assets/images/icons/social/social4.svg';
+import social5 from '@/assets/images/icons/social/social5.svg';
+import social6 from '@/assets/images/icons/social/social6.svg';
 
 const links = {
   heading: 'Quick link',
@@ -35,20 +35,4 @@ const cantact = {
 
 export const footerMenus = [links, services, cantact];
 
-export const socialMap = new Map([
-  ['social1', social1],
-  ['social2', social2],
-  ['social3', social3],
-  ['social4', social4],
-  ['social5', social5],
-  ['social6', social6],
-]);
-
-export const social = [
-  'social1',
-  'social2',
-  'social3',
-  'social4',
-  'social5',
-  'social6',
-];
+export const social = [social1, social2, social3, social4, social5, social6];

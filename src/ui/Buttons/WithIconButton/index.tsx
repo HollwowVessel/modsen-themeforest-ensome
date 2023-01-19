@@ -3,8 +3,11 @@ import { WithIcon } from './styled';
 interface FillProps {
   text: string;
   icon: string;
+  handleClick?: () => void;
 }
 
-export const Fill = ({ text, icon }: FillProps) => (
-  <WithIcon icon={icon}>{text}</WithIcon>
+export const WithIconButton = ({ text, icon, handleClick }: FillProps) => (
+  <WithIcon icon={icon} onClick={handleClick}>
+    {text}
+  </WithIcon>
 );

@@ -1,8 +1,5 @@
-import { CardItem } from 'constants/benefitsCard';
-
 import { Card, Description, Heading, Image } from './styled';
-
-type BenefitsCardProps = CardItem;
+import { BenefitsCardProps } from './types';
 
 export const BenefitsCard = ({
   description,

@@ -1,6 +1,6 @@
 import React from 'react';
-import { CircleButton } from 'ui/Buttons/CircleButton';
-import hero from 'assets/images/heroes.png';
+import { CircleButton } from '@/ui/Buttons/CircleButton';
+import hero from '@/assets/images/heroes.png';
 import {
   ButtonContainer,
   Container,

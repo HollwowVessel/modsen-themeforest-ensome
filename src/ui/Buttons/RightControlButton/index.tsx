@@ -5,6 +5,7 @@ import { RightControlButtonProps } from './types';
 
 export const RightControlButton = ({
   disabled = false,
+  onClick,
 }: RightControlButtonProps) => (
-  <LeftControl disabled={disabled} arrow={disabled} />
+  <LeftControl disabled={disabled} arrow={disabled} onClick={onClick} />
 );

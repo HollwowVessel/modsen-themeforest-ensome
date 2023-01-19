@@ -5,28 +5,30 @@ export const Container = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #f1f6fa;
-  padding: 100px 0;
+  background: ${({ theme }) => theme.colors.background};
+  padding: ${({ theme }) => theme.spaces[6]}px 0;
 `;
 
 export const Heading = styled.h3`
   font-weight: 800;
-  font-size: 38px;
-  line-height: 56px;
+  font-size: ${({ theme }) => theme.fonts.at(-2)}px;
+  line-height: ${({ theme }) => theme.lineHeights.at(-2)}px;
   text-align: center;
   letter-spacing: -0.015em;
-  color: #292d33;
-  max-width: 540px;
-  margin: 0 0 30px 0;
+  color: ${({ theme }) => theme.colors.black};
+  max-width: ${({ theme }) => theme.sizes.at(-1)}px;
+  margin: 0 0 ${({ theme }) => theme.spaces[2]}px 0;
 `;
 
 export const Description = styled.p`
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 28px;
+  font-weight: ${({ theme }) => theme.fontWeights[0]};
+
+  font-size: ${({ theme }) => theme.fonts[1]}px;
+  line-height: ${({ theme }) => theme.lineHeights[1]}px;
+
   text-align: center;
   letter-spacing: -0.015em;
-  color: #9497a1;
-  max-width: 540px;
-  margin: 0 0 30px 0;
+  color: ${({ theme }) => theme.colors.grey};
+  max-width: ${({ theme }) => theme.sizes.at(-1)}px;
+  margin: 0 0 ${({ theme }) => theme.spaces[2]}px 0;
 `;

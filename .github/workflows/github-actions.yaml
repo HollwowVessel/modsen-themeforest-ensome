@@ -9,4 +9,5 @@ jobs:
       - uses: mskelton/setup-yarn@v1
         with:
           node-version: '16.x'
-      - run: yarn lint
+      - run: yarn run lint:fix
+      - run: yarn run lint

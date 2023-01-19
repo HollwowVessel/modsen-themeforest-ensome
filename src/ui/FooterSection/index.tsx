@@ -1,6 +1,8 @@
-import React from 'react';
-import { footerMenus, social } from '../../constants/footer';
-import logo from '../../assets/images/logo.png';
+import React, { useState } from 'react';
+import { footerMenus, social } from '@/constants/footer';
+import logo from '@/assets/images/logo.svg';
+import upArrow from '@/assets/images/icons/dropdownMenu/footer.svg';
+import downArrow from '@/assets/images/icons/dropdownMenu/footerSecond.svg';
 import {
   Container,
   CopyRight,
@@ -20,42 +22,59 @@ import {
   SocialContainer,
   Terms,
 } from './styled';
-import { getSocial } from '../../utils/getSocial';
 
-export const FooterSection = () => (
-  <Footer>
-    <Container>
-      <Info>
-        <Logo src={logo} alt="logo" />
-        <Description>
-          Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
-          suscipit laboriosam, nisi ut aliquid ex ea commodi.
-        </Description>
-        <SocialContainer>
-          {social.map((el) => (
-            <Social>
-              <Icon src={getSocial(el)} />
-            </Social>
-          ))}
-        </SocialContainer>
-      </Info>
-      <Menus>
-        {footerMenus.map(({ heading, items }, id) => (
-          <Menu key={id}>
-            <MenuHeading>{heading}</MenuHeading>
-            {items.map((el, id) => (
-              <Item key={id}>{el}</Item>
+export const FooterSection = () => {
+  const [activeMenu, setActiveMenu] = useState(-1);
+
+  const handleMenu = (id: number) => () => {
+    if (id === activeMenu) {
+      setActiveMenu(-1);
+    } else {
+      setActiveMenu(id);
+    }
+  };
+
+  return (
+    <Footer>
+      <Container>
+        <Info>
+          <Logo src={logo} alt="logo" />
+          <Description>
+            Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
+            suscipit laboriosam, nisi ut aliquid ex ea commodi.
+          </Description>
+          <SocialContainer>
+            {social.map((el) => (
+              <Social>
+                <Icon src={el} />
+              </Social>
             ))}
-          </Menu>
-        ))}
-      </Menus>
-    </Container>
-    <CopyRight>
-      <Ensome>Ensome© 2022 All Rights Reserved</Ensome>
-      <Links>
-        <Policy>Privacy policy</Policy>
-        <Terms>Terms of us</Terms>
-      </Links>
-    </CopyRight>
-  </Footer>
-);
+          </SocialContainer>
+        </Info>
+        <Menus>
+          {footerMenus.map(({ heading, items }, id) => (
+            <Menu
+              key={id}
+              onClick={handleMenu(id)}
+              icon={id === activeMenu ? downArrow : upArrow}
+            >
+              <MenuHeading>{heading}</MenuHeading>
+              {items.map((el, ind) => (
+                <Item key={ind} display={activeMenu === id ? 'block' : 'none'}>
+                  {el}
+                </Item>
+              ))}
+            </Menu>
+          ))}
+        </Menus>
+      </Container>
+      <CopyRight>
+        <Ensome>Ensome© 2022 All Rights Reserved</Ensome>
+        <Links>
+          <Policy>Privacy policy</Policy>
+          <Terms>Terms of us</Terms>
+        </Links>
+      </CopyRight>
+    </Footer>
+  );
+};

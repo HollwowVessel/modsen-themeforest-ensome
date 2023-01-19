@@ -1,4 +1,3 @@
-import React from 'react';
 import { Card, Description, Image, Info, Name, Profession } from './styled';
 
 interface TestimonialsCardProps {
@@ -15,7 +14,7 @@ export const TestimonialsCard = ({
   description,
 }: TestimonialsCardProps) => (
   <Card>
-    <Image src={icon} alt="" />
+    <Image src={icon} alt={icon} title={icon} />
     <Info>
       <Name>{name}</Name>
       <Profession>{profession}</Profession>

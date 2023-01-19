@@ -1,35 +1,46 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Card = styled.div``;
 
 export const Image = styled.img`
-  margin: 0 0 20px 0;
+  max-width: ${({ theme }) => theme.sizes.at(-3)}px;
+  margin: 0 0 ${({ theme }) => theme.spaces[1]}px 0;
+
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    min-width: ${({ theme }) => theme.sizes.at(-3)}px;
+  }
 `;
 
 export const Date = styled.p`
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 24px;
+  font-weight: ${({ theme }) => theme.fontWeights[0]};
+
+  font-size: ${({ theme }) => theme.fonts[0]}px;
+  line-height: ${({ theme }) => theme.lineHeights[0]}px;
   letter-spacing: -0.015em;
-  
-  color: #9497a1;
+
+  color: ${({ theme }) => theme.colors.grey};
 `;
 
 export const Name = styled.h4`
-  font-weight: 700;
-  font-size: 22px;
-  line-height: 33px;
+  font-weight: ${({ theme }) => theme.fontWeights[3]};
+
+  font-size: ${({ theme }) => theme.fonts[3]}px;
+  line-height: ${({ theme }) => theme.lineHeights[2]}px;
   letter-spacing: -0.015em;
-  color: #292d33;
-  margin: 0 0 12px 0;
+  color: ${({ theme }) => theme.colors.black};
+  margin: 0 0 ${({ theme }) => theme.spaces[1]}px 0;
+  max-width: ${({ theme }) => theme.sizes.at(-3)}px;
 `;
 
 export const Description = styled.p`
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 28px;
+  font-weight: ${({ theme }) => theme.fontWeights[0]};
+
+  font-size: ${({ theme }) => theme.fonts[1]}px;
+  line-height: ${({ theme }) => theme.lineHeights[1]}px;
   letter-spacing: -0.015em;
-  color: #9497a1;
-  margin: 0 0 12px 0;
-  max-width: 350px;
+  color: ${({ theme }) => theme.colors.grey};
+  margin: 0 0 ${({ theme }) => theme.spaces[1]}px 0;
+  max-width: ${({ theme }) => theme.sizes.at(-3)}px;
+  text-align: justify;
 `;

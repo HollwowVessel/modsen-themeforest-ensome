@@ -2,12 +2,15 @@ import styled from 'styled-components';
 
 export const Card = styled.div`
   box-shadow: 0px 4px 12px rgba(12, 68, 204, 0.1);
-  max-width: 350px;
+  max-width: ${({ theme }) => theme.sizes[9]}px;
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: ${({ theme }) => theme.spaces[2]}px;
   flex-wrap: wrap;
-  padding: 35px;
+  padding: ${({ theme }) => theme.spaces[3]}px;
+  @media (max-width: ${({ theme }) => theme.breakPoints.laptop}px) {
+    min-width: ${({ theme }) => theme.sizes[9]}px;
+  }
 `;
 
 export const Info = styled.div``;
@@ -15,26 +18,30 @@ export const Info = styled.div``;
 export const Image = styled.img``;
 
 export const Name = styled.h4`
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 24px;
+  font-weight: ${({ theme }) => theme.fontWeights[3]};
+
+  font-size: ${({ theme }) => theme.fonts[1]}px;
+  line-height: ${({ theme }) => theme.lineHeights[0]}px;
   letter-spacing: -0.015em;
-  color: #292d33;
+  color: ${({ theme }) => theme.colors.black};
 `;
 
 export const Profession = styled.p`
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 24px;
+  font-weight: ${({ theme }) => theme.fontWeights[1]};
+
+  font-size: ${({ theme }) => theme.fonts[0]}px;
+  line-height: ${({ theme }) => theme.lineHeights[0]}px;
   letter-spacing: -0.01em;
-  color: #9497a1;
+  color: ${({ theme }) => theme.colors.grey};
 `;
 
 export const Description = styled.p`
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 28px;
+  font-weight: ${({ theme }) => theme.fontWeights[0]};
+
+  font-size: ${({ theme }) => theme.fonts[1]}px;
+  line-height: ${({ theme }) => theme.lineHeights[1]}px;
+
   text-align: justify;
   letter-spacing: -0.015em;
-  color: #9497a1;
+  color: ${({ theme }) => theme.colors.grey};
 `;

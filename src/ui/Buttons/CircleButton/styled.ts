@@ -1,15 +1,19 @@
 import styled from 'styled-components';
 
 export const OuterContainer = styled.div`
-  width: 140px;
-  height: 140px;
-  background: #fff;
+  width: ${({ theme }) => theme.sizes[7]}px;
+  height: ${({ theme }) => theme.sizes[7]}px;
+  background: ${({ theme }) => theme.colors.white};
   display: flex;
   justify-content: center;
   align-items: center;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border-radius: 100%;
   cursor: pointer;
+  @media (max-width: ${({ theme }) => theme.breakPoints.mobile}px) {
+    width: ${({ theme }) => theme.sizes[6]}px;
+    height: ${({ theme }) => theme.sizes[6]}px;
+  }
 `;
 
 export const InnerContainer = styled.div<
@@ -17,9 +21,9 @@ export const InnerContainer = styled.div<
 >`
   cursor: pointer;
 
-  background: #185cff;
-  width: 120px;
-  height: 120px;
+  background: ${({ theme }) => theme.colors.primary};
+  width: ${({ theme }) => theme.sizes[6]}px;
+  height: ${({ theme }) => theme.sizes[6]}px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,6 +38,11 @@ export const InnerContainer = styled.div<
   &:hover button {
     background: ${({ background }) => (background ? '' : '#467dff')};
   }
+
+  @media (max-width: ${({ theme }) => theme.breakPoints.mobile}px) {
+    width: ${({ theme }) => theme.sizes[5]}px;
+    height: ${({ theme }) => theme.sizes[5]}px;
+  }
 `;
 
 export const Circle = styled.button`
@@ -41,15 +50,20 @@ export const Circle = styled.button`
   border-radius: 100%;
   cursor: pointer;
 
-  width: 100px;
-  height: 100px;
-  background: #185cff;
+  width: ${({ theme }) => theme.sizes[5]}px;
+  height: ${({ theme }) => theme.sizes[5]}px;
+  background: ${({ theme }) => theme.colors.primary};
   font-weight: 600;
-  font-size: 14px;
-  line-height: 24px;
+  font-size: ${({ theme }) => theme.fonts[0]}px;
+  line-height: ${({ theme }) => theme.lineHeights[0]}px;
 
   text-align: center;
   letter-spacing: -0.01em;
 
-  color: #ffffff;
+  color: ${({ theme }) => theme.colors.white};
+
+  @media (max-width: ${({ theme }) => theme.breakPoints.mobile}px) {
+    width: ${({ theme }) => theme.sizes[4]}px;
+    height: ${({ theme }) => theme.sizes[4]}px;
+  }
 `;

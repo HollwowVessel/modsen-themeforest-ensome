@@ -1,29 +1,39 @@
 import styled from 'styled-components';
-import arrowEnabled from './../../../assets/images/icons/buttons/rightArrow.png';
-import arrowDisabled from './../../../assets/images/icons/buttons/rightArrowDisabled.png';
+import arrowEnabled from '@/assets/images/icons/buttons/rightArrow.svg';
+import arrowDisabled from '@/assets/images/icons/buttons/rightArrowDisabled.svg';
 
 export const LeftControl = styled.button<Pick<{ arrow: boolean }, 'arrow'>>`
   position: relative;
-  background: #f0f9ff;
+  background: ${({ theme }) => theme.colors.tertiary};
   border-radius: 20px;
   border: none;
-  width: 110px;
+  width: ${({ theme }) => theme.sizes[6]}px;
   height: 60px;
   cursor: pointer;
-  margin: 0 0 0 10px;
-  &:after {
+  margin: 0 0 0 ${({ theme }) => theme.spaces[1]}px;
+  &::after {
     content: '';
     position: absolute;
-    width: 30px;
-    height: 30px;
+    width: ${({ theme }) => theme.sizes[1]}px;
+    height: ${({ theme }) => theme.sizes[1]}px;
     background: url(${({ arrow }) =>
       !arrow ? `${arrowEnabled}` : `${arrowDisabled}`});
-    top: 15px;
+    background-repeat: no-repeat;
+    top: ${({ theme }) => theme.spaces[1]}px;
     right: 40px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    width: ${({ theme }) => theme.sizes[2]}px;
+    height: ${({ theme }) => theme.sizes[2]}px;
+    &::after {
+      right: 8px;
+      top: 8px;
+    }
   }
 `;
 
 export const Image = styled.img`
-  width: 30px;
-  height: 30px;
+  width: ${({ theme }) => theme.sizes[2]}px;
+  height: ${({ theme }) => theme.sizes[2]}px;
 `;

@@ -1,7 +1,7 @@
-import { logo } from 'constants/logo';
 import React from 'react';
-import { OverviewSectionFour } from 'ui/Sections/Overview/OverviewSectionFour';
-import { getLogo } from 'utils/getLogo';
+import { logo } from '@/constants/logo';
+import { OverviewSectionFour } from '@/ui/Sections/Overview/OverviewSectionFour';
+
 import {
   Companies,
   CompaniesImage,
@@ -26,7 +26,7 @@ export const Overview = () => (
     <Companies>
       {logo.map((el, id) => (
         <CompaniesItem key={id}>
-          <CompaniesImage src={getLogo(el)} />
+          <CompaniesImage src={el} />
         </CompaniesItem>
       ))}
     </Companies>

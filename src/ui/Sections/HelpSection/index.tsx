@@ -1,5 +1,5 @@
 import React from 'react';
-import { FillButton } from '../../Buttons/FillButton';
+import { FillButton } from '@/ui/Buttons/FillButton';
 import { Container, Description, Heading } from './styled';
 
 export const HelpSection = () => (

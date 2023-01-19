@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import image from 'assets/images/icons/blog/news1.png';
+import image from '@/assets/images/icons/blog/news1.jpg';
 import { Card, Date, Description, Image, Name } from './styled';
+import { ArrowLink } from '@/ui/Links/ArrowLink';
 
 export const BlogArticle = () => (
   <Card>
@@ -13,6 +14,6 @@ export const BlogArticle = () => (
       praesentium voluptatum deleniti atque corrupti quos dolores et quas. Quis
       autem vel eum iure...
     </Description>
-    <Link to="/">Read more</Link>
+    <ArrowLink to="/" text="Read more" />
   </Card>
 );

@@ -1,0 +1,46 @@
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import arrow from '@/assets/images/icons/Links/arrowLink.svg';
+import hoveredArrow from '@/assets/images/icons/Links/hoveredArrowLink.svg';
+import disabledArrow from '@/assets/images/icons/Links/disabledArrowLink.svg';
+
+export const Arrow = styled(Link)`
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  font-size: ${({ theme }) => theme.fonts[0]}px;
+  line-height: ${({ theme }) => theme.lineHeights[0]}px;
+  padding: 0 ${({ theme }) => theme.spaces[0]}px 0 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: ${({ theme }) => theme.sizes[4]}px;
+  max-height: 24px;
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.primary};
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: ${({ theme }) => theme.sizes[0]}px;
+    height: 20px;
+    background: url(${arrow});
+  }
+  &:hover,
+  &:active,
+  &:focus {
+    color: ${({ theme }) => theme.colors.secondary};
+
+    &::after {
+      background: url(${hoveredArrow});
+    }
+  }
+
+  &:disabled {
+    color: ${({ theme }) => theme.colors.grey};
+    &::after {
+      background: url(${disabledArrow});
+    }
+  }
+`;

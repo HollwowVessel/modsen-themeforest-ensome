@@ -13,19 +13,21 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-
     "jsx": "react-jsx",
     "baseUrl": "./src",
     "paths": {
-      "src": ["."],
-      "components": ["/components"],
-      "containers": ["/containers"],
-      "assets": ["/assets"],
-      "images": ["/assets/images"],
-      "utils": ["/utils"],
-      "store": ["/store"],
-      "constants": ["/constants"],
-      "ui": ["/ui"]
+      "@/src/*": ["."],
+      "@/components/*": ["components/*"],
+      "@/containers/*": ["containers/*"],
+      "@/assets/*": ["assets/*"],
+      "@/images/*": ["assets/images/*"],
+      "@/utils/*": ["utils/*"],
+      "@/store/*": ["store/*"],
+      "@/constants/*": ["constants/*"],
+      "@/ui/*": ["ui/*"],
+      "@/pages/*": ["pages/*"],
+      "@/theme/*": ["theme/*"],
+      "@/api/*": ["src/api/*"]
     }
   },
   "include": ["src", "./index.d.ts"]

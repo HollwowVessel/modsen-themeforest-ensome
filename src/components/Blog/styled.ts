@@ -1,30 +1,33 @@
 import styled from 'styled-components';
 
 export const Container = styled.section`
-  margin: 0 0 120px 0;
-  
+  margin: 0 0 ${({ theme }) => theme.spaces.at(-2)}px 0;
 `;
 
 export const Info = styled.div`
   display: flex;
   justify-content: space-around;
-  margin: 0 0 50px 0;
+  margin: 0 0 ${({ theme }) => theme.spaces[3]}px 0;
 `;
 
 export const Heading = styled.h3`
   font-weight: 800;
-  font-size: 38px;
-  line-height: 56px;
+  font-size: ${({ theme }) => theme.fonts.at(-2)}px;
+  line-height: ${({ theme }) => theme.lineHeights.at(-2)}px;
   letter-spacing: -0.015em;
-  color: #292d33;
+  color: ${({ theme }) => theme.colors.black};
 `;
 
 export const Cards = styled.div`
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: ${({ theme }) => theme.spaces[2]}px;
+
+  max-width: ${({ theme }) => theme.sizes[5]}%;
+  overflow: hidden;
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    justify-content: flex-start;
+  }
 `;
 
-export const Buttons = styled.div`
-  
-`;
+export const Buttons = styled.div``;
