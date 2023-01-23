@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { TestimonialsCard } from '@/components/TestimonialsCard';
+import { TestimonialsCard } from '@/ui/Cards/TestimonialsCard';
 import { CardItem, cardItems } from '@/constants/testimonialCards';
 import { LeftControlButton } from '@/ui/Buttons/LeftControlButton';
 import { RightControlButton } from '@/ui/Buttons/RightControlButton';

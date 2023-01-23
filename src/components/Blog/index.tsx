@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BlogArticle } from '@/components/BlogArticle';
+import { BlogCard } from '@/components/BlogCard';
 import { CardItem, cardItems } from '@/constants/testimonialCards';
 import { LeftControlButton } from '@/ui/Buttons/LeftControlButton';
 import { RightControlButton } from '@/ui/Buttons/RightControlButton';
@@ -27,7 +27,7 @@ export const Blog = () => {
         {cardItems
           .slice(sliderItems, sliderItems + 3)
           ?.map(({ icon, name, profession, description }: CardItem, id) => (
-            <BlogArticle />
+            <BlogCard />
           ))}
       </Cards>
     </Container>

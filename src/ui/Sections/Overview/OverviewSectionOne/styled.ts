@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  background: ${({ theme }) => theme.colors.primary};
+  background: #f1f6fa;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: auto;
+
+  padding: 30px 0;
 `;
 
 export const List = styled.ul`
@@ -23,7 +24,7 @@ export const Number = styled.h4`
   letter-spacing: -0.025em;
   margin: 0;
   padding: 0;
-  color: ${({ theme }) => theme.colors.white};
+  color: ${({ theme }) => theme.colors.primary};
 `;
 
 export const Name = styled.p`
@@ -36,7 +37,7 @@ export const Name = styled.p`
   letter-spacing: -0.015em;
   margin: 0;
   padding: 0;
-  color: ${({ theme }) => theme.colors.white};
+  color: ${({ theme }) => theme.colors.grey};
 `;
 
 export const Item = styled.li`
@@ -46,7 +47,10 @@ export const Item = styled.li`
   flex-direction: column;
   justify-content: flex-end;
   max-width: ${({ theme }) => theme.sizes.at(-1)};
-
+  padding: 0 63px;
   height: 104px;
-  border-right: 1px solid rgba(241, 246, 250, 0.2);
+  border-right: 1px solid #c9dcec;
+  &:last-of-type {
+    border-right: none;
+  }
 `;

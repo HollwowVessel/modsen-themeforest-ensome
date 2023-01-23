@@ -32,7 +32,7 @@ export const Heading = styled.h3`
 export const Info = styled.div`
   display: flex;
   align-items: flex-end;
-  justify-content: center;
+
   margin: 0 0 ${({ theme }) => theme.spaces[4]}px 0;
   @media (max-width: ${({ theme }) => theme.breakPoints.laptop}px) {
     flex-direction: column;

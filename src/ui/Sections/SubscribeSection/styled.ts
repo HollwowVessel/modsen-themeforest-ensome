@@ -15,7 +15,6 @@ export const Container = styled.section`
 `;
 
 export const Info = styled.div`
-  max-width: ${({ theme }) => theme.sizes.at(-1)}px;
   input,
   button {
     display: none;
@@ -49,7 +48,7 @@ export const Subscribe = styled.h3`
 
 export const Description = styled.p`
   font-weight: ${({ theme }) => theme.fontWeights[0]};
-
+  max-width: ${({ theme }) => theme.sizes.at(-1)}px;
   font-size: ${({ theme }) => theme.fonts[2]}px;
   line-height: ${({ theme }) => theme.lineHeights[2]}px;
   letter-spacing: -0.015em;
