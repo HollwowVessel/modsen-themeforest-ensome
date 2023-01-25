@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Container, Heading, Home, Links, Name } from './styled';
 
-export const BlogDescription = ({ text }: { text: string }) => (
+export const BlogDescription = memo(({ text }: { text: string }) => (
   <Container>
     <Heading>{text}</Heading>
     <Links>
@@ -9,4 +9,4 @@ export const BlogDescription = ({ text }: { text: string }) => (
       <Name to="">{text.split(' ').slice(0, 4).join(' ')}</Name>
     </Links>
   </Container>
-);
+));

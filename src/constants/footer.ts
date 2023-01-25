@@ -8,28 +8,37 @@ import social6 from '@/assets/images/icons/social/social6.svg';
 const links = {
   heading: 'Quick link',
   items: [
-    'Home',
-    'Solutions',
-    'Blog',
-    'Contacts',
-    'Our team',
-    'About Us',
-    'Services',
-    'FAQ',
+    { name: 'Home', to: '/' },
+    { name: 'Solutions', to: '/solutions' },
+    { name: 'Blog', to: '/blog' },
+    { name: 'Contacts', to: '/contacts' },
+    { name: 'Our team', to: '/elements' },
+    { name: 'About Us', to: '/about' },
+    { name: 'Services', to: '/services' },
+    { name: 'FAQ', to: '/FAQ' },
   ],
 };
 
 const services = {
   heading: 'Service',
-  items: ['Pages', 'Elements', 'FAQ', 'Pricing', 'Site map'],
+  items: [
+    { name: 'Pages', to: '/' },
+    { name: 'Elements', to: '/elements' },
+    { name: 'FAQ', to: '/FAQ' },
+    { name: 'Pricing', to: '/' },
+    { name: 'Site map', to: '/contacts' },
+  ],
 };
 
 const cantact = {
   heading: 'Cantact info',
   items: [
-    'ensome@info.co.us',
-    '+1 601-201-5580',
-    '1642 Washington Avenue, Jackson, MS, Mississippi, 39201',
+    { name: 'ensome@info.co.us', to: undefined },
+    { name: '+1 601-201-5580', to: undefined },
+    {
+      name: '1642 Washington Avenue, Jackson, MS, Mississippi, 39201',
+      to: undefined,
+    },
   ],
 };
 

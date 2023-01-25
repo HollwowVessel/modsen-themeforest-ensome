@@ -56,7 +56,20 @@ export const NavMenu = styled.ul<{ open: boolean }>`
   }
 `;
 
-export const MenuItem = styled.li``;
+export const MenuItem = styled.li`
+  &:nth-child(3) {
+    cursor: auto;
+    position: relative;
+    &:hover {
+      div {
+        display: block;
+        a {
+          display: block;
+        }
+      }
+    }
+  }
+`;
 
 export const MenuLink = styled(NavLink)<{ active: boolean }>`
   font-weight: ${({ theme }) => theme.fontWeights[1]};
@@ -140,4 +153,13 @@ export const YoutubeContainer = styled.div`
   div {
     z-index: 15;
   }
+`;
+
+export const PagesContainer = styled.div`
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  background: ${({ theme }) => theme.colors.grey};
 `;

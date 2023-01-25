@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { FillButton } from '@/ui/Buttons/FillButton';
 import features from '@/assets/images/features.png';
 import {
@@ -14,8 +14,9 @@ import {
   SolutionsImage,
   SolutionsInfo,
 } from './styled';
+import { FillButtonLink } from '@/ui/Links/FillButtonLink';
 
-export const Features = () => (
+export const Features = memo(() => (
   <Container>
     <Info>
       <Heading>
@@ -28,7 +29,7 @@ export const Features = () => (
           ab illo inventore veritatis et quasi architecto beatae vitae dicta
           sunt explicabo.
         </Description>
-        <FillButton text="Discover more" />
+        <FillButtonLink text="Discover more" to="/services" />
       </Discover>
     </Info>
     <Solutions>
@@ -43,8 +44,8 @@ export const Features = () => (
           ab illo inventore veritatis et quasi architecto beatae vitae dicta
           sunt explicabo.
         </SolutionsDescription>
-        <FillButton text="Learn more" />
+        <FillButtonLink text="Learn more" to="/solutions" />
       </SolutionsInfo>
     </Solutions>
   </Container>
-);
+));

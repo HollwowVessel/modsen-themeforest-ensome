@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { posts } from '@/constants/blogSidebar';
 import { ArrowLink } from '@/ui/Links/ArrowLink';
 import {
@@ -13,7 +13,7 @@ import {
   Title,
 } from './styled';
 
-export const Related = () => (
+export const Related = memo(() => (
   <Container>
     <Heading>Related Post</Heading>
     <Posts>
@@ -33,4 +33,4 @@ export const Related = () => (
       ))}
     </Posts>
   </Container>
-);
+));

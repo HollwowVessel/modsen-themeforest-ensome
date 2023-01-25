@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Footer = styled.footer`
@@ -175,4 +176,21 @@ export const Policy = styled.span`
 
 export const Terms = styled.span`
   display: block;
+`;
+
+export const LinkItem = styled(Link)`
+  font-weight: ${({ theme }) => theme.fontWeights[0]};
+
+  font-size: ${({ theme }) => theme.fonts[0]}px;
+  line-height: ${({ theme }) => theme.lineHeights[0]}px;
+  letter-spacing: -0.015em;
+  color: ${({ theme }) => theme.colors.grey};
+  margin: 0 0 ${({ theme }) => theme.spaces[1]}px 0;
+
+  text-decoration: none;
+
+  @media (max-width: ${({ theme }) => theme?.breakPoints?.laptop}px) {
+    max-width: ${({ theme }) => theme.sizes[5]}%;
+    padding: ${({ theme }) => theme.spaces[1]}px 0;
+  }
 `;

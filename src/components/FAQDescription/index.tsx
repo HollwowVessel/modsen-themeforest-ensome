@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import {
   Container,
   Description,
@@ -10,7 +10,7 @@ import {
   Solutions,
 } from './styled';
 
-export const FAQDescription = () => (
+export const FAQDescription = memo(() => (
   <Container>
     <Links>
       <Home to="/">Home</Home>
@@ -25,4 +25,4 @@ export const FAQDescription = () => (
       </Description>
     </Info>
   </Container>
-);
+));

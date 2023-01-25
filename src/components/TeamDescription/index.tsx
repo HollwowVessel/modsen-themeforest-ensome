@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import {
   Container,
   Description,
@@ -11,7 +11,7 @@ import {
   Team,
 } from './styled';
 
-export const TeamDescription = () => (
+export const TeamDescription = memo(() => (
   <Container>
     <Links>
       <Home to="/">Home</Home>
@@ -33,4 +33,4 @@ export const TeamDescription = () => (
       </Description>
     </Info>
   </Container>
-);
+));

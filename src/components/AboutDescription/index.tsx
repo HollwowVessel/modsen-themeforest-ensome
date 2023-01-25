@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { AboutUs, Container, Heading, Home, Links } from './styled';
 
-export const AboutDescription = () => (
+export const AboutDescription = memo(() => (
   <Container>
     <Heading>About Us</Heading>
     <Links>
@@ -9,4 +9,4 @@ export const AboutDescription = () => (
       <AboutUs to="/">About Us</AboutUs>
     </Links>
   </Container>
-);
+));

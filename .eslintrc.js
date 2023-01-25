@@ -97,5 +97,6 @@ module.exports = {
     'import/no-extraneous-dependencies': 0,
     'import/no-unresolved': 0,
     'react/no-unescaped-entities': 0,
+    'react/state-in-constructor': 0,
   },
 };

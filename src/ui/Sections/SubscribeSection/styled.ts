@@ -63,6 +63,7 @@ export const Interaction = styled.div`
   background: ${({ theme }) => theme.colors.helperBlueThree};
   border-radius: 6px;
   margin: ${({ theme }) => theme.spaces.at(-2)}px 0;
+
   @media (max-width: ${({ theme }) => theme?.breakPoints?.tablet}px) {
     margin: 0;
   }

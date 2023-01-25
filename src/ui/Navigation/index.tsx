@@ -14,6 +14,7 @@ import {
   MenuLink,
   Nav,
   NavMenu,
+  PagesContainer,
   StyledHamburger,
   YoutubeContainer,
 } from './styled';
@@ -37,6 +38,31 @@ export const Navigation = () => {
     setOpen((prev) => !prev);
   };
 
+  const Links = menuItems.map(({ name, path, components }, id) => {
+    if (components.length) {
+      return (
+        <MenuItem key={id}>
+          Pages
+          <PagesContainer>
+            {components.map((el, id) => (
+              <Link to={`/${el}`} key={id}>
+                {el}
+              </Link>
+            ))}
+          </PagesContainer>
+        </MenuItem>
+      );
+    }
+
+    return (
+      <MenuItem key={id}>
+        <MenuLink to={path as string} active={path === pathname}>
+          {name}
+        </MenuLink>
+      </MenuItem>
+    );
+  });
+
   return (
     <Container>
       <Nav>
@@ -46,15 +72,7 @@ export const Navigation = () => {
           </Link>
           <StyledHamburger onClick={handleMenu} open={open} />
         </HamburgerContainer>
-        <NavMenu open={open}>
-          {menuItems.map(({ name, path }, id) => (
-            <MenuItem key={id}>
-              <MenuLink to={path} active={path === pathname}>
-                {name}
-              </MenuLink>
-            </MenuItem>
-          ))}
-        </NavMenu>
+        <NavMenu open={open}>{Links}</NavMenu>
         <WithIconButton
           text="Watch the demo"
           icon={playButton}

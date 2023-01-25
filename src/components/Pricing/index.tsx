@@ -1,9 +1,9 @@
-import { PayPalButtons } from '@paypal/react-paypal-js';
+import { memo } from 'react';
 import { PricingCard } from '@/components/PricingCard';
 import { Cards, Container, Heading } from './styled';
 import { pricingCards } from '@/constants/pricingCards';
 
-export const Pricing = () => (
+export const Pricing = memo(() => (
   <Container>
     <Heading>Our pricing</Heading>
     <Cards>
@@ -12,4 +12,4 @@ export const Pricing = () => (
       ))}
     </Cards>
   </Container>
-);
+));

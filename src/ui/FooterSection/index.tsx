@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { footerMenus, social } from '@/constants/footer';
 import logo from '@/assets/images/logo.svg';
 import upArrow from '@/assets/images/icons/dropdownMenu/footer.svg';
@@ -12,6 +13,7 @@ import {
   Icon,
   Info,
   Item,
+  LinkItem,
   Links,
   Logo,
   Menu,
@@ -59,11 +61,23 @@ export const FooterSection = () => {
               icon={id === activeMenu ? downArrow : upArrow}
             >
               <MenuHeading>{heading}</MenuHeading>
-              {items.map((el, ind) => (
-                <Item key={ind} display={activeMenu === id ? 'block' : 'none'}>
-                  {el}
-                </Item>
-              ))}
+              {items.map(({ name, to }, ind) =>
+                to ? (
+                  <Item
+                    key={ind}
+                    display={activeMenu === id ? 'block' : 'none'}
+                  >
+                    <LinkItem to={to}>{name}</LinkItem>
+                  </Item>
+                ) : (
+                  <Item
+                    key={ind}
+                    display={activeMenu === id ? 'block' : 'none'}
+                  >
+                    {name}
+                  </Item>
+                )
+              )}
             </Menu>
           ))}
         </Menus>

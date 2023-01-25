@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { logo } from '@/constants/logo';
 import { OverviewSectionFour } from '@/ui/Sections/Overview/OverviewSectionFour';
 
@@ -12,7 +12,7 @@ import {
   InfoDescription,
 } from './styled';
 
-export const Customers = () => (
+export const Customers = memo(() => (
   <Container>
     <Heading>Our customers</Heading>
     <Info>
@@ -30,4 +30,4 @@ export const Customers = () => (
       ))}
     </Companies>
   </Container>
-);
+));

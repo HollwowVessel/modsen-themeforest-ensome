@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const OuterContainer = styled.div`
@@ -16,9 +17,7 @@ export const OuterContainer = styled.div`
   }
 `;
 
-export const InnerContainer = styled.div<
-  Pick<{ background: boolean }, 'background'>
->`
+export const InnerContainer = styled.div<{ background: boolean }>`
   cursor: pointer;
 
   background: ${({ theme }) => theme.colors.primary};
@@ -66,4 +65,8 @@ export const Circle = styled.button`
     width: ${({ theme }) => theme.sizes[4]}px;
     height: ${({ theme }) => theme.sizes[4]}px;
   }
+`;
+
+export const LinkContainer = styled(Link)`
+  text-decoration: none;
 `;

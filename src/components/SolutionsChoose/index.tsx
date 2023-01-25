@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import Servers from '@/assets/images/solutions.jpg';
 import {
   Container,
@@ -12,7 +12,7 @@ import {
 } from './styled';
 import { solutionsAdvantages } from '@/constants/solutionsAdvantages';
 
-export const SolutionsChoose = () => (
+export const SolutionsChoose = memo(() => (
   <Container>
     <Image src={Servers} />
     <Info>
@@ -27,4 +27,4 @@ export const SolutionsChoose = () => (
       </List>
     </Info>
   </Container>
-);
+));

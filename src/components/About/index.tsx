@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import Who from '@/assets/images/who.jpg';
 import Mission from '@/assets/images/mission.jpg';
 import {
@@ -10,7 +10,7 @@ import {
   Wrapper,
 } from './styled';
 
-export const About = () => (
+export const About = memo(() => (
   <Container>
     <Wrapper>
       <Description>
@@ -47,4 +47,4 @@ export const About = () => (
       </Description>
     </Wrapper>
   </Container>
-);
+));

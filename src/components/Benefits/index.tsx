@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { BenefitsCard } from '@/components/BenefitsCard';
 import { CardItem, cardItems } from '@/constants/benefitsCard';
 
 import { Cards, Container, Description, Heading, Info } from './styled';
 
-export const Benefits = () => (
+export const Benefits = memo(() => (
   <Container>
     <Info>
       <Heading>The benefits of Ensome </Heading>
@@ -26,4 +26,4 @@ export const Benefits = () => (
       ))}
     </Cards>
   </Container>
-);
+));

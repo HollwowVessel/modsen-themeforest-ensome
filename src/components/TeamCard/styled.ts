@@ -31,3 +31,15 @@ export const Profession = styled.p`
   color: #ffffff;
   padding: 0 25px;
 `;
+
+export const Socials = styled.ul`
+  display: flex;
+  gap: 5px;
+  padding: 0 25px;
+`;
+
+export const Social = styled.li``;
+
+export const SocialLink = styled.a``;
+
+export const Icon = styled.img``;

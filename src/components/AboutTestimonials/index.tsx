@@ -9,6 +9,14 @@ import { TestimonialsCardOpen } from '@/ui/Cards/TestimonialsCardOpen';
 export const AboutTestimonials = () => {
   const [sliderItems, setSliderItems] = useState(0);
 
+  const handleLeft = () => {
+    setSliderItems((prev) => prev - 1);
+  };
+
+  const handleRight = () => {
+    setSliderItems((prev) => prev - 1);
+  };
+
   return (
     <Container>
       <Info>
@@ -16,11 +24,11 @@ export const AboutTestimonials = () => {
         <Buttons>
           <LeftControlButton
             disabled={sliderItems === 0}
-            onClick={() => setSliderItems((prev) => prev - 1)}
+            onClick={handleLeft}
           />
           <RightControlButton
             disabled={sliderItems + 1 === cardItems.length}
-            onClick={() => setSliderItems((prev) => prev + 1)}
+            onClick={handleRight}
           />
         </Buttons>
       </Info>

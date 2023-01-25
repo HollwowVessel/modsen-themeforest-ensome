@@ -1,4 +1,5 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 import { Navigation } from '@/ui/Navigation';
 import { SubscribeSection } from '@/ui/Sections/SubscribeSection';
 import { SubscribeSectionBlue } from '@/ui/Sections/SubscribeSectionBlue';
@@ -8,18 +9,24 @@ import { Sidebar } from '@/components/Sidebar';
 import { Container } from './styled';
 import { Related } from '@/components/Related';
 import { FooterSection } from '@/ui/FooterSection';
+import { blogArticles } from '@/constants/blogArticle';
 
-export const BlogPage = () => (
-  <>
-    <Navigation />
-    <BlogDescription text="2022 software development trends explained with benefits" />
-    <Container>
-      <BlogArticle />
-      <Sidebar />
-    </Container>
-    <Related />
-    <SubscribeSectionBlue />
-    <SubscribeSection />
-    <FooterSection />
-  </>
-);
+export const BlogPage = () => {
+  const { index } = useParams();
+  const { heading, text, image, date } =
+    blogArticles[typeof index === 'string' ? +index : 0];
+  return (
+    <>
+      <Navigation />
+      <BlogDescription text={heading} />
+      <Container>
+        <BlogArticle text={text} heading={heading} image={image} date={date} />
+        <Sidebar />
+      </Container>
+      <Related />
+      <SubscribeSectionBlue />
+      <SubscribeSection />
+      <FooterSection />
+    </>
+  );
+};

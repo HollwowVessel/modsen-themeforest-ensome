@@ -1,13 +1,9 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 
-export class ErrorBoundary extends Component {
-  constructor({ props }: { props: Component }) {
-    super(props);
-    this.state = { hasError: false };
-  }
+export class ErrorBoundary extends Component<{ children: React.ReactNode }> {
+  state = { hasError: false };
 
   static getDerivedStateFromError() {
-    // Update state so the next render will show the fallback UI.
     return { hasError: true };
   }
 
