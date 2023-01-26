@@ -4,7 +4,7 @@ export const Card = styled.div`
   max-width: ${({ theme }) => theme.sizes.at(-4)}px;
 
   background: ${({ theme }) => theme.colors.white};
-  padding: ${({ theme }) => theme.spaces[2]}px;
+  padding: ${({ theme }) => theme.paddings[3]}px;
   &:nth-of-type(even) {
     transform: translateY(56px);
   }
@@ -20,7 +20,7 @@ export const Card = styled.div`
 export const Image = styled.img`
   width: ${({ theme }) => theme.sizes[2]}px;
 
-  margin: 0 0 ${({ theme }) => theme.spaces[1]}px px 0;
+  margin: 0 0 ${({ theme }) => theme.margins[2]}px 0;
 `;
 
 export const Heading = styled.h4`
@@ -31,7 +31,7 @@ export const Heading = styled.h4`
   letter-spacing: -0.015em;
 
   color: ${({ theme }) => theme.colors.black};
-  margin: 0 0 ${({ theme }) => theme.spaces[0]}px px 0;
+  margin: 0 0 ${({ theme }) => theme.margins[0]}px 0;
 `;
 
 export const Description = styled.p`

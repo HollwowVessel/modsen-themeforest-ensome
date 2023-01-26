@@ -6,9 +6,9 @@ export const Container = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  padding: 100px 0;
-  background: #f1f6fa;
-  margin: 0 0 120px 0;
+  padding: ${({ theme }) => theme.paddings[7]}px 0;
+  background: ${({ theme }) => theme.colors.background};
+  margin: 0 0 ${({ theme }) => theme.margins[7]}px 0;
 `;
 
 export const Heading = styled.h1`
@@ -22,34 +22,34 @@ export const Heading = styled.h1`
 
   /* Black */
 
-  color: #292d33;
+  color: ${({ theme }) => theme.colors.black};
 
-  margin: 0 0 20px 0;
+  margin: 0 0 ${({ theme }) => theme.margins[2]}px 0;
 `;
 
 export const Links = styled.div`
   display: flex;
-  margin: 0 0 56px 0;
+  margin: 0 0 ${({ theme }) => theme.margins[5]}px 0;
 `;
 
 export const Home = styled(Link)`
-  padding: 0 10px 0 0;
+  padding: 0 ${({ theme }) => theme.paddings[0]}px 0 0;
   text-decoration: none;
   font-weight: 500;
   font-size: 14px;
   line-height: 24px;
   letter-spacing: -0.01em;
-  color: #9497a1;
+  color: ${({ theme }) => theme.colors.grey};
 `;
 
 export const AboutUs = styled(Link)`
-  border-left: 2px solid #9497a1;
-  padding: 0 0 0 10px;
+  border-left: 2px solid ${({ theme }) => theme.colors.grey};
+  padding: 0 0 0 ${({ theme }) => theme.paddings[0]}px;
   text-decoration: none;
   font-weight: 500;
   font-size: 14px;
   line-height: 24px;
   letter-spacing: -0.01em;
-  color: #292d33;
+  color: ${({ theme }) => theme.colors.black};
   max-height: 24px;
 `;

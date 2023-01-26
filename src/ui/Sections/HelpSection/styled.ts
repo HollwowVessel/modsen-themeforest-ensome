@@ -6,7 +6,7 @@ export const Container = styled.section`
   justify-content: center;
   align-items: center;
   background: ${({ theme }) => theme.colors.background};
-  padding: ${({ theme }) => theme.spaces[6]}px 0;
+  padding: ${({ theme }) => theme.paddings[8]}px 0;
 `;
 
 export const Heading = styled.h3`

@@ -20,15 +20,15 @@ export const LeftControl = styled.button<Pick<{ arrow: boolean }, 'arrow'>>`
       !arrow ? `${arrowEnabled}` : `${arrowDisabled}`});
     background-repeat: no-repeat;
     top: ${({ theme }) => theme.spaces[1]}px;
-    right: 40px;
+    right: ${({ theme }) => theme.rights[3]}px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
     width: ${({ theme }) => theme.sizes[2]}px;
     height: ${({ theme }) => theme.sizes[2]}px;
     &::after {
-      right: 8px;
-      top: 8px;
+      right: ${({ theme }) => theme.rights[1]}px;
+      top: ${({ theme }) => theme.tops[2]};
     }
   }
 `;

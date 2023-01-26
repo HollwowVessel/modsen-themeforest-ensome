@@ -11,14 +11,14 @@ export const Container = styled.section`
 export const Info = styled.div`
   display: flex;
   justify-content: baseline;
-  gap: ${({ theme }) => theme.spaces[2]}px;
+  gap: ${({ theme }) => theme.gaps[2]}px;
   margin: 0 0 ${({ theme }) => theme.spaces.at(-2)}px 0;
   @media (max-width: ${({ theme }) => theme.breakPoints.laptop}px) {
     flex-direction: column;
   }
 
   @media (max-width: ${({ theme }) => theme.breakPoints.mobile}px) {
-    padding: 0 16px;
+    padding: 0 ${({ theme }) => theme.paddings[2]}px;
   }
 `;
 
@@ -65,7 +65,7 @@ export const Discover = styled.div``;
 
 export const Solutions = styled.div`
   display: flex;
-  gap: ${({ theme }) => theme.spaces[3]}px;
+  gap: ${({ theme }) => theme.gaps[4]}px;
   background: ${({ theme }) => theme.colors.background};
   align-items: center;
   width: ${({ theme }) => theme.sizes[5]}%;
@@ -77,12 +77,12 @@ export const Solutions = styled.div`
   @media (max-width: ${({ theme }) => theme.breakPoints.laptop}px) {
     button {
       order: 4;
-      margin: 0 0 50px 0;
+      margin: 0 0 ${({ theme }) => theme.margins[5]}px 0;
     }
   }
 
   @media (max-width: ${({ theme }) => theme.breakPoints.mobile}px) {
-    padding: 0 16px;
+    padding: 0 ${({ theme }) => theme.paddings[2]}px;
   }
 `;
 

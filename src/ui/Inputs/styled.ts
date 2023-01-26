@@ -4,8 +4,9 @@ export const Email = styled.input`
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  padding: 15px 91px 15px 25px;
-  gap: 10px;
+  padding: ${({ theme }) => theme.paddings[2]}px 91px
+    ${({ theme }) => theme.paddings[2]}px ${({ theme }) => theme.paddings[3]}px;
+  gap: ${({ theme }) => theme.gaps[0]}px;
   border: 1px solid ${({ theme }) => theme.colors.helperBlueTwo};
   border-radius: 6px;
   width: 100%;

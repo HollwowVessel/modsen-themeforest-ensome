@@ -3,3 +3,8 @@ export interface PricingCardProps {
   price: string;
   options: string[];
 }
+
+export interface TimeTypeProps {
+  background: string;
+  color: string;
+}

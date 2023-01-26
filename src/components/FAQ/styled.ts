@@ -7,7 +7,7 @@ export const Container = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 0 120px 0;
+  margin: 0 0 ${({ theme }) => theme.margins[7]}px 0;
 `;
 
 export const Questions = styled.ul`
@@ -17,10 +17,10 @@ export const Questions = styled.ul`
 `;
 
 export const Question = styled.li`
-  border: 1px solid #9497a1;
+  border: 1px solid ${({ theme }) => theme.colors.grey};
   border-radius: 6px;
-  padding: 35px;
-  margin: 0 0 20px 0;
+  padding: ${({ theme }) => theme.paddings[4]}px;
+  margin: 0 0 ${({ theme }) => theme.margins[2]}px 0;
   width: 100%;
 `;
 
@@ -32,7 +32,8 @@ export const Heading = styled.h3<ActiveProp>`
   letter-spacing: -0.015em;
   display: flex;
   align-items: center;
-  color: ${({ active }) => (active ? '#185CFF' : '#292d33')};
+  color: ${({ active, theme }) =>
+    active ? theme.colors.primary : theme.colors.grey};
   position: relative;
   &::before {
     content: '';
@@ -43,7 +44,7 @@ export const Heading = styled.h3<ActiveProp>`
     position: absolute;
     cursor: pointer;
 
-    right: 0;
+    right: ${({ theme }) => theme.rights[0]};
   }
 `;
 
@@ -51,10 +52,10 @@ export const Description = styled.p<ActiveProp>`
   font-weight: 400;
   font-size: 20px;
   line-height: 33px;
-  margin: 15px 0 0 0;
+  margin: ${({ theme }) => theme.margins[1]}px 0 0 0;
 
   letter-spacing: -0.015em;
-  color: #9497a1;
+  color: ${({ theme }) => theme.colors.grey};
   flex: none;
   order: 1;
   flex-grow: 0;

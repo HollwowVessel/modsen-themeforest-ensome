@@ -10,8 +10,9 @@ export const Container = styled.section`
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  gap: 30px;
-  margin: 0 0 120px 0;
+  gap: ${({ theme }) => theme.gaps[3]};
+
+  margin: 0 0 ${({ theme }) => theme.margins[7]}px 0;
 `;
 
 export const Image = styled.img``;
@@ -23,8 +24,8 @@ export const Heading = styled.h3`
   font-size: 46px;
   line-height: 60px;
   letter-spacing: -0.015em;
-  color: #292d33;
-  margin: 0 0 30px 0;
+  color: ${({ theme }) => theme.colors.black};
+  margin: 0 0 ${({ theme }) => theme.margins[3]}px 0;
 `;
 
 export const Text = styled.p`
@@ -32,7 +33,7 @@ export const Text = styled.p`
   font-size: 20px;
   line-height: 33px;
   letter-spacing: -0.015em;
-  color: #9497a1;
-  margin: 0 0 20px 0;
+  color: ${({ theme }) => theme.colors.grey};
+  margin: 0 0 ${({ theme }) => theme.margins[2]}px 0;
   max-width: 445px;
 `;

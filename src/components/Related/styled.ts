@@ -3,14 +3,14 @@ import styled from 'styled-components';
 export const Container = styled.section``;
 
 export const Posts = styled.div`
-  margin: 0 0 60px 0;
+  margin: 0 0 ${({ theme }) => theme.margins[5]}px 0;
 `;
 
 export const Post = styled.div`
   display: flex;
   align-items: flex-start;
-  gap: 20px;
-  margin: 0 0 30px 0;
+  gap: ${({ theme }) => theme.gaps[2]}px;
+  margin: 0 0 ${({ theme }) => theme.margins[3]}px 0;
 `;
 
 export const PostDescription = styled.div``;
@@ -25,8 +25,8 @@ export const Date = styled.p`
   font-size: 14px;
   line-height: 24px;
   letter-spacing: -0.015em;
-  color: #9497a1;
-  margin: 0 0 15px 0;
+  color: ${({ theme }) => theme.colors.grey};
+  margin: 0 0 ${({ theme }) => theme.margins[1]}px 0;
 `;
 
 export const Title = styled.h4`
@@ -34,8 +34,8 @@ export const Title = styled.h4`
   font-size: 16px;
   line-height: 24px;
   letter-spacing: -0.015em;
-  color: #292d33;
-  margin: 0 0 10px 0;
+  color: ${({ theme }) => theme.colors.black};
+  margin: 0 0 ${({ theme }) => theme.margins[0]}px 0;
 `;
 
 export const Heading = styled.h3`
@@ -43,8 +43,8 @@ export const Heading = styled.h3`
   font-size: 22px;
   line-height: 33px;
   letter-spacing: -0.015em;
-  color: #292d33;
-  margin: 0 0 30px 0;
+  color: ${({ theme }) => theme.colors.black};
+  margin: 0 0 ${({ theme }) => theme.margins[3]}px 0;
 `;
 
 export const Text = styled.p`
@@ -57,6 +57,6 @@ export const Text = styled.p`
 
   /* Grey */
 
-  color: #9497a1;
+  color: ${({ theme }) => theme.colors.grey};
   max-width: 400px;
 `;

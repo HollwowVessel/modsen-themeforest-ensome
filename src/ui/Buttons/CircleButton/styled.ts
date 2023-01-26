@@ -30,7 +30,7 @@ export const InnerContainer = styled.div<{ background: boolean }>`
 
   button:disabled,
   & {
-    background: ${({ background }) => (background ? '#9497a1' : '#185cff')};
+    background: ${({ background, theme }) => (background ? '' : '#')};
   }
 
   &:hover,

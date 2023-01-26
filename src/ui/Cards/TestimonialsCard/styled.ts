@@ -6,9 +6,10 @@ export const Card = styled.div`
 
   display: flex;
   align-items: center;
-  gap: ${({ theme }) => theme.spaces[2]}px;
+  gap: ${({ theme }) => theme.gaps[2]}px;
   flex-wrap: wrap;
-  padding: 0 24px 24px 24px;
+  padding: 0 ${({ theme }) => theme.paddings[3]}px
+    ${({ theme }) => theme.paddings[3]}px ${({ theme }) => theme.paddings[3]}px;
   @media (max-width: ${({ theme }) => theme.breakPoints.laptop}px) {
     min-width: ${({ theme }) => theme.sizes[9]}px;
   }

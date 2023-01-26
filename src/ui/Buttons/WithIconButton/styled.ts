@@ -5,9 +5,9 @@ export const WithIcon = styled.button<Pick<{ icon: string }, 'icon'>>`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: ${({ theme }) => theme.spaces[0]}px
-    ${({ theme }) => theme.spaces[1]}px;
-  gap: ${({ theme }) => theme.spaces[0]}px;
+  padding: ${({ theme }) => theme.paddings[1]}px
+    ${({ theme }) => theme.paddings[2]}px;
+  gap: ${({ theme }) => theme.gaps[0]}px;
   background: ${({ theme }) => theme.colors.primary};
   border-radius: 6px;
   cursor: pointer;

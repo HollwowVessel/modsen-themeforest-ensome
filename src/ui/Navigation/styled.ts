@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import hamburger from '@/assets/images/icons/general/hamburger.svg';
 import close from '@/assets/images/icons/general/close.svg';
 
 export const Container = styled.div`
-  padding: ${({ theme }) => theme.spaces[3]}px 0;
+  padding: ${({ theme }) => theme.paddings[4]}px 0;
   background: ${({ theme }) => theme.colors.background};
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
     padding: 0;
@@ -27,14 +27,14 @@ export const Nav = styled.nav`
 `;
 
 export const Logo = styled.img`
-  z-index: 10;
+  z-index: ${({ theme }) => theme.zIndexes[3]};
   margin: 0 ${({ theme }) => theme.spaces.at(-1)}px 0 0;
 `;
 
 export const NavMenu = styled.ul<{ open: boolean }>`
   list-style-type: none;
   display: flex;
-  gap: ${({ theme }) => theme.spaces[3]}px;
+  gap: ${({ theme }) => theme.gaps[4]}px;
   margin: 0 ${({ theme }) => theme.spaces.at(-2)}px 0 0;
 
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
@@ -47,11 +47,11 @@ export const NavMenu = styled.ul<{ open: boolean }>`
     height: 100%;
     top: 0;
     left: 0;
-    z-index: 5;
+    z-index: ${({ theme }) => theme.zIndexes[1]};
     justify-content: flex-start;
     align-items: baseline;
-    padding: ${({ theme }) => theme.spaces[5]}px 0 0
-      ${({ theme }) => theme.spaces[1]}px;
+    padding: ${({ theme }) => theme.paddings[6]}px 0 0
+      ${({ theme }) => theme.paddings[2]}px;
     background: ${({ theme }) => theme.colors.white};
   }
 `;
@@ -96,7 +96,7 @@ export const MenuLink = styled(NavLink)<{ active: boolean }>`
 export const StyledHamburger = styled.div<{ open: boolean }>`
   width: ${({ theme }) => theme.sizes[1]}px;
   height: ${({ theme }) => theme.sizes[1]}px;
-  z-index: 10;
+  z-index: ${({ theme }) => theme.zIndexes[3]};
   display: none;
   position: relative;
   &:after {
@@ -108,7 +108,7 @@ export const StyledHamburger = styled.div<{ open: boolean }>`
     height: ${({ theme }) => theme.sizes[1]}px;
     cursor: pointer;
     top: 0;
-    right: 0;
+    right: ${({ theme }) => theme.rights[0]};
   }
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
     display: block;
@@ -116,7 +116,7 @@ export const StyledHamburger = styled.div<{ open: boolean }>`
 `;
 
 export const HamburgerContainer = styled.div<{ open: boolean }>`
-  z-index: 6;
+  z-index: ${({ theme }) => theme.zIndexes[2]};
 
   display: flex;
   justify-content: space-between;
@@ -133,7 +133,7 @@ export const YoutubeContainer = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 15;
+  z-index: ${({ theme }) => theme.zIndexes[5]};
   display: flex;
   width: ${({ theme }) => theme.sizes[5]}%;
   height: 100%;
@@ -145,13 +145,13 @@ export const YoutubeContainer = styled.div`
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 10;
+    z-index: ${({ theme }) => theme.zIndexes[3]};
     opacity: 0.4;
     height: 100%;
     background: ${({ theme }) => theme.colors.grey};
   }
   div {
-    z-index: 15;
+    z-index: ${({ theme }) => theme.zIndexes[5]};
   }
 `;
 
@@ -160,6 +160,6 @@ export const PagesContainer = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  padding: 20px;
+  padding: ${({ theme }) => theme.paddings[2]}px;
   background: ${({ theme }) => theme.colors.grey};
 `;

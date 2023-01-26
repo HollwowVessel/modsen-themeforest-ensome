@@ -1,18 +1,18 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  background: #f1f6fa;
+  background: ${({ theme }) => theme.colors.background};
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  padding: 30px 0;
+  padding: ${({ theme }) => theme.paddings[4]}px 0;
 `;
 
 export const List = styled.ul`
   display: flex;
-  gap: ${({ theme }) => theme.spaces[1]}px;
+  gap: ${({ theme }) => theme.gaps[1]}px;
 `;
 
 export const Number = styled.h4`
@@ -47,9 +47,9 @@ export const Item = styled.li`
   flex-direction: column;
   justify-content: flex-end;
   max-width: ${({ theme }) => theme.sizes.at(-1)};
-  padding: 0 63px;
+  padding: 0 ${({ theme }) => theme.paddings[5]}px;
   height: 104px;
-  border-right: 1px solid #c9dcec;
+  border-right: 1px solid ${({ theme }) => theme.colors.helperBlueThree};
   &:last-of-type {
     border-right: none;
   }

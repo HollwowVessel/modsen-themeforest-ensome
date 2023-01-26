@@ -9,7 +9,7 @@ export const Container = styled.section`
   justify-content: center;
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
     display: initial;
-    padding: 0 16px;
+    padding: 0 ${({ theme }) => theme.paddings[2]}px;
   }
 `;
 
@@ -37,7 +37,7 @@ export const Info = styled.div`
   @media (max-width: ${({ theme }) => theme.breakPoints.laptop}px) {
     flex-direction: column;
     max-width: ${({ theme }) => theme.sizes[5]}%;
-    gap: ${({ theme }) => theme.spaces[2]}px;
+    gap: ${({ theme }) => theme.gaps[2]}px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {

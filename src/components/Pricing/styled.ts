@@ -17,19 +17,19 @@ export const Heading = styled.h3`
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
     font-size: ${({ theme }) => theme.fonts[4]}px;
     line-height: ${({ theme }) => theme.lineHeights[3]}px;
-    padding: 0 ${({ theme }) => theme.spaces[3]}px;
+    padding: 0 ${({ theme }) => theme.paddings[4]}px;
   }
 `;
 
 export const Cards = styled.div`
   display: flex;
   justify-content: center;
-  gap: ${({ theme }) => theme.spaces[2]}px;
+  gap: ${({ theme }) => theme.gaps[2]}px;
 
   overflow: auto;
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
     font-size: ${({ theme }) => theme.fonts[4]}px;
     line-height: ${({ theme }) => theme.lineHeights[3]}px;
-    padding: 0 ${({ theme }) => theme.spaces[3]}px;
+    padding: 0 ${({ theme }) => theme.paddings[4]}px;
   }
 `;

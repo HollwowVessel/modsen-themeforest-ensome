@@ -2,34 +2,35 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  margin: 20px 0 120px 0;
-  padding: 0 405px;
+  margin: ${({ theme }) => theme.margins[2]}px 0
+    ${({ theme }) => theme.margins[7]}px 0;
+  padding: 0 ${({ theme }) => theme.paddings[9]}px;
 `;
 
 export const Links = styled.div`
   display: flex;
-  margin: 0 0 56px 0;
+  margin: 0 0 ${({ theme }) => theme.margins[5]}px 0;
 `;
 
 export const Home = styled(Link)`
-  padding: 0 10px 0 0;
+  padding: 0 ${({ theme }) => theme.paddings[0]}px 0 0;
   text-decoration: none;
   font-weight: 500;
   font-size: 14px;
   line-height: 24px;
   letter-spacing: -0.01em;
-  color: #9497a1;
+  color: ${({ theme }) => theme.colors.grey};
 `;
 
 export const Solutions = styled(Link)`
-  border-left: 2px solid #9497a1;
-  padding: 0 0 0 10px;
+  border-left: 2px solid ${({ theme }) => theme.colors.grey};
+  padding: 0 0 0 ${({ theme }) => theme.paddings[0]}px;
   text-decoration: none;
   font-weight: 500;
   font-size: 14px;
   line-height: 24px;
   letter-spacing: -0.01em;
-  color: #292d33;
+  color: ${({ theme }) => theme.colors.black};
   max-height: 24px;
 `;
 
@@ -46,8 +47,8 @@ export const Name = styled.h3`
   line-height: 24px;
 
   letter-spacing: -0.015em;
-  color: #185cff;
-  margin: 0 0 15px 0;
+  color: ${({ theme }) => theme.colors.primary};
+  margin: 0 0 ${({ theme }) => theme.margins[2]}px 0;
 `;
 
 export const Heading = styled.h1`
@@ -55,8 +56,8 @@ export const Heading = styled.h1`
   font-size: 46px;
   line-height: 60px;
   letter-spacing: -0.015em;
-  color: #292d33;
-  margin: 0 0 15px 0;
+  color: ${({ theme }) => theme.colors.black};
+  margin: 0 0 ${({ theme }) => theme.margins[2]}px 0;
 `;
 
 export const Description = styled.p`
@@ -65,6 +66,6 @@ export const Description = styled.p`
   line-height: 33px;
   text-align: center;
   letter-spacing: -0.015em;
-  color: #9497a1;
+  color: ${({ theme }) => theme.colors.grey};
   max-width: 540px;
 `;

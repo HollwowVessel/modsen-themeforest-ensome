@@ -8,8 +8,8 @@ export const Fill = styled.button`
   line-height: ${({ theme }) => theme.lineHeights[0]}px;
   color: ${({ theme }) => theme.colors.white};
   letter-spacing: -0.015em;
-  padding: ${({ theme }) => theme.spaces[1]}px
-    ${({ theme }) => theme.spaces[4]}px;
+  padding: ${({ theme }) => theme.paddings[2]}px
+    ${({ theme }) => theme.paddings[5]}px;
   background: ${({ theme }) => theme.colors.primary};
   box-shadow: 0px 12px 30px rgba(24, 92, 255, 0.18);
   border-radius: 6px;

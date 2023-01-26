@@ -9,16 +9,16 @@ export const Footer = styled.footer`
   flex-direction: column;
   @media (max-width: ${({ theme }) => theme?.breakPoints?.laptop}px) {
     align-items: flex-start;
-    padding: 0 0 0 ${({ theme }) => theme.spaces[1]}px;
+    padding: 0 0 0 ${({ theme }) => theme.paddings[2]}px;
     align-items: initial;
   }
 `;
 
 export const Container = styled.div`
   display: flex;
-  gap: ${({ theme }) => theme.spaces.at(-1)}px;
+  gap: ${({ theme }) => theme.gaps.at(6)}px;
   border-bottom: 1px solid ${({ theme }) => theme.colors.helperBlueOne};
-  padding: ${({ theme }) => theme.spaces[4]}px 0;
+  padding: ${({ theme }) => theme.paddings[5]}px 0;
   @media (max-width: ${({ theme }) => theme?.breakPoints?.laptop}px) {
     gap: 0;
     flex-direction: column;
@@ -30,7 +30,7 @@ export const Info = styled.div`
   max-width: ${({ theme }) => theme.sizes[8]}px;
   max-height: 183px;
   @media (max-width: ${({ theme }) => theme?.breakPoints?.laptop}px) {
-    padding: ${({ theme }) => theme.spaces[3]}px 0 0 0;
+    padding: ${({ theme }) => theme.paddings[4]}px 0 0 0;
     border-top: 1px solid ${({ theme }) => theme.colors.helperBlueOne};
     max-width: ${({ theme }) => theme.sizes[5]}%;
   }
@@ -60,7 +60,7 @@ export const Description = styled.p`
 
 export const SocialContainer = styled.ul`
   display: flex;
-  gap: ${({ theme }) => theme.spaces[1]}px;
+  gap: ${({ theme }) => theme.gaps[1]}px;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -72,19 +72,20 @@ export const SocialContainer = styled.ul`
 export const Social = styled.li``;
 
 export const Icon = styled.img`
-  padding: ${({ theme }) => theme.spaces[3]}px 0 0 0;
+  padding: ${({ theme }) => theme.paddings[4]}px 0 0 0;
 `;
 
 export const Menus = styled.div`
   display: flex;
   justify-content: space-between;
-  gap: ${({ theme }) => theme.spaces.at(-2)}px;
+  gap: ${({ theme }) => theme.gaps[5]}px;
   @media (max-width: ${({ theme }) => theme?.breakPoints?.laptop}px) {
     gap: 0;
     flex-direction: column;
     max-width: ${({ theme }) => theme.sizes[5]}%;
-    padding: ${({ theme }) => theme.spaces[3]}px
-      ${({ theme }) => theme.spaces[1]}px 0 ${({ theme }) => theme.spaces[1]}px;
+    padding: ${({ theme }) => theme.paddings[4]}px
+      ${({ theme }) => theme.paddings[2]}px 0
+      ${({ theme }) => theme.paddings[2]}px;
   }
 `;
 
@@ -98,7 +99,7 @@ export const Menu = styled.ul<{ icon: string }>`
   @media (max-width: ${({ theme }) => theme?.breakPoints?.laptop}px) {
     cursor: pointer;
 
-    padding: ${({ theme }) => theme.spaces[1]}px 0;
+    padding: ${({ theme }) => theme.paddings[2]}px 0;
     max-width: ${({ theme }) => theme.sizes[5]}%;
     border-bottom: 1px solid ${({ theme }) => theme.colors.helperBlueOne};
     &::after {
@@ -108,8 +109,8 @@ export const Menu = styled.ul<{ icon: string }>`
       height: ${({ theme }) => theme.sizes[1]}px;
       background: url(${({ icon }) => icon});
       background-repeat: no-repeat;
-      top: ${({ theme }) => theme.spaces[2]}px;
-      right: ${({ theme }) => theme.spaces[1]}px;
+      top: ${({ theme }) => theme.tops[3]}px;
+      right: ${({ theme }) => theme.paddings[2]}px;
     }
   }
 `;
@@ -135,7 +136,7 @@ export const Item = styled.li<{ display: string }>`
 
   @media (max-width: ${({ theme }) => theme?.breakPoints?.laptop}px) {
     max-width: ${({ theme }) => theme.sizes[5]}%;
-    padding: ${({ theme }) => theme.spaces[1]}px 0;
+    padding: ${({ theme }) => theme.paddings[2]}px 0;
 
     display: ${({ display }) => display};
   }
@@ -145,7 +146,7 @@ export const CopyRight = styled.div`
   display: flex;
   justify-content: space-around;
   max-width: ${({ theme }) => theme.sizes[5]}%;
-  padding: ${({ theme }) => theme.spaces[3]}px 0;
+  padding: ${({ theme }) => theme.paddings[4]}px 0;
 `;
 
 export const Ensome = styled.p`
@@ -160,7 +161,7 @@ export const Ensome = styled.p`
 export const Links = styled.div`
   display: flex;
   justify-content: space-between;
-  gap: ${({ theme }) => theme.spaces.at(-3)}px;
+  gap: ${({ theme }) => theme.spaces.at(5)}px;
   font-weight: ${({ theme }) => theme.fontWeights[0]};
 
   font-size: ${({ theme }) => theme.fonts[0]}px;
@@ -191,6 +192,6 @@ export const LinkItem = styled(Link)`
 
   @media (max-width: ${({ theme }) => theme?.breakPoints?.laptop}px) {
     max-width: ${({ theme }) => theme.sizes[5]}%;
-    padding: ${({ theme }) => theme.spaces[1]}px 0;
+    padding: ${({ theme }) => theme.paddings[2]}px 0;
   }
 `;

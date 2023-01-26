@@ -27,7 +27,7 @@ export const LeftControl = styled.button<Pick<{ arrow: boolean }, 'arrow'>>`
     height: ${({ theme }) => theme.sizes[2]}px;
     &::after {
       left: 8px;
-      top: 8px;
+      top: ${({ theme }) => theme.tops[2]};
     }
   }
 `;

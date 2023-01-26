@@ -49,7 +49,7 @@ export const sendEmail = (
     .then(() => {
       setResponse('Successfully!');
     })
-    .catch((err: any) => {
+    .catch(() => {
       setResponse('Error :(');
     })
     .finally(() => setLoading(false));

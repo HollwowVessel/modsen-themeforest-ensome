@@ -2,10 +2,10 @@ import styled from 'styled-components';
 
 export const Container = styled.section`
   margin: 0 0 ${({ theme }) => theme.spaces[5]}px 0;
-  padding: 0 0 0 405px;
+  padding: 0 0 0 ${({ theme }) => theme.paddings[9]}px;
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
     display: initial;
-    padding: 0 16px;
+    padding: 0 ${({ theme }) => theme.paddings[2]}px;
   }
 `;
 
@@ -19,7 +19,7 @@ export const Heading = styled.h3`
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
     font-size: ${({ theme }) => theme.fonts[4]}px;
     line-height: ${({ theme }) => theme.lineHeights[3]}px;
-    padding: 0 ${({ theme }) => theme.spaces[1]}px;
+    padding: 0 ${({ theme }) => theme.paddings[2]}px;
     text-align: left;
   }
 `;
@@ -29,11 +29,11 @@ export const Info = styled.div`
   @media (max-width: ${({ theme }) => theme.breakPoints.laptop}px) {
     flex-direction: column;
     max-width: ${({ theme }) => theme.sizes[5]}%;
-    gap: ${({ theme }) => theme.spaces[2]}px;
+    gap: ${({ theme }) => theme.gaps[2]}px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
-    padding: 0 ${({ theme }) => theme.spaces[1]}px;
+    padding: 0 ${({ theme }) => theme.paddings[2]}px;
   }
 `;
 

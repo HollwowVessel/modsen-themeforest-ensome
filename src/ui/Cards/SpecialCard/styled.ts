@@ -4,11 +4,12 @@ export const Container = styled.div`
   max-width: 540px;
   box-shadow: 0px 4px 12px rgba(12, 68, 204, 0.1);
   border-radius: 6px;
-  padding: 20px 35px;
+  padding: ${({ theme }) => theme.paddings[3]}px
+    ${({ theme }) => theme.paddings[4]}px;
 `;
 
 export const Image = styled.img`
-  margin: 0 0 26px 0;
+  margin: 0 0 ${({ theme }) => theme.margins[2]}px 0;
 `;
 
 export const Heading = styled.h3`
@@ -17,8 +18,8 @@ export const Heading = styled.h3`
   line-height: 33px;
 
   letter-spacing: -0.015em;
-  color: #292d33;
-  margin: 0 0 16px 0;
+  color: ${({ theme }) => theme.colors.black};
+  margin: 0 0 ${({ theme }) => theme.margins[1]}px 0;
 `;
 
 export const Description = styled.p`
@@ -26,6 +27,6 @@ export const Description = styled.p`
   font-size: 16px;
   line-height: 28px;
   letter-spacing: -0.015em;
-  color: #9497a1;
-  margin: 0 0 20px 0;
+  color: ${({ theme }) => theme.colors.grey};
+  margin: 0 0 ${({ theme }) => theme.margins[2]}px 0;
 `;

@@ -85,5 +85,11 @@
     "react-youtube": "^10.1.0",
     "storybook": "^6.5.15",
     "styled-components": "^5.3.6"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn run lint:fix",
+      "pre-push": "yarn run lint"
+    }
   }
 }

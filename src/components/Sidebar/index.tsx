@@ -87,7 +87,8 @@ export const Sidebar = ({ handleCards }: SidebarProps) => {
           <Category
             key={id}
             onClick={handleCategory(id)}
-            active={activeCategory === id}>
+            active={activeCategory === id}
+          >
             {el}
           </Category>
         ))}

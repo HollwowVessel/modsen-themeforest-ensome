@@ -10,7 +10,7 @@ export const Arrow = styled(Link)`
   font-weight: 600;
   font-size: ${({ theme }) => theme.fonts[0]}px;
   line-height: ${({ theme }) => theme.lineHeights[0]}px;
-  padding: 0 ${({ theme }) => theme.spaces[0]}px 0 0;
+  padding: 0 ${({ theme }) => theme.paddings[1]}px 0 0;
   position: relative;
   display: flex;
   align-items: center;
@@ -22,7 +22,7 @@ export const Arrow = styled(Link)`
   &::after {
     content: '';
     position: absolute;
-    right: 0;
+    right: ${({ theme }) => theme.rights[0]};
     width: ${({ theme }) => theme.sizes[0]}px;
     height: 20px;
     background: url(${arrow});

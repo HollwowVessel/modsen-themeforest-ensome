@@ -2,12 +2,12 @@ import styled from 'styled-components';
 
 export const Container = styled.section`
   display: flex;
-  gap: ${({ theme }) => theme.spaces[3]}px;
+  gap: ${({ theme }) => theme.gaps[4]}px;
   background: ${({ theme }) => theme.colors.background};
-  padding: ${({ theme }) => theme.spaces.at(-2)}px 0;
+  padding: ${({ theme }) => theme.paddings[8]}px 0;
   justify-content: center;
   align-items: center;
-  margin: 0 0 ${({ theme }) => theme.spaces.at(-2)}px 0;
+  margin: 0 0 ${({ theme }) => theme.margins[7]}px 0;
   @media (max-width: ${({ theme }) => theme.breakPoints.laptop}px) {
     flex-direction: column;
   }
@@ -16,7 +16,7 @@ export const Container = styled.section`
 export const Info = styled.div`
   max-width: ${({ theme }) => theme.sizes.at(-1)}px;
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
-    padding: 0 ${({ theme }) => theme.spaces[1]}px;
+    padding: 0 ${({ theme }) => theme.paddings[3]}px;
   }
 `;
 
@@ -26,7 +26,7 @@ export const Heading = styled.h3`
   line-height: ${({ theme }) => theme.lineHeights.at(-2)}px;
   letter-spacing: -0.015em;
   color: ${({ theme }) => theme.colors.black};
-  margin: 0 0 ${({ theme }) => theme.spaces[2]}px 0;
+  margin: 0 0 ${({ theme }) => theme.margins[2]}px 0;
 
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
     font-size: ${({ theme }) => theme.fonts[4]}px;
@@ -48,7 +48,7 @@ export const Cards = styled.div`
 
   display: flex;
   flex-wrap: wrap;
-  gap: ${({ theme }) => theme.spaces[2]}px;
+  gap: ${({ theme }) => theme.gaps[2]}px;
 
   @media (max-width: ${({ theme }) => theme.breakPoints.laptop}px) {
     flex-wrap: nowrap;

@@ -7,7 +7,7 @@ export const Container = styled.div`
 export const List = styled.ul`
   display: flex;
   margin: 0 ${({ theme }) => theme.spaces[2]}px 0 0;
-  gap: ${({ theme }) => theme.spaces[2]}px;
+  gap: ${({ theme }) => theme.gaps[2]}px;
 `;
 
 export const Number = styled.h4`

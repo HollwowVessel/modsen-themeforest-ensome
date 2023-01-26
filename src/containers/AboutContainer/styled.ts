@@ -6,12 +6,12 @@ export const Heading = styled.h3`
   line-height: 60px;
   text-align: center;
   letter-spacing: -0.015em;
-  color: #292d33;
-  margin: 0 0 80px 0;
+  color: ${({ theme }) => theme.colors.black};
+  margin: 0 0 ${({ theme }) => theme.margins[6]}px 0;
 `;
 
 export const Container = styled.section`
-  padding: 100px 0;
-  margin: 0 0 120px 0;
-  background: #f1f6fa;
+  padding: ${({ theme }) => theme.paddings[7]}px 0;
+  margin: 0 0 ${({ theme }) => theme.margins[7]}px 0;
+  background: ${({ theme }) => theme.colors.background};
 `;

@@ -4,12 +4,12 @@ export const Container = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: ${({ theme }) => theme.spaces.at(-2)}px;
+  gap: ${({ theme }) => theme.gaps[5]}px;
   background: ${({ theme }) => theme.colors.secondary};
-  padding: ${({ theme }) => theme.spaces[5]}px 0;
+  padding: ${({ theme }) => theme.paddings[6]}px 0;
   @media (max-width: ${({ theme }) => theme?.breakPoints?.tablet}px) {
     flex-direction: column;
-    gap: ${({ theme }) => theme.spaces[2]}px;
+    gap: ${({ theme }) => theme.gaps[2]}px;
     text-align: center;
   }
 `;
@@ -77,8 +77,8 @@ export const Email = styled.input`
   color: ${({ theme }) => theme.colors.black};
   background: ${({ theme }) => theme.colors.helperBlueThree};
   border-radius: 6px;
-  padding: ${({ theme }) => theme.spaces[1]}px
-    ${({ theme }) => theme.spaces[2]}px;
+  padding: ${({ theme }) => theme.paddings[2]}px
+    ${({ theme }) => theme.paddings[3]}px;
   border: none;
   outline: none;
   max-width: ${({ theme }) => theme.sizes.at(-4)}px;
@@ -95,7 +95,7 @@ export const Email = styled.input`
   }
   @media (max-width: ${({ theme }) => theme?.breakPoints?.tablet}px) {
     flex-direction: column;
-    gap: ${({ theme }) => theme.spaces[2]}px;
+    gap: ${({ theme }) => theme.gaps[2]}px;
   }
 `;
 
@@ -105,8 +105,8 @@ export const Send = styled.button`
   font-size: ${({ theme }) => theme.fonts[1]}px;
   line-height: ${({ theme }) => theme.lineHeights[0]}px;
   background: ${({ theme }) => theme.colors.white};
-  padding: ${({ theme }) => theme.spaces[1]}px
-    ${({ theme }) => theme.spaces[2]}px;
+  padding: ${({ theme }) => theme.paddings[2]}px
+    ${({ theme }) => theme.paddings[3]}px;
   border-radius: 6px;
   border: none;
   outline: none;

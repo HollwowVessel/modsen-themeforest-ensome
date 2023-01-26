@@ -6,9 +6,11 @@ export const Card = styled.div`
   position: relative;
   display: flex;
   align-items: center;
-  gap: ${({ theme }) => theme.spaces[2]}px;
+  gap: ${({ theme }) => theme.gaps[2]}px;
   flex-wrap: wrap;
-  padding: 75px 35px 35px 35px;
+  padding: ${({ theme }) => theme.paddings[6]}px
+    ${({ theme }) => theme.paddings[4]}px ${({ theme }) => theme.paddings[4]}px
+    ${({ theme }) => theme.paddings[4]}px;
   @media (max-width: ${({ theme }) => theme.breakPoints.laptop}px) {
     min-width: 540px;
   }
@@ -18,7 +20,7 @@ export const Info = styled.div``;
 
 export const Image = styled.img`
   position: absolute;
-  top: -40px;
+  top: -${({ theme }) => theme.tops[4]};
   left: 35px;
 `;
 

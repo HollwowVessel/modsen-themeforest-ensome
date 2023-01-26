@@ -18,6 +18,7 @@ import {
 import { PricingCardProps } from './types';
 import { MONTH, YEAR } from '@/constants/general';
 import { timeTypes } from '@/constants/pricingTimeType';
+import { theme } from '../../theme/theme';
 
 export const PricingCard = ({ type, price, options }: PricingCardProps) => {
   const [active, setActive] = useState(0);
@@ -68,8 +69,10 @@ export const PricingCard = ({ type, price, options }: PricingCardProps) => {
         <Buttons>
           {timeTypes.map((el, id) => (
             <TimeType
-              background={id === active ? '#185CFF' : '#fff'}
-              color={id === active ? '#fff' : '#185CFF'}
+              background={
+                id === active ? theme.colors.primary : theme.colors.white
+              }
+              color={id === active ? theme.colors.white : theme.colors.primary}
               onClick={handleActive(id)}
               key={id}>
               {el}

@@ -4,7 +4,7 @@ export const Container = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 0 120px 0;
+  margin: 0 0 ${({ theme }) => theme.margins[7]}px 0;
 `;
 
 export const Cards = styled.div`
@@ -14,5 +14,5 @@ export const Cards = styled.div`
   max-width: 1110px;
   justify-items: center;
 
-  gap: 30px;
+  gap: ${({ theme }) => theme.gaps[3]}px;
 `;

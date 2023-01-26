@@ -13,10 +13,10 @@ export const Info = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: ${({ theme }) => theme.spaces.at(-1)}px;
+  gap: ${({ theme }) => theme.gaps.at(6)}px;
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
     flex-direction: column;
-    gap: ${({ theme }) => theme.spaces[2]}px;
+    gap: ${({ theme }) => theme.gaps[2]}px;
     text-align: center;
   }
 `;
@@ -48,8 +48,8 @@ export const HeroesContainer = styled.section`
 
 export const ButtonContainer = styled.section`
   position: absolute;
-  top: -${({ theme }) => theme.spaces[5]}px;
-  right: 32%;
+  top: -${({ theme }) => theme.tops[5]}px;
+  right: ${({ theme }) => theme.rights[2]}%;
 `;
 
 export const Ensome = styled.span`

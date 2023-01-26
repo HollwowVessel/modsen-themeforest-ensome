@@ -2,14 +2,14 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Container = styled.section`
-  margin: 0 0 ${({ theme }) => theme.spaces.at(-2)}px 0;
+  margin: 0 0 ${({ theme }) => theme.margins[6]}px 0;
 `;
 
 export const Info = styled.div`
   display: flex;
   justify-content: space-around;
 
-  margin: 0 0 ${({ theme }) => theme.spaces[3]}px 0;
+  margin: 0 0 ${({ theme }) => theme.margins[5]}px 0;
 `;
 
 export const Heading = styled.h3`
@@ -23,8 +23,8 @@ export const Heading = styled.h3`
 export const Cards = styled.div`
   display: flex;
   justify-content: center;
-  gap: ${({ theme }) => theme.spaces[2]}px;
-  margin: 0 0 60px 0;
+  gap: ${({ theme }) => theme.gaps[2]}px;
+  margin: 0 0 ${({ theme }) => theme.margins[5]}px 0;
 
   max-width: ${({ theme }) => theme.sizes[5]}%;
   overflow: hidden;
@@ -36,8 +36,8 @@ export const Cards = styled.div`
 export const CardsOpen = styled.div`
   display: flex;
   justify-content: center;
-  margin: 0 0 60px 0;
-  gap: ${({ theme }) => theme.spaces[2]}px;
+  margin: 0 0 ${({ theme }) => theme.margins[5]}px 0;
+  gap: ${({ theme }) => theme.gaps[2]}px;
 
   max-width: ${({ theme }) => theme.sizes[5]}%;
 

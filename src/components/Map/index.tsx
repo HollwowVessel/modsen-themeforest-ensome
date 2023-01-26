@@ -15,7 +15,8 @@ export const Map = memo(() => (
   <Container>
     <MapContainer
       center={mapContainerAttributes.center as LatLngExpression}
-      zoom={mapContainerAttributes.zoom}>
+      zoom={mapContainerAttributes.zoom}
+    >
       <TileLayer
         url={tileLayerAttributes.url}
         attribution={tileLayerAttributes.attribution}
@@ -24,7 +25,8 @@ export const Map = memo(() => (
         <Marker
           key={index}
           icon={customMarkerIcon}
-          position={position as LatLngExpression}>
+          position={position as LatLngExpression}
+        >
           <Popup>{label}</Popup>
         </Marker>
       ))}
