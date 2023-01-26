@@ -1,8 +1,6 @@
 import emailjs from '@emailjs/browser';
 import { Dispatch, SetStateAction } from 'react';
 
-console.log(process.env.REACT_APP_EMAILJS_EMAIL);
-
 const sendEmailParams = {
   to_name: 'Hollow',
   to_email: process.env.REACT_APP_EMAILJS_EMAIL as string,
@@ -35,7 +33,6 @@ const sendMessageParams = (
   subject: theme,
   message,
 });
-console.log(process.env.REACT_APP_EMAILJS_SERVICE);
 
 export const sendEmail = (
   setLoading: Dispatch<SetStateAction<boolean>>,
@@ -53,7 +50,6 @@ export const sendEmail = (
       setResponse('Successfully!');
     })
     .catch((err: any) => {
-      console.log(err);
       setResponse('Error :(');
     })
     .finally(() => setLoading(false));

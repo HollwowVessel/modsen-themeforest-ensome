@@ -1,6 +1,5 @@
-import React, { memo } from 'react';
-import { posts } from '@/constants/blogSidebar';
-import { ArrowLink } from '@/ui/Links/ArrowLink';
+import { memo } from 'react';
+
 import {
   Container,
   Date,
@@ -12,25 +11,33 @@ import {
   Text,
   Title,
 } from './styled';
+import { blogArticles } from '@/constants/blogArticle';
+import { RelatedProps } from './types';
 
-export const Related = memo(() => (
+export const Related = memo(({ tag }: RelatedProps) => (
   <Container>
     <Heading>Related Post</Heading>
     <Posts>
-      {posts.map(({ date, heading, image }, id) => (
-        <Post key={id}>
-          <Image src={image} />
-          <PostDescription>
-            <Date>{date}</Date>
-            <Title>{heading}</Title>
-            <Text>
-              Mauris purus diam, iaculis non leo nec, ultricies fringilla odio.
-              Fusce feugiat elit facilisis volutpat venenatis. Vestibulum tempor
-              ligula vel orci consectetur, euismod augue bibendum...
-            </Text>
-          </PostDescription>
-        </Post>
-      ))}
+      {blogArticles
+        .filter(({ tags }) =>
+          tag !== -1 ? tags.indexOf(tag as string) !== -1 : null
+        )
+        .sort((a, b) => b.views - a.views)
+        .map(({ info, heading, icon }, id) => (
+          <Post key={id}>
+            <Image src={icon} />
+            <PostDescription>
+              <Date>{info}</Date>
+              <Title>{heading}</Title>
+              <Text>
+                Mauris purus diam, iaculis non leo nec, ultricies fringilla
+                odio. Fusce feugiat elit facilisis volutpat venenatis.
+                Vestibulum tempor ligula vel orci consectetur, euismod augue
+                bibendum...
+              </Text>
+            </PostDescription>
+          </Post>
+        ))}
     </Posts>
   </Container>
 ));

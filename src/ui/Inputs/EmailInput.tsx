@@ -1,12 +1,11 @@
 import React, { ChangeEvent } from 'react';
 import { Email } from './styled';
+import { EmailInputProps } from './types';
 
 export const EmailInput = ({
   placeholder,
   handleChange,
   value,
-}: {
-  placeholder: string;
-  handleChange?: (e: ChangeEvent<HTMLInputElement>) => void;
-  value?: string;
-}) => <Email placeholder={placeholder} onChange={handleChange} value={value} />;
+}: EmailInputProps) => (
+  <Email placeholder={placeholder} onChange={handleChange} value={value} />
+);

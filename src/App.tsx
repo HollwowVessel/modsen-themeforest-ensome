@@ -1,6 +1,7 @@
 import { ThemeProvider } from 'styled-components';
 import { PayPalScriptProvider } from '@paypal/react-paypal-js';
 import { Route, Routes } from 'react-router-dom';
+
 import { theme } from './theme/theme';
 
 import { GlobalStyles } from './theme/GlobalStyles';

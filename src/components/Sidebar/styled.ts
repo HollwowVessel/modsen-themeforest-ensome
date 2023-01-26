@@ -1,5 +1,8 @@
 import styled from 'styled-components';
-import rightArrow from '@/assets/images/icons/blog/rightArrow.svg';
+import { Link } from 'react-router-dom';
+import minus from '@/assets/images/icons/dropdownMenu/minus.svg';
+import plus from '@/assets/images/icons/dropdownMenu/plus.svg';
+import { ActiveProps } from './types';
 
 export const Container = styled.aside`
   max-width: 445px;
@@ -65,7 +68,7 @@ export const Categories = styled.ul`
   margin: 0 0 60px 0;
 `;
 
-export const Category = styled.li`
+export const Category = styled.li<ActiveProps>`
   font-weight: 400;
   font-size: 20px;
   line-height: 33px;
@@ -80,10 +83,11 @@ export const Category = styled.li`
 
   &::before {
     content: '';
-    width: 16px;
-    height: 16px;
+    width: 24px;
+    height: 24px;
     position: absolute;
-    background: url(${rightArrow});
+    background: url(${({ active }) => (active ? minus : plus)});
+
     background-repeat: no-repeat;
     top: 32px;
     right: 0;
@@ -97,7 +101,7 @@ export const Tags = styled.div`
   flex-wrap: wrap;
 `;
 
-export const Tag = styled.button<{ active: boolean }>`
+export const Tag = styled.button<ActiveProps>`
   background: ${({ active }) => (active ? '#185CFF' : '')};
   border: none;
   outline: none;

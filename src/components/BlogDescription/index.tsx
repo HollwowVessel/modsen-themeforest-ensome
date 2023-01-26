@@ -1,7 +1,8 @@
 import React, { memo } from 'react';
 import { Container, Heading, Home, Links, Name } from './styled';
+import { BlogDescriptionProps } from './types';
 
-export const BlogDescription = memo(({ text }: { text: string }) => (
+export const BlogDescription = memo(({ text }: BlogDescriptionProps) => (
   <Container>
     <Heading>{text}</Heading>
     <Links>

@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
-import { icon, LatLngExpression } from 'leaflet';
+import { LatLngExpression } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import Image from '@/assets/images/map.png';
+
+import { memo } from 'react';
 import { Container } from './styled';
 import {
   customMarkerIcon,
@@ -11,12 +11,11 @@ import {
   tileLayerAttributes,
 } from '@/constants/map';
 
-export const Map = () => (
+export const Map = memo(() => (
   <Container>
     <MapContainer
       center={mapContainerAttributes.center as LatLngExpression}
-      zoom={mapContainerAttributes.zoom}
-    >
+      zoom={mapContainerAttributes.zoom}>
       <TileLayer
         url={tileLayerAttributes.url}
         attribution={tileLayerAttributes.attribution}
@@ -25,11 +24,10 @@ export const Map = () => (
         <Marker
           key={index}
           icon={customMarkerIcon}
-          position={position as LatLngExpression}
-        >
+          position={position as LatLngExpression}>
           <Popup>{label}</Popup>
         </Marker>
       ))}
     </MapContainer>
   </Container>
-);
+));

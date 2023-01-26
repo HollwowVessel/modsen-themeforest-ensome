@@ -6,27 +6,30 @@ import { FooterSection } from '@/ui/FooterSection';
 import { OverviewSectionOne } from '@/ui/Sections/Overview/OverviewSectionOne';
 import { AboutDescription } from '@/components/AboutDescription';
 import { About } from '@/components/About';
-import { Container, Heading } from './styled';
+import { Container, Heading } from '../../containers/AboutContainer/styled';
 import { Customers } from '@/components/Customers';
-import { AboutTestimonials } from '@/components/AboutTestimonials';
+
 import { ContactsSection } from '@/ui/Sections/Contacts';
 import { SubscribeSection } from '@/ui/Sections/SubscribeSection';
-import { SubscribeSectionBlue } from '@/ui/Sections/SubscribeSectionBlue';
+import { Carousel } from '@/ui/Carousel';
+import { TestimonialsCardOpen } from '@/ui/Cards/TestimonialsCardOpen';
+import { cardItems } from '@/constants/testimonialCards';
 
 export const AboutPage = () => (
   <>
     <Navigation />
     <AboutDescription />
     <About />
-    <Container>
-      <Heading>Ensome in numbers</Heading>
-      <OverviewSectionOne />
-    </Container>
     <Customers />
-    <AboutTestimonials />
+    <Carousel
+      heading="What our customers say"
+      Card={TestimonialsCardOpen}
+      cards={cardItems}
+      type="open"
+    />
     <ContactsSection />
     <SubscribeSection />
-    <SubscribeSectionBlue />
+
     <FooterSection />
   </>
 );

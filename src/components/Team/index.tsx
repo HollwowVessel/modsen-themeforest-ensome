@@ -1,8 +1,7 @@
-import React, { memo, useEffect, useState } from 'react';
+import { memo } from 'react';
 import { useInfinityScrollItems } from '../../hooks/useInifityScrollItems';
-import { TeamCard } from '@/components/TeamCard';
+import { TeamCard } from '@/ui/Cards/TeamCard';
 import { Cards, Container } from './styled';
-import { teamCards } from '@/constants/teamCards';
 
 export const Team = memo(() => {
   const items = useInfinityScrollItems();

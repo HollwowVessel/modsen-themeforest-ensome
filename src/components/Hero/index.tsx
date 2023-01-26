@@ -26,7 +26,7 @@ export const Hero = memo(() => (
     </Info>
     <HeroesContainer>
       <ButtonContainer>
-        <CircleButton text="Learn more" to="solutions" />
+        <CircleButton text="Learn more" to="/services" />
       </ButtonContainer>
       <Image src={hero} />
     </HeroesContainer>

@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+/* eslint-disable react/jsx-no-bind */
+import React, { ChangeEvent, useState } from 'react';
+
+import { BlogArticleI } from 'types/blogTypes';
 import { FillButton } from '@/ui/Buttons/FillButton';
 import { Email } from '@/ui/Inputs/styled';
 import {
@@ -17,44 +20,82 @@ import {
   Title,
 } from './styled';
 import { ArrowLink } from '@/ui/Links/ArrowLink';
-import { categories, posts, tags } from '@/constants/blogSidebar';
+import { tags as allTags, categories } from '@/constants/blogSidebar';
+import { blogArticles } from '@/constants/blogArticle';
+import { SidebarProps } from './types';
+import { searchHelper } from '@/utils/searchHelper';
 
-export const Sidebar = () => {
+export const Sidebar = ({ handleCards }: SidebarProps) => {
   const [activeTag, setActiveTag] = useState(0);
+  const [search, setSearch] = useState('');
+  const [activeCategory, setActiveCategory] = useState(-1);
 
-  const handleActiveTag = (id: number) => () => {
+  const handleFilter = (id: number) => () => {
     setActiveTag(id);
+    searchHelper(activeTag, search, handleCards, id);
+  };
+
+  const searchHandler = (e: ChangeEvent<HTMLInputElement>) => {
+    setSearch(e.target.value);
+    if (!e.target.value && handleCards) {
+      handleCards(blogArticles);
+    }
+  };
+
+  const handleCategory = (id: number) => () => {
+    if (id !== activeCategory) {
+      setActiveCategory(id);
+    } else {
+      setActiveCategory(-1);
+    }
+  };
+
+  const handleClick = () => {
+    searchHelper(activeTag, search, handleCards);
   };
 
   return (
     <Container>
       <Search>
-        <Email placeholder="Search" />
-        <FillButton text="Search" />
+        <Email
+          placeholder="Search"
+          onChange={(e) => searchHandler(e)}
+          value={search}
+        />
+        <FillButton text="Search" onClick={handleClick} />
       </Search>
+
       <Heading>Popular posts</Heading>
       <Posts>
-        {posts.map(({ date, heading, image }, id) => (
-          <Post key={id}>
-            <Image src={image} />
-            <PostDescription>
-              <Date>{date}</Date>
-              <Title>{heading}</Title>
-              <ArrowLink text="Read more" to="/" />
-            </PostDescription>
-          </Post>
-        ))}
+        {blogArticles
+          .sort((a, b) => b.views - a.views)
+          .slice(0, 4)
+          .map(({ info, heading, icon }, id) => (
+            <Post key={id}>
+              <Image src={icon} />
+              <PostDescription>
+                <Date>{info}</Date>
+                <Title>{heading}</Title>
+                <ArrowLink text="Read more" to={`/blog/${id}`} />
+              </PostDescription>
+            </Post>
+          ))}
       </Posts>
       <Heading>Categories</Heading>
       <Categories>
         {categories.map((el, id) => (
-          <Category key={id}>{el}</Category>
+          <Category
+            key={id}
+            onClick={handleCategory(id)}
+            active={activeCategory === id}>
+            {el}
+          </Category>
         ))}
       </Categories>
       <Heading>Tags</Heading>
       <Tags>
-        {tags.map((el, id) => (
-          <Tag key={id} onClick={handleActiveTag(id)} active={id === activeTag}>
+        {allTags.map((el, id) => (
+          <Tag key={id} onClick={handleFilter(id)} active={id === activeTag}>
             {el}
           </Tag>
         ))}

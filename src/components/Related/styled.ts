@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.section`
-  padding: 0 400px;
-`;
+export const Container = styled.section``;
 
 export const Posts = styled.div`
   margin: 0 0 60px 0;

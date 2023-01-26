@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { ContactHeadingProps } from './types';
 
 export const Container = styled.section`
   padding: 0 0 0 405px;
@@ -114,7 +115,7 @@ export const ContactInfo = styled.ul`
 
 export const Contact = styled.li``;
 
-export const ContactHeading = styled.h4<{ icon: string }>`
+export const ContactHeading = styled.h4<ContactHeadingProps>`
   padding: 0 0 0 32px;
   position: relative;
   margin: 0 0 5px 0;

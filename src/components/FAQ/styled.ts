@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Plus from '@/assets/images/icons/dropdownMenu/plus.svg';
 import Minus from '@/assets/images/icons/dropdownMenu/minus.svg';
+import { ActiveProp } from './types';
 
 export const Container = styled.section`
   display: flex;
@@ -23,7 +24,7 @@ export const Question = styled.li`
   width: 100%;
 `;
 
-export const Heading = styled.h3<{ active: boolean }>`
+export const Heading = styled.h3<ActiveProp>`
   font-weight: 700;
   font-size: 22px;
   width: 100%;
@@ -46,7 +47,7 @@ export const Heading = styled.h3<{ active: boolean }>`
   }
 `;
 
-export const Description = styled.p<{ active: boolean }>`
+export const Description = styled.p<ActiveProp>`
   font-weight: 400;
   font-size: 20px;
   line-height: 33px;

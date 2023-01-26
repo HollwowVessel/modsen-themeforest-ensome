@@ -1,10 +1,4 @@
-import React, {
-  ChangeEvent,
-  EventHandler,
-  memo,
-  MouseEvent,
-  useState,
-} from 'react';
+import { ChangeEvent, MouseEvent, useState } from 'react';
 import { FillButton } from '@/ui/Buttons/FillButton';
 import {
   BasicInfo,

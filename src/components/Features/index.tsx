@@ -29,7 +29,7 @@ export const Features = memo(() => (
           ab illo inventore veritatis et quasi architecto beatae vitae dicta
           sunt explicabo.
         </Description>
-        <FillButtonLink text="Discover more" to="/services" />
+        <FillButtonLink text="Discover more" to="/solutions" />
       </Discover>
     </Info>
     <Solutions>

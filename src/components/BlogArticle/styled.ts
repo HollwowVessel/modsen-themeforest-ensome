@@ -4,6 +4,7 @@ import person from '@/assets/images/icons/blog/person.svg';
 import views from '@/assets/images/icons/blog/views.svg';
 import share from '@/assets/images/icons/blog/share.svg';
 import tags from '@/assets/images/icons/blog/tags.svg';
+import { TagProps } from './types';
 
 export const Container = styled.section`
   max-width: 635px;
@@ -12,6 +13,7 @@ export const Container = styled.section`
 
 export const Image = styled.img`
   margin: 0 0 25px 0;
+  width: 635px;
 `;
 
 export const GeneralInfo = styled.div`
@@ -91,6 +93,7 @@ export const Quote = styled.p`
 export const Statistics = styled.div`
   display: flex;
   gap: 30px;
+  margin: 0 0 60px 0;
 `;
 
 export const Views = styled.span`
@@ -172,13 +175,14 @@ export const Tags = styled.ul`
   }
 `;
 
-export const Tag = styled.li`
+export const Tag = styled.li<TagProps>`
   font-weight: 800;
   font-size: 14px;
   line-height: 24px;
   text-align: center;
   letter-spacing: -0.015em;
-  color: #185cff;
+  background: ${({ active }) => (active ? '#185cff' : '#f1f6fa')};
+  color: ${({ active }) => (active ? '#f1f6fa' : '#185cff')};
   border: 1px solid #f1f6fa;
   border-radius: 6px;
   padding: 3px 11px;

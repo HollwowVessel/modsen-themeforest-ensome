@@ -1,5 +1,5 @@
-import React, { memo } from 'react';
-import { useParams } from 'react-router-dom';
+import { useState } from 'react';
+
 import {
   Author,
   Container,
@@ -17,21 +17,26 @@ import {
   Text,
   Views,
 } from './styled';
-import img1 from '@/assets/images/blog/img1.jpg';
-import { blogSocials } from '@/constants/blogSocials';
 
-export const BlogArticle = memo(
-  ({
-    text,
-    date,
-    heading,
-    image,
-  }: {
-    text: string;
-    date: string;
-    heading: string;
-    image: string;
-  }) => (
+import { blogSocials } from '@/constants/blogSocials';
+import { Related } from '../Related';
+import { BlogArticleProps } from './types';
+
+export const BlogArticle = ({
+  text,
+  date,
+  heading,
+  image,
+  views,
+  tags,
+}: BlogArticleProps) => {
+  const [active, setActive] = useState(0);
+
+  const handleActive = (id: number) => () => {
+    setActive(id);
+  };
+
+  return (
     <Container>
       <Image src={image} />
       <GeneralInfo>
@@ -69,7 +74,7 @@ export const BlogArticle = memo(
         lobortis orci, sit amet fermentum ex nunc ac diam.
       </Text>
       <Statistics>
-        <Views>481 Views</Views>
+        <Views>{views} Views</Views>
         <Share>
           Share:
           {blogSocials.map((el, id) => (
@@ -80,10 +85,14 @@ export const BlogArticle = memo(
         </Share>
         <Tags>
           Tags:
-          <Tag>Data</Tag>
-          <Tag>Future</Tag>
+          {tags?.map((el, id) => (
+            <Tag key={id} onClick={handleActive(id)} active={active === id}>
+              {el}
+            </Tag>
+          ))}
         </Tags>
       </Statistics>
+      <Related tag={active >= 0 && tags?.length ? tags[active] : -1} />
     </Container>
-  )
-);
+  );
+};

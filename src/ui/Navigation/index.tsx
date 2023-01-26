@@ -21,31 +21,34 @@ import {
 
 import { WithIconButton } from '@/ui/Buttons/WithIconButton';
 import { GreyFill } from '@/components/PricingCard/styled';
+import { youtubeOptions } from '../../api/youtubeApi';
 
 export const Navigation = () => {
   const [open, setOpen] = useState(true);
   const { pathname } = useLocation();
   const [showVideo, setVideo] = useState(false);
 
-  const opts = {
-    height: '390',
-    width: '640',
-  };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleMenu = () => {
     document.body.style.overflow = !open ? 'initial' : 'hidden';
-
     setOpen((prev) => !prev);
+  };
+
+  const handleVideo = () => {
+    setVideo((prev) => !prev);
   };
 
   const Links = menuItems.map(({ name, path, components }, id) => {
     if (components.length) {
       return (
-        <MenuItem key={id}>
+        <MenuItem key={id} data-test-id={id}>
           Pages
-          <PagesContainer>
+          <PagesContainer data-text-id="pages">
             {components.map((el, id) => (
-              <Link to={`/${el}`} key={id}>
+              <Link to={`/${el}`} key={id} data-test-id={`/${el}`}>
                 {el}
               </Link>
             ))}
@@ -55,7 +58,7 @@ export const Navigation = () => {
     }
 
     return (
-      <MenuItem key={id}>
+      <MenuItem key={id} data-test-id={id}>
         <MenuLink to={path as string} active={path === pathname}>
           {name}
         </MenuLink>
@@ -76,13 +79,13 @@ export const Navigation = () => {
         <WithIconButton
           text="Watch the demo"
           icon={playButton}
-          handleClick={() => setVideo((prev) => !prev)}
+          handleClick={handleVideo}
         />
       </Nav>
       {showVideo && (
-        <YoutubeContainer onClick={() => setVideo((prev) => !prev)}>
+        <YoutubeContainer onClick={handleVideo}>
           <GreyFill />
-          <YouTube videoId="ppSPsvO19dU" opts={opts} />
+          <YouTube videoId="ppSPsvO19dU" opts={youtubeOptions} />
         </YoutubeContainer>
       )}
     </Container>
