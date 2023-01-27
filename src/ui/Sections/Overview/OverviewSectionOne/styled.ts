@@ -1,39 +1,43 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  background: #185cff;
+  background: ${({ theme }) => theme.colors.background};
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: auto;
+
+  padding: ${({ theme }) => theme.paddings[4]}px 0;
 `;
 
 export const List = styled.ul`
   display: flex;
-  gap: 16px;
+  gap: ${({ theme }) => theme.gaps[1]}px;
 `;
 
 export const Number = styled.h4`
-  font-weight: 800;
-  font-size: 56px;
-  line-height: 112px;
+  font-weight: ${({ theme }) => theme.fontWeights[4]};
+  font-size: ${({ theme }) => theme.fonts.at(-1)}px;
+  line-height: ${({ theme }) => theme.lineHeights.at(-1)}px;
+
   text-align: center;
   letter-spacing: -0.025em;
   margin: 0;
   padding: 0;
-  color: #ffffff;
+  color: ${({ theme }) => theme.colors.primary};
 `;
 
 export const Name = styled.p`
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 28px;
+  font-weight: ${({ theme }) => theme.fontWeights[3]};
+
+  font-size: ${({ theme }) => theme.fonts[1]}px;
+  line-height: ${({ theme }) => theme.lineHeights[1]}px;
+
   text-align: center;
   letter-spacing: -0.015em;
   margin: 0;
   padding: 0;
-  color: #ffffff;
+  color: ${({ theme }) => theme.colors.grey};
 `;
 
 export const Item = styled.li`
@@ -42,7 +46,11 @@ export const Item = styled.li`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  width: 255px;
-  height: 104px;
-  border-right: 1px solid rgba(241, 246, 250, 0.2);
+  max-width: ${({ theme }) => theme.sizes.at(-4)};
+  padding: 0 ${({ theme }) => theme.paddings[5]}px;
+  height: ${({ theme }) => theme.sizes[5]}px;
+  border-right: 1px solid ${({ theme }) => theme.colors.helperBlueThree};
+  &:last-of-type {
+    border-right: none;
+  }
 `;

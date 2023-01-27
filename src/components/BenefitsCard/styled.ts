@@ -1,34 +1,44 @@
 import styled from 'styled-components';
 
 export const Card = styled.div`
-  max-width: 255px;
-  max-height: 248px;
-  background: #fff;
-  padding: 25px;
+  max-width: ${({ theme }) => theme.sizes.at(-7)}px;
+
+  background: ${({ theme }) => theme.colors.white};
+  padding: ${({ theme }) => theme.paddings[3]}px;
   &:nth-of-type(even) {
     transform: translateY(56px);
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakPoints.laptop}px) {
+    &:nth-of-type(even) {
+      transform: none;
+    }
+    min-width: ${({ theme }) => theme.sizes.at(-7)}px;
   }
 `;
 
 export const Image = styled.img`
-  width: 48px;
-  height: 48px;
-  margin: 0 0 15px 0;
+  width: ${({ theme }) => theme.sizes[2]}px;
+
+  margin: 0 0 ${({ theme }) => theme.margins[2]}px 0;
 `;
 
 export const Heading = styled.h4`
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 30px;
+  font-weight: ${({ theme }) => theme.fontWeights[3]};
+
+  font-size: ${({ theme }) => theme.fonts[2]}px;
+  line-height: ${({ theme }) => theme.lineHeights[2]}px;
   letter-spacing: -0.015em;
-  color: #292d33;
-  margin: 0 0 10px 0;
+
+  color: ${({ theme }) => theme.colors.black};
+  margin: 0 0 ${({ theme }) => theme.margins[0]}px 0;
 `;
 
 export const Description = styled.p`
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 24px;
+  font-weight: ${({ theme }) => theme.fontWeights[0]};
+
+  font-size: ${({ theme }) => theme.fonts[0]}px;
+  line-height: ${({ theme }) => theme.lineHeights[0]}px;
   letter-spacing: -0.015em;
-  color: #9497a1;
+  color: ${({ theme }) => theme.colors.grey};
 `;

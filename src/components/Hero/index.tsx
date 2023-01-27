@@ -1,6 +1,6 @@
-import React from 'react';
-import { CircleButton } from 'ui/Buttons/CircleButton';
-import hero from 'assets/images/heroes.png';
+import { memo } from 'react';
+import { CircleButton } from '@/ui/Buttons/CircleButton';
+import hero from '@/assets/images/heroes.png';
 import {
   ButtonContainer,
   Container,
@@ -12,7 +12,7 @@ import {
   Info,
 } from './styled';
 
-export const Hero = () => (
+export const Hero = memo(() => (
   <Container>
     <Info>
       <Heading>
@@ -26,9 +26,9 @@ export const Hero = () => (
     </Info>
     <HeroesContainer>
       <ButtonContainer>
-        <CircleButton text="Learn more" />
+        <CircleButton text="Learn more" to="/services" />
       </ButtonContainer>
-      <Image src={hero} />
+      <Image src={hero} loading="lazy" />
     </HeroesContainer>
   </Container>
-);
+));

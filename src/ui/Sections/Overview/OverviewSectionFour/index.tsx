@@ -1,7 +1,7 @@
-import React from 'react';
+import { memo } from 'react';
 import { Container, Item, List, Name, Number } from './styled';
 
-export const OverviewSectionFour = () => (
+export const OverviewSectionFour = memo(() => (
   <Container>
     <List>
       <Item>
@@ -18,4 +18,4 @@ export const OverviewSectionFour = () => (
       </Item>
     </List>
   </Container>
-);
+));

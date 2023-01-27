@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { CircleButton } from './index';
 import { CircleButtonProps } from './types';
@@ -15,11 +15,11 @@ const Template: ComponentStory<typeof CircleButton> = ({
 
 export const Enabled = Template.bind({});
 Enabled.args = {
-  text: 'Just a button :)',
+  text: 'Enabled',
   disabled: false,
 } as CircleButtonProps;
 export const Disabled = Template.bind({});
 Disabled.args = {
-  text: 'Just a button :)',
+  text: 'Disabled',
   disabled: true,
 } as CircleButtonProps;

@@ -1,12 +1,16 @@
-import { theme } from 'constants/theme';
-import { HomePage } from 'pages/Home';
-import { ThemeProvider } from 'styled-components';
+import { Route, Routes } from 'react-router-dom';
 
-import { GlobalStyles } from './GlobalStyles';
+import { GlobalStyles } from './theme/GlobalStyles';
+
+import { routes } from '@/constants/routes';
 
 export const App = () => (
-  <ThemeProvider theme={theme}>
+  <>
     <GlobalStyles />
-    <HomePage />
-  </ThemeProvider>
+    <Routes>
+      {routes.map(({ path, element }) => (
+        <Route path={path} element={element} key={path} />
+      ))}
+    </Routes>
+  </>
 );

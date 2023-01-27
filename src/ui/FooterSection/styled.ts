@@ -1,104 +1,190 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { ItemProps, MenuProps } from './types';
 
 export const Footer = styled.footer`
-  background: #002b4e;
-  padding: 0 400px;
+  background: ${({ theme }) => theme.colors.secondary};
+
+  display: flex;
+  flex-direction: column;
+  @media (max-width: ${({ theme }) => theme?.breakPoints?.laptop}px) {
+    align-items: flex-start;
+    padding: 0 0 0 ${({ theme }) => theme.paddings[2]}px;
+    align-items: initial;
+  }
 `;
 
 export const Container = styled.div`
   display: flex;
-  gap: 190px;
-  border-bottom: 1px solid #607d94;
-  padding: 50px 0;
+  margin: 0 auto;
+
+  justify-content: space-between;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.helperBlueOne};
+  min-width: ${({ theme }) => theme.sizes.at(-1)}px;
+  padding: ${({ theme }) => theme.paddings[5]}px 0;
+  @media (max-width: ${({ theme }) => theme?.breakPoints?.laptop}px) {
+    max-width: ${({ theme }) => theme.sizes.at(-1)}px;
+
+    gap: 0;
+    flex-direction: column;
+    border: none;
+  }
 `;
 
 export const Info = styled.div`
-  max-width: 285px;
-  max-height: 183px;
+  max-width: ${({ theme }) => theme.sizes[8]}px;
+  max-height: ${({ theme }) => theme.sizes[7]}px;
+  @media (max-width: ${({ theme }) => theme?.breakPoints?.laptop}px) {
+    padding: ${({ theme }) => theme.paddings[4]}px 0 0 0;
+    border-top: 1px solid ${({ theme }) => theme.colors.helperBlueOne};
+    max-width: ${({ theme }) => theme.sizes[5]}%;
+  }
 `;
 
 export const Logo = styled.img`
-  width: 141px;
-  height: 46px;
-  margin: 0 0 20px 0;
+  width: ${({ theme }) => theme.sizes[7]}px;
+  height: ${({ theme }) => theme.sizes[2]}px;
+  margin: 0 0 ${({ theme }) => theme.spaces[2]}px 0;
+  @media (max-width: ${({ theme }) => theme?.breakPoints?.laptop}px) {
+    margin: 0 0 ${({ theme }) => theme.spaces[1]}px 0;
+  }
 `;
 
 export const Description = styled.p`
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 24px;
+  font-weight: ${({ theme }) => theme.fontWeights[0]};
+
+  font-size: ${({ theme }) => theme.fonts[0]}px;
+  line-height: ${({ theme }) => theme.lineHeights[0]}px;
   letter-spacing: -0.015em;
-  color: #9497a1;
+  color: ${({ theme }) => theme.colors.grey};
+  margin: 0 0 ${({ theme }) => theme.spaces[2]}px 0;
+  @media (max-width: ${({ theme }) => theme?.breakPoints?.laptop}px) {
+    display: none;
+  }
 `;
 
 export const SocialContainer = styled.ul`
   display: flex;
-  gap: 15px;
+  gap: ${({ theme }) => theme.gaps[1]}px;
   list-style-type: none;
   margin: 0;
   padding: 0;
+  @media (max-width: ${({ theme }) => theme?.breakPoints?.laptop}px) {
+    display: none;
+  }
 `;
 
 export const Social = styled.li``;
 
-export const Icon = styled.img``;
+export const Icon = styled.img`
+  padding: ${({ theme }) => theme.paddings[4]}px 0 0 0;
+`;
 
 export const Menus = styled.div`
   display: flex;
   justify-content: space-between;
-  gap: 117px;
+  gap: ${({ theme }) => theme.gaps[5]}px;
+  @media (max-width: ${({ theme }) => theme?.breakPoints?.laptop}px) {
+    gap: 0;
+    flex-direction: column;
+    max-width: ${({ theme }) => theme.sizes[5]}%;
+    padding: ${({ theme }) => theme.paddings[4]}px
+      ${({ theme }) => theme.paddings[2]}px 0
+      ${({ theme }) => theme.paddings[2]}px;
+  }
 `;
 
-export const Menu = styled.ul`
+export const Menu = styled.ul<MenuProps>`
   list-style-type: none;
-  min-width: 72px;
+  min-width: ${({ theme }) => theme.sizes[3]}px;
+  position: relative;
   margin: 0;
   padding: 0;
+
+  @media (max-width: ${({ theme }) => theme?.breakPoints?.laptop}px) {
+    cursor: pointer;
+
+    padding: ${({ theme }) => theme.paddings[2]}px 0;
+    max-width: ${({ theme }) => theme.sizes[5]}%;
+    border-bottom: 1px solid ${({ theme }) => theme.colors.helperBlueOne};
+    &::after {
+      content: '';
+      position: absolute;
+      width: ${({ theme }) => theme.sizes[1]}px;
+      height: ${({ theme }) => theme.sizes[1]}px;
+      background: url(${({ icon }) => icon});
+      background-repeat: no-repeat;
+      top: ${({ theme }) => theme.tops[3]}px;
+      right: ${({ theme }) => theme.paddings[2]}px;
+    }
+  }
 `;
 
 export const MenuHeading = styled.h4`
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 24px;
+  font-weight: ${({ theme }) => theme.fontWeights[3]};
+
+  font-size: ${({ theme }) => theme.fonts[1]}px;
+  line-height: ${({ theme }) => theme.lineHeights[0]}px;
   letter-spacing: -0.015em;
-  color: #ffffff;
-  margin: 0 0 20px 0;
+  color: ${({ theme }) => theme.colors.white};
+  margin: 0 0 ${({ theme }) => theme.spaces[2]}px 0;
 `;
 
-export const Item = styled.li`
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 24px;
+export const Item = styled.li<ItemProps>`
+  font-weight: ${({ theme }) => theme.fontWeights[0]};
+  max-width: ${({ theme }) => theme.sizes[8]}px;
+
+  font-size: ${({ theme }) => theme.fonts[0]}px;
+  line-height: ${({ theme }) => theme.lineHeights[0]}px;
   letter-spacing: -0.015em;
-  color: #9497a1;
-  margin: 0 0 12px 0;
+  color: ${({ theme }) => theme.colors.grey};
+  margin: 0 0 ${({ theme }) => theme.spaces[1]}px 0;
+  transition: 0.5s;
+
+  &:hover {
+    font-size: ${({ theme }) => theme.fonts[1]}px;
+  }
+
+  @media (max-width: ${({ theme }) => theme?.breakPoints?.laptop}px) {
+    max-width: ${({ theme }) => theme.sizes[5]}%;
+    padding: ${({ theme }) => theme.paddings[2]}px 0;
+
+    display: ${({ display }) => display};
+  }
 `;
 
 export const CopyRight = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 32px 0;
+  margin: 0 auto;
+  min-width: ${({ theme }) => theme.sizes.at(-1)}px;
+  padding: ${({ theme }) => theme.paddings[4]}px 0;
+  @media (max-width: ${({ theme }) => theme?.breakPoints?.laptop}px) {
+    max-width: ${({ theme }) => theme.sizes.at(-1)}px;
+    padding: ${({ theme }) => theme.paddings[2]}px 0;
+  }
 `;
 
-export const Ensome = styled.span`
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 24px;
+export const Ensome = styled.p`
+  font-weight: ${({ theme }) => theme.fontWeights[0]};
+
+  font-size: ${({ theme }) => theme.fonts[0]}px;
+  line-height: ${({ theme }) => theme.lineHeights[0]}px;
   letter-spacing: -0.015em;
-  color: #607d94;
+  color: ${({ theme }) => theme.colors.helperBlueOne};
 `;
 
 export const Links = styled.div`
   display: flex;
   justify-content: space-between;
-  gap: 95px;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 24px;
-  /* identical to box height, or 171% */
+  gap: ${({ theme }) => theme.spaces.at(5)}px;
+  font-weight: ${({ theme }) => theme.fontWeights[0]};
+
+  font-size: ${({ theme }) => theme.fonts[0]}px;
+  line-height: ${({ theme }) => theme.lineHeights[0]}px;
 
   letter-spacing: -0.015em;
-  color: #607d94;
+  color: ${({ theme }) => theme.colors.helperBlueOne};
 `;
 
 export const Policy = styled.span`
@@ -107,4 +193,27 @@ export const Policy = styled.span`
 
 export const Terms = styled.span`
   display: block;
+`;
+
+export const LinkItem = styled(Link)`
+  font-weight: ${({ theme }) => theme.fontWeights[0]};
+
+  font-size: ${({ theme }) => theme.fonts[0]}px;
+  line-height: ${({ theme }) => theme.lineHeights[0]}px;
+  letter-spacing: -0.015em;
+  color: ${({ theme }) => theme.colors.grey};
+  margin: 0 0 ${({ theme }) => theme.spaces[1]}px 0;
+
+  text-decoration: none;
+
+  transition: 0.5s;
+
+  &:hover {
+    font-size: ${({ theme }) => theme.fonts[1]}px;
+  }
+
+  @media (max-width: ${({ theme }) => theme?.breakPoints?.laptop}px) {
+    max-width: ${({ theme }) => theme.sizes[5]}%;
+    padding: ${({ theme }) => theme.paddings[2]}px 0;
+  }
 `;

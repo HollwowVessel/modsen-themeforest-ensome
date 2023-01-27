@@ -1,38 +1,43 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { InnerContainerProps } from './types';
 
 export const OuterContainer = styled.div`
-  width: 140px;
-  height: 140px;
-  background: #fff;
+  width: ${({ theme }) => theme.sizes[7]}px;
+  height: ${({ theme }) => theme.sizes[7]}px;
+  background: ${({ theme }) => theme.colors.white};
   display: flex;
   justify-content: center;
   align-items: center;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border-radius: 100%;
   cursor: pointer;
+  @media (max-width: ${({ theme }) => theme.breakPoints.mobile}px) {
+    width: ${({ theme }) => theme.sizes[6]}px;
+    height: ${({ theme }) => theme.sizes[6]}px;
+  }
 `;
 
-export const InnerContainer = styled.div<
-  Pick<{ background: boolean }, 'background'>
->`
+export const InnerContainer = styled.div<InnerContainerProps>`
   cursor: pointer;
 
-  background: #185cff;
-  width: 120px;
-  height: 120px;
+  background: ${({ theme }) => theme.colors.primary};
+  width: ${({ theme }) => theme.sizes[6]}px;
+  height: ${({ theme }) => theme.sizes[6]}px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 100%;
-
-  button:disabled,
-  & {
-    background: ${({ background }) => (background ? '#9497a1' : '#185cff')};
-  }
+  transition: 0.5s;
 
   &:hover,
-  &:hover button {
+  &:hover button:enabled {
     background: ${({ background }) => (background ? '' : '#467dff')};
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakPoints.mobile}px) {
+    width: ${({ theme }) => theme.sizes[5]}px;
+    height: ${({ theme }) => theme.sizes[5]}px;
   }
 `;
 
@@ -41,15 +46,24 @@ export const Circle = styled.button`
   border-radius: 100%;
   cursor: pointer;
 
-  width: 100px;
-  height: 100px;
-  background: #185cff;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 24px;
+  width: ${({ theme }) => theme.sizes[5]}px;
+  height: ${({ theme }) => theme.sizes[5]}px;
+  background: ${({ theme }) => theme.colors.primary};
+  font-weight: ${({ theme }) => theme.fontWeights[2]};
+  font-size: ${({ theme }) => theme.fonts[0]}px;
+  line-height: ${({ theme }) => theme.lineHeights[0]}px;
 
   text-align: center;
   letter-spacing: -0.01em;
 
-  color: #ffffff;
+  color: ${({ theme }) => theme.colors.white};
+
+  @media (max-width: ${({ theme }) => theme.breakPoints.mobile}px) {
+    width: ${({ theme }) => theme.sizes[4]}px;
+    height: ${({ theme }) => theme.sizes[4]}px;
+  }
+`;
+
+export const LinkContainer = styled(Link)`
+  text-decoration: none;
 `;

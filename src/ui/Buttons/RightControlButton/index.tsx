@@ -1,10 +1,10 @@
-import React from 'react';
+import { memo } from 'react';
 
-import { LeftControl } from './styled';
+import { RightControl } from './styled';
 import { RightControlButtonProps } from './types';
 
-export const RightControlButton = ({
-  disabled = false,
-}: RightControlButtonProps) => (
-  <LeftControl disabled={disabled} arrow={disabled} />
+export const RightControlButton = memo(
+  ({ disabled = false, onClick }: RightControlButtonProps) => (
+    <RightControl disabled={disabled} arrow={disabled} onClick={onClick} />
+  )
 );

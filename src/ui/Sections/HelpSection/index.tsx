@@ -1,14 +1,14 @@
-import React from 'react';
-import { FillButton } from '../../Buttons/FillButton';
+import { memo, useState } from 'react';
 import { Container, Description, Heading } from './styled';
+import { FillButtonLink } from '@/ui/Links/FillButtonLink';
 
-export const HelpSection = () => (
+export const HelpSection = memo(() => (
   <Container>
     <Heading>Do you need help?</Heading>
     <Description>
       Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
       suscipit laboriosam, nisi ut aliquid ex ea commodi.
     </Description>
-    <FillButton text="Contact Us" />
+    <FillButtonLink text="Contact Us" to="/contacts" />
   </Container>
-);
+));

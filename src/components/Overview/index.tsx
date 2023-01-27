@@ -1,7 +1,7 @@
-import { logo } from 'constants/logo';
-import React from 'react';
-import { OverviewSectionFour } from 'ui/Sections/Overview/OverviewSectionFour';
-import { getLogo } from 'utils/getLogo';
+import { memo } from 'react';
+import { logo } from '@/constants/logo';
+import { OverviewSectionFour } from '@/ui/Sections/Overview/OverviewSectionFour';
+
 import {
   Companies,
   CompaniesImage,
@@ -12,7 +12,7 @@ import {
   InfoDescription,
 } from './styled';
 
-export const Overview = () => (
+export const Overview = memo(() => (
   <Container>
     <Heading>We provide services that guarantee your success</Heading>
     <Info>
@@ -26,9 +26,9 @@ export const Overview = () => (
     <Companies>
       {logo.map((el, id) => (
         <CompaniesItem key={id}>
-          <CompaniesImage src={getLogo(el)} />
+          <CompaniesImage src={el} />
         </CompaniesItem>
       ))}
     </Companies>
   </Container>
-);
+));

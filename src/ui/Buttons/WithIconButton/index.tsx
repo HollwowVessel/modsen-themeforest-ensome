@@ -1,10 +1,9 @@
+import { memo } from 'react';
 import { WithIcon } from './styled';
+import { FillProps } from './types';
 
-interface FillProps {
-  text: string;
-  icon: string;
-}
-
-export const Fill = ({ text, icon }: FillProps) => (
-  <WithIcon icon={icon}>{text}</WithIcon>
-);
+export const WithIconButton = memo(({ text, icon, handleClick }: FillProps) => (
+  <WithIcon icon={icon} onClick={handleClick}>
+    {text}
+  </WithIcon>
+));

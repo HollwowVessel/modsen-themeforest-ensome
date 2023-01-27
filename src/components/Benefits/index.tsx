@@ -1,10 +1,10 @@
-import { BenefitsCard } from 'components/BenefitsCard';
-import { CardItem, cardItems } from 'constants/benefitsCard';
-import React from 'react';
-import { getIcon } from 'utils/getIcon';
+import { memo } from 'react';
+import { BenefitsCard } from '@/components/BenefitsCard';
+import { CardItem, cardItems } from '@/constants/benefitsCard';
+
 import { Cards, Container, Description, Heading, Info } from './styled';
 
-export const Benefits = () => (
+export const Benefits = memo(() => (
   <Container>
     <Info>
       <Heading>The benefits of Ensome </Heading>
@@ -18,7 +18,7 @@ export const Benefits = () => (
     <Cards>
       {cardItems.map(({ icon, heading, description }: CardItem, id) => (
         <BenefitsCard
-          icon={getIcon(icon)}
+          icon={icon}
           heading={heading}
           description={description}
           key={id}
@@ -26,4 +26,4 @@ export const Benefits = () => (
       ))}
     </Cards>
   </Container>
-);
+));

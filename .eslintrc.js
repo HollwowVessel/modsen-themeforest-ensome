@@ -20,7 +20,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'prettier', 'react-hooks'],
+  plugins: ['react', '@typescript-eslint', 'prettier', 'react-hooks', 'import'],
   settings: {
     'import/resolver': {
       node: {
@@ -29,15 +29,19 @@ module.exports = {
       },
       alias: {
         map: [
-          ['src', 'src'],
-          ['components', '/components'],
-          ['containers', '/containers'],
-          ['pages', '/pages'],
-          ['assets', '/assets'],
-          ['utils', '/utils'],
-          ['store', '/store'],
-          ['constants', '/constants'],
-          ['services', '/services'],
+          ['@/src', 'src'],
+          ['@/components', 'components'],
+          ['@/containers', 'containers'],
+          ['@/pages', 'pages'],
+          ['@/assets', 'assets'],
+          ['@/utils', 'utils'],
+          ['@/store', 'store'],
+          ['@/constants', 'constants'],
+          ['@/services', 'services'],
+          ['@/api', 'api'],
+          ['@/types', 'types'],
+          ['@/theme', 'theme'],
+          ['@/hooks', 'hooks'],
         ],
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
@@ -60,6 +64,7 @@ module.exports = {
       'error',
       {
         singleQuote: true,
+        endOfLine: 'auto',
       },
     ],
     'react/prop-types': 0,
@@ -82,16 +87,7 @@ module.exports = {
     'array-callback-return': 0,
     'default-case': 0,
     'react/prefer-stateless-function': 0,
-    'import/extensions': [
-      'error',
-      'ignorePackages',
-      {
-        js: 'never',
-        jsx: 'never',
-        ts: 'never',
-        tsx: 'never',
-      },
-    ],
+    'import/extensions': 0,
     'no-param-reassign': 0,
     'prefer-destructuring': 0,
     'react/require-default-props': 0,
@@ -102,5 +98,8 @@ module.exports = {
     'default-param-last': 0,
     'no-alert': 0,
     'import/no-extraneous-dependencies': 0,
+    'import/no-unresolved': 0,
+    'react/no-unescaped-entities': 0,
+    'react/state-in-constructor': 0,
   },
 };
