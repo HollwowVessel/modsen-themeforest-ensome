@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  height: 460px;
+  height: ${({ theme }) => theme.sizes[10]}px;
 
   .leaflet-container {
-    height: 460px;
+    height: ${({ theme }) => theme.sizes[10]}px;
   }
 `;

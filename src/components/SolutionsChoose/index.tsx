@@ -14,7 +14,7 @@ import { solutionsAdvantages } from '@/constants/solutionsAdvantages';
 
 export const SolutionsChoose = memo(() => (
   <Container>
-    <Image src={Servers} />
+    <Image src={Servers} loading="lazy" />
     <Info>
       <Heading>Why choose us?</Heading>
       <List>

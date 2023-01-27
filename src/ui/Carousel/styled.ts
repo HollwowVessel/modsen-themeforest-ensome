@@ -1,20 +1,23 @@
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import styled, { Keyframes } from 'styled-components';
 
 export const Container = styled.section`
-  margin: 0 0 ${({ theme }) => theme.margins[6]}px 0;
+  margin: 0 auto ${({ theme }) => theme.margins[6]}px auto;
+  max-width: ${({ theme }) => theme.sizes.at(-1)}px;
 `;
 
 export const Info = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 
   margin: 0 0 ${({ theme }) => theme.margins[5]}px 0;
 `;
 
 export const Heading = styled.h3`
-  font-weight: 800;
+  font-weight: ${({ theme }) => theme.fontWeights[4]};
   font-size: ${({ theme }) => theme.fonts.at(-2)}px;
+  margin: 0 0 ${({ theme }) => theme.margins[5]}px 0;
+
   line-height: ${({ theme }) => theme.lineHeights.at(-2)}px;
   letter-spacing: -0.015em;
   color: ${({ theme }) => theme.colors.black};
@@ -25,7 +28,6 @@ export const Cards = styled.div`
   justify-content: center;
   gap: ${({ theme }) => theme.gaps[2]}px;
   margin: 0 0 ${({ theme }) => theme.margins[5]}px 0;
-
   max-width: ${({ theme }) => theme.sizes[5]}%;
   overflow: hidden;
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {

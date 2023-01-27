@@ -1,7 +1,8 @@
 import { BlogArticle } from '@/components/BlogArticle';
-import { BlogDescription } from '@/components/BlogDescription';
+
 import { Sidebar } from '@/components/Sidebar';
 import { blogArticles } from '@/constants/blogArticle';
+import { SecondDescriptionSection } from '@/ui/Sections/SecondDescriptionSection';
 import { Container } from './styled';
 import { BlogItemContainerProps } from './types';
 
@@ -10,7 +11,11 @@ export const BlogItemContainer = ({ index }: BlogItemContainerProps) => {
     blogArticles[+(index as string)];
   return (
     <>
-      <BlogDescription text={heading} />
+      <SecondDescriptionSection
+        heading={text}
+        link={`blog/${index}`}
+        name={text}
+      />
       <Container>
         <BlogArticle
           text={text}

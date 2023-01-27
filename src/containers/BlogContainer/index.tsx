@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { BlogCard } from '@/ui/Cards/BlogCard';
 import { Sidebar } from '@/components/Sidebar';
 import { blogArticles } from '@/constants/blogArticle';

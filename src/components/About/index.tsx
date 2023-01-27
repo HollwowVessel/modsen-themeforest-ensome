@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import { memo } from 'react';
 import Who from '@/assets/images/who.jpg';
 import Mission from '@/assets/images/mission.jpg';
 import {
@@ -28,10 +28,10 @@ export const About = memo(() => (
           cursus lacinia lectus.
         </Text>
       </Description>
-      <Image src={Who} />
+      <Image src={Who} loading="lazy" />
     </Wrapper>
     <Wrapper>
-      <Image src={Mission} />
+      <Image src={Mission} loading="lazy" />
       <Description>
         <Heading>Our mission</Heading>
         <Text>

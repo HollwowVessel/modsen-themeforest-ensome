@@ -3,13 +3,14 @@ import menuIcon from '@/assets/images/icons/general/menuIcon.svg';
 import { TimeTypeProps } from './types';
 
 export const Card = styled.div`
-  min-height: 525px;
-  padding: ${({ theme }) => theme.paddings[4]}px;
+  min-height: ${({ theme }) => theme.sizes[11]}px;
+  width: ${({ theme }) => theme.sizes[8]}px;
+  padding: ${({ theme }) => theme.paddings[3]}px;
   background: ${({ theme }) => theme.colors.white};
   box-shadow: 0px 4px 12px rgba(12, 68, 204, 0.1);
   border-radius: 6px;
   button {
-    width: 100%;
+    width: ${({ theme }) => theme.sizes[5]}%;
   }
 `;
 
@@ -31,7 +32,7 @@ export const Info = styled.div`
 `;
 
 export const Price = styled.h4`
-  font-weight: 700;
+  font-weight: ${({ theme }) => theme.fontWeights[3]};
   font-size: ${({ theme }) => theme.fonts[4]}px;
   line-height: ${({ theme }) => theme.lineHeights[3]}px;
 
@@ -42,7 +43,7 @@ export const Price = styled.h4`
 export const TimeType = styled.button<TimeTypeProps>`
   padding: ${({ theme }) => theme.paddings[1]}px
     ${({ theme }) => theme.spaces[1]}px;
-  font-weight: 600;
+  font-weight: ${({ theme }) => theme.fontWeights[2]};
   font-size: ${({ theme }) => theme.fonts[0]}px;
   line-height: ${({ theme }) => theme.lineHeights[0]}px;
   text-align: center;
@@ -88,8 +89,8 @@ export const Advantages = styled.li`
 
 export const Container = styled.div`
   position: fixed;
-  width: 100%;
-  height: 100%;
+  width: ${({ theme }) => theme.sizes[5]}%;
+  height: ${({ theme }) => theme.sizes[5]}%;
   z-index: ${({ theme }) => theme.zIndexes[5]};
   top: 0;
   right: ${({ theme }) => theme.rights[0]};
@@ -97,10 +98,10 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   li {
-    font-size: 20px;
+    font-size: ${({ theme }) => theme.fonts[2]}px;
   }
   div:nth-child(2) {
-    width: 650px;
+    width: ${({ theme }) => theme.sizes.at(-3)}px;
     height: auto;
     z-index: ${({ theme }) => theme.zIndexes[6]};
   }
@@ -108,8 +109,8 @@ export const Container = styled.div`
 
 export const GreyFill = styled.div`
   position: fixed;
-  width: 100%;
-  height: 100%;
+  width: ${({ theme }) => theme.sizes[5]}%;
+  height: ${({ theme }) => theme.sizes[5]}%;
   z-index: ${({ theme }) => theme.zIndexes[4]};
   top: 0;
   right: ${({ theme }) => theme.rights[0]};

@@ -11,5 +11,5 @@ export const Cards = styled.div`
   justify-items: center;
 
   gap: ${({ theme }) => theme.gaps[1]}px;
-  max-width: 1120px;
+  max-width: ${({ theme }) => theme.sizes.at(-1)}px;
 `;

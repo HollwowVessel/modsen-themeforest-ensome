@@ -25,7 +25,7 @@ export const Related = memo(({ tag }: RelatedProps) => (
         .sort((a, b) => b.views - a.views)
         .map(({ info, heading, icon }, id) => (
           <Post key={id}>
-            <Image src={icon} />
+            <Image src={icon} loading="lazy" />
             <PostDescription>
               <Date>{info}</Date>
               <Title>{heading}</Title>

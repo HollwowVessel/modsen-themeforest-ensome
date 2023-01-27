@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import { memo } from 'react';
 import { BenefitsCard } from '@/components/BenefitsCard';
 import { CardItem, cardItems } from '@/constants/benefitsCard';
 

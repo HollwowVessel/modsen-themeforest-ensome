@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { HelpSection } from '@/ui/Sections/HelpSection';
 import { SubscribeSection } from '@/ui/Sections/SubscribeSection';
 import { FooterSection } from '@/ui/FooterSection';

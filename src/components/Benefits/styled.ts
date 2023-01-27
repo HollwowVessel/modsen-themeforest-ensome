@@ -14,14 +14,14 @@ export const Container = styled.section`
 `;
 
 export const Info = styled.div`
-  max-width: ${({ theme }) => theme.sizes.at(-1)}px;
+  max-width: ${({ theme }) => theme.sizes.at(-4)}px;
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
     padding: 0 ${({ theme }) => theme.paddings[3]}px;
   }
 `;
 
 export const Heading = styled.h3`
-  font-weight: 800;
+  font-weight: ${({ theme }) => theme.fontWeights[4]};
   font-size: ${({ theme }) => theme.fonts.at(-2)}px;
   line-height: ${({ theme }) => theme.lineHeights.at(-2)}px;
   letter-spacing: -0.015em;
@@ -44,7 +44,7 @@ export const Description = styled.p`
 `;
 
 export const Cards = styled.div`
-  max-width: ${({ theme }) => theme.sizes.at(-1)}px;
+  max-width: ${({ theme }) => theme.sizes.at(-4)}px;
 
   display: flex;
   flex-wrap: wrap;

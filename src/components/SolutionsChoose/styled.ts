@@ -3,6 +3,7 @@ import MenuIcon from '@/assets/images/icons/general/menuIcon.svg';
 
 export const Container = styled.div`
   display: flex;
+  align-items: center;
   background: ${({ theme }) => theme.colors.background};
   gap: ${({ theme }) => theme.gaps[4]}px;
   margin: 0 0 ${({ theme }) => theme.margins[7]}px 0;
@@ -13,9 +14,9 @@ export const Image = styled.img``;
 export const Info = styled.div``;
 
 export const Heading = styled.h3`
-  font-weight: 800;
-  font-size: 38px;
-  line-height: 56px;
+  font-weight: ${({ theme }) => theme.fontWeights[4]};
+  font-size: ${({ theme }) => theme.fonts[5]}px;
+  line-height: ${({ theme }) => theme.lineHeights[4]}px;
   letter-spacing: -0.015em;
   color: ${({ theme }) => theme.colors.black};
   margin: 0 0 ${({ theme }) => theme.margins[5]}px 0;
@@ -29,10 +30,12 @@ export const Item = styled.li`
 
   &::before {
     content: '';
-    width: 17px;
-    height: 12px;
+    width: ${({ theme }) => theme.sizes[0]}px;
+    height: ${({ theme }) => theme.sizes[0]}px;
     position: absolute;
+
     background: url(${MenuIcon});
+    background-repeat: no-repeat;
     top: ${({ theme }) => theme.tops[0]};
   }
 `;
@@ -43,10 +46,10 @@ export const ItemName = styled.h4`
 `;
 
 export const ItemDescription = styled.p`
-  max-width: 540px;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 28px;
+  max-width: ${({ theme }) => theme.sizes.at(-4)}px;
+  font-weight: ${({ theme }) => theme.fontWeights[0]};
+  font-size: ${({ theme }) => theme.fonts[1]}px;
+  line-height: ${({ theme }) => theme.lineHeights[1]}px;
   letter-spacing: -0.015em;
   color: ${({ theme }) => theme.colors.grey};
 `;

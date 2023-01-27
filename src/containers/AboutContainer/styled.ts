@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 export const Heading = styled.h3`
-  font-weight: 800;
-  font-size: 46px;
-  line-height: 60px;
+  font-weight: ${({ theme }) => theme.fontWeights[4]};
+  font-size: ${({ theme }) => theme.fonts[6]}px;
+  line-height: ${({ theme }) => theme.lineHeights[4]}px;
   text-align: center;
   letter-spacing: -0.015em;
   color: ${({ theme }) => theme.colors.black};

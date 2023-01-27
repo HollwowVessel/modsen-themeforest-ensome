@@ -11,7 +11,8 @@ export const Container = styled.section`
 export const Info = styled.div`
   display: flex;
   justify-content: baseline;
-  gap: ${({ theme }) => theme.gaps[2]}px;
+  max-width: ${({ theme }) => theme.sizes.at(-1)}px;
+  gap: ${({ theme }) => theme.gaps[0]}px;
   margin: 0 0 ${({ theme }) => theme.spaces.at(-2)}px 0;
   @media (max-width: ${({ theme }) => theme.breakPoints.laptop}px) {
     flex-direction: column;
@@ -27,12 +28,12 @@ export const Newest = styled.span`
 `;
 
 export const Heading = styled.h3`
-  font-weight: 800;
+  font-weight: ${({ theme }) => theme.fontWeights[4]};
   font-size: ${({ theme }) => theme.fonts.at(-1)}px;
   line-height: ${({ theme }) => theme.lineHeights.at(-2)}px;
   letter-spacing: -0.015em;
   color: ${({ theme }) => theme.colors.black};
-  max-width: ${({ theme }) => theme.sizes.at(-1)}px;
+  max-width: ${({ theme }) => theme.sizes.at(-3)}px;
 
   @media (max-width: ${({ theme }) => theme.breakPoints.laptop}px) {
     text-align: center;
@@ -50,9 +51,9 @@ export const Description = styled.p`
 
   font-size: ${({ theme }) => theme.fonts[2]}px;
   line-height: ${({ theme }) => theme.lineHeights[2]}px;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.035em;
   color: ${({ theme }) => theme.colors.grey};
-  max-width: ${({ theme }) => theme.sizes.at(-1)}px;
+  max-width: ${({ theme }) => theme.sizes.at(-3)}px;
 
   text-align: justify;
   margin: 0 0 ${({ theme }) => theme.spaces[2]}px 0;
@@ -94,7 +95,7 @@ export const SolutionsImage = styled.img`
 `;
 
 export const SolutionsInfo = styled.div`
-  max-width: ${({ theme }) => theme.sizes.at(-1)}px;
+  max-width: ${({ theme }) => theme.sizes.at(-4)}px;
 
   margin: auto 0;
   img {
@@ -112,7 +113,7 @@ export const SolutionsInfo = styled.div`
 `;
 
 export const SolutionsHeading = styled.h4`
-  font-weight: 800;
+  font-weight: ${({ theme }) => theme.fontWeights[4]};
   font-size: ${({ theme }) => theme.fonts.at(-2)}px;
   line-height: ${({ theme }) => theme.lineHeights.at(-2)}px;
   color: ${({ theme }) => theme.colors.black};

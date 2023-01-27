@@ -1,6 +1,4 @@
-import React, { memo, useState } from 'react';
-import { sendEmail } from '../../../api/emailjsApi';
-import { FillButton } from '@/ui/Buttons/FillButton';
+import { memo, useState } from 'react';
 import { Container, Description, Heading } from './styled';
 import { FillButtonLink } from '@/ui/Links/FillButtonLink';
 

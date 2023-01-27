@@ -10,7 +10,7 @@ export const Container = styled.section`
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  gap: ${({ theme }) => theme.gaps[3]};
+  gap: ${({ theme }) => theme.gaps[3]}px;
 
   margin: 0 0 ${({ theme }) => theme.margins[7]}px 0;
 `;
@@ -20,20 +20,20 @@ export const Image = styled.img``;
 export const Description = styled.div``;
 
 export const Heading = styled.h3`
-  font-weight: 800;
-  font-size: 46px;
-  line-height: 60px;
+  font-weight: ${({ theme }) => theme.fontWeights[4]};
+  font-size: ${({ theme }) => theme.fonts[6]}px;
+  line-height: ${({ theme }) => theme.lineHeights[4]}px;
   letter-spacing: -0.015em;
   color: ${({ theme }) => theme.colors.black};
   margin: 0 0 ${({ theme }) => theme.margins[3]}px 0;
 `;
 
 export const Text = styled.p`
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 33px;
+  font-weight: ${({ theme }) => theme.fontWeights[0]};
+  font-size: ${({ theme }) => theme.fonts[2]}px;
+  line-height: ${({ theme }) => theme.lineHeights[2]}px;
   letter-spacing: -0.015em;
   color: ${({ theme }) => theme.colors.grey};
   margin: 0 0 ${({ theme }) => theme.margins[2]}px 0;
-  max-width: 445px;
+  max-width: ${({ theme }) => theme.sizes.at(-5)}px;
 `;

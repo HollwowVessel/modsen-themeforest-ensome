@@ -15,6 +15,7 @@ export const Fill = styled.button`
   border-radius: 6px;
   border: none;
   cursor: pointer;
+  transition: 0.5s;
 
   &:hover {
     background: ${({ theme }) => theme.colors.helperBlueFour};

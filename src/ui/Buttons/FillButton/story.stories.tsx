@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeProvider } from 'styled-components';
 import { FillButton } from './index';

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Card = styled.div`
-  max-width: ${({ theme }) => theme.sizes.at(-4)}px;
+  max-width: ${({ theme }) => theme.sizes.at(-7)}px;
 
   background: ${({ theme }) => theme.colors.white};
   padding: ${({ theme }) => theme.paddings[3]}px;
@@ -13,7 +13,7 @@ export const Card = styled.div`
     &:nth-of-type(even) {
       transform: none;
     }
-    min-width: ${({ theme }) => theme.sizes.at(-4)}px;
+    min-width: ${({ theme }) => theme.sizes.at(-7)}px;
   }
 `;
 

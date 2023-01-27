@@ -16,7 +16,9 @@ const colors = {
   helperBlueFour: '#467dff',
 };
 const spaces = [8, 16, 24, 40, 56, 80, 120, 220];
-const sizes = [24, 32, 48, 72, 94, 100, 120, 140, 255, 350, 445, 540];
+const sizes = [
+  24, 32, 48, 72, 94, 100, 120, 140, 255, 350, 445, 540, 600, 740, 1100,
+];
 const breakPoints = { mobile: 800, tablet: 1100, laptop: 1400 };
 const gaps = [8, 16, 24, 30, 40, 120, 220];
 const paddings = [4, 8, 16, 24, 40, 56, 80, 100, 120, 400];

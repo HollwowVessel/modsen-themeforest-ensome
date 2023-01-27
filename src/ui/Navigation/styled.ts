@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import hamburger from '@/assets/images/icons/general/hamburger.svg';
 import close from '@/assets/images/icons/general/close.svg';
+import { StyledOpenProps } from './types';
 
 export const Container = styled.div`
   padding: ${({ theme }) => theme.paddings[4]}px 0;
@@ -19,7 +20,7 @@ export const Nav = styled.nav`
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
     justify-content: initial;
     align-items: initial;
-    width: 100%;
+    width: ${({ theme }) => theme.sizes.at(5)}px;
     button {
       display: none;
     }
@@ -31,7 +32,7 @@ export const Logo = styled.img`
   margin: 0 ${({ theme }) => theme.spaces.at(-1)}px 0 0;
 `;
 
-export const NavMenu = styled.ul<{ open: boolean }>`
+export const NavMenu = styled.ul<StyledOpenProps>`
   list-style-type: none;
   display: flex;
   gap: ${({ theme }) => theme.gaps[4]}px;
@@ -44,7 +45,7 @@ export const NavMenu = styled.ul<{ open: boolean }>`
     align-items: center;
     position: fixed;
     width: ${({ theme }) => theme.sizes[5]}%;
-    height: 100%;
+    height: ${({ theme }) => theme.sizes[5]}%;
     top: 0;
     left: 0;
     z-index: ${({ theme }) => theme.zIndexes[1]};
@@ -71,7 +72,7 @@ export const MenuItem = styled.li`
   }
 `;
 
-export const MenuLink = styled(NavLink)<{ active: boolean }>`
+export const MenuLink = styled(NavLink)<StyledOpenProps>`
   font-weight: ${({ theme }) => theme.fontWeights[1]};
 
   font-size: ${({ theme }) => theme.fonts[0]}px;
@@ -80,20 +81,26 @@ export const MenuLink = styled(NavLink)<{ active: boolean }>`
   color: ${({ theme }) => theme.colors.grey};
 
   position: relative;
+  transition: 0.5s;
+  &:hover {
+    color: ${({ theme }) => theme.colors.black};
+    font-size: ${({ theme }) => theme.fonts[1]}px;
+  }
 
   &::before {
     content: '';
     position: absolute;
-    width: 100%;
+    width: ${({ theme }) => theme.sizes.at(5)}%;
+    background-repeat: no-repeat;
 
     top: ${({ theme }) => theme.spaces[1]}px;
     border-bottom: 5px solid
-      ${({ theme, active }) => (active ? theme.colors.black : 'none')};
+      ${({ theme, open }) => (open ? theme.colors.black : 'none')};
     border-radius: 5px;
   }
 `;
 
-export const StyledHamburger = styled.div<{ open: boolean }>`
+export const StyledHamburger = styled.div<StyledOpenProps>`
   width: ${({ theme }) => theme.sizes[1]}px;
   height: ${({ theme }) => theme.sizes[1]}px;
   z-index: ${({ theme }) => theme.zIndexes[3]};
@@ -115,7 +122,7 @@ export const StyledHamburger = styled.div<{ open: boolean }>`
   }
 `;
 
-export const HamburgerContainer = styled.div<{ open: boolean }>`
+export const HamburgerContainer = styled.div<StyledOpenProps>`
   z-index: ${({ theme }) => theme.zIndexes[2]};
 
   display: flex;
@@ -136,7 +143,7 @@ export const YoutubeContainer = styled.div`
   z-index: ${({ theme }) => theme.zIndexes[5]};
   display: flex;
   width: ${({ theme }) => theme.sizes[5]}%;
-  height: 100%;
+  height: ${({ theme }) => theme.sizes[5]}%;
   justify-content: center;
   align-items: center;
   background: transparent;
@@ -147,7 +154,7 @@ export const YoutubeContainer = styled.div`
     left: 0;
     z-index: ${({ theme }) => theme.zIndexes[3]};
     opacity: 0.4;
-    height: 100%;
+    height: ${({ theme }) => theme.sizes[5]}%;
     background: ${({ theme }) => theme.colors.grey};
   }
   div {

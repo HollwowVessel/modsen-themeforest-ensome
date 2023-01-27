@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Navigation } from '@/ui/Navigation';
 import { SubscribeSection } from '@/ui/Sections/SubscribeSection';
-
-import { BlogDescription } from '@/components/BlogDescription';
 
 import { FooterSection } from '@/ui/FooterSection';
 import { blogArticles } from '@/constants/blogArticle';

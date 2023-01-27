@@ -10,10 +10,11 @@ export const Container = styled.section`
 
 export const Info = styled.div`
   margin: ${({ theme }) => theme.spaces[5]}px 0;
+  max-width: ${({ theme }) => theme.sizes.at(-1)}px;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: ${({ theme }) => theme.gaps.at(6)}px;
+  gap: ${({ theme }) => theme.gaps.at(5)}px;
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
     flex-direction: column;
     gap: ${({ theme }) => theme.gaps[2]}px;
@@ -22,10 +23,10 @@ export const Info = styled.div`
 `;
 
 export const Heading = styled.h1`
-  font-weight: 800;
+  font-weight: ${({ theme }) => theme.fontWeights[4]};
   font-size: ${({ theme }) => theme.fonts.at(-2)}px;
   line-height: ${({ theme }) => theme.lineHeights.at(-2)}px;
-  max-width: ${({ theme }) => theme.sizes.at(-1)}px;
+  max-width: ${({ theme }) => theme.sizes.at(-2)}px;
 `;
 
 export const Description = styled.p`
@@ -58,5 +59,5 @@ export const Ensome = styled.span`
 
 export const Image = styled.img`
   width: ${({ theme }) => theme.sizes[5]}%;
-  height: 100%;
+  height: ${({ theme }) => theme.sizes[5]}%;
 `;

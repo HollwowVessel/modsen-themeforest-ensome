@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import { memo } from 'react';
 import { FillButton } from '@/ui/Buttons/FillButton';
 import features from '@/assets/images/features.png';
 import {

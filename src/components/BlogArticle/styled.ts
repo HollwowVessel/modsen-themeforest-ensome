@@ -7,13 +7,13 @@ import tags from '@/assets/images/icons/blog/tags.svg';
 import { TagProps } from './types';
 
 export const Container = styled.section`
-  max-width: 635px;
+  max-width: ${({ theme }) => theme.sizes.at(-3)}px;
   margin: 0 0 ${({ theme }) => theme.margins[5]}px 0;
 `;
 
 export const Image = styled.img`
   margin: 0 0 ${({ theme }) => theme.margins[2]}px 0;
-  width: 635px;
+  width: ${({ theme }) => theme.sizes.at(-3)}px;
 `;
 
 export const GeneralInfo = styled.div`
@@ -27,8 +27,8 @@ export const Date = styled.span`
   padding: 0 0 0 ${({ theme }) => theme.paddings[3]}px;
   &::before {
     content: '';
-    width: 16px;
-    height: 16px;
+    width: ${({ theme }) => theme.sizes[0]}px;
+    height: ${({ theme }) => theme.sizes[0]}px;
     position: absolute;
     background: url(${date});
     background-repeat: no-repeat;
@@ -42,8 +42,8 @@ export const Author = styled.span`
   padding: 0 0 0 ${({ theme }) => theme.paddings[3]}px;
   &::before {
     content: '';
-    width: 16px;
-    height: 16px;
+    width: ${({ theme }) => theme.sizes[0]}px;
+    height: ${({ theme }) => theme.sizes[0]}px;
     position: absolute;
     background: url(${person});
     background-repeat: no-repeat;
@@ -53,9 +53,9 @@ export const Author = styled.span`
 `;
 
 export const Heading = styled.h3`
-  font-weight: 800;
-  font-size: 30px;
-  line-height: 40px;
+  font-weight: ${({ theme }) => theme.fontWeights[4]};
+  font-size: ${({ theme }) => theme.fonts[4]}px;
+  line-height: ${({ theme }) => theme.lineHeights[3]}px;
   letter-spacing: -0.015em;
   color: ${({ theme }) => theme.colors.black};
   margin: 0 0 ${({ theme }) => theme.margins[3]}px 0;
@@ -63,9 +63,9 @@ export const Heading = styled.h3`
 
 export const Text = styled.p`
   margin: 0 0 ${({ theme }) => theme.margins[3]}px 0;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 28px;
+  font-weight: ${({ theme }) => theme.fontWeights[0]};
+  font-size: ${({ theme }) => theme.fonts[1]}px;
+  line-height: ${({ theme }) => theme.lineHeights[1]}px;
   /* or 175% */
 
   letter-spacing: -0.015em;
@@ -76,9 +76,9 @@ export const Text = styled.p`
 `;
 
 export const Quote = styled.p`
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 33px;
+  font-weight: ${({ theme }) => theme.fontWeights[0]};
+  font-size: ${({ theme }) => theme.fonts[2]}px;
+  line-height: ${({ theme }) => theme.lineHeights[2]}px;
   /* or 165% */
 
   letter-spacing: -0.015em;
@@ -97,9 +97,9 @@ export const Statistics = styled.div`
 `;
 
 export const Views = styled.span`
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 24px;
+  font-weight: ${({ theme }) => theme.fontWeights[0]};
+  font-size: ${({ theme }) => theme.fonts[0]}px;
+  line-height: ${({ theme }) => theme.lineHeights[0]}px;
   letter-spacing: -0.015em;
   color: ${({ theme }) => theme.colors.grey};
 
@@ -107,8 +107,8 @@ export const Views = styled.span`
   padding: 0 0 0 ${({ theme }) => theme.paddings[3]}px;
   &::before {
     content: '';
-    width: 16px;
-    height: 16px;
+    width: ${({ theme }) => theme.sizes[0]}px;
+    height: ${({ theme }) => theme.sizes[0]}px;
     position: absolute;
     background: url(${views});
     background-repeat: no-repeat;
@@ -120,9 +120,9 @@ export const Views = styled.span`
 export const Share = styled.ul`
   position: relative;
   padding: 0 0 0 ${({ theme }) => theme.paddings[3]}px;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 24px;
+  font-weight: ${({ theme }) => theme.fontWeights[0]};
+  font-size: ${({ theme }) => theme.fonts[0]}px;
+  line-height: ${({ theme }) => theme.lineHeights[0]}px;
   /* identical to box height, or 171% */
   display: flex;
   align-items: flex-start;
@@ -134,8 +134,8 @@ export const Share = styled.ul`
   color: ${({ theme }) => theme.colors.grey};
   &::before {
     content: '';
-    width: 16px;
-    height: 16px;
+    width: ${({ theme }) => theme.sizes[0]}px;
+    height: ${({ theme }) => theme.sizes[0]}px;
     position: absolute;
     background: url(${share});
     background-repeat: no-repeat;
@@ -152,9 +152,9 @@ export const ShareItem = styled.li`
 export const Tags = styled.ul`
   position: relative;
   padding: 0 0 0 ${({ theme }) => theme.paddings[3]}px;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 24px;
+  font-weight: ${({ theme }) => theme.fontWeights[0]};
+  font-size: ${({ theme }) => theme.fonts[0]}px;
+  line-height: ${({ theme }) => theme.lineHeights[0]}px;
   /* identical to box height, or 171% */
   display: flex;
   align-items: center;
@@ -165,8 +165,8 @@ export const Tags = styled.ul`
   color: ${({ theme }) => theme.colors.grey};
   &::before {
     content: '';
-    width: 16px;
-    height: 16px;
+    width: ${({ theme }) => theme.sizes[0]}px;
+    height: ${({ theme }) => theme.sizes[0]}px;
     position: absolute;
     background: url(${tags});
     background-repeat: no-repeat;
@@ -176,9 +176,9 @@ export const Tags = styled.ul`
 `;
 
 export const Tag = styled.li<TagProps>`
-  font-weight: 800;
-  font-size: 14px;
-  line-height: 24px;
+  font-weight: ${({ theme }) => theme.fontWeights[4]};
+  font-size: ${({ theme }) => theme.fonts[0]}px;
+  line-height: ${({ theme }) => theme.lineHeights[0]}px;
   text-align: center;
   letter-spacing: -0.015em;
   background: ${({ active, theme }) =>

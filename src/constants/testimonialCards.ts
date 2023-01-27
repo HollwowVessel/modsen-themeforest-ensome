@@ -1,13 +1,7 @@
 import photo1 from '@/assets/images/icons/persons/photo1.svg';
 import photo2 from '@/assets/images/icons/persons/photo2.svg';
 import photo3 from '@/assets/images/icons/persons/photo3.svg';
-
-export interface CardItem {
-  icon: string;
-  heading: string;
-  info: string;
-  text: string;
-}
+import { CardItem } from '@/types/cardTypes';
 
 export const cardItems: CardItem[] = [
   {

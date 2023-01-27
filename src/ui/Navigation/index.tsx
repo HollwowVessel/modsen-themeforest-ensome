@@ -21,7 +21,7 @@ import {
 
 import { WithIconButton } from '@/ui/Buttons/WithIconButton';
 import { GreyFill } from '@/components/PricingCard/styled';
-import { youtubeOptions } from '../../api/youtubeApi';
+import { youtubeOptions } from '@/api/youtubeApi';
 
 export const Navigation = () => {
   const [open, setOpen] = useState(true);
@@ -59,7 +59,7 @@ export const Navigation = () => {
 
     return (
       <MenuItem key={id} data-test-id={id}>
-        <MenuLink to={path as string} active={path === pathname}>
+        <MenuLink to={path as string} open={path === pathname}>
           {name}
         </MenuLink>
       </MenuItem>
@@ -71,7 +71,7 @@ export const Navigation = () => {
       <Nav>
         <HamburgerContainer open={open}>
           <Link to="/">
-            <Logo src={blueLogo} />
+            <Logo src={blueLogo} loading="lazy" />
           </Link>
           <StyledHamburger onClick={handleMenu} open={open} />
         </HamburgerContainer>

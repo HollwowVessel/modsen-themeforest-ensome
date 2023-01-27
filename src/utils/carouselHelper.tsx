@@ -1,10 +1,14 @@
+import { Keyframes } from 'styled-components';
+import { CardItem, CardProps } from '@/types/cardTypes';
+
 import { ItemLink } from '@/ui/Carousel/styled';
 
 export const carouselHelper = (
   Card: any,
-  cards: any[],
+  cards: CardProps[] | CardItem[],
   type: string,
-  sliderItems: number
+  sliderItems: number,
+  animation: Keyframes
 ) => {
   if (type === 'blog') {
     return cards
@@ -16,6 +20,7 @@ export const carouselHelper = (
           text={text}
           image={icon}
           key={id}
+          animation={animation}
           id={id}
         />
       ));
@@ -30,6 +35,7 @@ export const carouselHelper = (
             icon={icon}
             name={heading}
             key={id}
+            animation={animation}
             profession={info}
           />
         </ItemLink>
@@ -44,6 +50,7 @@ export const carouselHelper = (
           icon={icon}
           name={heading}
           key={id}
+          animation={animation}
           profession={info}
         />
       ));

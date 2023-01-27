@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import { memo } from 'react';
 import {
   Card,
   Icon,
@@ -20,14 +20,14 @@ export const TeamCard = memo(
     }
     return (
       <Card>
-        <Image src={image} />
+        <Image src={image} loading="lazy" />
         <Name>{name}</Name>
         <Profession>{profession}</Profession>
         <Socials>
           {socialItems.map(({ link, icon }, id) => (
             <SocialLink key={id} href={link}>
               <Social>
-                <Icon src={icon} />
+                <Icon src={icon} loading="lazy" />
               </Social>
             </SocialLink>
           ))}

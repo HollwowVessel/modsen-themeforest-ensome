@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { FAQItems } from '@/constants/FAQItem';
 import { Container, Description, Heading, Question, Questions } from './styled';
 

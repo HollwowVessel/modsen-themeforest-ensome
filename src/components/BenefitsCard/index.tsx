@@ -5,7 +5,7 @@ import { BenefitsCardProps } from './types';
 export const BenefitsCard = memo(
   ({ description, heading, icon }: BenefitsCardProps) => (
     <Card>
-      <Image src={icon} />
+      <Image src={icon} loading="lazy" />
       <Heading>{heading}</Heading>
       <Description>{description}</Description>
     </Card>

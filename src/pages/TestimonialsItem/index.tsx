@@ -1,16 +1,15 @@
-import React from 'react';
 import { useParams } from 'react-router-dom';
 import { Navigation } from '@/ui/Navigation';
 import { SubscribeSection } from '@/ui/Sections/SubscribeSection';
 
-import { BlogDescription } from '@/components/BlogDescription';
 import { BlogArticle } from '@/components/BlogArticle';
 import { Sidebar } from '@/components/Sidebar';
 import { Container } from './styled';
-import { Related } from '@/components/Related';
+
 import { FooterSection } from '@/ui/FooterSection';
-import { blogArticles } from '@/constants/blogArticle';
+
 import { cardItems } from '@/constants/testimonialCards';
+import { SecondDescriptionSection } from '@/ui/Sections/SecondDescriptionSection';
 
 export const TestimonialsItemPage = () => {
   const { index } = useParams();
@@ -18,7 +17,11 @@ export const TestimonialsItemPage = () => {
   return (
     <>
       <Navigation />
-      <BlogDescription text={heading} />
+      <SecondDescriptionSection
+        heading={heading}
+        link={`testimonials/${index}`}
+        name={heading}
+      />
       <Container>
         <BlogArticle text={info} heading={text} image={icon} date={heading} />
         <Sidebar />

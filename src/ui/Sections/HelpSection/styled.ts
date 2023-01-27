@@ -10,13 +10,13 @@ export const Container = styled.section`
 `;
 
 export const Heading = styled.h3`
-  font-weight: 800;
+  font-weight: ${({ theme }) => theme.fontWeights[4]};
   font-size: ${({ theme }) => theme.fonts.at(-2)}px;
   line-height: ${({ theme }) => theme.lineHeights.at(-2)}px;
   text-align: center;
   letter-spacing: -0.015em;
   color: ${({ theme }) => theme.colors.black};
-  max-width: ${({ theme }) => theme.sizes.at(-1)}px;
+  max-width: ${({ theme }) => theme.sizes.at(-4)}px;
   margin: 0 0 ${({ theme }) => theme.spaces[2]}px 0;
 `;
 
@@ -29,6 +29,6 @@ export const Description = styled.p`
   text-align: center;
   letter-spacing: -0.015em;
   color: ${({ theme }) => theme.colors.grey};
-  max-width: ${({ theme }) => theme.sizes.at(-1)}px;
+  max-width: ${({ theme }) => theme.sizes.at(-4)}px;
   margin: 0 0 ${({ theme }) => theme.spaces[2]}px 0;
 `;

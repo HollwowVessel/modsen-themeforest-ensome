@@ -7,7 +7,7 @@ import disabledArrow from '@/assets/images/icons/Links/disabledArrowLink.svg';
 export const Arrow = styled(Link)`
   font-family: 'Manrope';
   font-style: normal;
-  font-weight: 600;
+  font-weight: ${({ theme }) => theme.fontWeights[2]};
   font-size: ${({ theme }) => theme.fonts[0]}px;
   line-height: ${({ theme }) => theme.lineHeights[0]}px;
   padding: 0 ${({ theme }) => theme.paddings[1]}px 0 0;
@@ -15,16 +15,17 @@ export const Arrow = styled(Link)`
   display: flex;
   align-items: center;
   max-width: ${({ theme }) => theme.sizes[4]}px;
-  max-height: 24px;
+  max-height: ${({ theme }) => theme.sizes[0]}px;
   text-decoration: none;
   color: ${({ theme }) => theme.colors.primary};
+  transition: 0.5s;
 
   &::after {
     content: '';
     position: absolute;
     right: ${({ theme }) => theme.rights[0]};
     width: ${({ theme }) => theme.sizes[0]}px;
-    height: 20px;
+    height: ${({ theme }) => theme.sizes[0]}px;
     background: url(${arrow});
   }
   &:hover,

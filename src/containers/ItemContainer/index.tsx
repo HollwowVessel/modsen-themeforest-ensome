@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 
 import { Card, Cards, Description, Heading, Image } from './styled';
 import { ItemContainerProps } from './types';
@@ -22,7 +22,7 @@ export const ItemContainer = ({
     <>
       <Card>
         <Heading>{heading}</Heading>
-        <Image src={img} alt={img} />
+        <Image src={img} alt={img} loading="lazy" />
         <Description>{description}</Description>
       </Card>
       <Cards>

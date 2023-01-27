@@ -6,3 +6,10 @@ export interface CardProps {
   id: number;
   [key: string]: unknown;
 }
+
+export interface CardItem {
+  icon: string;
+  heading: string;
+  info: string;
+  text: string;
+}

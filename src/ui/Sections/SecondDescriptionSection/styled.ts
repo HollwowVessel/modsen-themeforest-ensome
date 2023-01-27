@@ -12,9 +12,9 @@ export const Container = styled.div`
 `;
 
 export const Heading = styled.h1`
-  font-weight: 800;
-  font-size: 46px;
-  line-height: 60px;
+  font-weight: ${({ theme }) => theme.fontWeights[4]};
+  font-size: ${({ theme }) => theme.fonts[6]}px;
+  line-height: ${({ theme }) => theme.lineHeights[4]}px;
   /* identical to box height, or 130% */
 
   text-align: center;
@@ -35,9 +35,9 @@ export const Links = styled.div`
 export const Home = styled(Link)`
   padding: 0 ${({ theme }) => theme.paddings[0]}px 0 0;
   text-decoration: none;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 24px;
+  font-weight: ${({ theme }) => theme.fontWeights[1]};
+  font-size: ${({ theme }) => theme.fonts[0]}px;
+  line-height: ${({ theme }) => theme.lineHeights[0]}px;
   letter-spacing: -0.01em;
   color: ${({ theme }) => theme.colors.grey};
 `;
@@ -46,10 +46,10 @@ export const AboutUs = styled(Link)`
   border-left: 2px solid ${({ theme }) => theme.colors.grey};
   padding: 0 0 0 ${({ theme }) => theme.paddings[0]}px;
   text-decoration: none;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 24px;
+  font-weight: ${({ theme }) => theme.fontWeights[1]};
+  font-size: ${({ theme }) => theme.fonts[0]}px;
+  line-height: ${({ theme }) => theme.lineHeights[0]}px;
   letter-spacing: -0.01em;
   color: ${({ theme }) => theme.colors.black};
-  max-height: 24px;
+  max-height: ${({ theme }) => theme.sizes[0]}px;
 `;

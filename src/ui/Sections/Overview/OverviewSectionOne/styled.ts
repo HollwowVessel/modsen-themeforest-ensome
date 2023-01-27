@@ -16,7 +16,7 @@ export const List = styled.ul`
 `;
 
 export const Number = styled.h4`
-  font-weight: 800;
+  font-weight: ${({ theme }) => theme.fontWeights[4]};
   font-size: ${({ theme }) => theme.fonts.at(-1)}px;
   line-height: ${({ theme }) => theme.lineHeights.at(-1)}px;
 
@@ -46,9 +46,9 @@ export const Item = styled.li`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  max-width: ${({ theme }) => theme.sizes.at(-1)};
+  max-width: ${({ theme }) => theme.sizes.at(-4)};
   padding: 0 ${({ theme }) => theme.paddings[5]}px;
-  height: 104px;
+  height: ${({ theme }) => theme.sizes[5]}px;
   border-right: 1px solid ${({ theme }) => theme.colors.helperBlueThree};
   &:last-of-type {
     border-right: none;

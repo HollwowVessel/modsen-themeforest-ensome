@@ -1,5 +1,5 @@
 export interface BlogArticleI {
-  icon: any;
+  icon: string;
   info: string;
   text: string;
   heading: string;

@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import { memo } from 'react';
 import { Container, Item, List, Name, Number } from './styled';
 
 export const OverviewSectionFour = memo(() => (

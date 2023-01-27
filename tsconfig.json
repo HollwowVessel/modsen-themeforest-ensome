@@ -27,7 +27,9 @@
       "@/ui/*": ["ui/*"],
       "@/pages/*": ["pages/*"],
       "@/theme/*": ["theme/*"],
-      "@/api/*": ["api/*"]
+      "@/api/*": ["api/*"],
+      "@/types/*": ["types/*"],
+      "@/hooks/*": ["hooks/*"]
     }
   },
   "include": ["src", "./index.d.ts"]

@@ -22,11 +22,11 @@ const links = {
 const services = {
   heading: 'Service',
   items: [
-    { name: 'Pages', to: '/' },
+    { name: 'Pages', to: '/pages' },
     { name: 'Elements', to: '/elements' },
     { name: 'FAQ', to: '/FAQ' },
-    { name: 'Pricing', to: '/' },
-    { name: 'Site map', to: '/contacts' },
+    { name: 'Pricing', to: '/pricing' },
+    { name: 'Site map', to: '/map' },
   ],
 };
 
@@ -44,4 +44,11 @@ const cantact = {
 
 export const footerMenus = [links, services, cantact];
 
-export const social = [social1, social2, social3, social4, social5, social6];
+export const social = [
+  { el: social1, to: 'http://www.facebook.com' },
+  { el: social2, to: 'http://www.twitter.com' },
+  { el: social3, to: 'http://www.youtube.com' },
+  { el: social4, to: 'http://www.linkedin.com' },
+  { el: social5, to: 'http://www.dribble.com' },
+  { el: social6, to: 'http://www.solutions.com' },
+];

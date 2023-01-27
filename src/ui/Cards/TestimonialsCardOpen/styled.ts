@@ -1,10 +1,12 @@
 import styled from 'styled-components';
+import { CardProps } from './types';
 
-export const Card = styled.div`
+export const Card = styled.div<CardProps>`
   box-shadow: 0px 4px 12px rgba(12, 68, 204, 0.1);
-  max-width: 540px;
+  max-width: ${({ theme }) => theme.sizes.at(-4)}px;
   position: relative;
   display: flex;
+  animation: ${({ animation }) => animation} 0.5s;
   align-items: center;
   gap: ${({ theme }) => theme.gaps[2]}px;
   flex-wrap: wrap;
@@ -12,7 +14,7 @@ export const Card = styled.div`
     ${({ theme }) => theme.paddings[4]}px ${({ theme }) => theme.paddings[4]}px
     ${({ theme }) => theme.paddings[4]}px;
   @media (max-width: ${({ theme }) => theme.breakPoints.laptop}px) {
-    min-width: 540px;
+    min-width: ${({ theme }) => theme.sizes.at(-4)}px;
   }
 `;
 
@@ -20,7 +22,7 @@ export const Info = styled.div``;
 
 export const Image = styled.img`
   position: absolute;
-  top: -${({ theme }) => theme.tops[4]};
+  top: -${({ theme }) => theme.tops[4]}px;
   left: 35px;
 `;
 

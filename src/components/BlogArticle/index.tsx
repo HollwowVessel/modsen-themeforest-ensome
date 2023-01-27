@@ -19,7 +19,7 @@ import {
 } from './styled';
 
 import { blogSocials } from '@/constants/blogSocials';
-import { Related } from '../Related';
+import { Related } from '@/components/Related';
 import { BlogArticleProps } from './types';
 
 export const BlogArticle = ({
@@ -38,7 +38,7 @@ export const BlogArticle = ({
 
   return (
     <Container>
-      <Image src={image} />
+      <Image src={image} loading="lazy" />
       <GeneralInfo>
         <Date>{date}</Date>
         <Author>William Pond</Author>

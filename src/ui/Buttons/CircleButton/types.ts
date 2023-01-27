@@ -3,3 +3,7 @@ export interface CircleButtonProps {
   to?: string;
   disabled?: boolean;
 }
+
+export interface InnerContainerProps {
+  background: boolean;
+}

@@ -11,8 +11,8 @@ export const Cards = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  max-width: 1110px;
+  max-width: ${({ theme }) => theme.sizes.at(-1)}px;
   justify-items: center;
 
-  gap: ${({ theme }) => theme.gaps[3]}px;
+  gap: ${({ theme }) => theme.gaps[2]}px;
 `;

@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import { memo } from 'react';
 import { CircleButton } from '@/ui/Buttons/CircleButton';
 import hero from '@/assets/images/heroes.png';
 import {
@@ -28,7 +28,7 @@ export const Hero = memo(() => (
       <ButtonContainer>
         <CircleButton text="Learn more" to="/services" />
       </ButtonContainer>
-      <Image src={hero} />
+      <Image src={hero} loading="lazy" />
     </HeroesContainer>
   </Container>
 ));

@@ -3,3 +3,7 @@ export interface FillProps {
   icon: string;
   handleClick?: () => void;
 }
+
+export interface WithIconProps {
+  icon: string;
+}

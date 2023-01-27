@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import { footerMenus, social } from '@/constants/footer';
 import logo from '@/assets/images/logo.svg';
 import upArrow from '@/assets/images/icons/dropdownMenu/footer.svg';
@@ -40,15 +39,17 @@ export const FooterSection = () => {
     <Footer>
       <Container>
         <Info>
-          <Logo src={logo} alt="logo" />
+          <Logo src={logo} alt="logo" loading="lazy" />
           <Description>
             Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
             suscipit laboriosam, nisi ut aliquid ex ea commodi.
           </Description>
           <SocialContainer>
-            {social.map((el) => (
-              <Social>
-                <Icon src={el} />
+            {social.map(({ el, to }) => (
+              <Social key={to}>
+                <a href={to}>
+                  <Icon src={el} loading="lazy" />
+                </a>
               </Social>
             ))}
           </SocialContainer>

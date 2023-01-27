@@ -84,7 +84,8 @@
     "react-router-dom": "^6.6.2",
     "react-youtube": "^10.1.0",
     "storybook": "^6.5.15",
-    "styled-components": "^5.3.6"
+    "styled-components": "^5.3.6",
+    "yup": "^0.32.11"
   },
   "husky": {
     "hooks": {

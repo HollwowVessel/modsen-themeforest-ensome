@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { InnerContainerProps } from './types';
 
 export const OuterContainer = styled.div`
   width: ${({ theme }) => theme.sizes[7]}px;
@@ -17,7 +18,7 @@ export const OuterContainer = styled.div`
   }
 `;
 
-export const InnerContainer = styled.div<{ background: boolean }>`
+export const InnerContainer = styled.div<InnerContainerProps>`
   cursor: pointer;
 
   background: ${({ theme }) => theme.colors.primary};
@@ -27,14 +28,10 @@ export const InnerContainer = styled.div<{ background: boolean }>`
   justify-content: center;
   align-items: center;
   border-radius: 100%;
-
-  button:disabled,
-  & {
-    background: ${({ background, theme }) => (background ? '' : '#')};
-  }
+  transition: 0.5s;
 
   &:hover,
-  &:hover button {
+  &:hover button:enabled {
     background: ${({ background }) => (background ? '' : '#467dff')};
   }
 
@@ -52,7 +49,7 @@ export const Circle = styled.button`
   width: ${({ theme }) => theme.sizes[5]}px;
   height: ${({ theme }) => theme.sizes[5]}px;
   background: ${({ theme }) => theme.colors.primary};
-  font-weight: 600;
+  font-weight: ${({ theme }) => theme.fontWeights[2]};
   font-size: ${({ theme }) => theme.fonts[0]}px;
   line-height: ${({ theme }) => theme.lineHeights[0]}px;
 

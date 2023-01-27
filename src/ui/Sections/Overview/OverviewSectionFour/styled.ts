@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  max-width: 100%;
+  max-width: ${({ theme }) => theme.sizes[5]}%;
 `;
 
 export const List = styled.ul`
@@ -11,7 +11,7 @@ export const List = styled.ul`
 `;
 
 export const Number = styled.h4`
-  font-weight: 800;
+  font-weight: ${({ theme }) => theme.fontWeights[4]};
   font-size: ${({ theme }) => theme.fonts.at(-1)}px;
   line-height: ${({ theme }) => theme.lineHeights.at(-1)}px;
 

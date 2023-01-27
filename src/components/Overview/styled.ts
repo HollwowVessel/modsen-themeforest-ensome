@@ -14,8 +14,8 @@ export const Container = styled.section`
 `;
 
 export const Heading = styled.h3`
-  font-weight: 800;
-  font-size: ${({ theme }) => theme.fonts.at(-2)}px;
+  font-weight: ${({ theme }) => theme.fontWeights[4]};
+  font-size: ${({ theme }) => theme.fonts.at(-3)}px;
   line-height: ${({ theme }) => theme.lineHeights.at(-2)}px;
   text-align: center;
   letter-spacing: -0.015em;
@@ -51,7 +51,7 @@ export const InfoDescription = styled.p`
   font-size: ${({ theme }) => theme.fonts[2]}px;
   line-height: ${({ theme }) => theme.lineHeights[2]}px;
   letter-spacing: -0.015em;
-  max-width: ${({ theme }) => theme.sizes.at(-1)}px;
+  max-width: ${({ theme }) => theme.sizes.at(-4)}px;
 
   text-align: justify;
   color: ${({ theme }) => theme.colors.grey};

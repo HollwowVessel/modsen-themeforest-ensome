@@ -12,6 +12,7 @@ import { SolutionsItemPage } from '@/pages/SolutionsItem';
 
 import { ServicesItemPage } from '@/pages/ServicesItem';
 import { TestimonialsItemPage } from '@/pages/TestimonialsItem';
+import { NotFoundPage } from '@/pages/NotFound';
 
 export const routes = [
   { path: '/', element: <HomePage /> },
@@ -26,4 +27,5 @@ export const routes = [
   { path: '/blog/:index', element: <BlogItemPage /> },
   { path: '/services/:index', element: <ServicesItemPage /> },
   { path: '/testimonials/:index', element: <TestimonialsItemPage /> },
+  { path: '*', element: <NotFoundPage /> },
 ];

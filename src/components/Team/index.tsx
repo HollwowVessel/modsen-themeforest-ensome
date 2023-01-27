@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { useInfinityScrollItems } from '../../hooks/useInifityScrollItems';
+import { useInfinityScrollItems } from '@/hooks/useInifityScrollItems';
 import { TeamCard } from '@/ui/Cards/TeamCard';
 import { Cards, Container } from './styled';
 

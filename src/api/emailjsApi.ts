@@ -1,15 +1,6 @@
 import emailjs from '@emailjs/browser';
 import { Dispatch, SetStateAction } from 'react';
 
-const sendEmailParams = {
-  to_name: 'Hollow',
-  to_email: process.env.REACT_APP_EMAILJS_EMAIL as string,
-  from_name: 'User',
-  from_email: 'User@gmail.com',
-  subject: 'Help me!',
-  message: 'Just help me!',
-};
-
 const subscribeParams = (email: string) => ({
   to_name: email,
   to_email: email,
@@ -34,28 +25,10 @@ const sendMessageParams = (
   message,
 });
 
-export const sendEmail = (
-  setLoading: Dispatch<SetStateAction<boolean>>,
-  setResponse: Dispatch<SetStateAction<string>>
+export const subscribeToNewsLetter = (
+  email: string,
+  setError: Dispatch<SetStateAction<string>>
 ) => {
-  setLoading(true);
-  emailjs
-    .send(
-      process.env.REACT_APP_EMAILJS_SERVICE as string,
-      process.env.REACT_APP_EMAILJS_TEMPLATE as string,
-      sendEmailParams,
-      process.env.REACT_APP_EMAILJS_CLIENTID as string
-    )
-    .then(() => {
-      setResponse('Successfully!');
-    })
-    .catch(() => {
-      setResponse('Error :(');
-    })
-    .finally(() => setLoading(false));
-};
-
-export const subscribeToNewsLetter = (email: string) => {
   emailjs
     .send(
       process.env.REACT_APP_EMAILJS_SERVICE as string,
@@ -63,11 +36,9 @@ export const subscribeToNewsLetter = (email: string) => {
       subscribeParams(email),
       process.env.REACT_APP_EMAILJS_CLIENTID as string
     )
-    .then((response: any) => {
-      console.log('Success!', response.status, response.text);
-    })
-    .catch((err: any) => {
-      console.log('Failed...', err);
+    .then(() => console.log('Everything is good'))
+    .catch(() => {
+      setError('Failed :(((');
     });
 };
 
@@ -75,7 +46,8 @@ export const sendMessage = (
   email: string,
   message: string,
   theme: string,
-  name: string
+  name: string,
+  handleError: Dispatch<SetStateAction<string>>
 ) => {
   emailjs
     .send(
@@ -84,10 +56,7 @@ export const sendMessage = (
       sendMessageParams(email, message, theme, name),
       process.env.REACT_APP_EMAILJS_CLIENTID as string
     )
-    .then((response: any) => {
-      console.log('Success!', response.status, response.text);
-    })
-    .catch((err: any) => {
-      console.log('Failed...', err);
+    .catch(() => {
+      handleError('Failed :((');
     });
 };

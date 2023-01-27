@@ -1,5 +1,5 @@
 export const createPaypalOrder =
-  (price: number, type: string) => (data: any, actions: any) =>
+  (price: number, type: string) => (_: any, actions: any) =>
     actions.order
       .create({
         purchase_units: [
@@ -12,7 +12,7 @@ export const createPaypalOrder =
           },
         ],
       })
-      .then((orderID: boolean) => orderID);
+      .then((orderID: string) => orderID);
 
 export const initialOptions = {
   'client-id': process.env.REACT_APP_PAYPAL_ID as string,

@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { ItemProps, MenuProps } from './types';
 
 export const Footer = styled.footer`
   background: ${({ theme }) => theme.colors.secondary};
 
   display: flex;
-  align-items: center;
   flex-direction: column;
   @media (max-width: ${({ theme }) => theme?.breakPoints?.laptop}px) {
     align-items: flex-start;
@@ -16,10 +16,15 @@ export const Footer = styled.footer`
 
 export const Container = styled.div`
   display: flex;
-  gap: ${({ theme }) => theme.gaps.at(6)}px;
+  margin: 0 auto;
+
+  justify-content: space-between;
   border-bottom: 1px solid ${({ theme }) => theme.colors.helperBlueOne};
+  min-width: ${({ theme }) => theme.sizes.at(-1)}px;
   padding: ${({ theme }) => theme.paddings[5]}px 0;
   @media (max-width: ${({ theme }) => theme?.breakPoints?.laptop}px) {
+    max-width: ${({ theme }) => theme.sizes.at(-1)}px;
+
     gap: 0;
     flex-direction: column;
     border: none;
@@ -28,7 +33,7 @@ export const Container = styled.div`
 
 export const Info = styled.div`
   max-width: ${({ theme }) => theme.sizes[8]}px;
-  max-height: 183px;
+  max-height: ${({ theme }) => theme.sizes[7]}px;
   @media (max-width: ${({ theme }) => theme?.breakPoints?.laptop}px) {
     padding: ${({ theme }) => theme.paddings[4]}px 0 0 0;
     border-top: 1px solid ${({ theme }) => theme.colors.helperBlueOne};
@@ -38,7 +43,7 @@ export const Info = styled.div`
 
 export const Logo = styled.img`
   width: ${({ theme }) => theme.sizes[7]}px;
-  height: 46px;
+  height: ${({ theme }) => theme.sizes[2]}px;
   margin: 0 0 ${({ theme }) => theme.spaces[2]}px 0;
   @media (max-width: ${({ theme }) => theme?.breakPoints?.laptop}px) {
     margin: 0 0 ${({ theme }) => theme.spaces[1]}px 0;
@@ -89,7 +94,7 @@ export const Menus = styled.div`
   }
 `;
 
-export const Menu = styled.ul<{ icon: string }>`
+export const Menu = styled.ul<MenuProps>`
   list-style-type: none;
   min-width: ${({ theme }) => theme.sizes[3]}px;
   position: relative;
@@ -125,14 +130,20 @@ export const MenuHeading = styled.h4`
   margin: 0 0 ${({ theme }) => theme.spaces[2]}px 0;
 `;
 
-export const Item = styled.li<{ display: string }>`
+export const Item = styled.li<ItemProps>`
   font-weight: ${({ theme }) => theme.fontWeights[0]};
+  max-width: ${({ theme }) => theme.sizes[8]}px;
 
   font-size: ${({ theme }) => theme.fonts[0]}px;
   line-height: ${({ theme }) => theme.lineHeights[0]}px;
   letter-spacing: -0.015em;
   color: ${({ theme }) => theme.colors.grey};
   margin: 0 0 ${({ theme }) => theme.spaces[1]}px 0;
+  transition: 0.5s;
+
+  &:hover {
+    font-size: ${({ theme }) => theme.fonts[1]}px;
+  }
 
   @media (max-width: ${({ theme }) => theme?.breakPoints?.laptop}px) {
     max-width: ${({ theme }) => theme.sizes[5]}%;
@@ -144,9 +155,14 @@ export const Item = styled.li<{ display: string }>`
 
 export const CopyRight = styled.div`
   display: flex;
-  justify-content: space-around;
-  max-width: ${({ theme }) => theme.sizes[5]}%;
+  justify-content: space-between;
+  margin: 0 auto;
+  min-width: ${({ theme }) => theme.sizes.at(-1)}px;
   padding: ${({ theme }) => theme.paddings[4]}px 0;
+  @media (max-width: ${({ theme }) => theme?.breakPoints?.laptop}px) {
+    max-width: ${({ theme }) => theme.sizes.at(-1)}px;
+    padding: ${({ theme }) => theme.paddings[2]}px 0;
+  }
 `;
 
 export const Ensome = styled.p`
@@ -189,6 +205,12 @@ export const LinkItem = styled(Link)`
   margin: 0 0 ${({ theme }) => theme.spaces[1]}px 0;
 
   text-decoration: none;
+
+  transition: 0.5s;
+
+  &:hover {
+    font-size: ${({ theme }) => theme.fonts[1]}px;
+  }
 
   @media (max-width: ${({ theme }) => theme?.breakPoints?.laptop}px) {
     max-width: ${({ theme }) => theme.sizes[5]}%;

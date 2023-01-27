@@ -1,5 +1,9 @@
+import { servicesItems } from '@/constants/servicesCard';
+import { solutionsItems } from '@/constants/solutions';
+import { SpecialCard } from '@/ui/Cards/SpecialCard';
+
 export interface ItemContainerProps {
   index: string;
-  unfilteredItems: any[];
-  RenderCard: any;
+  unfilteredItems: typeof servicesItems | typeof solutionsItems;
+  RenderCard: typeof SpecialCard;
 }

@@ -11,7 +11,7 @@ export const Cards = styled.div`
   justify-items: center;
 
   gap: ${({ theme }) => theme.gaps[1]}px;
-  max-width: 1120px;
+  max-width: ${({ theme }) => theme.sizes.at(-1)}px;
 `;
 
 export const Card = styled.div`
@@ -21,13 +21,13 @@ export const Card = styled.div`
 `;
 export const Image = styled.img`
   margin: 0 0 ${({ theme }) => theme.margins[3]}px 0;
-  width: 300px;
+  width: ${({ theme }) => theme.sizes.at(-7)}px;
 `;
 
 export const Heading = styled.h3`
-  font-weight: 700;
+  font-weight: ${({ theme }) => theme.fontWeights[3]};
   font-size: ${({ theme }) => theme.fonts.at(-1)}px;
-  line-height: 33px;
+  line-height: ${({ theme }) => theme.lineHeights[2]}px;
 
   letter-spacing: -0.015em;
   color: ${({ theme }) => theme.colors.black};
@@ -35,11 +35,11 @@ export const Heading = styled.h3`
 `;
 
 export const Description = styled.p`
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 28px;
+  font-weight: ${({ theme }) => theme.fontWeights[0]};
+  font-size: ${({ theme }) => theme.fonts[1]}px;
+  line-height: ${({ theme }) => theme.lineHeights[1]}px;
   letter-spacing: -0.015em;
   color: ${({ theme }) => theme.colors.grey};
   margin: 0 0 ${({ theme }) => theme.margins[2]}px 0;
-  max-width: 540px;
+  max-width: ${({ theme }) => theme.sizes.at(-4)}px;
 `;

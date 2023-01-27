@@ -1,9 +1,6 @@
 /* eslint-disable react/jsx-no-bind */
-import React, { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 
-import { BlogArticleI } from 'types/blogTypes';
-import { FillButton } from '@/ui/Buttons/FillButton';
-import { Email } from '@/ui/Inputs/styled';
 import {
   Categories,
   Category,
@@ -24,6 +21,7 @@ import { tags as allTags, categories } from '@/constants/blogSidebar';
 import { blogArticles } from '@/constants/blogArticle';
 import { SidebarProps } from './types';
 import { searchHelper } from '@/utils/searchHelper';
+import { InputWithButton } from '@/ui/Inputs/InputWithButton';
 
 export const Sidebar = ({ handleCards }: SidebarProps) => {
   const [activeTag, setActiveTag] = useState(0);
@@ -56,14 +54,13 @@ export const Sidebar = ({ handleCards }: SidebarProps) => {
 
   return (
     <Container>
-      <Search>
-        <Email
-          placeholder="Search"
-          onChange={(e) => searchHandler(e)}
-          value={search}
-        />
-        <FillButton text="Search" onClick={handleClick} />
-      </Search>
+      <InputWithButton
+        placeholder="Search"
+        onChange={searchHandler}
+        value={search}
+        buttonText="Search"
+        onClick={handleClick}
+      />
 
       <Heading>Popular posts</Heading>
       <Posts>
@@ -72,7 +69,7 @@ export const Sidebar = ({ handleCards }: SidebarProps) => {
           .slice(0, 4)
           .map(({ info, heading, icon }, id) => (
             <Post key={id}>
-              <Image src={icon} />
+              <Image src={icon} loading="lazy" />
               <PostDescription>
                 <Date>{info}</Date>
                 <Title>{heading}</Title>

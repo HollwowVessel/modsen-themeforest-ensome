@@ -1,13 +1,16 @@
 import styled from 'styled-components';
+import { CardProps } from './types';
 
-export const Card = styled.div``;
+export const Card = styled.div<CardProps>`
+  animation: ${({ animation }) => animation} 0.5s;
+`;
 
 export const Image = styled.img`
-  max-width: ${({ theme }) => theme.sizes.at(-3)}px;
+  max-width: ${({ theme }) => theme.sizes.at(-6)}px;
   margin: 0 0 ${({ theme }) => theme.spaces[1]}px 0;
 
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
-    min-width: ${({ theme }) => theme.sizes.at(-3)}px;
+    min-width: ${({ theme }) => theme.sizes.at(-6)}px;
   }
 `;
 
@@ -29,7 +32,7 @@ export const Name = styled.h4`
   letter-spacing: -0.015em;
   color: ${({ theme }) => theme.colors.black};
   margin: 0 0 ${({ theme }) => theme.spaces[1]}px 0;
-  max-width: ${({ theme }) => theme.sizes.at(-3)}px;
+  max-width: ${({ theme }) => theme.sizes.at(-6)}px;
 `;
 
 export const Description = styled.p`
@@ -40,6 +43,6 @@ export const Description = styled.p`
   letter-spacing: -0.015em;
   color: ${({ theme }) => theme.colors.grey};
   margin: 0 0 ${({ theme }) => theme.spaces[1]}px 0;
-  max-width: ${({ theme }) => theme.sizes.at(-3)}px;
+  max-width: ${({ theme }) => theme.sizes.at(-6)}px;
   text-align: justify;
 `;
