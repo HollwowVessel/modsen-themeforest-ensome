@@ -1,6 +1,6 @@
 import { memo } from 'react';
-import Who from '@/assets/images/who.jpg';
 import Mission from '@/assets/images/mission.jpg';
+import Who from '@/assets/images/who.jpg';
 import {
   Container,
   Description,

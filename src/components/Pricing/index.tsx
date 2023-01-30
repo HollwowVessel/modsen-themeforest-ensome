@@ -7,8 +7,8 @@ export const Pricing = memo(() => (
   <Container>
     <Heading>Our pricing</Heading>
     <Cards>
-      {pricingCards.map(({ type, price, options }, id) => (
-        <PricingCard price={price} options={options} type={type} key={id} />
+      {pricingCards.map(({ type, price, options }) => (
+        <PricingCard price={price} options={options} type={type} key={type} />
       ))}
     </Cards>
   </Container>

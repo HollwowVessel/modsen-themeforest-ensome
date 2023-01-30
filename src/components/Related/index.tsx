@@ -23,8 +23,8 @@ export const Related = memo(({ tag }: RelatedProps) => (
           tag !== -1 ? tags.indexOf(tag as string) !== -1 : null
         )
         .sort((a, b) => b.views - a.views)
-        .map(({ info, heading, icon }, id) => (
-          <Post key={id}>
+        .map(({ info, heading, icon }) => (
+          <Post key={heading}>
             <Image src={icon} loading="lazy" />
             <PostDescription>
               <Date>{info}</Date>

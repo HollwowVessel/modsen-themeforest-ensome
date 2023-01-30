@@ -116,7 +116,7 @@ export const ContactsDescription = () => {
       </Links>
       <Interaction>
         <Heading>
-          How can we <Blue> help you</Blue>?
+          How can we <Blue> help you?</Blue>
         </Heading>
         <Form>
           <BasicInfo>
@@ -152,7 +152,7 @@ export const ContactsDescription = () => {
       </Interaction>
       <ContactInfo>
         {contacts.map(({ icon, heading, description }, id) => (
-          <Contact key={id}>
+          <Contact key={icon}>
             <ContactHeading icon={icon}>{heading}</ContactHeading>
             <ContactDescription>{description}</ContactDescription>
           </Contact>

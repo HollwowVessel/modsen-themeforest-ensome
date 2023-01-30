@@ -6,8 +6,8 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  padding: ${({ theme }) => theme.paddings[4]}px 0;
+  max-width: ${({ theme }) => theme.sizes.at(-1)}px;
+  margin: 0 auto;
 `;
 
 export const List = styled.ul`

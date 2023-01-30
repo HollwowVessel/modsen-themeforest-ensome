@@ -14,7 +14,7 @@ export const WithIcon = styled.button<WithIconProps>`
   cursor: pointer;
   border: none;
   outline: none;
-
+  width: ${({ theme }) => theme.sizes[10]}px;
   color: ${({ theme }) => theme.colors.white};
 
   transition: 0.5s;

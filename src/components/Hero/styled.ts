@@ -19,6 +19,7 @@ export const Info = styled.div`
     flex-direction: column;
     gap: ${({ theme }) => theme.gaps[2]}px;
     text-align: center;
+    padding: 0 ${({ theme }) => theme.paddings[2]}px;
   }
 `;
 

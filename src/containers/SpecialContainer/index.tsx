@@ -12,7 +12,7 @@ export const SpecialContainer = memo(
             description={description}
             heading={heading}
             img={img}
-            key={id}
+            key={img}
             link={link + id}
           />
         ))}

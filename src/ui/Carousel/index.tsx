@@ -52,7 +52,7 @@ export const Carousel = ({ heading, Card, cards, type }: CarouselProps) => {
             onClick={handleLeft}
           />
           <RightControlButton
-            disabled={sliderItems === blogArticles.length - 3}
+            disabled={sliderItems === cards.length - 1}
             onClick={handleRight}
           />
         </Buttons>

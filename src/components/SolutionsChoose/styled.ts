@@ -7,9 +7,15 @@ export const Container = styled.div`
   background: ${({ theme }) => theme.colors.background};
   gap: ${({ theme }) => theme.gaps[4]}px;
   margin: 0 0 ${({ theme }) => theme.margins[7]}px 0;
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    padding: 0 ${({ theme }) => theme.paddings[2]}px;
+    flex-direction: column;
+  }
 `;
 
-export const Image = styled.img``;
+export const Image = styled.img`
+  max-width: ${({ theme }) => theme.sizes[5]}%;
+`;
 
 export const Info = styled.div``;
 
@@ -52,4 +58,7 @@ export const ItemDescription = styled.p`
   line-height: ${({ theme }) => theme.lineHeights[1]}px;
   letter-spacing: -0.015em;
   color: ${({ theme }) => theme.colors.grey};
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    font-size: ${({ theme }) => theme.fonts[0]}px;
+  }
 `;

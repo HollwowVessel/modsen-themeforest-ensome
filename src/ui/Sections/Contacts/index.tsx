@@ -121,8 +121,8 @@ export const ContactsSection = () => {
             suscipit laboriosam, nisi ut aliquid ex ea commodi.
           </Description>
           <ContactList>
-            {contacts.map(({ heading, description }, id) => (
-              <Contact key={id}>
+            {contacts.map(({ heading, description }) => (
+              <Contact key={heading}>
                 <ContactHeading>{heading}</ContactHeading>
                 <ContactDescription>{description}</ContactDescription>
               </Contact>

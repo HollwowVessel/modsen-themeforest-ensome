@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { MouseEvent, useMemo, useState } from 'react';
 import { PayPalButtons } from '@paypal/react-paypal-js';
 import { createPortal } from 'react-dom';
 import { createPaypalOrder } from '@/api/paypalApi';
@@ -40,19 +40,23 @@ export const PricingCard = ({ type, price, options }: PricingCardProps) => {
     setShowPopup((prev) => !prev);
   };
 
+  const handleCardClick = (e: MouseEvent<HTMLDivElement>) => {
+    e.preventDefault();
+  };
+
   if (showPopup) {
     return createPortal(
-      <Container onClick={() => setShowPopup((prev) => !prev)}>
+      <Container onClick={handlePopup}>
         <GreyFill />
-        <Card onClick={(e) => e.stopPropagation()}>
+        <Card onClick={handleCardClick}>
           <Heading>{type}</Heading>
           <Info>
             <Price>${money}</Price>
           </Info>
           <PayPalButtons createOrder={createPaypalOrder(money, type)} />
           <List>
-            {options.map((el, id) => (
-              <Advantages key={id}>{el}</Advantages>
+            {options.map((el) => (
+              <Advantages key={el}>{el}</Advantages>
             ))}
           </List>
         </Card>
@@ -74,8 +78,7 @@ export const PricingCard = ({ type, price, options }: PricingCardProps) => {
               }
               color={id === active ? theme.colors.white : theme.colors.primary}
               onClick={handleActive(id)}
-              key={id}
-            >
+              key={el}>
               {el}
             </TimeType>
           ))}
@@ -83,8 +86,8 @@ export const PricingCard = ({ type, price, options }: PricingCardProps) => {
       </Info>
       <FillButton text="Choose plan" onClick={handlePopup} />
       <List>
-        {options.map((el, id) => (
-          <Advantages key={id}>{el}</Advantages>
+        {options.map((el) => (
+          <Advantages key={el}>{el}</Advantages>
         ))}
       </List>
     </Card>

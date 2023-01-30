@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
-import YouTube, { YouTubeEvent } from 'react-youtube';
+import YouTube from 'react-youtube';
 import { Link, useLocation } from 'react-router-dom';
 import { menuItems } from '@/constants/navigation';
-import { FillButton } from '@/ui/Buttons/FillButton';
 import blueLogo from '@/assets/images/logo_blue.svg';
 import playButton from '@/assets/images/icons/buttons/play.svg';
 
 import {
   Container,
+  FillContainer,
   HamburgerContainer,
   Logo,
   MenuItem,
@@ -22,18 +22,19 @@ import {
 import { WithIconButton } from '@/ui/Buttons/WithIconButton';
 import { GreyFill } from '@/components/PricingCard/styled';
 import { youtubeOptions } from '@/api/youtubeApi';
+import { ArrowLink } from '@/ui/Links/ArrowLink';
 
 export const Navigation = () => {
   const [open, setOpen] = useState(true);
-  const { pathname } = useLocation();
+  const [openPage, setOpenPage] = useState(false);
   const [showVideo, setVideo] = useState(false);
+  const { pathname } = useLocation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   const handleMenu = () => {
-    document.body.style.overflow = !open ? 'initial' : 'hidden';
     setOpen((prev) => !prev);
   };
 
@@ -41,18 +42,29 @@ export const Navigation = () => {
     setVideo((prev) => !prev);
   };
 
+  const handlePages = () => {
+    setOpenPage((prev) => !prev);
+  };
+
   const Links = menuItems.map(({ name, path, components }, id) => {
     if (components.length) {
       return (
-        <MenuItem key={id} data-test-id={id}>
+        <MenuItem
+          key={name}
+          data-test-id={id}
+          onClick={handlePages}
+          disabled={openPage}>
           Pages
-          <PagesContainer data-text-id="pages">
-            {components.map((el, id) => (
-              <Link to={`/${el}`} key={id} data-test-id={`/${el}`}>
-                {el}
-              </Link>
-            ))}
-          </PagesContainer>
+          {openPage && (
+            <>
+              <FillContainer />
+              <PagesContainer data-text-id="pages">
+                {components.map((el) => (
+                  <ArrowLink to={`/${el}`} key={el} text={el} />
+                ))}
+              </PagesContainer>
+            </>
+          )}
         </MenuItem>
       );
     }
@@ -69,7 +81,7 @@ export const Navigation = () => {
   return (
     <Container>
       <Nav>
-        <HamburgerContainer open={open}>
+        <HamburgerContainer>
           <Link to="/">
             <Logo src={blueLogo} loading="lazy" />
           </Link>

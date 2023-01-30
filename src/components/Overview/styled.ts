@@ -21,17 +21,25 @@ export const Heading = styled.h3`
   letter-spacing: -0.015em;
   color: ${({ theme }) => theme.colors.black};
   margin: 0 0 ${({ theme }) => theme.spaces[4]}px 0;
+
+  @media (max-width: ${({ theme }) => theme.breakPoints.laptop}px) {
+    width: ${({ theme }) => theme.sizes[5]}%;
+  }
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
     font-size: ${({ theme }) => theme.fonts[4]}px;
     line-height: ${({ theme }) => theme.lineHeights[3]}px;
     padding: 0 ${({ theme }) => theme.spaces[1]}px;
+    text-align: center;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakPoints.mobile}px) {
     text-align: left;
   }
 `;
 
 export const Info = styled.div`
   display: flex;
-  align-items: flex-end;
+  align-items: center;
 
   margin: 0 0 ${({ theme }) => theme.spaces[4]}px 0;
   @media (max-width: ${({ theme }) => theme.breakPoints.laptop}px) {

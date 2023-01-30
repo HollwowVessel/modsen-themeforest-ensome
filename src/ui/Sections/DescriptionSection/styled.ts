@@ -5,11 +5,19 @@ export const Container = styled.div`
   margin: ${({ theme }) => theme.margins[2]}px auto
     ${({ theme }) => theme.margins[7]}px auto;
   max-width: ${({ theme }) => theme.sizes.at(-1)}px;
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    padding: 0 ${({ theme }) => theme.paddings[2]}px;
+    margin: ${({ theme }) => theme.margins[2]}px auto
+      ${({ theme }) => theme.margins[3]}px auto;
+  }
 `;
 
 export const Links = styled.div`
   display: flex;
   margin: 0 0 ${({ theme }) => theme.margins[5]}px 0;
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    margin: 0 0 ${({ theme }) => theme.margins[3]}px 0;
+  }
 `;
 
 export const Home = styled(Link)`
@@ -58,6 +66,10 @@ export const Heading = styled.h1`
   letter-spacing: -0.015em;
   color: ${({ theme }) => theme.colors.black};
   margin: 0 0 ${({ theme }) => theme.margins[1]}px 0;
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    line-height: ${({ theme }) => theme.lineHeights[2]}px;
+    font-size: ${({ theme }) => theme.fonts[4]}px;
+  }
 `;
 
 export const Description = styled.p`
@@ -68,4 +80,8 @@ export const Description = styled.p`
   letter-spacing: -0.015em;
   color: ${({ theme }) => theme.colors.grey};
   max-width: ${({ theme }) => theme.sizes.at(-4)}px;
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    line-height: ${({ theme }) => theme.lineHeights[2]}px;
+    font-size: ${({ theme }) => theme.fonts[0]}px;
+  }
 `;

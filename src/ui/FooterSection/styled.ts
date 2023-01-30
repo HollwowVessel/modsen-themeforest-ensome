@@ -23,8 +23,10 @@ export const Container = styled.div`
   min-width: ${({ theme }) => theme.sizes.at(-1)}px;
   padding: ${({ theme }) => theme.paddings[5]}px 0;
   @media (max-width: ${({ theme }) => theme?.breakPoints?.laptop}px) {
-    max-width: ${({ theme }) => theme.sizes.at(-1)}px;
+    min-width: auto;
 
+    max-width: ${({ theme }) => theme.sizes.at(5)}%;
+    margin: 0;
     gap: 0;
     flex-direction: column;
     border: none;
@@ -74,10 +76,19 @@ export const SocialContainer = styled.ul`
   }
 `;
 
-export const Social = styled.li``;
+export const Social = styled.li`
+  @media (max-width: ${({ theme }) => theme?.breakPoints?.tablet}px) {
+    width: ${({ theme }) => theme.sizes[0]}px;
+    height: ${({ theme }) => theme.sizes[0]}px;
+  }
+`;
 
 export const Icon = styled.img`
   padding: ${({ theme }) => theme.paddings[4]}px 0 0 0;
+
+  @media (max-width: ${({ theme }) => theme?.breakPoints?.tablet}px) {
+    padding: 0;
+  }
 `;
 
 export const Menus = styled.div`
@@ -103,6 +114,7 @@ export const Menu = styled.ul<MenuProps>`
 
   @media (max-width: ${({ theme }) => theme?.breakPoints?.laptop}px) {
     cursor: pointer;
+    min-width: auto;
 
     padding: ${({ theme }) => theme.paddings[2]}px 0;
     max-width: ${({ theme }) => theme.sizes[5]}%;
@@ -160,8 +172,11 @@ export const CopyRight = styled.div`
   min-width: ${({ theme }) => theme.sizes.at(-1)}px;
   padding: ${({ theme }) => theme.paddings[4]}px 0;
   @media (max-width: ${({ theme }) => theme?.breakPoints?.laptop}px) {
-    max-width: ${({ theme }) => theme.sizes.at(-1)}px;
-    padding: ${({ theme }) => theme.paddings[2]}px 0;
+    min-width: auto;
+    margin: 0;
+    max-width: ${({ theme }) => theme.sizes[5]}%;
+    padding: 0 ${({ theme }) => theme.paddings[2]}px;
+    flex-direction: column-reverse;
   }
 `;
 
@@ -172,6 +187,9 @@ export const Ensome = styled.p`
   line-height: ${({ theme }) => theme.lineHeights[0]}px;
   letter-spacing: -0.015em;
   color: ${({ theme }) => theme.colors.helperBlueOne};
+  @media (max-width: ${({ theme }) => theme?.breakPoints?.laptop}px) {
+    padding: ${({ theme }) => theme.paddings[1]}px 0 0 0;
+  }
 `;
 
 export const Links = styled.div`
@@ -185,6 +203,11 @@ export const Links = styled.div`
 
   letter-spacing: -0.015em;
   color: ${({ theme }) => theme.colors.helperBlueOne};
+
+  @media (max-width: ${({ theme }) => theme?.breakPoints?.laptop}px) {
+    padding: 0 0 ${({ theme }) => theme.paddings[1]}px 0;
+    border-bottom: 1px solid ${({ theme }) => theme.colors.helperBlueThree};
+  }
 `;
 
 export const Policy = styled.span`
@@ -215,5 +238,22 @@ export const LinkItem = styled(Link)`
   @media (max-width: ${({ theme }) => theme?.breakPoints?.laptop}px) {
     max-width: ${({ theme }) => theme.sizes[5]}%;
     padding: ${({ theme }) => theme.paddings[2]}px 0;
+  }
+`;
+
+export const CopyRightSocial = styled.ul`
+  display: none;
+  margin: ${({ theme }) => theme.margins[3]}px 0 0 0;
+  font-weight: ${({ theme }) => theme.fontWeights[3]};
+
+  font-size: ${({ theme }) => theme.fonts[1]}px;
+  line-height: ${({ theme }) => theme.lineHeights[0]}px;
+  letter-spacing: -0.015em;
+  color: ${({ theme }) => theme.colors.white};
+  @media (max-width: ${({ theme }) => theme?.breakPoints?.laptop}px) {
+    display: flex;
+    padding: 0 ${({ theme }) => theme.paddings[2]}px;
+    align-items: center;
+    gap: ${({ theme }) => theme.gaps[1]}px;
   }
 `;

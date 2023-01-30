@@ -10,7 +10,7 @@ export const Arrow = styled(Link)`
   font-weight: ${({ theme }) => theme.fontWeights[2]};
   font-size: ${({ theme }) => theme.fonts[0]}px;
   line-height: ${({ theme }) => theme.lineHeights[0]}px;
-  padding: 0 ${({ theme }) => theme.paddings[1]}px 0 0;
+  padding: 0 ${({ theme }) => theme.paddings[3]}px 0 0;
   position: relative;
   display: flex;
   align-items: center;
@@ -23,10 +23,11 @@ export const Arrow = styled(Link)`
   &::after {
     content: '';
     position: absolute;
-    right: ${({ theme }) => theme.rights[0]};
+    right: -${({ theme }) => theme.rights[2]}px;
     width: ${({ theme }) => theme.sizes[0]}px;
     height: ${({ theme }) => theme.sizes[0]}px;
     background: url(${arrow});
+    background-repeat: no-repeat;
   }
   &:hover,
   &:active,
@@ -35,6 +36,7 @@ export const Arrow = styled(Link)`
 
     &::after {
       background: url(${hoveredArrow});
+      background-repeat: no-repeat;
     }
   }
 
@@ -42,6 +44,7 @@ export const Arrow = styled(Link)`
     color: ${({ theme }) => theme.colors.grey};
     &::after {
       background: url(${disabledArrow});
+      background-repeat: no-repeat;
     }
   }
 `;

@@ -17,7 +17,7 @@ export const FAQ = () => {
     <Container>
       <Questions>
         {FAQItems.map(({ heading, description }, id) => (
-          <Question key={id} onClick={handleActive(id)}>
+          <Question key={heading} onClick={handleActive(id)}>
             <Heading active={active === id}>{heading}</Heading>
             <Description active={active === id}>{description}</Description>
           </Question>

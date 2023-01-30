@@ -23,8 +23,8 @@ export const Customers = memo(() => (
       </InfoDescription>
     </Info>
     <Companies>
-      {logo.map((el, id) => (
-        <CompaniesItem key={id}>
+      {logo.map((el) => (
+        <CompaniesItem key={el}>
           <CompaniesImage src={el} />
         </CompaniesItem>
       ))}

@@ -19,6 +19,7 @@ export const Section = styled.div`
 `;
 
 export const Info = styled.div`
+  width: ${({ theme }) => theme.sizes[5]}%;
   input,
   button {
     display: none;
@@ -48,6 +49,10 @@ export const Subscribe = styled.h3`
   letter-spacing: -0.015em;
   color: ${({ theme }) => theme.colors.white};
   margin: 0 0 ${({ theme }) => theme.spaces[2]}px 0;
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    font-size: ${({ theme }) => theme.fonts.at(-4)}px;
+    line-height: ${({ theme }) => theme.lineHeights.at(-4)}px;
+  }
 `;
 
 export const Description = styled.p`
@@ -69,7 +74,7 @@ export const Interaction = styled.div`
   margin: ${({ theme }) => theme.spaces.at(-2)}px 0;
 
   @media (max-width: ${({ theme }) => theme?.breakPoints?.tablet}px) {
-    margin: 0;
+    display: none;
   }
 `;
 

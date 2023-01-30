@@ -6,6 +6,7 @@ import downArrow from '@/assets/images/icons/dropdownMenu/footerSecond.svg';
 import {
   Container,
   CopyRight,
+  CopyRightSocial,
   Description,
   Ensome,
   Footer,
@@ -57,24 +58,21 @@ export const FooterSection = () => {
         <Menus>
           {footerMenus.map(({ heading, items }, id) => (
             <Menu
-              key={id}
+              key={heading}
               onClick={handleMenu(id)}
-              icon={id === activeMenu ? downArrow : upArrow}
-            >
+              icon={id === activeMenu ? downArrow : upArrow}>
               <MenuHeading>{heading}</MenuHeading>
-              {items.map(({ name, to }, ind) =>
+              {items.map(({ name, to }) =>
                 to ? (
                   <Item
-                    key={ind}
-                    display={activeMenu === id ? 'block' : 'none'}
-                  >
+                    key={name}
+                    display={activeMenu === id ? 'block' : 'none'}>
                     <LinkItem to={to}>{name}</LinkItem>
                   </Item>
                 ) : (
                   <Item
-                    key={ind}
-                    display={activeMenu === id ? 'block' : 'none'}
-                  >
+                    key={name}
+                    display={activeMenu === id ? 'block' : 'none'}>
                     {name}
                   </Item>
                 )
@@ -82,6 +80,16 @@ export const FooterSection = () => {
             </Menu>
           ))}
         </Menus>
+        <CopyRightSocial>
+          Follow us
+          {social.map(({ el, to }) => (
+            <Social key={to}>
+              <a href={to}>
+                <Icon src={el} loading="lazy" />
+              </a>
+            </Social>
+          ))}
+        </CopyRightSocial>
       </Container>
       <CopyRight>
         <Ensome>Ensome© 2022 All Rights Reserved</Ensome>

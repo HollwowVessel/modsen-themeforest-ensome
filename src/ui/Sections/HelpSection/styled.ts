@@ -7,6 +7,10 @@ export const Container = styled.section`
   align-items: center;
   background: ${({ theme }) => theme.colors.background};
   padding: ${({ theme }) => theme.paddings[8]}px 0;
+  @media (max-width: ${({ theme }) => theme?.breakPoints?.laptop}px) {
+    padding: ${({ theme }) => theme.paddings[8]}px
+      ${({ theme }) => theme.paddings[2]}px;
+  }
 `;
 
 export const Heading = styled.h3`
@@ -18,6 +22,9 @@ export const Heading = styled.h3`
   color: ${({ theme }) => theme.colors.black};
   max-width: ${({ theme }) => theme.sizes.at(-4)}px;
   margin: 0 0 ${({ theme }) => theme.spaces[2]}px 0;
+  @media (max-width: ${({ theme }) => theme.breakPoints.mobile}px) {
+    font-size: ${({ theme }) => theme.fonts.at(-4)}px;
+  }
 `;
 
 export const Description = styled.p`
@@ -31,4 +38,7 @@ export const Description = styled.p`
   color: ${({ theme }) => theme.colors.grey};
   max-width: ${({ theme }) => theme.sizes.at(-4)}px;
   margin: 0 0 ${({ theme }) => theme.spaces[2]}px 0;
+  @media (max-width: ${({ theme }) => theme.breakPoints.mobile}px) {
+    font-size: ${({ theme }) => theme.fonts[0]}px;
+  }
 `;
