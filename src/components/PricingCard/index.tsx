@@ -78,7 +78,8 @@ export const PricingCard = ({ type, price, options }: PricingCardProps) => {
               }
               color={id === active ? theme.colors.white : theme.colors.primary}
               onClick={handleActive(id)}
-              key={el}>
+              key={el}
+            >
               {el}
             </TimeType>
           ))}

@@ -19,8 +19,12 @@ export const WithIcon = styled.button<WithIconProps>`
 
   transition: 0.5s;
 
-  &:hover {
+  &:hover:enabled {
     background: ${({ theme }) => theme.colors.helperBlueFour};
+  }
+
+  &:disabled {
+    background: ${({ theme }) => theme.colors.grey};
   }
   &::before {
     content: '';

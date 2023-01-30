@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { ItemProps, MenuProps } from './types';
 
 export const Footer = styled.footer`
-  background: ${({ theme }) => theme.colors.secondary};
+  background: ${({ theme }) => theme.colors?.secondary};
 
   display: flex;
   flex-direction: column;

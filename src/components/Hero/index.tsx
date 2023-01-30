@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { CircleButton } from '@/ui/Buttons/CircleButton';
+import { CircleButton } from '@/ui/Links/CircleButton';
 import hero from '@/assets/images/heroes.png';
 import {
   ButtonContainer,

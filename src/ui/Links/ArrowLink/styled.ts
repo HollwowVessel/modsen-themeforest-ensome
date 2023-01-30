@@ -14,7 +14,7 @@ export const Arrow = styled(Link)`
   position: relative;
   display: flex;
   align-items: center;
-  max-width: ${({ theme }) => theme.sizes[4]}px;
+  max-width: ${({ theme }) => theme.sizes[6]}px;
   max-height: ${({ theme }) => theme.sizes[0]}px;
   text-decoration: none;
   color: ${({ theme }) => theme.colors.primary};

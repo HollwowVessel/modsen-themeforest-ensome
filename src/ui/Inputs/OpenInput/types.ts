@@ -5,8 +5,8 @@ export interface InputProps {
 }
 
 export interface OpenInputProps {
-  value: string;
-  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
-  placeholder: string;
+  value?: string;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+  placeholder?: string;
   error?: boolean;
 }

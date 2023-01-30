@@ -3,3 +3,6 @@ dist
 .idea
 yarn-error.log
 build
+
+# Local Netlify folder
+.netlify

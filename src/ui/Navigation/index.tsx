@@ -53,7 +53,8 @@ export const Navigation = () => {
           key={name}
           data-test-id={id}
           onClick={handlePages}
-          disabled={openPage}>
+          disabled={openPage}
+        >
           Pages
           {openPage && (
             <>

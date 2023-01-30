@@ -80,7 +80,7 @@ export const MenuItem = styled.li<MenuItemProps>`
     &::after {
       content: '';
       position: absolute;
-      top: ${({ theme }) => theme.tops[1]}px;
+      top: ${({ theme }) => theme.tops[2]}px;
       right: -${({ theme }) => theme.rights.at(-1)}px;
       background: url( ${({ disabled }) =>
         !disabled ? pagesIcon : pagesIconUp});

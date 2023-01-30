@@ -60,19 +60,22 @@ export const FooterSection = () => {
             <Menu
               key={heading}
               onClick={handleMenu(id)}
-              icon={id === activeMenu ? downArrow : upArrow}>
+              icon={id === activeMenu ? downArrow : upArrow}
+            >
               <MenuHeading>{heading}</MenuHeading>
               {items.map(({ name, to }) =>
                 to ? (
                   <Item
                     key={name}
-                    display={activeMenu === id ? 'block' : 'none'}>
+                    display={activeMenu === id ? 'block' : 'none'}
+                  >
                     <LinkItem to={to}>{name}</LinkItem>
                   </Item>
                 ) : (
                   <Item
                     key={name}
-                    display={activeMenu === id ? 'block' : 'none'}>
+                    display={activeMenu === id ? 'block' : 'none'}
+                  >
                     {name}
                   </Item>
                 )

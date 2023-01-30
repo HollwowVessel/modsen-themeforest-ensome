@@ -5,7 +5,7 @@ import { LeftControlButton } from '@/ui/Buttons/LeftControlButton';
 import { RightControlButton } from '@/ui/Buttons/RightControlButton';
 
 import { Buttons, Cards, CardsOpen, Container, Heading, Info } from './styled';
-import { blogArticles } from '@/constants/blogArticle';
+
 import { CarouselProps } from './types';
 import { carouselHelper } from '@/utils/carouselHelper';
 import { slideAnimationIn, slideAnimationOut } from '@/theme/animations';

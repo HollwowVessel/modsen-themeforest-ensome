@@ -10,7 +10,7 @@ export default {
   component: Navigation,
 } as ComponentMeta<typeof Navigation>;
 
-export const Example = (
+export const Example = () => (
   <BrowserRouter>
     <ThemeProvider theme={theme}>
       <GlobalStyles />

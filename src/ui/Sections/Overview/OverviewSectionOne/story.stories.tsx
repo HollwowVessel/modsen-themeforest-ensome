@@ -9,7 +9,7 @@ export default {
   component: OverviewSectionOne,
 } as ComponentMeta<typeof OverviewSectionOne>;
 
-export const Example = (
+export const Example = () => (
   <ThemeProvider theme={theme}>
     <GlobalStyles />
     <OverviewSectionOne />
