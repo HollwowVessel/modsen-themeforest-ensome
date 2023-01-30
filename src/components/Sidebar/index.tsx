@@ -68,7 +68,7 @@ export const Sidebar = ({ handleCards }: SidebarProps) => {
           .sort((a, b) => b.views - a.views)
           .slice(0, 4)
           .map(({ info, heading, icon }, id) => (
-            <Post key={id}>
+            <Post key={heading}>
               <Image src={icon} loading="lazy" />
               <PostDescription>
                 <Date>{info}</Date>
@@ -82,7 +82,7 @@ export const Sidebar = ({ handleCards }: SidebarProps) => {
       <Categories>
         {categories.map((el, id) => (
           <Category
-            key={id}
+            key={el}
             onClick={handleCategory(id)}
             active={activeCategory === id}
           >
@@ -93,7 +93,7 @@ export const Sidebar = ({ handleCards }: SidebarProps) => {
       <Heading>Tags</Heading>
       <Tags>
         {allTags.map((el, id) => (
-          <Tag key={id} onClick={handleFilter(id)} active={id === activeTag}>
+          <Tag key={el} onClick={handleFilter(id)} active={id === activeTag}>
             {el}
           </Tag>
         ))}

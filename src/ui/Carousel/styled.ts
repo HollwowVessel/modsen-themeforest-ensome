@@ -4,6 +4,9 @@ import styled, { Keyframes } from 'styled-components';
 export const Container = styled.section`
   margin: 0 auto ${({ theme }) => theme.margins[6]}px auto;
   max-width: ${({ theme }) => theme.sizes.at(-1)}px;
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    padding: 0 ${({ theme }) => theme.paddings[2]}px;
+  }
 `;
 
 export const Info = styled.div`
@@ -21,6 +24,10 @@ export const Heading = styled.h3`
   line-height: ${({ theme }) => theme.lineHeights.at(-2)}px;
   letter-spacing: -0.015em;
   color: ${({ theme }) => theme.colors.black};
+
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    font-size: ${({ theme }) => theme.fonts.at(-5)}px;
+  }
 `;
 
 export const Cards = styled.div`

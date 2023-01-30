@@ -5,5 +5,5 @@ export interface TestimonialsCardProps {
   name: string;
   profession: string;
   description: string;
-  animation: Keyframes;
+  animation?: Keyframes;
 }

@@ -21,7 +21,14 @@ export const HomePage = () => (
     <Hero />
     <Features />
     <Overview />
-    <Benefits />
+    <Benefits
+      heading="The benefits of Ensome"
+      description="Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
+        illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+        explicabo."
+      background
+    />
     <Carousel
       Card={TestimonialsCard}
       cards={cardItems}
@@ -40,3 +47,4 @@ export const HomePage = () => (
     <FooterSection />
   </>
 );
+//

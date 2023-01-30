@@ -32,7 +32,7 @@ export const ItemContainer = ({
             heading={heading}
             img={img}
             link={`/services/${id}`}
-            key={id}
+            key={img}
           />
         ))}
       </Cards>

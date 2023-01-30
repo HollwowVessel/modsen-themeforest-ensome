@@ -7,10 +7,18 @@ export const Card = styled.div`
   &:nth-of-type(3n + 2) {
     transform: translateY(-120px);
   }
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    &:nth-of-type(3n + 2) {
+      transform: none;
+    }
+  }
 `;
 export const Image = styled.img`
   position: absolute;
   z-index: ${({ theme }) => theme.zIndexes[0]};
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    position: initial;
+  }
 `;
 
 export const Name = styled.h3`
@@ -21,6 +29,10 @@ export const Name = styled.h3`
   letter-spacing: -0.015em;
   color: ${({ theme }) => theme.colors.white};
   padding: 0 ${({ theme }) => theme.paddings[3]}px;
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    color: ${({ theme }) => theme.colors.black};
+    margin: 0;
+  }
 `;
 
 export const Profession = styled.p`
@@ -30,6 +42,9 @@ export const Profession = styled.p`
   letter-spacing: -0.015em;
   color: ${({ theme }) => theme.colors.white};
   padding: 0 ${({ theme }) => theme.paddings[3]}px;
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    color: ${({ theme }) => theme.colors.grey};
+  }
 `;
 
 export const Socials = styled.ul`

@@ -3,7 +3,10 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import hamburger from '@/assets/images/icons/general/hamburger.svg';
 import close from '@/assets/images/icons/general/close.svg';
-import { StyledOpenProps } from './types';
+
+import pagesIcon from '@/assets/images/icons/general/pagesIcon.svg';
+import pagesIconUp from '@/assets/images/icons/general/pagesIconUp.svg';
+import { MenuItemProps, StyledOpenProps } from './types';
 
 export const Container = styled.div`
   padding: ${({ theme }) => theme.paddings[4]}px 0;
@@ -17,10 +20,14 @@ export const Nav = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
+  width: ${({ theme }) => theme.sizes.at(-1)}px;
+  margin: 0 auto;
+
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
     justify-content: initial;
+    padding: ${({ theme }) => theme.paddings[2]}px;
     align-items: initial;
-    width: ${({ theme }) => theme.sizes.at(5)}px;
+    width: ${({ theme }) => theme.sizes.at(5)}%;
     button {
       display: none;
     }
@@ -29,7 +36,6 @@ export const Nav = styled.nav`
 
 export const Logo = styled.img`
   z-index: ${({ theme }) => theme.zIndexes[3]};
-  margin: 0 ${({ theme }) => theme.spaces.at(-1)}px 0 0;
 `;
 
 export const NavMenu = styled.ul<StyledOpenProps>`
@@ -39,6 +45,7 @@ export const NavMenu = styled.ul<StyledOpenProps>`
   margin: 0 ${({ theme }) => theme.spaces.at(-2)}px 0 0;
 
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    overflow: auto;
     display: ${({ open }) => (!open ? 'flex' : 'none')};
     flex-direction: column;
     justify-content: center;
@@ -57,16 +64,44 @@ export const NavMenu = styled.ul<StyledOpenProps>`
   }
 `;
 
-export const MenuItem = styled.li`
+export const MenuItem = styled.li<MenuItemProps>`
+  width: ${({ theme }) => theme.sizes[3]}%;
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+      border-bottom: 1px solid ${({ theme }) => theme.colors.grey};
+    }
   &:nth-child(3) {
-    cursor: auto;
+    cursor: pointer;
+    font-weight: ${({ theme }) => theme.fontWeights[1]};
+    font-size: ${({ theme }) => theme.fonts[0]}px;
+    line-height: ${({ theme }) => theme.lineHeights[0]}px;
+    color: #9497a1;
+    cursor: pointer;
     position: relative;
-    &:hover {
-      div {
-        display: block;
-        a {
-          display: block;
-        }
+    &::after {
+      content: '';
+      position: absolute;
+      top: ${({ theme }) => theme.tops[2]}px;
+      right: -${({ theme }) => theme.rights.at(-1)}px;
+      background: url( ${({ disabled }) =>
+        !disabled ? pagesIcon : pagesIconUp});
+      background-repeat: no-repeat;
+      width: ${({ theme }) => theme.sizes[0]}px;
+      height: ${({ theme }) => theme.sizes[0]}px;
+      cursor: pointer;
+    }
+
+    @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+      
+      &::after {
+        content: '';
+        position: absolute;
+        top: ${({ theme }) => theme.tops[1]}px;
+        right: 0;
+        url( ${({ disabled }) => (!disabled ? pagesIcon : pagesIconUp)});
+        background-repeat: no-repeat;
+        width: ${({ theme }) => theme.sizes[0]}px;
+        height: ${({ theme }) => theme.sizes[0]}px;
+        cursor: pointer;
       }
     }
   }
@@ -122,16 +157,16 @@ export const StyledHamburger = styled.div<StyledOpenProps>`
   }
 `;
 
-export const HamburgerContainer = styled.div<StyledOpenProps>`
+export const HamburgerContainer = styled.div`
   z-index: ${({ theme }) => theme.zIndexes[2]};
-
+  width: ${({ theme }) => theme.sizes[5]}%;
   display: flex;
   justify-content: space-between;
 
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
     top: ${({ theme }) => theme.spaces[2]}px;
-    right: ${({ theme }) => theme.spaces[1]}px;
-
+    right: 0;
+    align-items: center;
     width: ${({ theme }) => theme.sizes[5]}%;
   }
 `;
@@ -163,10 +198,24 @@ export const YoutubeContainer = styled.div`
 `;
 
 export const PagesContainer = styled.div`
-  display: none;
   position: absolute;
   top: 0;
   left: 0;
-  padding: ${({ theme }) => theme.paddings[2]}px;
-  background: ${({ theme }) => theme.colors.grey};
+  padding: ${({ theme }) => theme.paddings[1]}px
+    ${({ theme }) => theme.paddings[3]}px;
+  background: ${({ theme }) => theme.colors.white};
+  z-index: ${({ theme }) => theme.zIndexes[4]};
+
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    position: initial;
+  }
+`;
+
+export const FillContainer = styled.div`
+  position: fixed;
+  width: ${({ theme }) => theme.sizes[5]}%;
+  height: ${({ theme }) => theme.sizes[5]}%;
+  background: none;
+  top: 0;
+  right: 0;
 `;

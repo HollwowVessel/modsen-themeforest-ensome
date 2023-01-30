@@ -16,7 +16,6 @@ export const Input = styled.input<InputProps>`
     ${({ theme, error }) => (error ? theme.colors.red : theme.colors.grey)};
   outline: none;
   background: none;
-  margin: 0 0 ${({ theme }) => theme.margins[2]}px 0;
   border-radius: 6px;
   &:hover,
   &:focus,

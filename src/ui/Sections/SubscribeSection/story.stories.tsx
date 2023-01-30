@@ -9,7 +9,7 @@ export default {
   component: SubscribeSection,
 } as ComponentMeta<typeof SubscribeSection>;
 
-export const Example = (
+export const Example = () => (
   <ThemeProvider theme={theme}>
     <GlobalStyles />
     <SubscribeSection />

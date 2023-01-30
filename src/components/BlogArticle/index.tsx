@@ -77,16 +77,16 @@ export const BlogArticle = ({
         <Views>{views} Views</Views>
         <Share>
           Share:
-          {blogSocials.map((el, id) => (
+          {blogSocials.map((el) => (
             <ShareItem>
-              <Social src={el} alt={el} title={el} key={id} />
+              <Social src={el} alt={el} title={el} key={el} />
             </ShareItem>
           ))}
         </Share>
         <Tags>
           Tags:
           {tags?.map((el, id) => (
-            <Tag key={id} onClick={handleActive(id)} active={active === id}>
+            <Tag key={el} onClick={handleActive(id)} active={active === id}>
               {el}
             </Tag>
           ))}

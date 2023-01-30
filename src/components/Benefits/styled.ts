@@ -1,15 +1,20 @@
 import styled from 'styled-components';
+import { ContainerProps } from './types';
 
-export const Container = styled.section`
+export const Container = styled.section<ContainerProps>`
   display: flex;
   gap: ${({ theme }) => theme.gaps[4]}px;
-  background: ${({ theme }) => theme.colors.background};
+  background: ${({ theme, background }) =>
+    background ? theme.colors.background : theme.colors.white};
   padding: ${({ theme }) => theme.paddings[8]}px 0;
   justify-content: center;
   align-items: center;
   margin: 0 0 ${({ theme }) => theme.margins[7]}px 0;
   @media (max-width: ${({ theme }) => theme.breakPoints.laptop}px) {
     flex-direction: column;
+  }
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    padding: 0 ${({ theme }) => theme.paddings[2]}px;
   }
 `;
 
@@ -31,7 +36,7 @@ export const Heading = styled.h3`
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
     font-size: ${({ theme }) => theme.fonts[4]}px;
     line-height: ${({ theme }) => theme.lineHeights[3]}px;
-    text-align: left;
+    text-align: center;
   }
 `;
 
@@ -41,6 +46,9 @@ export const Description = styled.p`
   line-height: ${({ theme }) => theme.lineHeights[2]}px;
   letter-spacing: -0.015em;
   color: ${({ theme }) => theme.colors.grey};
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    text-align: center;
+  }
 `;
 
 export const Cards = styled.div`
@@ -53,5 +61,8 @@ export const Cards = styled.div`
   @media (max-width: ${({ theme }) => theme.breakPoints.laptop}px) {
     flex-wrap: nowrap;
     overflow: auto;
+  }
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    max-width: ${({ theme }) => theme.sizes[3]}%;
   }
 `;

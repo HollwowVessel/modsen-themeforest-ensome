@@ -3,6 +3,9 @@ import styled from 'styled-components';
 export const Container = styled.section`
   margin: 0 auto ${({ theme }) => theme.spaces.at(-2)}px auto;
   max-width: ${({ theme }) => theme.sizes.at(-1)}px;
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    padding: 0 ${({ theme }) => theme.paddings[2]}px;
+  }
 `;
 
 export const Heading = styled.h3`

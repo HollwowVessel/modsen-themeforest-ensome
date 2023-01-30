@@ -5,6 +5,9 @@ export const Container = styled.section`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    padding: 0 ${({ theme }) => theme.paddings[2]}px;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -13,6 +16,9 @@ export const Wrapper = styled.div`
   gap: ${({ theme }) => theme.gaps[3]}px;
 
   margin: 0 0 ${({ theme }) => theme.margins[7]}px 0;
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    display: column;
+  }
 `;
 
 export const Image = styled.img``;

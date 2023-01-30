@@ -2,11 +2,12 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   max-width: ${({ theme }) => theme.sizes[5]}%;
+  margin: 0 auto;
 `;
 
 export const List = styled.ul`
   display: flex;
-  margin: 0 ${({ theme }) => theme.spaces[2]}px 0 0;
+  justify-content: center;
   gap: ${({ theme }) => theme.gaps[2]}px;
 `;
 
@@ -21,6 +22,7 @@ export const Number = styled.h4`
   padding: 0;
   @media (max-width: ${({ theme }) => theme.breakPoints.mobile}px) {
     font-size: ${({ theme }) => theme.fonts[4]}px;
+    line-height: ${({ theme }) => theme.lineHeights[3]}px;
   }
 `;
 

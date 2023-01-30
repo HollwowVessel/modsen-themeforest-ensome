@@ -18,8 +18,8 @@ export const SolutionsChoose = memo(() => (
     <Info>
       <Heading>Why choose us?</Heading>
       <List>
-        {solutionsAdvantages.map(({ heading, description }, id) => (
-          <Item key={id}>
+        {solutionsAdvantages.map(({ heading, description }) => (
+          <Item key={heading}>
             <ItemName>{heading}</ItemName>
             <ItemDescription>{description}</ItemDescription>
           </Item>

@@ -12,6 +12,9 @@ export const Card = styled.div`
   button {
     width: ${({ theme }) => theme.sizes[5]}%;
   }
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    padding: 0 ${({ theme }) => theme.paddings[2]}px;
+  }
 `;
 
 export const Heading = styled.h4`
@@ -101,9 +104,18 @@ export const Container = styled.div`
     font-size: ${({ theme }) => theme.fonts[2]}px;
   }
   div:nth-child(2) {
-    width: ${({ theme }) => theme.sizes.at(-3)}px;
+    width: ${({ theme }) => theme.sizes[10]}px;
     height: auto;
     z-index: ${({ theme }) => theme.zIndexes[6]};
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakPoints.mobile}px) {
+    div:nth-child(2) {
+      width: ${({ theme }) => theme.sizes[8]}px;
+
+      max-height: ${({ theme }) => theme.sizes[3]}vh;
+      z-index: ${({ theme }) => theme.zIndexes[6]};
+    }
   }
 `;
 

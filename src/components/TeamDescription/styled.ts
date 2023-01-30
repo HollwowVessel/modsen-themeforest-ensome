@@ -4,6 +4,9 @@ import styled from 'styled-components';
 export const Container = styled.div`
   margin: 0 0 ${({ theme }) => theme.margins[8]}px 0;
   background: ${({ theme }) => theme.colors.secondary};
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    padding: 0 ${({ theme }) => theme.paddings[2]}px;
+  }
 `;
 
 export const Links = styled.div`

@@ -32,6 +32,10 @@ export const Input = styled.input<InputProps>`
     letter-spacing: -0.015em;
     color: ${({ theme }) => theme.colors.grey};
   }
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    max-width: ${({ theme }) => theme.sizes[5]}%;
+    margin: 0 0 ${({ theme }) => theme.margins[2]}px 0;
+  }
 `;
 
 export const Send = styled.button`
@@ -50,7 +54,8 @@ export const Send = styled.button`
   right: 0;
   top: 0;
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
-    display: none;
+    position: initial;
+    width: ${({ theme }) => theme.sizes[5]}%;
   }
 `;
 
@@ -58,4 +63,10 @@ export const Interaction = styled.div`
   min-width: ${({ theme }) => theme.sizes.at(-5)}px;
   position: relative;
   border-radius: 6px;
+
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    position: initial;
+    min-width: auto;
+    max-width: ${({ theme }) => theme.sizes[5]}%;
+  }
 `;

@@ -1,9 +1,11 @@
 import { memo } from 'react';
 import { WithIcon } from './styled';
-import { FillProps } from './types';
+import { WithIconButtonProps } from './types';
 
-export const WithIconButton = memo(({ text, icon, handleClick }: FillProps) => (
-  <WithIcon icon={icon} onClick={handleClick}>
-    {text}
-  </WithIcon>
-));
+export const WithIconButton = memo(
+  ({ text, icon, handleClick, disabled = false }: WithIconButtonProps) => (
+    <WithIcon icon={icon} onClick={handleClick} disabled={disabled}>
+      {text}
+    </WithIcon>
+  )
+);

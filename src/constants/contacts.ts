@@ -4,7 +4,7 @@ import address from '@/assets/images/icons/general/address.svg';
 
 export const contacts = [
   { icon: email, heading: 'Email', description: 'ensome@info.co.us' },
-  { icon: phone, heading: 'Phone', description: 'ensome@info.co.us' },
+  { icon: phone, heading: 'Phone', description: '+1 601-201-5580' },
   {
     icon: address,
     heading: 'Address',

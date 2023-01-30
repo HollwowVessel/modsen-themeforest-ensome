@@ -1,6 +1,6 @@
 import { memo } from 'react';
 import { Input, Interaction, Send } from './styled';
-import { OpenInputProps } from './types';
+import { InputWithButtonProps } from './types';
 
 export const InputWithButton = memo(
   ({
@@ -11,7 +11,7 @@ export const InputWithButton = memo(
     onClick,
     buttonText,
     disabled,
-  }: OpenInputProps) => (
+  }: InputWithButtonProps) => (
     <Interaction>
       <Input
         placeholder={placeholder}

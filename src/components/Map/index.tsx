@@ -21,9 +21,9 @@ export const Map = memo(() => (
         url={tileLayerAttributes.url}
         attribution={tileLayerAttributes.attribution}
       />
-      {markers.map(({ position, label }, index) => (
+      {markers.map(({ position, label }) => (
         <Marker
-          key={index}
+          key={label}
           icon={customMarkerIcon}
           position={position as LatLngExpression}
         >

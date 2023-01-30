@@ -14,22 +14,12 @@ import { TestimonialsCardOpen } from '@/ui/Cards/TestimonialsCardOpen';
 import { cardItems } from '@/constants/testimonialCards';
 import { SecondDescriptionSection } from '@/ui/Sections/SecondDescriptionSection';
 import { AboutContainer } from '@/containers/AboutContainer';
+import { AboutDesktopContainer } from '@/containers/AboutDesktopContainer';
+import { AboutMobileContainer } from '@/containers/AboutMobileContainer';
 
 export const AboutPage = () => (
   <>
-    <Navigation />
-    <SecondDescriptionSection heading="About Us" link="about" name="About us" />
-    <About />
-    <AboutContainer />
-    <Customers />
-    <Carousel
-      heading="What our customers say"
-      Card={TestimonialsCardOpen}
-      cards={cardItems}
-      type="open"
-    />
-    <ContactsSection />
-    <SubscribeSection />
-    <FooterSection />
+    <AboutDesktopContainer />
+    <AboutMobileContainer />
   </>
 );

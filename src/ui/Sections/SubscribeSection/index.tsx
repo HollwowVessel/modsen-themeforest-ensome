@@ -38,29 +38,35 @@ export const SubscribeSection = () => {
       <Section>
         <Info>
           <Subscribe>Subscribe to our newsletter</Subscribe>
-          <Interaction>
-            <Email
-              placeholder="Your email"
-              onChange={handleChange}
-              value={email}
-            />
-            <FillButton text="Subscribe" disabled={incorrectEmail} />
-          </Interaction>
+
+          <InputWithButton
+            buttonText="Send"
+            onChange={handleChange}
+            onClick={handleSubscribe}
+            placeholder="Your email"
+            value={email}
+            error={incorrectEmail}
+            disabled={incorrectEmail}
+          />
+          {error}
 
           <Description>
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem
             accusantium doloremque laudantium.
           </Description>
         </Info>
-        <InputWithButton
-          buttonText="Send"
-          onChange={handleChange}
-          onClick={handleSubscribe}
-          placeholder="Your email"
-          value={email}
-          error={incorrectEmail}
-          disabled={incorrectEmail}
-        />
+        <Interaction>
+          <InputWithButton
+            buttonText="Send"
+            onChange={handleChange}
+            onClick={handleSubscribe}
+            placeholder="Your email"
+            value={email}
+            error={incorrectEmail}
+            disabled={incorrectEmail}
+          />
+        </Interaction>
+        {error}
       </Section>
     </Container>
   );

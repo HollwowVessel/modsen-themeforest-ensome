@@ -28,12 +28,14 @@ export const Fill = styled.button`
 
   @media (max-width: ${({ theme }) => theme?.breakPoints?.laptop}px) {
     margin: 0 auto;
-  }
-  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
     width: ${({ theme }) => theme.sizes[5]}%;
   }
 `;
 
 export const LinkContainer = styled(Link)`
   text-decoration: none;
+  @media (max-width: ${({ theme }) => theme?.breakPoints?.laptop}px) {
+    margin: 0 auto;
+    width: ${({ theme }) => theme.sizes[5]}%;
+  }
 `;

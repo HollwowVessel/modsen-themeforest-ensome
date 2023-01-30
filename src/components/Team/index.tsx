@@ -9,13 +9,13 @@ export const Team = memo(() => {
   return (
     <Container>
       <Cards>
-        {items?.map(({ name, profession, photo, social }, id) => (
+        {items?.map(({ name, profession, photo, social }) => (
           <TeamCard
             image={photo}
             name={name}
             profession={profession}
             social={social}
-            key={id}
+            key={name}
           />
         ))}
       </Cards>

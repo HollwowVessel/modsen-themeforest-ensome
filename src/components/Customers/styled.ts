@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.section`
-  margin: 0 0 ${({ theme }) => theme.spaces[5]}px 0;
-  padding: 0 0 0 ${({ theme }) => theme.paddings[9]}px;
+  margin: 0 auto ${({ theme }) => theme.spaces[5]}px auto;
+  max-width: ${({ theme }) => theme.sizes.at(-1)}px;
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
     display: initial;
     padding: 0 ${({ theme }) => theme.paddings[2]}px;

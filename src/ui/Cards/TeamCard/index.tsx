@@ -24,8 +24,8 @@ export const TeamCard = memo(
         <Name>{name}</Name>
         <Profession>{profession}</Profession>
         <Socials>
-          {socialItems.map(({ link, icon }, id) => (
-            <SocialLink key={id} href={link}>
+          {socialItems.map(({ link, icon }) => (
+            <SocialLink key={link} href={link}>
               <Social>
                 <Icon src={icon} loading="lazy" />
               </Social>

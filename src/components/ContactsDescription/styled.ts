@@ -6,6 +6,9 @@ export const Container = styled.section`
   margin: ${({ theme }) => theme.margins[2]}px auto
     ${({ theme }) => theme.margins[7]}px auto;
   max-width: ${({ theme }) => theme.sizes.at(-1)}px;
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    padding: 0 ${({ theme }) => theme.paddings[2]}px;
+  }
 `;
 
 export const Links = styled.div`
@@ -40,21 +43,36 @@ export const Interaction = styled.div`
 
   align-items: baseline;
   gap: ${({ theme }) => theme.gaps[3]}px;
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0 ${({ theme }) => theme.margins[5]}px 0;
+  }
 `;
 
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    width: ${({ theme }) => theme.sizes[5]}%;
+  }
 `;
 
 export const Heading = styled.h1`
   font-weight: ${({ theme }) => theme.fontWeights[4]};
-  font-size: 80px;
+  font-size: ${({ theme }) => theme.fonts.at(-1)}px;
   line-height: ${({ theme }) => theme.lineHeights[5]}%;
   letter-spacing: -0.015em;
   color: ${({ theme }) => theme.colors.black};
   max-width: ${({ theme }) => theme.sizes.at(-4)}px;
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: ${({ theme }) => theme.sizes.at(-4)}px;
+    font-size: ${({ theme }) => theme.fonts.at(-4)}px;
+    margin: 0 auto;
+  }
 `;
 
 export const Blue = styled.span`
@@ -66,6 +84,9 @@ export const BasicInfo = styled.div`
   gap: ${({ theme }) => theme.gaps[3]}px;
   margin: 0 0 ${({ theme }) => theme.margins[2]}px 0;
   width: ${({ theme }) => theme.sizes[5]}%;
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    flex-direction: column;
+  }
 `;
 
 export const Email = styled.input`
@@ -92,7 +113,7 @@ export const Message = styled.textarea`
   margin: ${({ theme }) => theme.margins[2]}px 0 0 0;
   padding: ${({ theme }) => theme.paddings[2]}px
     ${({ theme }) => theme.paddings[3]}px;
-  width: ${({ theme }) => theme.sizes.at(-4)}px;
+  width: ${({ theme }) => theme.sizes[5]}%;
   height: ${({ theme }) => theme.sizes[7]}px;
   resize: none;
   margin: ${({ theme }) => theme.margins[2]}px 0
@@ -120,7 +141,11 @@ export const Message = styled.textarea`
 
 export const ContactInfo = styled.ul`
   display: flex;
-  gap: 47px;
+  gap: ${({ theme }) => theme.gaps[4]}px;
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 export const Contact = styled.li``;

@@ -14,14 +14,15 @@ export const BlogContainer = () => {
   return (
     <Container>
       <Cards>
-        {cards.map(({ icon, info, text, heading }, id) => (
+        {cards.map(({ icon, info, text, heading, tags }, id) => (
           <BlogCard
             heading={heading}
             id={id}
             image={icon}
             text={text}
-            key={id}
+            key={icon}
             date={info}
+            tags={tags}
           />
         ))}
       </Cards>
