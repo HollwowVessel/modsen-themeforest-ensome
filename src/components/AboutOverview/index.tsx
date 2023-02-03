@@ -1,4 +1,3 @@
-import React from 'react';
 import { OverviewSectionFour } from '@/ui/Sections/Overview/OverviewSectionFour';
 import { Description, Heading, Overview } from './styled';
 

@@ -2,7 +2,6 @@ import { useMemo } from 'react';
 
 import { Card, Cards, Description, Heading, Image } from './styled';
 import { ItemContainerProps } from './types';
-import { servicesItems } from '@/constants/servicesCard';
 
 export const ItemContainer = ({
   index,

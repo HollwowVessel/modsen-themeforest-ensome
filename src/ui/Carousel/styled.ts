@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import styled, { Keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 export const Container = styled.section`
   margin: 0 auto ${({ theme }) => theme.margins[6]}px auto;

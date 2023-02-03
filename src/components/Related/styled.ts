@@ -15,6 +15,9 @@ export const Post = styled.div`
   align-items: flex-start;
   gap: ${({ theme }) => theme.gaps[2]}px;
   margin: 0 0 ${({ theme }) => theme.margins[3]}px 0;
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    flex-direction: column;
+  }
 `;
 
 export const PostDescription = styled.div``;

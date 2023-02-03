@@ -7,6 +7,7 @@ import { initialOptions } from './api/paypalApi';
 import { App } from './App';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { theme } from './theme/theme';
+import { GlobalStyles } from './theme/GlobalStyles';
 
 const root = createRoot(document.getElementById('root') as HTMLDivElement);
 
@@ -16,6 +17,7 @@ root.render(
       <PayPalScriptProvider options={initialOptions}>
         <ThemeProvider theme={theme}>
           <ErrorBoundary>
+            <GlobalStyles />
             <App />
           </ErrorBoundary>
         </ThemeProvider>

@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '@/theme/theme';

@@ -13,7 +13,7 @@ export const Benefits = memo(
         <Description>{description}</Description>
       </Info>
       <Cards>
-        {cardItems.map(({ icon, heading, description }: CardItem, id) => (
+        {cardItems.map(({ icon, heading, description }: CardItem) => (
           <BenefitsCard
             icon={icon}
             heading={heading}

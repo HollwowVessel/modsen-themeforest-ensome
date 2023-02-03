@@ -1,4 +1,4 @@
-import { memo, useState } from 'react';
+import { useState } from 'react';
 
 import { Keyframes } from 'styled-components';
 import { Card, Date, Description, Image, Name, Tag, Tags } from './styled';

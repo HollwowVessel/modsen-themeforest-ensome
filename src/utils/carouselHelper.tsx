@@ -1,23 +1,25 @@
 import { Keyframes } from 'styled-components';
-import { CardProps } from '@/types/cardTypes';
 
 import { ItemLink } from '@/ui/Carousel/styled';
-import { BlogArticleI } from '@/types/blogTypes';
 import { cardItems } from '@/constants/testimonialCards';
 import { blogArticles } from '@/constants/blogArticle';
+import { TestimonialsCard } from '@/ui/Cards/TestimonialsCard';
+import { TestimonialsCardOpen } from '@/ui/Cards/TestimonialsCardOpen';
+import { BlogCard } from '@/ui/Cards/BlogCard';
 
 export const carouselHelper = (
-  Card: any,
+  Card: typeof TestimonialsCard | typeof TestimonialsCardOpen | typeof BlogCard,
   cards: typeof blogArticles | typeof cardItems,
   type: string,
   sliderItems: number,
   animation: Keyframes
 ) => {
   if (type === 'blog') {
+    const RenderCard = Card as typeof BlogCard;
     return (cards as typeof blogArticles)
       .slice(sliderItems, sliderItems + 3)
       ?.map(({ icon, info, heading, text, tags }, id) => (
-        <Card
+        <RenderCard
           date={info}
           heading={heading}
           text={text}
@@ -30,10 +32,12 @@ export const carouselHelper = (
       ));
   }
   if (type === 'close') {
+    const RenderCard = Card as typeof TestimonialsCard;
+
     return cards
       .slice(sliderItems, sliderItems + 3)
       .map(({ icon, info, heading, text }, id) => (
-        <Card
+        <RenderCard
           description={text}
           icon={icon}
           name={heading}
@@ -44,11 +48,13 @@ export const carouselHelper = (
       ));
   }
   if (type === 'open') {
+    const RenderCard = Card as typeof TestimonialsCardOpen;
+
     return cards
       .slice(sliderItems, sliderItems + 2)
       .map(({ icon, info, heading, text }, id) => (
         <ItemLink to={`/testimonials/${id}`}>
-          <Card
+          <RenderCard
             description={text}
             icon={icon}
             name={heading}

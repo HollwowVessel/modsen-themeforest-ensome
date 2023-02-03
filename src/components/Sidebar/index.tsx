@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-no-bind */
 import { ChangeEvent, useState } from 'react';
 
 import {
@@ -11,7 +10,6 @@ import {
   Post,
   PostDescription,
   Posts,
-  Search,
   Tag,
   Tags,
   Title,

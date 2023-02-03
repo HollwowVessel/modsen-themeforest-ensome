@@ -1,3 +1,4 @@
+import { Keyframes } from 'styled-components';
 import { Card, Description, Image, Info, Name, Profession } from './styled';
 import { TestimonialsCardProps } from './types';
 
@@ -8,7 +9,7 @@ export const TestimonialsCard = ({
   description,
   animation,
 }: TestimonialsCardProps) => (
-  <Card animation={animation}>
+  <Card animation={animation as Keyframes}>
     <Image src={icon} alt={icon} title={icon} loading="lazy" />
     <Info>
       <Name>{name}</Name>

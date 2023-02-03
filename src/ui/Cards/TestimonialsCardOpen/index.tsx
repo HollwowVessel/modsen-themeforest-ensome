@@ -1,4 +1,3 @@
-import { memo } from 'react';
 import { Card, Description, Image, Info, Name, Profession } from './styled';
 import { TestimonialsCardProps } from './types';
 

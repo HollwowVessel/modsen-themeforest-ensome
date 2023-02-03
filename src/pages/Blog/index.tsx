@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import { Navigation } from '@/ui/Navigation';
 import { SubscribeSection } from '@/ui/Sections/SubscribeSection';
 

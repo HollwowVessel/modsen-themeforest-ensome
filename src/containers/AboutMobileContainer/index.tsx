@@ -1,6 +1,6 @@
 import { Navigation } from '@/ui/Navigation';
 import { DescriptionSection } from '@/ui/Sections/DescriptionSection';
-import { OverviewSectionFour } from '@/ui/Sections/Overview/OverviewSectionFour';
+
 import { Benefits } from '@/components/Benefits';
 import { Carousel } from '@/ui/Carousel';
 import { TestimonialsCard } from '@/ui/Cards/TestimonialsCard';

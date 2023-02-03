@@ -36,7 +36,6 @@ export const subscribeToNewsLetter = (
       subscribeParams(email),
       process.env.REACT_APP_EMAILJS_CLIENTID as string
     )
-    .then(() => console.log('Everything is good'))
     .catch(() => {
       setError('Failed :(((');
     });

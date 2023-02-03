@@ -3,14 +3,11 @@ import { ChangeEvent, useState } from 'react';
 import {
   Container,
   Description,
-  Email,
   Info,
   Interaction,
   Section,
-  Send,
   Subscribe,
 } from './styled';
-import { FillButton } from '@/ui/Buttons/FillButton';
 import { subscribeToNewsLetter } from '@/api/emailjsApi';
 import { validateEmail } from '@/utils/validateEmail';
 import { InputWithButton } from '@/ui/Inputs/InputWithButton';
