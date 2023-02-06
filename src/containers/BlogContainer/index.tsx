@@ -20,7 +20,7 @@ export const BlogContainer = () => {
             id={id}
             image={icon}
             text={text}
-            key={icon}
+            key={id}
             date={info}
             tags={tags}
           />

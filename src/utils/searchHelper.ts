@@ -6,7 +6,7 @@ export const searchHelper = (
   activeTag: number,
   search: string,
   handleCards?: (items: BlogArticleI[]) => void,
-  id?: number
+  id?: number,
 ) => {
   const items = [];
   if (typeof id === 'number') {
@@ -27,9 +27,10 @@ export const searchHelper = (
 
   if (handleCards) {
     handleCards(
-      items.filter(({ heading }) =>
-        heading.toLowerCase().includes(search.toLowerCase())
-      )
+      items.filter(
+        ({ heading }) =>
+          heading.toLowerCase().indexOf(search.toLowerCase()) !== -1,
+      ),
     );
   }
 };

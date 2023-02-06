@@ -7,13 +7,18 @@ import { TestimonialsCard } from '@/ui/Cards/TestimonialsCard';
 import { TestimonialsCardOpen } from '@/ui/Cards/TestimonialsCardOpen';
 import { BlogCard } from '@/ui/Cards/BlogCard';
 
-export const carouselHelper = (
-  Card: typeof TestimonialsCard | typeof TestimonialsCardOpen | typeof BlogCard,
+export function carouselHelper<
+  T extends
+    | typeof TestimonialsCard
+    | typeof TestimonialsCardOpen
+    | typeof BlogCard
+>(
+  Card: T,
   cards: typeof blogArticles | typeof cardItems,
   type: string,
   sliderItems: number,
   animation: Keyframes
-) => {
+) {
   if (type === 'blog') {
     const RenderCard = Card as typeof BlogCard;
     return (cards as typeof blogArticles)
@@ -65,4 +70,4 @@ export const carouselHelper = (
         </ItemLink>
       ));
   }
-};
+}

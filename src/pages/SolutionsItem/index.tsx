@@ -32,5 +32,3 @@ export const SolutionsItemPage = () => {
     </>
   );
 };
-
-// TODO remove
