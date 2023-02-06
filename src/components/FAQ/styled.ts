@@ -13,13 +13,13 @@ export const Container = styled.section`
   }
 `;
 
-export const Questions = styled.ul`
+export const Questions = styled.section`
   width: ${({ theme }) => theme.sizes.at(-1)}px;
   display: flex;
   flex-direction: column;
 `;
 
-export const Question = styled.li`
+export const Question = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.grey};
   border-radius: 6px;
   padding: ${({ theme }) => theme.paddings[5]}px;

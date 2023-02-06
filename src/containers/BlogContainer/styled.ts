@@ -6,7 +6,7 @@ export const Container = styled.section`
   justify-content: center;
   align-items: flex-start;
   margin: 0 0 ${({ theme }) => theme.margins[7]}px 0;
-
+  gap: ${({ theme }) => theme.gaps[2]}px;
   @media (max-width: ${({ theme }) => theme.breakPoints.laptop}px) {
     aside {
       display: none;

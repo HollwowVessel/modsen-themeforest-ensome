@@ -40,6 +40,7 @@ export const Heading = styled.h3`
 export const Info = styled.div`
   display: flex;
   align-items: center;
+  gap: ${({ theme }) => theme.gaps[2]}px;
 
   margin: 0 0 ${({ theme }) => theme.spaces[4]}px 0;
   @media (max-width: ${({ theme }) => theme.breakPoints.laptop}px) {

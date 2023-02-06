@@ -58,7 +58,7 @@ export const Description = styled.p`
   }
 `;
 
-export const Tags = styled.ul`
+export const Tags = styled.div`
   position: relative;
   padding: 0 0 0 ${({ theme }) => theme.paddings[3]}px;
   font-weight: ${({ theme }) => theme.fontWeights[0]};
@@ -76,7 +76,7 @@ export const Tags = styled.ul`
   color: ${({ theme }) => theme.colors.grey};
 `;
 
-export const Tag = styled.li<TagProps>`
+export const Tag = styled.button<TagProps>`
   font-weight: ${({ theme }) => theme.fontWeights[4]};
   font-size: ${({ theme }) => theme.fonts[0]}px;
   line-height: ${({ theme }) => theme.lineHeights[0]}px;
