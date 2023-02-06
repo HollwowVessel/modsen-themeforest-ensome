@@ -1,4 +1,4 @@
-import { ChangeEvent, MouseEvent, useEffect, useState } from 'react';
+import { ChangeEvent, MouseEvent, useState } from 'react';
 import { contacts } from '@/constants/contacts';
 import {
   Contact,
@@ -20,6 +20,7 @@ import { sendMessage } from '@/api/emailjsApi';
 import { contactSchema } from '@/api/yupSchema';
 import { validateEmail } from '@/utils/validateEmail';
 import { OpenInput } from '@/ui/Inputs/OpenInput';
+import { useCheckForm } from '@/hooks/useCheckForm';
 
 export const ContactsSection = () => {
   const [email, setEmail] = useState('');
@@ -89,21 +90,7 @@ export const ContactsSection = () => {
     }
   };
 
-  useEffect(() => {
-    const checkValues = async () => {
-      try {
-        await contactSchema.validate(
-          { email, name, theme, message },
-          { abortEarly: false }
-        );
-
-        await setIsValid(true);
-      } catch {
-        setIsValid(false);
-      }
-    };
-    checkValues();
-  }, [email, name, theme, message]);
+  useCheckForm(email, name, theme, message, setIsValid);
 
   return (
     <Container>
