@@ -12,6 +12,13 @@ export const Cards = styled.div`
 
   gap: ${({ theme }) => theme.gaps[1]}px;
   max-width: ${({ theme }) => theme.sizes.at(-1)}px;
+
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: ${({ theme }) => theme.breakPoints.mobile}px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 export const Card = styled.div`

@@ -7,3 +7,7 @@ export interface TestimonialsCardProps {
   description: string;
   animation?: Keyframes;
 }
+
+export interface CardProps {
+  animation: Keyframes;
+}

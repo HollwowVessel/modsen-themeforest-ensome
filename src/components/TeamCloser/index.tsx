@@ -1,4 +1,3 @@
-import React from 'react';
 import { Container, Description, Heading, Image, Text } from './styled';
 import Team from '@/assets/images/teamImage.png';
 

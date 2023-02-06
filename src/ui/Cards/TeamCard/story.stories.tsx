@@ -1,11 +1,9 @@
-import { useState } from 'react';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ComponentMeta } from '@storybook/react';
 import { ThemeProvider } from 'styled-components';
 import { BrowserRouter } from 'react-router-dom';
 import { TeamCard } from './index';
-import { TeamCardProps } from './types';
+
 import { theme } from '@/theme/theme';
-import { blogArticles } from '@/constants/blogArticle';
 import { useInfinityScrollItems } from '@/hooks/useInifityScrollItems';
 
 export default {

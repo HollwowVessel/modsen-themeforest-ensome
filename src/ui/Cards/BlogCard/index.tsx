@@ -1,4 +1,4 @@
-import { memo, useState } from 'react';
+import { useState } from 'react';
 
 import { Keyframes } from 'styled-components';
 import { Card, Date, Description, Image, Name, Tag, Tags } from './styled';
@@ -21,14 +21,14 @@ export const BlogCard = ({
 
   return (
     <Card animation={animation as Keyframes}>
-      <Image src={image} alt="" loading="lazy" />
+      <Image src={image} alt={image} loading="lazy" />
       <Date>{date}</Date>
       <Name>{heading}</Name>
       <Description>{text}</Description>
       <Tags>
         Tags:
         {tags?.map((el, ind) => (
-          <Tag key={el} onClick={handleActive(ind)} active={activeTag === ind}>
+          <Tag key={ind} onClick={handleActive(ind)} active={activeTag === ind}>
             {el}
           </Tag>
         ))}

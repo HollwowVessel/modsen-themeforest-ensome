@@ -11,13 +11,14 @@ export const Container = styled.section`
   margin: 0 0 ${({ theme }) => theme.margins[5]}px 0;
 
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    max-width: ${({ theme }) => theme.sizes[5]}%;
     padding: 0 ${({ theme }) => theme.paddings[2]}px;
   }
 `;
 
 export const Image = styled.img`
   margin: 0 0 ${({ theme }) => theme.margins[2]}px 0;
-  width: ${({ theme }) => theme.sizes.at(-3)}px;
+  width: ${({ theme }) => theme.sizes[5]}%;
 `;
 
 export const GeneralInfo = styled.div`

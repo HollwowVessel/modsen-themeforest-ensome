@@ -1,6 +1,7 @@
-import styled, { Keyframes } from 'styled-components';
+import styled from 'styled-components';
+import { CardProps } from './types';
 
-export const Card = styled.div<{ animation: Keyframes }>`
+export const Card = styled.div<CardProps>`
   box-shadow: 0px 4px 12px rgba(12, 68, 204, 0.1);
   max-width: ${({ theme }) => theme.sizes[9]}px;
 

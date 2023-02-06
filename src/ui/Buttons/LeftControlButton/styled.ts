@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-// eslint-disable-next-line import/no-useless-path-segments
+
 import arrowEnabled from '@/assets/images/icons/buttons/leftArrow.svg';
 import arrowDisabled from '@/assets/images/icons/buttons/leftArrowDisabled.svg';
 import { LeftControlProps } from './types';

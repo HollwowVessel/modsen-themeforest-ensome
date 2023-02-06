@@ -9,7 +9,6 @@ import {
   ContactInfo,
   Contacts,
   Container,
-  Email,
   Form,
   Heading,
   Home,
@@ -76,7 +75,6 @@ export const ContactsDescription = () => {
     }
     if (checked) {
       sendMessage(email, message, theme, name, setError);
-      console.log(1);
       setEmail('');
       setName('');
       setTheme('');
@@ -151,7 +149,7 @@ export const ContactsDescription = () => {
         </Form>
       </Interaction>
       <ContactInfo>
-        {contacts.map(({ icon, heading, description }, id) => (
+        {contacts.map(({ icon, heading, description }) => (
           <Contact key={icon}>
             <ContactHeading icon={icon}>{heading}</ContactHeading>
             <ContactDescription>{description}</ContactDescription>

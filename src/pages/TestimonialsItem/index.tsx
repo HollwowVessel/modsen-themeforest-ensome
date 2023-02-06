@@ -31,5 +31,3 @@ export const TestimonialsItemPage = () => {
     </>
   );
 };
-
-// TODO remove

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Navigation } from '@/ui/Navigation';
 import { DescriptionSection } from '@/ui/Sections/DescriptionSection';
 import { Team } from '@/components/Team';

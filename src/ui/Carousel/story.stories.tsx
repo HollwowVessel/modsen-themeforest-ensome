@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeProvider } from 'styled-components';
 import { BrowserRouter } from 'react-router-dom';
@@ -15,8 +14,6 @@ export default {
   title: 'Section/Carousel',
   component: Carousel,
 } as ComponentMeta<typeof Carousel>;
-
-const props = blogArticles[0];
 
 const Template: ComponentStory<typeof Carousel> = ({
   heading,

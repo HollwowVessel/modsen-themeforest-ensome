@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 import minus from '@/assets/images/icons/dropdownMenu/minus.svg';
 import plus from '@/assets/images/icons/dropdownMenu/plus.svg';
 import { ActiveProps } from './types';
@@ -8,6 +7,7 @@ export const Container = styled.aside`
   max-width: ${({ theme }) => theme.sizes.at(-5)}px;
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
     padding: 0 ${({ theme }) => theme.paddings[2]}px;
+    display: none;
   }
 `;
 

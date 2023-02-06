@@ -9,7 +9,6 @@ import {
   Description,
   Heading,
   Info,
-  Input,
   Interaction,
   InteractionBlock,
   InteractionDescription,
@@ -17,7 +16,6 @@ import {
   Section,
 } from './styled';
 import { FillButton } from '@/ui/Buttons/FillButton';
-import { contactInfo } from '@/constants/contactInfo';
 import { sendMessage } from '@/api/emailjsApi';
 import { contactSchema } from '@/api/yupSchema';
 import { validateEmail } from '@/utils/validateEmail';
@@ -76,7 +74,6 @@ export const ContactsSection = () => {
     }
     if (checked) {
       sendMessage(email, message, theme, name, setError);
-      console.log(1);
       setEmail('');
       setName('');
       setTheme('');

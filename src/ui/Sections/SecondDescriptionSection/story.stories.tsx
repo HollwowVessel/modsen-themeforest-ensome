@@ -14,12 +14,7 @@ export const Example = () => (
   <BrowserRouter>
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <SecondDescriptionSection
-        description="Test"
-        heading="Test"
-        link="Test"
-        name="Test"
-      />
+      <SecondDescriptionSection heading="Test" link="Test" name="Test" />
     </ThemeProvider>
   </BrowserRouter>
 );

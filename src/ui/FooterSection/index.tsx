@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { footerMenus, social } from '@/constants/footer';
 import logo from '@/assets/images/logo.svg';
 import upArrow from '@/assets/images/icons/dropdownMenu/footer.svg';
@@ -87,9 +88,9 @@ export const FooterSection = () => {
           Follow us
           {social.map(({ el, to }) => (
             <Social key={to}>
-              <a href={to}>
+              <Link to={to}>
                 <Icon src={el} loading="lazy" />
-              </a>
+              </Link>
             </Social>
           ))}
         </CopyRightSocial>

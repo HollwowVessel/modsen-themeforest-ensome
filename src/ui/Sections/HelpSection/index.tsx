@@ -1,4 +1,4 @@
-import { memo, useState } from 'react';
+import { memo } from 'react';
 import { Container, Description, Heading } from './styled';
 import { FillButtonLink } from '@/ui/Links/FillButtonLink';
 

@@ -1,6 +1,5 @@
 import { memo } from 'react';
 import { logo } from '@/constants/logo';
-import { OverviewSectionFour } from '@/ui/Sections/Overview/OverviewSectionFour';
 
 import {
   Companies,

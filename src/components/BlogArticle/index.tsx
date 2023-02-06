@@ -38,7 +38,7 @@ export const BlogArticle = ({
 
   return (
     <Container>
-      <Image src={image} loading="lazy" />
+      <Image src={image} alt={image} loading="lazy" />
       <GeneralInfo>
         <Date>{date}</Date>
         <Author>William Pond</Author>

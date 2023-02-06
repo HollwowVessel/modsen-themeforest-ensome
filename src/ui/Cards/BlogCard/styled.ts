@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import tags from '@/assets/images/icons/blog/tags.svg';
 import { CardProps, TagProps } from './types';
 
 export const Card = styled.div<CardProps>`

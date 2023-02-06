@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-no-bind */
 import { ChangeEvent, useState } from 'react';
 
 import {
@@ -11,7 +10,6 @@ import {
   Post,
   PostDescription,
   Posts,
-  Search,
   Tag,
   Tags,
   Title,
@@ -68,7 +66,7 @@ export const Sidebar = ({ handleCards }: SidebarProps) => {
           .sort((a, b) => b.views - a.views)
           .slice(0, 4)
           .map(({ info, heading, icon }, id) => (
-            <Post key={heading}>
+            <Post key={id}>
               <Image src={icon} loading="lazy" />
               <PostDescription>
                 <Date>{info}</Date>
