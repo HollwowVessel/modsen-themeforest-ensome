@@ -1,5 +1,3 @@
-SOLID реализовать все принципы
-
 # Modsen-themeforest-ensome
 
 ## Description
