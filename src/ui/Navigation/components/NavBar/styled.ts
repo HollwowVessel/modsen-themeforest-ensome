@@ -165,13 +165,16 @@ export const HamburgerContainer = styled.div`
 
 export const PagesContainer = styled.div`
   position: absolute;
-  top: 0;
+  top: ${({ theme }) => theme.tops[3]}px;
   left: 0;
   padding: ${({ theme }) => theme.paddings[1]}px
     ${({ theme }) => theme.paddings[3]}px;
   background: ${({ theme }) => theme.colors.white};
   z-index: ${({ theme }) => theme.zIndexes[4]};
+  filter: drop-shadow(0px 2px 6px ${({ theme }) => theme.colors.grey})
+    drop-shadow(0px 1px 2px ${({ theme }) => theme.colors.grey});
 
+  border-radius: 6px;
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
     position: initial;
   }

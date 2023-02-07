@@ -26,8 +26,8 @@ export const navigationHelper = (
             <>
               <FillContainer />
               <PagesContainer data-text-id="pages">
-                {components.map((el) => (
-                  <ArrowLink to={`/${el}`} key={el} text={el} />
+                {components.map(({ name, path }) => (
+                  <ArrowLink to={`/${path}`} key={name} text={name} />
                 ))}
               </PagesContainer>
             </>

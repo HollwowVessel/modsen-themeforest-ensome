@@ -3,7 +3,11 @@ export const menuItems = [
   { name: 'Solutions', path: '/solutions', components: [] },
   {
     name: 'Pages',
-    components: ['FAQ', 'services', 'about'],
+    components: [
+      { name: 'FAQ', path: 'FAQ' },
+      { name: 'Services', path: 'services' },
+      { name: 'About', path: 'about' },
+    ],
     path: undefined,
   },
   { name: 'Elements', path: '/elements', components: [] },
