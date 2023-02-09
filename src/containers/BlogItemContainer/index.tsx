@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { BlogArticle } from '@/components/BlogArticle';
 
 import { Sidebar } from '@/components/Sidebar';
@@ -9,12 +10,18 @@ import { BlogItemContainerProps } from './types';
 export const BlogItemContainer = ({ index }: BlogItemContainerProps) => {
   const { heading, text, icon, info, tags, views } =
     blogArticles[+(index as string)];
+  const [cards, setCards] = useState(blogArticles);
+
+  const handleCards = (items: typeof cards) => {
+    setCards(items);
+  };
+
   return (
     <>
       <SecondDescriptionSection
-        heading={text}
+        heading={heading}
         link={`blog/${index}`}
-        name={text}
+        name={heading}
       />
       <Container>
         <BlogArticle
@@ -24,8 +31,9 @@ export const BlogItemContainer = ({ index }: BlogItemContainerProps) => {
           date={info}
           tags={tags}
           views={views}
+          cards={cards}
         />
-        <Sidebar />
+        <Sidebar handleCards={handleCards} />
       </Container>
     </>
   );

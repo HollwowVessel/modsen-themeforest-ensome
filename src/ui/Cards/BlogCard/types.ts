@@ -6,7 +6,6 @@ export interface BlogCardProps {
   text: string;
   heading: string;
   id: number;
-  tags: string[];
   animation?: Keyframes;
 }
 

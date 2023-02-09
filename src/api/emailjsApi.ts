@@ -45,17 +45,12 @@ export const sendMessage = (
   email: string,
   message: string,
   theme: string,
-  name: string,
-  handleError: Dispatch<SetStateAction<string>>
+  name: string
 ) => {
-  emailjs
-    .send(
-      process.env.REACT_APP_EMAILJS_SERVICE as string,
-      process.env.REACT_APP_EMAILJS_TEMPLATE as string,
-      sendMessageParams(email, message, theme, name),
-      process.env.REACT_APP_EMAILJS_CLIENTID as string
-    )
-    .catch(() => {
-      handleError('Failed :((');
-    });
+  emailjs.send(
+    process.env.REACT_APP_EMAILJS_SERVICE as string,
+    process.env.REACT_APP_EMAILJS_TEMPLATE as string,
+    sendMessageParams(email, message, theme, name),
+    process.env.REACT_APP_EMAILJS_CLIENTID as string
+  );
 };

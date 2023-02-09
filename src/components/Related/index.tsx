@@ -11,20 +11,17 @@ import {
   Text,
   Title,
 } from './styled';
-import { blogArticles } from '@/constants/blogArticle';
 import { RelatedProps } from './types';
 
-export const Related = memo(({ tag }: RelatedProps) => (
+export const Related = memo(({ cards }: RelatedProps) => (
   <Container>
     <Heading>Related Post</Heading>
     <Posts>
-      {blogArticles
-        .filter(({ tags }) =>
-          tag !== -1 ? tags.indexOf(tag as string) !== -1 : null
-        )
-        .sort((a, b) => b.views - a.views)
-        .map(({ info, heading, icon }) => (
-          <Post key={heading}>
+      {cards
+        ?.sort((a, b) => b.views - a.views)
+        ?.slice(0, 4)
+        ?.map(({ info, heading, icon }, id) => (
+          <Post key={id}>
             <Image src={icon} loading="lazy" />
             <PostDescription>
               <Date>{info}</Date>

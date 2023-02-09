@@ -9,4 +9,5 @@ export interface CloseInputProps {
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
   error?: boolean;
+  name?: string;
 }

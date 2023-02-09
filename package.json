@@ -4,8 +4,6 @@
   "description": "",
   "main": "src/index.tsx",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "webpack serve --mode development",
     "build": "webpack --mode production",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
@@ -13,7 +11,8 @@
     "test": "",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "deploy": "yarn build && npx netlify deploy --prod"
   },
   "keywords": [],
   "author": "Hollow Vessel",
@@ -76,6 +75,7 @@
     "@types/react-dom": "^18.0.10",
     "@types/styled-components": "^5.1.26",
     "email-js": "^2.0.2",
+    "formik": "^2.2.9",
     "husky": "^8.0.3",
     "i18n": "^0.15.1",
     "i18next": "^22.4.9",

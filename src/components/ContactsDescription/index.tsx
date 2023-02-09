@@ -1,5 +1,6 @@
-import { ChangeEvent, MouseEvent, useState } from 'react';
+import { Formik } from 'formik';
 import { FillButton } from '@/ui/Buttons/FillButton';
+
 import {
   BasicInfo,
   Blue,
@@ -19,79 +20,22 @@ import {
 import { contacts } from '@/constants/contacts';
 import { sendMessage } from '@/api/emailjsApi';
 import { CloseInput } from '@/ui/Inputs/CloseInput';
-import { validateEmail } from '@/utils/validateEmail';
+
 import { contactSchema } from '@/api/yupSchema';
-import { useCheckForm } from '@/hooks/useCheckForm';
+import { initialValue } from '@/api/formikApi';
 
 export const ContactsDescription = () => {
-  const [email, setEmail] = useState('');
-  const [name, setName] = useState('');
-  const [theme, setTheme] = useState('');
-  const [message, setMessage] = useState('');
-  const [error, setError] = useState('');
-  const [incorrectEmail, setIncorrectEmail] = useState(true);
-  const [touched, setTouched] = useState({
-    email: false,
-    name: false,
-    theme: false,
-    message: false,
-  });
-  const [isValid, setIsValid] = useState(false);
-
-  const handleEmail = (e: ChangeEvent<HTMLInputElement>) => {
-    const email = e.target.value;
-    try {
-      setIncorrectEmail(validateEmail(email));
-      setTouched({ ...touched, email: true });
-    } catch (err) {
-      setTouched({ ...touched, email: true });
-    }
-    setEmail(email);
+  const handleSubmit = (
+    { email, message, theme, name }: typeof initialValue,
+    {
+      setSubmitting,
+      resetForm,
+    }: { setSubmitting: (arg: boolean) => void; resetForm: () => void }
+  ) => {
+    sendMessage(email, message, theme, name);
+    setSubmitting(false);
+    resetForm();
   };
-  const handleName = (e: ChangeEvent<HTMLInputElement>) => {
-    setName(e.target.value);
-    setTouched({ ...touched, name: true });
-  };
-  const handleTheme = (e: ChangeEvent<HTMLInputElement>) => {
-    setTheme(e.target.value);
-    setTouched({ ...touched, theme: true });
-  };
-  const handleMessage = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    setMessage(e.target.value);
-    setTouched({ ...touched, message: true });
-  };
-
-  const handleClick = async (e: MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    let checked;
-    try {
-      await contactSchema.validate(
-        { email, name, theme, message },
-        { abortEarly: false }
-      );
-      checked = true;
-      setIsValid(true);
-    } catch (error) {
-      setError('Failed :(');
-    }
-    if (checked) {
-      sendMessage(email, message, theme, name, setError);
-      setEmail('');
-      setName('');
-      setTheme('');
-      setMessage('');
-      setTouched({
-        email: false,
-        name: false,
-        theme: false,
-        message: false,
-      });
-      setIsValid(false);
-      setError('');
-    }
-  };
-
-  useCheckForm(email, name, theme, message, setIsValid);
 
   return (
     <Container>
@@ -103,37 +47,63 @@ export const ContactsDescription = () => {
         <Heading>
           How can we <Blue> help you?</Blue>
         </Heading>
-        <Form>
-          <BasicInfo>
-            <CloseInput
-              error={incorrectEmail && touched.email}
-              placeholder="Your email"
-              onChange={handleEmail}
-              value={email}
-            />
-            <CloseInput
-              placeholder="Your name"
-              onChange={handleName}
-              value={name}
-            />
-          </BasicInfo>
-          <CloseInput
-            placeholder="Your theme"
-            onChange={handleTheme}
-            value={theme}
-          />
-          <Message
-            placeholder="Your message"
-            onChange={handleMessage}
-            value={message}
-          />
-          <FillButton
-            text="Send"
-            onClick={handleClick}
-            disabled={!isValid || !Object.values(touched).every((val) => val)}
-          />
-          {error}
-        </Form>
+        <Formik
+          initialValues={initialValue}
+          validationSchema={contactSchema}
+          onSubmit={handleSubmit}
+        >
+          {({
+            values,
+            errors,
+            touched,
+            handleChange,
+            handleSubmit,
+            isSubmitting,
+          }) => (
+            <Form onSubmit={handleSubmit}>
+              <BasicInfo>
+                <CloseInput
+                  error={
+                    !!touched.email ||
+                    errors.email === 'email must be a valid email'
+                  }
+                  placeholder="Your email"
+                  onChange={handleChange}
+                  value={values.email}
+                  name="email"
+                />
+                <CloseInput
+                  placeholder="Your name"
+                  onChange={handleChange}
+                  value={values.name}
+                  name="name"
+                />
+              </BasicInfo>
+              <CloseInput
+                placeholder="Your theme"
+                onChange={handleChange}
+                value={values.theme}
+                name="theme"
+              />
+              <Message
+                placeholder="Your message"
+                onChange={handleChange}
+                value={values.message}
+                name="message"
+              />
+              <FillButton
+                text="Send"
+                disabled={
+                  (isSubmitting ||
+                    errors.email ||
+                    errors.message ||
+                    errors.name ||
+                    errors.theme) as boolean
+                }
+              />
+            </Form>
+          )}
+        </Formik>
       </Interaction>
       <ContactInfo>
         {contacts.map(({ icon, heading, description }) => (

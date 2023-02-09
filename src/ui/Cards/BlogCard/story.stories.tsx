@@ -18,7 +18,7 @@ const Template: ComponentStory<typeof BlogCard> = ({
   heading,
   id,
   image,
-  tags,
+
   text,
 }: BlogCardProps) => (
   <BrowserRouter>
@@ -28,7 +28,6 @@ const Template: ComponentStory<typeof BlogCard> = ({
         heading={heading}
         id={id}
         image={image}
-        tags={tags}
         text={text}
       />
     </ThemeProvider>

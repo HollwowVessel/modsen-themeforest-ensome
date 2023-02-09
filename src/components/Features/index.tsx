@@ -34,7 +34,6 @@ export const Features = memo(() => (
     </Info>
     <Solutions>
       <SolutionsImage src={features} alt="features" />
-
       <SolutionsInfo>
         <SolutionsImage src={features} alt="features" />
         <SolutionsHeading>Radically new solutions for data</SolutionsHeading>

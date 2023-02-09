@@ -1,7 +1,7 @@
 import { BlogArticleI } from 'types/blogTypes';
 
 export interface SidebarProps {
-  handleCards?: (items: BlogArticleI[]) => void;
+  handleCards: (items: BlogArticleI[]) => void;
 }
 
 export interface ActiveProps {

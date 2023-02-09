@@ -18,23 +18,23 @@ import { ArrowLink } from '@/ui/Links/ArrowLink';
 import { tags as allTags, categories } from '@/constants/blogSidebar';
 import { blogArticles } from '@/constants/blogArticle';
 import { SidebarProps } from './types';
-import { searchHelper } from '@/utils/searchHelper';
 import { InputWithButton } from '@/ui/Inputs/InputWithButton';
 
 export const Sidebar = ({ handleCards }: SidebarProps) => {
-  const [activeTag, setActiveTag] = useState(0);
   const [search, setSearch] = useState('');
+  const [activeTag, setTag] = useState(0);
   const [activeCategory, setActiveCategory] = useState(-1);
-
-  const handleFilter = (id: number) => () => {
-    setActiveTag(id);
-    searchHelper(activeTag, search, handleCards, id);
-  };
 
   const searchHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
-    if (!e.target.value && handleCards) {
-      handleCards(blogArticles);
+    if (!e.target.value) {
+      handleCards(
+        blogArticles.filter(
+          ({ tags }) =>
+            tags.indexOf(allTags[activeTag]) !== -1 ||
+            allTags[activeTag] === 'All topics'
+        )
+      );
     }
   };
 
@@ -46,8 +46,26 @@ export const Sidebar = ({ handleCards }: SidebarProps) => {
     }
   };
 
-  const handleClick = () => {
-    searchHelper(activeTag, search, handleCards);
+  const handleTag = (id: number) => () => {
+    setTag(id);
+    handleCards(
+      blogArticles.filter(
+        ({ heading, tags }) =>
+          heading.toLowerCase().indexOf(search.toLowerCase()) !== -1 &&
+          (tags.indexOf(allTags[id]) !== -1 || allTags[id] === 'All topics')
+      )
+    );
+  };
+
+  const handleSearch = () => {
+    handleCards(
+      blogArticles.filter(
+        ({ heading, tags }) =>
+          heading.toLowerCase().indexOf(search.toLowerCase()) !== -1 &&
+          (tags.indexOf(allTags[activeTag]) !== -1 ||
+            allTags[activeTag] === 'All topics')
+      )
+    );
   };
 
   return (
@@ -57,7 +75,7 @@ export const Sidebar = ({ handleCards }: SidebarProps) => {
         onChange={searchHandler}
         value={search}
         buttonText="Search"
-        onClick={handleClick}
+        onClick={handleSearch}
       />
 
       <Heading>Popular posts</Heading>
@@ -91,7 +109,7 @@ export const Sidebar = ({ handleCards }: SidebarProps) => {
       <Heading>Tags</Heading>
       <Tags>
         {allTags.map((el, id) => (
-          <Tag key={el} onClick={handleFilter(id)} active={id === activeTag}>
+          <Tag key={el} onClick={handleTag(id)} active={id === activeTag}>
             {el}
           </Tag>
         ))}

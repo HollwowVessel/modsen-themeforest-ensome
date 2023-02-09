@@ -1,13 +1,13 @@
 import { useParams } from 'react-router-dom';
 import { Navigation } from '@/ui/Navigation';
 
-import { HelpSection } from '@/ui/Sections/HelpSection';
 import { FooterSection } from '@/ui/FooterSection';
 
-import { ItemContainer } from '@/containers/ItemContainer';
-import { SpecialCard } from '@/ui/Cards/SpecialCard';
 import { servicesItems } from '@/constants/servicesCard';
-import { DescriptionSection } from '@/ui/Sections/DescriptionSection';
+import { ThirdDescriptionSection } from '@/ui/Sections/ThirdDescriptionSection';
+import { SubscribeSection } from '@/ui/Sections/SubscribeSection';
+import { ContactInformation } from '@/components/ContactInformation';
+import { ServicesItemContainer } from '@/containers/ServicesItemContainer';
 
 export const ServicesItemPage = () => {
   const { index } = useParams();
@@ -15,20 +15,17 @@ export const ServicesItemPage = () => {
   return (
     <>
       <Navigation />
-      <DescriptionSection
-        description="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-      doloremque laudantium, totam rem aperiam, eaque ipsa quaeab illo
-      inventore."
-        heading="Data Analytics Services"
-        name="Services"
-        link="services"
+      <ThirdDescriptionSection
+        heading={servicesItems[+(index as string)].heading}
+        link={`/services/${index}`}
+        text="Sed ut perspiciatis unde omnis iste natus error volupta accusantium doloremque laudantium, totam remiga aperiam, eaque ipsa."
       />
-      <ItemContainer
-        RenderCard={SpecialCard}
-        index={index as string}
-        unfilteredItems={servicesItems}
+      <ServicesItemContainer />
+      <ContactInformation
+        heading="Contact Information"
+        description="Fill up the form and our Team will get back to you with 25 hours."
       />
-      <HelpSection />
+      <SubscribeSection />
       <FooterSection />
     </>
   );

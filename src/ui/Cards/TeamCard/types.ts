@@ -3,4 +3,5 @@ export interface TeamCardProps {
   profession: string;
   image: string;
   social: string[];
+  id?: number;
 }

@@ -1,32 +1,35 @@
 import { useState } from 'react';
 import { BlogCard } from '@/ui/Cards/BlogCard';
-import { Sidebar } from '@/components/Sidebar';
 import { blogArticles } from '@/constants/blogArticle';
 import { Cards, Container } from './styled';
+import { FillButton } from '@/ui/Buttons/FillButton';
 
 export const BlogContainer = () => {
-  const [cards, setCards] = useState(blogArticles);
+  const [newsQuantity, setNews] = useState(9);
 
-  const handleCards = (items: typeof cards) => {
-    setCards(items);
+  const handleNews = () => {
+    setNews((prev) => prev + 9);
   };
 
   return (
     <Container>
       <Cards>
-        {cards.map(({ icon, info, text, heading, tags }, id) => (
-          <BlogCard
-            heading={heading}
-            id={id}
-            image={icon}
-            text={text}
-            key={id}
-            date={info}
-            tags={tags}
-          />
-        ))}
+        {blogArticles
+          .slice(0, newsQuantity)
+          .map(({ icon, info, text, heading }, id) => (
+            <BlogCard
+              heading={heading}
+              id={id}
+              image={icon}
+              text={text}
+              key={id}
+              date={info}
+            />
+          ))}
       </Cards>
-      <Sidebar handleCards={handleCards} />
+      {blogArticles.length > newsQuantity && (
+        <FillButton text="More articles" onClick={handleNews} />
+      )}
     </Container>
   );
 };

@@ -4,7 +4,8 @@ export const Container = styled.section`
   display: flex;
 
   justify-content: center;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
   margin: 0 0 ${({ theme }) => theme.margins[7]}px 0;
   gap: ${({ theme }) => theme.gaps[2]}px;
   @media (max-width: ${({ theme }) => theme.breakPoints.laptop}px) {

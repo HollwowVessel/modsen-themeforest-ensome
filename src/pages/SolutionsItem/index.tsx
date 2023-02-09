@@ -2,32 +2,27 @@ import { useParams } from 'react-router-dom';
 import { Navigation } from '@/ui/Navigation';
 
 import { solutionsItems } from '@/constants/solutions';
-import { SpecialCard } from '@/ui/Cards/SpecialCard';
 
 import { HelpSection } from '@/ui/Sections/HelpSection';
 import { FooterSection } from '@/ui/FooterSection';
-import { ItemContainer } from '@/containers/ItemContainer';
-import { DescriptionSection } from '@/ui/Sections/DescriptionSection';
+import { SecondDescriptionSection } from '@/ui/Sections/SecondDescriptionSection';
+import { SubscribeSection } from '@/ui/Sections/SubscribeSection';
+import { SolutionsItemDescription } from '@/components/SolutionsItemDescription';
 
 export const SolutionsItemPage = () => {
   const { index } = useParams();
-
+  const { heading } = solutionsItems[+(index as string)];
   return (
     <>
       <Navigation />
-      <DescriptionSection
-        description="Getting ready for your success, we provide truly outstanding IT
-        solutions."
-        heading="Data analytics solutions"
-        link="solutions"
-        name="Solutions"
+      <SecondDescriptionSection
+        heading={heading}
+        link={`/solutions/${index}`}
+        name={heading}
       />
-      <ItemContainer
-        RenderCard={SpecialCard}
-        index={index as string}
-        unfilteredItems={solutionsItems}
-      />
+      <SolutionsItemDescription name={heading} />
       <HelpSection />
+      <SubscribeSection />
       <FooterSection />
     </>
   );

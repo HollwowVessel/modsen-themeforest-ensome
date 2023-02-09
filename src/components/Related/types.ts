@@ -1,3 +1,5 @@
+import { blogArticles } from '@/constants/blogArticle';
+
 export interface RelatedProps {
-  tag?: string | number;
+  cards: typeof blogArticles;
 }

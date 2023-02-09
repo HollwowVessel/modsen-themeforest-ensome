@@ -1,4 +1,4 @@
-import { ChangeEvent, MouseEvent, useState } from 'react';
+import { Formik } from 'formik';
 import { contacts } from '@/constants/contacts';
 import {
   Contact,
@@ -12,85 +12,26 @@ import {
   Interaction,
   InteractionBlock,
   InteractionDescription,
-  InteractionHeading,
   Section,
 } from './styled';
 import { FillButton } from '@/ui/Buttons/FillButton';
 import { sendMessage } from '@/api/emailjsApi';
 import { contactSchema } from '@/api/yupSchema';
-import { validateEmail } from '@/utils/validateEmail';
 import { OpenInput } from '@/ui/Inputs/OpenInput';
-import { useCheckForm } from '@/hooks/useCheckForm';
+import { initialValue } from '@/api/formikApi';
 
 export const ContactsSection = () => {
-  const [email, setEmail] = useState('');
-  const [name, setName] = useState('');
-  const [theme, setTheme] = useState('');
-  const [message, setMessage] = useState('');
-  const [error, setError] = useState('');
-  const [incorrectEmail, setIncorrectEmail] = useState(true);
-  const [touched, setTouched] = useState({
-    email: false,
-    name: false,
-    theme: false,
-    message: false,
-  });
-  const [isValid, setIsValid] = useState(false);
-
-  const handleEmail = (e: ChangeEvent<HTMLInputElement>) => {
-    const email = e.target.value;
-    try {
-      setIncorrectEmail(validateEmail(email));
-      setTouched({ ...touched, email: true });
-    } catch (err) {
-      setTouched({ ...touched, email: true });
-    }
-    setEmail(email);
+  const handleSubmit = (
+    { email, message, theme, name }: typeof initialValue,
+    {
+      setSubmitting,
+      resetForm,
+    }: { setSubmitting: (arg: boolean) => void; resetForm: () => void }
+  ) => {
+    sendMessage(email, message, theme, name);
+    setSubmitting(false);
+    resetForm();
   };
-  const handleName = (e: ChangeEvent<HTMLInputElement>) => {
-    setName(e.target.value);
-    setTouched({ ...touched, name: true });
-  };
-  const handleTheme = (e: ChangeEvent<HTMLInputElement>) => {
-    setTheme(e.target.value);
-    setTouched({ ...touched, theme: true });
-  };
-  const handleMessage = (e: ChangeEvent<HTMLInputElement>) => {
-    setMessage(e.target.value);
-    setTouched({ ...touched, message: true });
-  };
-
-  const handleClick = async (e: MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    let checked;
-    try {
-      await contactSchema.validate(
-        { email, name, theme, message },
-        { abortEarly: false }
-      );
-      checked = true;
-      setIsValid(true);
-    } catch (error) {
-      setError('Failed :(');
-    }
-    if (checked) {
-      sendMessage(email, message, theme, name, setError);
-      setEmail('');
-      setName('');
-      setTheme('');
-      setMessage('');
-      setTouched({
-        email: false,
-        name: false,
-        theme: false,
-        message: false,
-      });
-      setIsValid(false);
-      setError('');
-    }
-  };
-
-  useCheckForm(email, name, theme, message, setIsValid);
 
   return (
     <Container>
@@ -113,46 +54,76 @@ export const ContactsSection = () => {
             ))}
           </ContactList>
         </Info>
-        <Interaction>
-          <InteractionHeading>Contact Us</InteractionHeading>
-          <InteractionBlock>
-            <InteractionDescription>Name</InteractionDescription>
-            <OpenInput
-              placeholder="Andrea"
-              onChange={handleName}
-              value={name}
-            />
-          </InteractionBlock>
-          <InteractionBlock>
-            <InteractionDescription error={incorrectEmail && touched.email}>
-              Email
-            </InteractionDescription>
-            <OpenInput
-              placeholder="andrea@gmail.com"
-              onChange={handleEmail}
-              value={email}
-              error={incorrectEmail && touched.email}
-            />
-          </InteractionBlock>
-          <InteractionBlock>
-            <InteractionDescription>Theme</InteractionDescription>
-            <OpenInput placeholder="job" onChange={handleTheme} value={theme} />
-          </InteractionBlock>
-          <InteractionBlock>
-            <InteractionDescription>Message</InteractionDescription>
-            <OpenInput
-              placeholder="Your message"
-              onChange={handleMessage}
-              value={message}
-            />
-          </InteractionBlock>
-          <FillButton
-            text="Send"
-            onClick={handleClick}
-            disabled={!isValid || !Object.values(touched).every((val) => val)}
-          />
-          {error}
-        </Interaction>
+        <Formik
+          initialValues={initialValue}
+          validationSchema={contactSchema}
+          onSubmit={handleSubmit}
+        >
+          {({
+            values,
+            errors,
+            touched,
+            handleChange,
+            handleSubmit,
+            isSubmitting,
+          }) => (
+            <Interaction onSubmit={handleSubmit}>
+              <InteractionBlock>
+                <InteractionDescription>Name</InteractionDescription>
+                <OpenInput
+                  placeholder="Andrea"
+                  name="name"
+                  onChange={handleChange}
+                  value={values.name}
+                  error={!!touched.name && !!errors.name}
+                />
+              </InteractionBlock>
+              <InteractionBlock>
+                <InteractionDescription>Email</InteractionDescription>
+                <OpenInput
+                  placeholder="andrea@gmail.com"
+                  name="email"
+                  onChange={handleChange}
+                  value={values.email}
+                  error={
+                    !!touched.email ||
+                    errors.email === 'email must be a valid email'
+                  }
+                />
+              </InteractionBlock>
+              <InteractionBlock>
+                <InteractionDescription>Theme</InteractionDescription>
+                <OpenInput
+                  placeholder="Message theme"
+                  name="theme"
+                  onChange={handleChange}
+                  value={values.theme}
+                  error={!!touched.theme && !!errors.theme}
+                />
+              </InteractionBlock>
+              <InteractionBlock>
+                <InteractionDescription>Message</InteractionDescription>
+                <OpenInput
+                  placeholder="Your message"
+                  name="message"
+                  onChange={handleChange}
+                  value={values.message}
+                  error={!!touched.message && !!errors.message}
+                />
+              </InteractionBlock>
+              <FillButton
+                text="Submit"
+                disabled={
+                  (isSubmitting ||
+                    errors.email ||
+                    errors.message ||
+                    errors.name ||
+                    errors.theme) as boolean
+                }
+              />
+            </Interaction>
+          )}
+        </Formik>
       </Section>
     </Container>
   );

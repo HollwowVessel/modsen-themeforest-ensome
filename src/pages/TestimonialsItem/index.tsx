@@ -3,7 +3,6 @@ import { Navigation } from '@/ui/Navigation';
 import { SubscribeSection } from '@/ui/Sections/SubscribeSection';
 
 import { BlogArticle } from '@/components/BlogArticle';
-import { Sidebar } from '@/components/Sidebar';
 import { Container } from './styled';
 
 import { FooterSection } from '@/ui/FooterSection';
@@ -24,7 +23,6 @@ export const TestimonialsItemPage = () => {
       />
       <Container>
         <BlogArticle text={info} heading={text} image={icon} date={heading} />
-        <Sidebar />
       </Container>
       <SubscribeSection />
       <FooterSection />

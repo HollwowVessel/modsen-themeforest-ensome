@@ -23,7 +23,7 @@ export function carouselHelper<
     const RenderCard = Card as typeof BlogCard;
     return (cards as typeof blogArticles)
       .slice(sliderItems, sliderItems + 3)
-      ?.map(({ icon, info, heading, text, tags }, id) => (
+      ?.map(({ icon, info, heading, text }, id) => (
         <RenderCard
           date={info}
           heading={heading}
@@ -32,7 +32,6 @@ export function carouselHelper<
           key={id}
           animation={animation}
           id={id}
-          tags={tags}
         />
       ));
   }

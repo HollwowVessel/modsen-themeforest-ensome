@@ -1,3 +1,5 @@
+import { blogArticles } from '@/constants/blogArticle';
+
 export interface BlogArticleProps {
   text: string;
   date: string;
@@ -5,6 +7,7 @@ export interface BlogArticleProps {
   image: string;
   views?: number;
   tags?: string[];
+  cards?: typeof blogArticles;
 }
 
 export interface TagProps {

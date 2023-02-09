@@ -21,6 +21,7 @@ import {
 import { blogSocials } from '@/constants/blogSocials';
 import { Related } from '@/components/Related';
 import { BlogArticleProps } from './types';
+import { blogArticles } from '@/constants/blogArticle';
 
 export const BlogArticle = ({
   text,
@@ -29,6 +30,7 @@ export const BlogArticle = ({
   image,
   views,
   tags,
+  cards,
 }: BlogArticleProps) => {
   const [active, setActive] = useState(0);
 
@@ -92,7 +94,7 @@ export const BlogArticle = ({
           ))}
         </Tags>
       </Statistics>
-      <Related tag={active >= 0 && tags?.length ? tags[active] : -1} />
+      <Related cards={cards as typeof blogArticles} />
     </Container>
   );
 };

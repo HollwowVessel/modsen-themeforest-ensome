@@ -40,6 +40,11 @@ export const Info = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    justify-content: center;
+    padding: 0 ${({ theme }) => theme.paddings[2]}px;
+    flex-direction: column;
+  }
 `;
 
 export const Heading = styled.h1`
@@ -54,7 +59,7 @@ export const Description = styled.div`
   max-width: ${({ theme }) => theme.sizes.at(-4)}px;
 `;
 
-export const Sed = styled.p`
+export const Text = styled.p`
   font-weight: ${({ theme }) => theme.fontWeights[0]};
   font-size: ${({ theme }) => theme.fonts[0]}px;
   line-height: ${({ theme }) => theme.lineHeights[0]}px;
@@ -63,16 +68,6 @@ export const Sed = styled.p`
   letter-spacing: -0.015em;
   color: ${({ theme }) => theme.colors.background};
   margin: 0 0 ${({ theme }) => theme.margins[0]}px 0;
-`;
-
-export const Morbi = styled.p`
-  font-weight: ${({ theme }) => theme.fontWeights[0]};
-  font-size: ${({ theme }) => theme.fonts[0]}px;
-  line-height: ${({ theme }) => theme.lineHeights[0]}px;
-  display: flex;
-  align-items: center;
-  letter-spacing: -0.015em;
-  color: ${({ theme }) => theme.colors.background};
 `;
 
 export const Section = styled.div`

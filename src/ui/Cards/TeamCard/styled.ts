@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Card = styled.div`
@@ -58,3 +59,17 @@ export const Social = styled.li``;
 export const SocialLink = styled.a``;
 
 export const Icon = styled.img``;
+
+export const TeamLink = styled(Link)`
+  width: ${({ theme }) => theme.sizes.at(-6)}px;
+  text-decoration: none;
+  position: relative;
+  &:nth-of-type(3n + 2) {
+    transform: translateY(-120px);
+  }
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    &:nth-of-type(3n + 2) {
+      transform: none;
+    }
+  }
+`;
