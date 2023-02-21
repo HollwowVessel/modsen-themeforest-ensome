@@ -1,29 +1,28 @@
+import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import { Navigation } from '@/ui/Navigation';
+import {
+  HelpSection,
+  SecondDescriptionSection,
+  SubscribeSection,
+} from 'tired-hollow-lib-modsen';
 
-import { solutionsItems } from '@/constants/solutions';
-
-import { HelpSection } from '@/ui/Sections/HelpSection';
-import { FooterSection } from '@/ui/FooterSection';
-import { SecondDescriptionSection } from '@/ui/Sections/SecondDescriptionSection';
-import { SubscribeSection } from '@/ui/Sections/SubscribeSection';
 import { SolutionsItemDescription } from '@/components/SolutionsItemDescription';
+import { solutionsItems } from '@/constants/solutions';
+import { Layout } from '@/containers/Layout';
+import { Language } from '@/utils/languageContext';
 
 export const SolutionsItemPage = () => {
   const { index } = useParams();
-  const { heading } = solutionsItems[+(index as string)];
+  const { lang } = useContext(Language);
+  const { heading } = solutionsItems[lang].filter(
+    ({ heading }) => heading.indexOf(index as string) !== -1
+  )[0];
   return (
-    <>
-      <Navigation />
-      <SecondDescriptionSection
-        heading={heading}
-        link={`/solutions/${index}`}
-        name={heading}
-      />
+    <Layout>
+      <SecondDescriptionSection heading={heading} />
       <SolutionsItemDescription name={heading} />
       <HelpSection />
       <SubscribeSection />
-      <FooterSection />
-    </>
+    </Layout>
   );
 };

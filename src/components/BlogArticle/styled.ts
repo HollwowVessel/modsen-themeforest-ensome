@@ -1,9 +1,11 @@
 import styled from 'styled-components';
+
 import date from '@/assets/images/icons/blog/date.svg';
 import person from '@/assets/images/icons/blog/person.svg';
-import views from '@/assets/images/icons/blog/views.svg';
 import share from '@/assets/images/icons/blog/share.svg';
 import tags from '@/assets/images/icons/blog/tags.svg';
+import views from '@/assets/images/icons/blog/views.svg';
+
 import { TagProps } from './types';
 
 export const Container = styled.section`
@@ -61,7 +63,7 @@ export const Heading = styled.h3`
   font-weight: ${({ theme }) => theme.fontWeights[4]};
   font-size: ${({ theme }) => theme.fonts[4]}px;
   line-height: ${({ theme }) => theme.lineHeights[3]}px;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.black};
   margin: 0 0 ${({ theme }) => theme.margins[3]}px 0;
 `;
@@ -73,7 +75,7 @@ export const Text = styled.p`
   line-height: ${({ theme }) => theme.lineHeights[1]}px;
   /* or 175% */
 
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
 
   /* Grey */
 
@@ -86,7 +88,7 @@ export const Quote = styled.p`
   line-height: ${({ theme }) => theme.lineHeights[2]}px;
   /* or 165% */
 
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
 
   /* Black */
 
@@ -105,7 +107,7 @@ export const Views = styled.span`
   font-weight: ${({ theme }) => theme.fontWeights[0]};
   font-size: ${({ theme }) => theme.fonts[0]}px;
   line-height: ${({ theme }) => theme.lineHeights[0]}px;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.grey};
 
   position: relative;
@@ -132,7 +134,7 @@ export const Share = styled.ul`
   display: flex;
   align-items: flex-start;
   gap: ${({ theme }) => theme.gaps[0]}px;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
 
   /* Grey */
 
@@ -163,7 +165,7 @@ export const Tags = styled.div`
   /* identical to box height, or 171% */
   display: flex;
   align-items: center;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   gap: ${({ theme }) => theme.gaps[0]}px;
   /* Grey */
 
@@ -185,7 +187,7 @@ export const Tag = styled.button<TagProps>`
   font-size: ${({ theme }) => theme.fonts[0]}px;
   line-height: ${({ theme }) => theme.lineHeights[0]}px;
   text-align: center;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   background: ${({ active, theme }) =>
     active ? theme.colors.primary : theme.colors.background};
   color: ${({ active, theme }) =>

@@ -1,9 +1,11 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeProvider } from 'styled-components';
+
+import { GlobalStyles } from '@/theme/GlobalStyles';
+import { theme } from '@/theme/theme';
+
 import { FillButton } from './index';
 import { FillButtonProps } from './types';
-import { theme } from '@/theme/theme';
-import { GlobalStyles } from '@/theme/GlobalStyles';
 
 export default {
   title: 'Button/FillButton',

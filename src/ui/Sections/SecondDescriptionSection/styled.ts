@@ -16,7 +16,7 @@ export const Heading = styled.h1`
   font-size: ${({ theme }) => theme.fonts[6]}px;
   line-height: ${({ theme }) => theme.lineHeights[4]}px;
   text-align: center;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
 
   color: ${({ theme }) => theme.colors.black};
 

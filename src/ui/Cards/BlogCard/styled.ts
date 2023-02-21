@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { CardProps, TagProps } from './types';
 
-export const Card = styled.div<CardProps>`
-  animation: ${({ animation }) => animation} 0.5s;
+import { TagProps } from './types';
+
+export const Card = styled.div`
   box-shadow: 0px 4px 12px rgba(12, 68, 204, 0.1);
   border-radius: 6px;
   a {
@@ -24,7 +24,7 @@ export const Date = styled.p`
 
   font-size: ${({ theme }) => theme.fonts[0]}px;
   line-height: ${({ theme }) => theme.lineHeights[0]}px;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
 
   color: ${({ theme }) => theme.colors.grey};
   padding: 0 ${({ theme }) => theme.paddings[3]}px;
@@ -35,7 +35,7 @@ export const Name = styled.h4`
 
   font-size: ${({ theme }) => theme.fonts[3]}px;
   line-height: ${({ theme }) => theme.lineHeights[2]}px;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.black};
   margin: 0 0 ${({ theme }) => theme.spaces[1]}px 0;
   max-width: ${({ theme }) => theme.sizes.at(-6)}px;
@@ -47,7 +47,7 @@ export const Description = styled.p`
 
   font-size: ${({ theme }) => theme.fonts[1]}px;
   line-height: ${({ theme }) => theme.lineHeights[1]}px;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.grey};
   margin: 0 0 ${({ theme }) => theme.spaces[1]}px 0;
   max-width: ${({ theme }) => theme.sizes.at(-6)}px;
@@ -67,7 +67,7 @@ export const Tags = styled.div`
   /* identical to box height, or 171% */
   display: flex;
   align-items: center;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   margin: 0 0 ${({ theme }) => theme.margins[2]}px 0;
   gap: ${({ theme }) => theme.gaps[0]}px;
 
@@ -81,7 +81,7 @@ export const Tag = styled.button<TagProps>`
   font-size: ${({ theme }) => theme.fonts[0]}px;
   line-height: ${({ theme }) => theme.lineHeights[0]}px;
   text-align: center;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   background: ${({ active, theme }) =>
     active ? theme.colors.primary : theme.colors.background};
   color: ${({ active, theme }) =>

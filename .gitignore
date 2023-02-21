@@ -2,6 +2,7 @@ node_modules
 dist
 .idea
 yarn-error.log
+lib
 build
 
 # Local Netlify folder

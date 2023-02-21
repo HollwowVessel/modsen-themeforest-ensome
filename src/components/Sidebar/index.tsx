@@ -1,4 +1,13 @@
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useContext, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { ArrowLink } from 'tired-hollow-lib-modsen';
+
+import { blogArticles } from '@/constants/blogArticle';
+import { categories, tags as allTags } from '@/constants/blogSidebar';
+import { InputWithButton } from '@/ui/Inputs/InputWithButton';
+import { filterCards, filterOnClear } from '@/utils/filterCards';
+import { Language } from '@/utils/languageContext';
+import { makeFourSortedArticles } from '@/utils/makeFourSortedArticles';
 
 import {
   Categories,
@@ -14,27 +23,22 @@ import {
   Tags,
   Title,
 } from './styled';
-import { ArrowLink } from '@/ui/Links/ArrowLink';
-import { tags as allTags, categories } from '@/constants/blogSidebar';
-import { blogArticles } from '@/constants/blogArticle';
-import { SidebarProps } from './types';
-import { InputWithButton } from '@/ui/Inputs/InputWithButton';
 
-export const Sidebar = ({ handleCards }: SidebarProps) => {
+export const Sidebar = () => {
+  const { lang } = useContext(Language);
   const [search, setSearch] = useState('');
-  const [activeTag, setTag] = useState(0);
+  const [cards, setCards] = useState(() =>
+    makeFourSortedArticles(blogArticles[lang])
+  );
+  const [activeTags, setTags] = useState<number[]>([]);
   const [activeCategory, setActiveCategory] = useState(-1);
+
+  const { t } = useTranslation();
 
   const searchHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
     if (!e.target.value) {
-      handleCards(
-        blogArticles.filter(
-          ({ tags }) =>
-            tags.indexOf(allTags[activeTag]) !== -1 ||
-            allTags[activeTag] === 'All topics'
-        )
-      );
+      setCards(filterOnClear(activeTags, lang));
     }
   };
 
@@ -47,54 +51,44 @@ export const Sidebar = ({ handleCards }: SidebarProps) => {
   };
 
   const handleTag = (id: number) => () => {
-    setTag(id);
-    handleCards(
-      blogArticles.filter(
-        ({ heading, tags }) =>
-          heading.toLowerCase().indexOf(search.toLowerCase()) !== -1 &&
-          (tags.indexOf(allTags[id]) !== -1 || allTags[id] === 'All topics')
-      )
+    setTags((prev) =>
+      prev.indexOf(id) === -1 ? [...prev, id] : prev.filter((el) => el !== id)
     );
   };
 
   const handleSearch = () => {
-    handleCards(
-      blogArticles.filter(
-        ({ heading, tags }) =>
-          heading.toLowerCase().indexOf(search.toLowerCase()) !== -1 &&
-          (tags.indexOf(allTags[activeTag]) !== -1 ||
-            allTags[activeTag] === 'All topics')
-      )
-    );
+    setCards(filterCards(search, -1, activeTags, lang));
   };
+
+  const articles = makeFourSortedArticles(cards);
 
   return (
     <Container>
       <InputWithButton
-        placeholder="Search"
+        placeholder={t('Search') as string}
         onChange={searchHandler}
         value={search}
-        buttonText="Search"
+        buttonText={t('Search') as string}
         onClick={handleSearch}
       />
 
-      <Heading>Popular posts</Heading>
+      <Heading>{t('Popular posts')}</Heading>
       <Posts>
-        {blogArticles
-          .sort((a, b) => b.views - a.views)
-          .slice(0, 4)
-          .map(({ info, heading, icon }, id) => (
-            <Post key={id}>
-              <Image src={icon} loading="lazy" />
-              <PostDescription>
-                <Date>{info}</Date>
-                <Title>{heading}</Title>
-                <ArrowLink text="Read more" to={`/blog/${id}`} />
-              </PostDescription>
-            </Post>
-          ))}
+        {articles.map(({ info, heading, icon }, id) => (
+          <Post key={id}>
+            <Image src={icon} alt="icon" title="icon" />
+            <PostDescription>
+              <Date>{info}</Date>
+              <Title>{heading}</Title>
+              <ArrowLink
+                text={t('Read more')}
+                to={`/blog/${heading.split(' ').slice(0, 2).join(' ')}`}
+              />
+            </PostDescription>
+          </Post>
+        ))}
       </Posts>
-      <Heading>Categories</Heading>
+      <Heading>{t('Categories')}</Heading>
       <Categories>
         {categories.map((el, id) => (
           <Category
@@ -106,10 +100,14 @@ export const Sidebar = ({ handleCards }: SidebarProps) => {
           </Category>
         ))}
       </Categories>
-      <Heading>Tags</Heading>
+      <Heading>{t('Tags')}</Heading>
       <Tags>
         {allTags.map((el, id) => (
-          <Tag key={el} onClick={handleTag(id)} active={id === activeTag}>
+          <Tag
+            key={el}
+            onClick={handleTag(id)}
+            active={activeTags.indexOf(id) !== -1}
+          >
             {el}
           </Tag>
         ))}

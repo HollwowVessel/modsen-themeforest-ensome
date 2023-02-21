@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import menuIcon from '@/assets/images/icons/general/menuIcon.svg';
 
 export const Container = styled.div`
@@ -22,7 +23,7 @@ export const Heading = styled.h3`
   font-size: ${({ theme }) => theme.fonts[4]}px;
   line-height: ${({ theme }) => theme.lineHeights[3]}px;
 
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
 
   color: ${({ theme }) => theme.colors.black};
   margin: 0 0 ${({ theme }) => theme.margins[2]}px 0;
@@ -35,7 +36,7 @@ export const Text = styled.p`
   font-weight: ${({ theme }) => theme.fontWeights[0]};
   font-size: ${({ theme }) => theme.fonts[1]}px;
   line-height: ${({ theme }) => theme.lineHeights[1]}px;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.grey};
   margin: 0 0 ${({ theme }) => theme.margins[2]}px 0;
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
@@ -53,7 +54,7 @@ export const Item = styled.li`
   font-weight: ${({ theme }) => theme.fontWeights[0]};
   font-size: ${({ theme }) => theme.fonts[1]}px;
   line-height: ${({ theme }) => theme.lineHeights[1]}px;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.black};
   padding: 0 0 0 ${({ theme }) => theme.paddings[3]}px;
   &::before {

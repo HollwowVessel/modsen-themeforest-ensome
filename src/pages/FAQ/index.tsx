@@ -1,24 +1,27 @@
+import { useTranslation } from 'react-i18next';
+import {
+  DescriptionSection,
+  HelpSection,
+  SubscribeSection,
+} from 'tired-hollow-lib-modsen';
+
 import { FAQ } from '@/components/FAQ';
+import { Layout } from '@/containers/Layout';
 
-import { FooterSection } from '@/ui/FooterSection';
-import { Navigation } from '@/ui/Navigation';
-import { DescriptionSection } from '@/ui/Sections/DescriptionSection';
-import { HelpSection } from '@/ui/Sections/HelpSection';
-import { SubscribeSection } from '@/ui/Sections/SubscribeSection';
+export const FAQPage = () => {
+  const { t } = useTranslation();
 
-export const FAQPage = () => (
-  <>
-    <Navigation />
-    <DescriptionSection
-      description="Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-        accusantium doloremque laudantium totam."
-      heading="Frequently asked questions"
-      name="FAQS"
-      link="FAQ"
-    />
-    <FAQ />
-    <HelpSection />
-    <SubscribeSection />
-    <FooterSection />
-  </>
-);
+  return (
+    <Layout>
+      <DescriptionSection
+        description={t('Accusantium doloremque')}
+        heading={t('Frequently asked')}
+        name="FAQS"
+        link="FAQ"
+      />
+      <FAQ />
+      <HelpSection />
+      <SubscribeSection />
+    </Layout>
+  );
+};

@@ -1,14 +1,18 @@
 import { memo } from 'react';
-import { Container, Description, Heading } from './styled';
+import { useTranslation } from 'react-i18next';
+
 import { FillButtonLink } from '@/ui/Links/FillButtonLink';
 
-export const HelpSection = memo(() => (
-  <Container>
-    <Heading>Do you need help?</Heading>
-    <Description>
-      Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
-      suscipit laboriosam, nisi ut aliquid ex ea commodi.
-    </Description>
-    <FillButtonLink text="Contact Us" to="/contacts" />
-  </Container>
-));
+import { Container, Description, Heading } from './styled';
+
+export const HelpSection = memo(() => {
+  const { t } = useTranslation();
+
+  return (
+    <Container>
+      <Heading>{t('Do you')}</Heading>
+      <Description>{t('Ut enim')}</Description>
+      <FillButtonLink text={t('Contact us')} to="/contacts" />
+    </Container>
+  );
+});

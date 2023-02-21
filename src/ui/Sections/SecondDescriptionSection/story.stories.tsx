@@ -1,9 +1,11 @@
 import { ComponentMeta } from '@storybook/react';
-import { ThemeProvider } from 'styled-components';
 import { BrowserRouter } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
+
 import { GlobalStyles } from '@/theme/GlobalStyles';
-import { SecondDescriptionSection } from './index';
 import { theme } from '@/theme/theme';
+
+import { SecondDescriptionSection } from './index';
 
 export default {
   title: 'Section/Contacts/SecondDescriptionSection',
@@ -14,7 +16,7 @@ export const Example = () => (
   <BrowserRouter>
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <SecondDescriptionSection heading="Test" link="Test" name="Test" />
+      <SecondDescriptionSection heading="Test" />
     </ThemeProvider>
   </BrowserRouter>
 );

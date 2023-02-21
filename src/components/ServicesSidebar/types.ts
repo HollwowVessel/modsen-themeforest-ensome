@@ -1,4 +1,4 @@
-import { BlogArticleI } from 'types/blogTypes';
+import { BlogArticleI } from 'interfaces/blogTypes';
 
 export interface SidebarProps {
   handleCards?: (items: BlogArticleI[]) => void;

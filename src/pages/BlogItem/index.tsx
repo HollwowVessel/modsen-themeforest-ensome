@@ -1,20 +1,16 @@
 import { useParams } from 'react-router-dom';
-import { Navigation } from '@/ui/Navigation';
-import { SubscribeSection } from '@/ui/Sections/SubscribeSection';
-
-import { FooterSection } from '@/ui/FooterSection';
+import { SubscribeSection } from 'tired-hollow-lib-modsen';
 
 import { BlogItemContainer } from '@/containers/BlogItemContainer';
+import { Layout } from '@/containers/Layout';
 
 export const BlogItemPage = () => {
   const { index } = useParams();
 
   return (
-    <>
-      <Navigation />
+    <Layout>
       <BlogItemContainer index={index as string} />
       <SubscribeSection />
-      <FooterSection />
-    </>
+    </Layout>
   );
 };

@@ -1,4 +1,9 @@
 import { ChangeEvent, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+
+import { subscribeToNewsLetter } from '@/api/emailjsApi';
+import { InputWithButton } from '@/ui/Inputs/InputWithButton';
+import { validateEmail } from '@/utils/validateEmail';
 
 import {
   Container,
@@ -8,15 +13,12 @@ import {
   Section,
   Subscribe,
 } from './styled';
-import { subscribeToNewsLetter } from '@/api/emailjsApi';
-import { validateEmail } from '@/utils/validateEmail';
-import { InputWithButton } from '@/ui/Inputs/InputWithButton';
 
 export const SubscribeSection = () => {
   const [email, setEmail] = useState('');
   const [incorrectEmail, setIncorrectEmail] = useState(false);
   const [error, setError] = useState('');
-
+  const { t } = useTranslation();
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const check = validateEmail(email);
     setIncorrectEmail(check);
@@ -34,30 +36,27 @@ export const SubscribeSection = () => {
     <Container>
       <Section>
         <Info>
-          <Subscribe>Subscribe to our newsletter</Subscribe>
+          <Subscribe>{t('Subscribe to')}</Subscribe>
 
           <InputWithButton
-            buttonText="Send"
+            buttonText={t('Send') as string}
             onChange={handleChange}
             onClick={handleSubscribe}
-            placeholder="Your email"
+            placeholder={t('Your email') as string}
             value={email}
             error={incorrectEmail}
             disabled={incorrectEmail}
           />
           {error}
 
-          <Description>
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque laudantium.
-          </Description>
+          <Description>{t('Sed ut')}</Description>
         </Info>
         <Interaction>
           <InputWithButton
-            buttonText="Send"
+            buttonText={t('Send') as string}
             onChange={handleChange}
             onClick={handleSubscribe}
-            placeholder="Your email"
+            placeholder={t('Your email') as string}
             value={email}
             error={incorrectEmail}
             disabled={incorrectEmail}

@@ -8,7 +8,7 @@ export const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
     } 
     p, h1, h2,h3,h4,h5,h6{
-        letter-spacing: -0.015em;
+        letter-spacing: 0.03em;
         font-style: normal; 
     }
     p{

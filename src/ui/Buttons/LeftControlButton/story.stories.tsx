@@ -1,4 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+
 import { LeftControlButton } from './index';
 import { LeftControlButtonProps } from './types';
 

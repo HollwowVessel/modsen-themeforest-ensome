@@ -6,10 +6,9 @@ export const TestimonialsCardOpen = ({
   name,
   profession,
   description,
-  animation,
 }: TestimonialsCardProps) => (
-  <Card animation={animation}>
-    <Image src={icon} alt={icon} title={icon} loading="lazy" />
+  <Card>
+    <Image src={icon} alt={icon} title={icon} />
     <Description>{description}</Description>
     <Info>
       <Name>{name}</Name>

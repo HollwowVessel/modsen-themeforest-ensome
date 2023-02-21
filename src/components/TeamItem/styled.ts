@@ -5,6 +5,11 @@ export const Container = styled.div`
   gap: ${({ theme }) => theme.gaps[2]}px;
   max-width: ${({ theme }) => theme.sizes.at(-1)}px;
   margin: 0 auto ${({ theme }) => theme.margins[7]}px auto;
+
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    flex-direction: column;
+    padding: 0 ${({ theme }) => theme.paddings[1]}px;
+  }
 `;
 
 export const Info = styled.div`
@@ -23,7 +28,7 @@ export const Heading = styled.h3`
 
   line-height: ${({ theme }) => theme.lineHeights[2]}px;
 
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.primary};
 `;
 
@@ -31,7 +36,7 @@ export const Text = styled.p`
   font-weight: ${({ theme }) => theme.fontWeights[0]};
   font-size: ${({ theme }) => theme.fonts[2]}px;
   line-height: ${({ theme }) => theme.lineHeights[2]}px;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.grey};
   margin: 0 0 ${({ theme }) => theme.margins[3]}px 0;
 `;

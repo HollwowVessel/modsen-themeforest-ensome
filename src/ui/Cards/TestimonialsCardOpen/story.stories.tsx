@@ -1,21 +1,21 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { ThemeProvider } from 'styled-components';
 import { BrowserRouter } from 'react-router-dom';
-import { TestimonialsCardOpen } from './index';
-import { TestimonialsCardProps } from './types';
+import { ThemeProvider } from 'styled-components';
+
+import { testimonialCards } from '@/constants/testimonialCards';
 import { theme } from '@/theme/theme';
 
-import { cardItems } from '@/constants/testimonialCards';
+import { TestimonialsCardOpen } from './index';
+import { TestimonialsCardProps } from './types';
 
 export default {
   title: 'Cards/TestimonialsCardOpen',
   component: TestimonialsCardOpen,
 } as ComponentMeta<typeof TestimonialsCardOpen>;
 
-const { heading, icon, info, text } = cardItems[0];
+const { heading, icon, info, text } = testimonialCards.en[0];
 
 const Template: ComponentStory<typeof TestimonialsCardOpen> = ({
-  animation,
   description,
   icon,
   name,
@@ -28,7 +28,6 @@ const Template: ComponentStory<typeof TestimonialsCardOpen> = ({
         icon={icon}
         name={name}
         profession={profession}
-        animation={animation}
       />
     </ThemeProvider>
   </BrowserRouter>

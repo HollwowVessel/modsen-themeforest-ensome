@@ -1,45 +1,63 @@
-import { Navigation } from '@/ui/Navigation';
-import { DescriptionSection } from '@/ui/Sections/DescriptionSection';
+import { useContext } from 'react';
+import { useTranslation } from 'react-i18next';
+import {
+  Carousel,
+  DescriptionSection,
+  HelpSection,
+  OverviewSectionFour,
+  SubscribeSection,
+  TestimonialsCard,
+} from 'tired-hollow-lib-modsen';
 
-import { Benefits } from '@/components/Benefits';
-import { Carousel } from '@/ui/Carousel';
-import { TestimonialsCard } from '@/ui/Cards/TestimonialsCard';
-import { HelpSection } from '@/ui/Sections/HelpSection';
-import { SubscribeSection } from '@/ui/Sections/SubscribeSection';
-import { FooterSection } from '@/ui/FooterSection';
-import { cardItems } from '@/constants/testimonialCards';
 import AboutMobile from '@/assets/images/aboutMobile.png';
-import { AboutMobileSection, Description, Heading, Image } from './styled';
-import { AboutOverview } from '@/components/AboutOverview';
+import { Benefits } from '@/components/Benefits';
+import { testimonialCards } from '@/constants/testimonialCards';
+import { Language } from '@/utils/languageContext';
 
-export const AboutMobileContainer = () => (
-  <AboutMobileSection>
-    <Navigation />
-    <DescriptionSection
-      description=""
-      heading=""
-      link="/about"
-      name="About us"
-    />
-    <Heading>We work with 15 years of experience</Heading>
-    <Description>
-      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-      doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo.
-    </Description>
-    <Image src={AboutMobile} />
-    <AboutOverview />
-    <Benefits
-      description="Doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
-      heading="Why our clients chosse Ensome?"
-    />
-    <Carousel
-      Card={TestimonialsCard}
-      cards={cardItems}
-      heading="Testimonials"
-      type="close"
-    />
-    <HelpSection />
-    <SubscribeSection />
-    <FooterSection />
-  </AboutMobileSection>
-);
+import { Layout } from '../Layout';
+import {
+  AboutMobileSection,
+  Description,
+  Heading,
+  Image,
+  Overview,
+} from './styled';
+
+export const AboutMobileContainer = () => {
+  const { t } = useTranslation();
+
+  const { lang } = useContext(Language);
+
+  return (
+    <AboutMobileSection>
+      <Layout>
+        <DescriptionSection
+          description=""
+          heading=""
+          link="/about"
+          name={t('About us')}
+        />
+        <Heading>{t('We work')}</Heading>
+        <Description>{t('Sed ut')}</Description>
+        <Image src={AboutMobile} alt="about" title="about" />
+        <Overview>
+          <Heading>{t('We provide')}</Heading>
+          <OverviewSectionFour />
+          <Description>{t('Sed ut')}</Description>
+        </Overview>
+        <Benefits
+          description={t('Doloremque laudantium')}
+          heading={t('Why our')}
+        />
+        <Carousel
+          Card={TestimonialsCard}
+          cards={testimonialCards[lang]}
+          heading={t('Testimonials')}
+          type="close"
+        />
+        <HelpSection />
+        <SubscribeSection />
+      </Layout>
+    </AboutMobileSection>
+  );
+};

@@ -1,9 +1,11 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { ThemeProvider } from 'styled-components';
 import { BrowserRouter } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
+
+import { theme } from '@/theme/theme';
+
 import { ArrowLink } from './index';
 import { ArrowLinkProps } from './types';
-import { theme } from '@/theme/theme';
 
 export default {
   title: 'Link/ArrowLink',

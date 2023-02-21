@@ -20,7 +20,14 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'prettier', 'react-hooks', 'import'],
+  plugins: [
+    'react',
+    '@typescript-eslint',
+    'prettier',
+    'react-hooks',
+    'import',
+    'simple-import-sort',
+  ],
   settings: {
     'import/resolver': {
       node: {
@@ -71,13 +78,6 @@ module.exports = {
     'linebreak-style': ['error', 'unix'],
     quotes: ['warn', 'single'],
     semi: ['error', 'always'],
-    'sort-imports': [
-      'error',
-      {
-        ignoreCase: true,
-        ignoreDeclarationSort: true,
-      },
-    ],
     'import/prefer-default-export': 'off',
     'no-plusplus': 0,
     'max-classes-per-file': 0,
@@ -101,5 +101,7 @@ module.exports = {
     'import/no-unresolved': 0,
     'react/no-unescaped-entities': 0,
     'react/state-in-constructor': 0,
+    'simple-import-sort/imports': 'error',
+    'simple-import-sort/exports': 'error',
   },
 };

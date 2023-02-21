@@ -1,23 +1,41 @@
-import { Navigation } from '@/ui/Navigation';
-import { DescriptionSection } from '@/ui/Sections/DescriptionSection';
-import { Team } from '@/components/Team';
-import { SubscribeSection } from '@/ui/Sections/SubscribeSection';
-import { FooterSection } from '@/ui/FooterSection';
-import { Container } from './styled';
-import { TeamCloser } from '@/components/TeamCloser';
+import { useTranslation } from 'react-i18next';
+import { DescriptionSection, SubscribeSection } from 'tired-hollow-lib-modsen';
 
-export const ElementsMobileContainer = () => (
-  <Container>
-    <Navigation />
-    <DescriptionSection
-      description=""
-      heading=""
-      link="elements"
-      name="Our team"
-    />
-    <TeamCloser />
-    <Team />
-    <SubscribeSection />
-    <FooterSection />
-  </Container>
-);
+import TeamImage from '@/assets/images/teamImage.png';
+import { Team } from '@/components/Team';
+
+import { Layout } from '../Layout';
+import {
+  Container,
+  ContainerCloser,
+  Description,
+  Heading,
+  Image,
+  Text,
+} from './styled';
+
+export const ElementsMobileContainer = () => {
+  const { t } = useTranslation();
+
+  return (
+    <Container>
+      <Layout>
+        <DescriptionSection
+          description=""
+          heading=""
+          link={t('elements')}
+          name={t('Our team')}
+        />
+        <ContainerCloser>
+          <Heading>{t('Get to')}</Heading>
+          <Description>{t('Sed ut')}</Description>
+          <Image src={TeamImage} alt="team" title="team" />
+          <Text>{t('Phasellus tristique')}</Text>
+          <Text>{t('At vero')}</Text>
+        </ContainerCloser>
+        <Team />
+        <SubscribeSection />
+      </Layout>
+    </Container>
+  );
+};

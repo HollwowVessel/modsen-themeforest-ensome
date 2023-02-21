@@ -1,6 +1,8 @@
 import styled from 'styled-components';
+
 import minus from '@/assets/images/icons/dropdownMenu/minus.svg';
 import plus from '@/assets/images/icons/dropdownMenu/plus.svg';
+
 import { ActiveProps } from './types';
 
 export const Container = styled.aside`
@@ -26,7 +28,7 @@ export const Heading = styled.h3`
   font-weight: ${({ theme }) => theme.fontWeights[3]};
   font-size: ${({ theme }) => theme.fonts[3]}px;
   line-height: ${({ theme }) => theme.lineHeights[2]}px;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.black};
   margin: 0 0 ${({ theme }) => theme.margins[3]}px 0;
 `;
@@ -53,7 +55,7 @@ export const Date = styled.p`
   font-weight: ${({ theme }) => theme.fontWeights[0]};
   font-size: ${({ theme }) => theme.fonts[0]}px;
   line-height: ${({ theme }) => theme.lineHeights[0]}px;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.grey};
   margin: 0 0 ${({ theme }) => theme.margins[1]}px 0;
 `;
@@ -62,7 +64,7 @@ export const Title = styled.h4`
   font-weight: ${({ theme }) => theme.fontWeights[3]};
   font-size: ${({ theme }) => theme.fonts[1]}px;
   line-height: ${({ theme }) => theme.lineHeights[0]}px;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.black};
   margin: 0 0 ${({ theme }) => theme.margins[1]}px 0;
 `;
@@ -75,7 +77,7 @@ export const Category = styled.li<ActiveProps>`
   font-weight: ${({ theme }) => theme.fontWeights[0]};
   font-size: ${({ theme }) => theme.fonts[2]}px;
   line-height: ${({ theme }) => theme.lineHeights[2]}px;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.black};
   padding: ${({ theme }) => theme.paddings[3]}px 0;
   justify-content: center;
@@ -86,13 +88,13 @@ export const Category = styled.li<ActiveProps>`
 
   &::before {
     content: '';
-    width: ${({ theme }) => theme.sizes[0]}px;
-    height: ${({ theme }) => theme.sizes[0]}px;
+    width: ${({ theme }) => theme.sizes[1]}px;
+    height: ${({ theme }) => theme.sizes[1]}px;
     position: absolute;
     background: url(${({ active }) => (active ? minus : plus)});
 
     background-repeat: no-repeat;
-    top: ${({ theme }) => theme.tops[3]};
+    top: ${({ theme }) => theme.tops[3]}px;
     right: ${({ theme }) => theme.rights[0]};
     cursor: pointer;
   }
@@ -113,7 +115,7 @@ export const Tag = styled.button<ActiveProps>`
   font-size: ${({ theme }) => theme.fonts[0]}px;
   line-height: ${({ theme }) => theme.lineHeights[0]}px;
   text-align: center;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   padding: ${({ theme }) => theme.paddings[0]}px
     ${({ theme }) => theme.paddings[1]}px;
   color: ${({ active, theme }) =>

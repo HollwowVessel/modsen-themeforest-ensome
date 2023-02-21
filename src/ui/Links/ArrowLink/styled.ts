@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+
 import arrow from '@/assets/images/icons/Links/arrowLink.svg';
-import hoveredArrow from '@/assets/images/icons/Links/hoveredArrowLink.svg';
 import disabledArrow from '@/assets/images/icons/Links/disabledArrowLink.svg';
+import hoveredArrow from '@/assets/images/icons/Links/hoveredArrowLink.svg';
 
 export const Arrow = styled(Link)`
   font-family: 'Manrope';

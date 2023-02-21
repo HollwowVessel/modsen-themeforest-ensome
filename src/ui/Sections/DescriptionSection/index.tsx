@@ -1,23 +1,14 @@
 import { memo } from 'react';
-import {
-  Container,
-  Description,
-  Heading,
-  Home,
-  Info,
-  Links,
-  Name,
-  Solutions,
-} from './styled';
+
+import { BreadCrumbs } from '@/ui/sections/BreadCrumbs';
+
+import { Container, Description, Heading, Info, Name } from './styled';
 import { DescriptionSectionProps } from './types';
 
 export const DescriptionSection = memo(
-  ({ link, name, heading, description }: DescriptionSectionProps) => (
+  ({ name, heading, description }: DescriptionSectionProps) => (
     <Container>
-      <Links>
-        <Home to="/">Home</Home>
-        <Solutions to={`/${link}`}>{name}</Solutions>
-      </Links>
+      <BreadCrumbs />
       <Info>
         <Name>{name}</Name>
         <Heading>{heading}</Heading>

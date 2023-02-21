@@ -1,6 +1,14 @@
+import { useContext, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
-import { useState } from 'react';
+
+import playButton from '@/assets/images/icons/buttons/play.svg';
+import blueLogo from '@/assets/images/logo_blue.svg';
+import { useTopScroll } from '@/hooks/useTopScroll';
 import { WithIconButton } from '@/ui/Buttons/WithIconButton';
+import { Language } from '@/utils/languageContext';
+import { navigationHelper } from '@/utils/navigationHelper';
+
 import {
   HamburgerContainer,
   Logo,
@@ -8,17 +16,14 @@ import {
   NavMenu,
   StyledHamburger,
 } from './styled';
-import blueLogo from '@/assets/images/logo_blue.svg';
-import playButton from '@/assets/images/icons/buttons/play.svg';
-import { useTopScroll } from '@/hooks/useTopScroll';
-import { navigationHelper } from '@/utils/navigationHelper';
 import { NavBarProps } from './types';
 
 export const NavBar = ({ handleVideo }: NavBarProps) => {
   const [open, setOpen] = useState(true);
   const [openPage, setOpenPage] = useState(false);
+  const { lang } = useContext(Language);
   const { pathname } = useLocation();
-  useTopScroll();
+  const { t } = useTranslation();
 
   const handleMenu = () => {
     setOpen((prev) => !prev);
@@ -28,19 +33,26 @@ export const NavBar = ({ handleVideo }: NavBarProps) => {
     setOpenPage((prev) => !prev);
   };
 
-  const Links = navigationHelper(handlePages, openPage, pathname);
+  if (!open) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = 'auto';
+  }
+
+  useTopScroll();
+  const Links = navigationHelper(handlePages, openPage, pathname, lang);
 
   return (
     <Nav>
       <HamburgerContainer>
         <Link to="/">
-          <Logo src={blueLogo} loading="lazy" />
+          <Logo src={blueLogo} alt={blueLogo} title="logo" />
         </Link>
         <StyledHamburger onClick={handleMenu} open={open} />
       </HamburgerContainer>
       <NavMenu open={open}>{Links}</NavMenu>
       <WithIconButton
-        text="Watch the demo"
+        text={t('Watch the')}
         icon={playButton}
         handleClick={handleVideo}
       />

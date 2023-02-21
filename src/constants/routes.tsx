@@ -1,19 +1,17 @@
-import { HomePage } from '@/pages/Home';
-
-import { TeamPage } from '@/pages/Team/TeamPage';
-import { ContactsPage } from '@/pages/Contacts';
+import { AboutPage } from '@/pages/About';
 import { BlogPage } from '@/pages/Blog';
 import { BlogItemPage } from '@/pages/BlogItem';
-import { SolutionsPage } from '@/pages/Solutions';
+import { ContactsPage } from '@/pages/Contacts';
 import { FAQPage } from '@/pages/FAQ';
-import { ServicesPage } from '@/pages/Services';
-import { AboutPage } from '@/pages/About';
-import { SolutionsItemPage } from '@/pages/SolutionsItem';
-
-import { ServicesItemPage } from '@/pages/ServicesItem';
-import { TestimonialsItemPage } from '@/pages/TestimonialsItem';
+import { HomePage } from '@/pages/Home';
 import { NotFoundPage } from '@/pages/NotFound';
+import { ServicesPage } from '@/pages/Services';
+import { ServicesItemPage } from '@/pages/ServicesItem';
+import { SolutionsPage } from '@/pages/Solutions';
+import { SolutionsItemPage } from '@/pages/SolutionsItem';
+import { TeamPage } from '@/pages/Team/TeamPage';
 import { TeamItemPage } from '@/pages/TeamItemPage';
+import { TestimonialsItemPage } from '@/pages/TestimonialsItem';
 
 export const routes = [
   { path: '/', element: <HomePage /> },

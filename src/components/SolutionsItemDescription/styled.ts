@@ -1,5 +1,7 @@
 import styled from 'styled-components';
+
 import listMarker from '@/assets/images/icons/general/listMarker.svg';
+
 import { ActiveProps } from './types';
 
 export const Container = styled.section`
@@ -21,7 +23,7 @@ export const Heading = styled.h3`
   font-weight: ${({ theme }) => theme.fontWeights.at(-1)};
   font-size: ${({ theme }) => theme.fonts.at(-3)}px;
   line-height: ${({ theme }) => theme.lineHeights.at(-2)}px;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.black};
 `;
 
@@ -29,13 +31,18 @@ export const Text = styled.p`
   font-weight: ${({ theme }) => theme.fontWeights[0]};
   font-size: ${({ theme }) => theme.fonts[2]}px;
   line-height: ${({ theme }) => theme.lineHeights[2]}px;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.grey};
   margin: 0 0 ${({ theme }) => theme.margins[3]}px 0;
 `;
 
 export const Info = styled.div`
   max-width: ${({ theme }) => theme.sizes.at(-3)}px;
+`;
+
+export const StickyContainer = styled.div`
+  position: sticky;
+  top: ${({ theme }) => theme.sizes[5]}px;
 `;
 
 export const TabContainer = styled.div`
@@ -53,7 +60,7 @@ export const TabTeleport = styled.a<ActiveProps>`
   font-weight: ${({ theme }) => theme.fontWeights[0]};
   font-size: ${({ theme }) => theme.fonts[0]}px;
   line-height: ${({ theme }) => theme.lineHeights[2]}px;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.black};
   border-left: 4px solid
     ${({ theme, active }) =>
@@ -75,7 +82,7 @@ export const Item = styled.li`
   font-size: ${({ theme }) => theme.fonts[2]}px;
   line-height: ${({ theme }) => theme.lineHeights[3]}px;
 
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.grey};
 `;
 

@@ -1,22 +1,27 @@
-import { memo } from 'react';
+import { memo, useContext } from 'react';
+import { SpecialCard } from 'tired-hollow-lib-modsen';
+
+import { Language } from '@/utils/languageContext';
+
 import { Cards, Container } from './styled';
-import { SpecialCard } from '@/ui/Cards/SpecialCard';
 import { SpecialContainerProps } from './types';
 
-export const SpecialContainer = memo(
-  ({ cards, link }: SpecialContainerProps) => (
+export const SpecialContainer = memo(({ cards }: SpecialContainerProps) => {
+  const { lang } = useContext(Language);
+
+  return (
     <Container>
       <Cards>
-        {cards.map(({ img, heading, description, id }) => (
+        {cards[lang].map(({ img, heading, description }) => (
           <SpecialCard
             description={description}
             heading={heading}
             img={img}
             key={img}
-            link={link + id}
+            link={heading}
           />
         ))}
       </Cards>
     </Container>
-  )
-);
+  );
+});

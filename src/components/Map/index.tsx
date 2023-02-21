@@ -1,15 +1,17 @@
-import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
-import { LatLngExpression } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
+import { LatLngExpression } from 'leaflet';
 import { memo } from 'react';
-import { Container } from './styled';
+import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
+
 import {
   customMarkerIcon,
   mapContainerAttributes,
   markers,
   tileLayerAttributes,
 } from '@/constants/map';
+
+import { Container } from './styled';
 
 export const Map = memo(() => (
   <Container>

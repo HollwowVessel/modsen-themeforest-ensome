@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+
 import { InnerContainerProps } from './types';
 
 export const OuterContainer = styled.div`

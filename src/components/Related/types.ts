@@ -1,5 +1,5 @@
 import { blogArticles } from '@/constants/blogArticle';
 
 export interface RelatedProps {
-  cards: typeof blogArticles;
+  cards?: typeof blogArticles.en;
 }

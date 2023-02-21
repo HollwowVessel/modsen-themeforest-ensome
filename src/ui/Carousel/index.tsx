@@ -1,46 +1,24 @@
-import { useEffect, useRef, useState } from 'react';
-import { Keyframes } from 'styled-components';
+import { useState } from 'react';
 
 import { LeftControlButton } from '@/ui/Buttons/LeftControlButton';
 import { RightControlButton } from '@/ui/Buttons/RightControlButton';
-
-import { Buttons, Cards, CardsOpen, Container, Heading, Info } from './styled';
-
-import { CarouselProps } from './types';
 import { carouselHelper } from '@/utils/carouselHelper';
-import { slideAnimationIn, slideAnimationOut } from '@/theme/animations';
+
+import { Buttons, Cards, Container, Heading, Info } from './styled';
+import { CarouselProps } from './types';
 
 export const Carousel = ({ heading, Card, cards, type }: CarouselProps) => {
   const [sliderItems, setSliderItems] = useState(0);
-  const [animation, setAnimation] = useState<Keyframes | null>(null);
 
-  const animationRef = useRef<null | NodeJS.Timeout>(null);
-
-  const cardItems = carouselHelper(
-    Card,
-    cards,
-    type,
-    sliderItems,
-    animation as Keyframes
-  );
+  const cardItems = carouselHelper(Card, cards, type, sliderItems);
 
   const handleLeft = () => {
     setSliderItems((prev) => prev - 1);
-    setAnimation(slideAnimationOut);
-    animationRef.current = setTimeout(() => setAnimation(null), 500);
   };
 
   const handleRight = () => {
     setSliderItems((prev) => prev + 1);
-    setAnimation(slideAnimationIn);
-
-    animationRef.current = setTimeout(() => setAnimation(null), 500);
   };
-
-  useEffect(
-    () => () => clearTimeout(animationRef.current as NodeJS.Timeout),
-    []
-  );
 
   return (
     <Container>
@@ -58,9 +36,13 @@ export const Carousel = ({ heading, Card, cards, type }: CarouselProps) => {
         </Buttons>
       </Info>
       {type === 'open' ? (
-        <CardsOpen>{cardItems}</CardsOpen>
+        <Cards overflow="none" key={sliderItems}>
+          {cardItems}
+        </Cards>
       ) : (
-        <Cards>{cardItems}</Cards>
+        <Cards overflow="hidden" key={sliderItems}>
+          {cardItems}
+        </Cards>
       )}
     </Container>
   );

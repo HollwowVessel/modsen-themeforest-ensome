@@ -1,4 +1,4 @@
-import { menuItems } from '@/constants/navigation';
+import { navigationItems } from '@/constants/navigation';
 import { ArrowLink } from '@/ui/Links/ArrowLink';
 import {
   FillContainer,
@@ -10,9 +10,10 @@ import {
 export const navigationHelper = (
   handlePages: () => void,
   openPage: boolean,
-  pathname: string
+  pathname: string,
+  lang: 'en' | 'ru'
 ) =>
-  menuItems.map(({ name, path, components }, id) => {
+  navigationItems[lang].map(({ name, path, components }, id) => {
     if (components.length) {
       return (
         <MenuItem
@@ -21,7 +22,7 @@ export const navigationHelper = (
           onClick={handlePages}
           disabled={openPage}
         >
-          Pages
+          {name}
           {openPage && (
             <>
               <FillContainer />

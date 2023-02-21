@@ -1,4 +1,4 @@
-import { ChangeEvent } from 'react';
+import { ChangeEvent, FocusEventHandler } from 'react';
 
 export interface InputProps {
   error?: boolean;
@@ -9,5 +9,6 @@ export interface OpenInputProps {
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
   error?: boolean;
+  onBlur?: FocusEventHandler<HTMLInputElement>;
   name?: string;
 }

@@ -1,50 +1,103 @@
-import { HelpSection } from '@/ui/Sections/HelpSection';
-import { SubscribeSection } from '@/ui/Sections/SubscribeSection';
-import { FooterSection } from '@/ui/FooterSection';
+import { useContext } from 'react';
+import { useTranslation } from 'react-i18next';
+import {
+  BlogCard,
+  Carousel,
+  CircleButton,
+  FillButtonLink,
+  HelpSection,
+  SubscribeSection,
+  TestimonialsCard,
+} from 'tired-hollow-lib-modsen';
+
+import features from '@/assets/images/features.png';
+import hero from '@/assets/images/heroes.png';
 import { Benefits } from '@/components/Benefits';
-
-import { Pricing } from '@/components/Pricing';
-
 import { Overview } from '@/components/Overview';
-import { Features } from '@/components/Features';
-import { Hero } from '@/components/Hero';
-import { Navigation } from '@/ui/Navigation';
-import { Carousel } from '@/ui/Carousel';
-import { TestimonialsCard } from '@/ui/Cards/TestimonialsCard';
-import { cardItems } from '@/constants/testimonialCards';
-import { BlogCard } from '@/ui/Cards/BlogCard';
+import { Pricing } from '@/components/Pricing';
 import { blogArticles } from '@/constants/blogArticle';
+import { testimonialCards } from '@/constants/testimonialCards';
+import { Layout } from '@/containers/Layout';
+import { Language } from '@/utils/languageContext';
 
-export const HomePage = () => (
-  <>
-    <Navigation />
-    <Hero />
-    <Features />
-    <Overview />
-    <Benefits
-      heading="The benefits of Ensome"
-      description="Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
-        illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-        explicabo."
-      background
-    />
-    <Carousel
-      Card={TestimonialsCard}
-      cards={cardItems}
-      heading="Testimonials"
-      type="close"
-    />
-    <Pricing />
-    <Carousel
-      Card={BlogCard}
-      cards={blogArticles}
-      heading="Our blog"
-      type="blog"
-    />
-    <HelpSection />
-    <SubscribeSection />
-    <FooterSection />
-  </>
-);
-//
+import {
+  ButtonContainer,
+  Container,
+  Description,
+  Discover,
+  Ensome,
+  Heading,
+  HeroesContainer,
+  Image,
+  Info,
+  Newest,
+  Solutions,
+  SolutionsDescription,
+  SolutionsHeading,
+  SolutionsImage,
+  SolutionsInfo,
+} from './styled';
+// TODO Refactor info and Solutions components
+export const HomePage = () => {
+  const { t } = useTranslation();
+  const { lang } = useContext(Language);
+  return (
+    <Layout>
+      <Container>
+        <Info>
+          <Heading>
+            {t('Find true')} <Ensome>{t('Ensome')}</Ensome>
+          </Heading>
+          <Description>{t('Lauda, totam')}</Description>
+        </Info>
+        <HeroesContainer>
+          <ButtonContainer>
+            <CircleButton text={t('Learn more')} to="/services" />
+          </ButtonContainer>
+          <Image src={hero} alt="hero" title="hero" />
+        </HeroesContainer>
+      </Container>
+      <Container>
+        <Info>
+          <Heading>
+            {t('The')} <Newest>{t('newest')}</Newest> {t('business analytics')}
+          </Heading>
+          <Discover>
+            <Description>{t('Doloremque laudantium')}</Description>
+            <FillButtonLink text={t('Discover more')} to="/solutions" />
+          </Discover>
+        </Info>
+        <Solutions>
+          <SolutionsImage src={features} alt="features" title="features" />
+          <SolutionsInfo>
+            <SolutionsImage src={features} alt="features" title="features" />
+            <SolutionsHeading>{t('Radically new')}</SolutionsHeading>
+            <SolutionsDescription>{t('Lauda, totam')}</SolutionsDescription>
+            <FillButtonLink text={t('Learn more')} to="/solutions" />
+          </SolutionsInfo>
+        </Solutions>
+      </Container>
+      <Overview />
+      <Benefits
+        heading={t('The benefits')}
+        description={t('Sed ut')}
+        background
+      />
+      <Carousel
+        Card={TestimonialsCard}
+        cards={testimonialCards[lang]}
+        heading={t('Testimonials')}
+        type="close"
+      />
+      <Pricing />
+      <Carousel
+        Card={BlogCard}
+        cards={blogArticles[lang]}
+        heading={t('Our blog')}
+        type="blog"
+      />
+      <HelpSection />
+      <SubscribeSection />
+    </Layout>
+  );
+};

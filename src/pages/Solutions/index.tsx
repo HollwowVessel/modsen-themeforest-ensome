@@ -1,34 +1,66 @@
-import { FooterSection } from '@/ui/FooterSection';
-import { Navigation } from '@/ui/Navigation';
-import { HelpSection } from '@/ui/Sections/HelpSection';
+import { useContext } from 'react';
+import { useTranslation } from 'react-i18next';
+import {
+  Carousel,
+  DescriptionSection,
+  HelpSection,
+  TestimonialsCard,
+} from 'tired-hollow-lib-modsen';
 
-import { SolutionsChoose } from '@/components/SolutionsChoose';
-import { TestimonialsCard } from '@/ui/Cards/TestimonialsCard';
-import { cardItems } from '@/constants/testimonialCards';
-import { Carousel } from '@/ui/Carousel';
+import Servers from '@/assets/images/solutions.jpg';
 import { solutionsItems } from '@/constants/solutions';
+import { solutionsAdvantages } from '@/constants/solutionsAdvantages';
+import { testimonialCards } from '@/constants/testimonialCards';
+import { Layout } from '@/containers/Layout';
 import { SpecialContainer } from '@/containers/SpecialContainer';
-import { DescriptionSection } from '@/ui/Sections/DescriptionSection';
+import { Language } from '@/utils/languageContext';
 
-export const SolutionsPage = () => (
-  <>
-    <Navigation />
-    <DescriptionSection
-      description="Getting ready for your success, we provide truly outstanding IT
-        solutions."
-      heading="Data analytics solutions"
-      link="solutions"
-      name="Solutions"
-    />
-    <SpecialContainer cards={solutionsItems} link="/solutions/" />
-    <SolutionsChoose />
-    <Carousel
-      Card={TestimonialsCard}
-      cards={cardItems}
-      heading="Testimonials"
-      type="close"
-    />
-    <HelpSection />
-    <FooterSection />
-  </>
-);
+import {
+  Container,
+  Heading,
+  Image,
+  Info,
+  Item,
+  ItemDescription,
+  ItemName,
+  List,
+} from './styled';
+
+export const SolutionsPage = () => {
+  const { t } = useTranslation();
+
+  const { lang } = useContext(Language);
+
+  return (
+    <Layout>
+      <DescriptionSection
+        description={t('Getting ready')}
+        heading={t('Data analytics sol')}
+        link="solutions"
+        name={t('Solutions')}
+      />
+      <SpecialContainer cards={solutionsItems} link="/solutions/" />
+      <Container>
+        <Image src={Servers} alt="servers" title="servers" />
+        <Info>
+          <Heading>{t('Why choose')}</Heading>
+          <List>
+            {solutionsAdvantages[lang].map(({ heading, description }) => (
+              <Item key={heading}>
+                <ItemName>{heading}</ItemName>
+                <ItemDescription>{description}</ItemDescription>
+              </Item>
+            ))}
+          </List>
+        </Info>
+      </Container>
+      <Carousel
+        Card={TestimonialsCard}
+        cards={testimonialCards[lang]}
+        heading={t('Testimonials')}
+        type="close"
+      />
+      <HelpSection />
+    </Layout>
+  );
+};

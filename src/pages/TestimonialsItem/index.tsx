@@ -1,31 +1,32 @@
+import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import { Navigation } from '@/ui/Navigation';
-import { SubscribeSection } from '@/ui/Sections/SubscribeSection';
+import {
+  SecondDescriptionSection,
+  SubscribeSection,
+} from 'tired-hollow-lib-modsen';
 
 import { BlogArticle } from '@/components/BlogArticle';
+import { testimonialCards } from '@/constants/testimonialCards';
+import { Layout } from '@/containers/Layout';
+import { Language } from '@/utils/languageContext';
+
 import { Container } from './styled';
-
-import { FooterSection } from '@/ui/FooterSection';
-
-import { cardItems } from '@/constants/testimonialCards';
-import { SecondDescriptionSection } from '@/ui/Sections/SecondDescriptionSection';
 
 export const TestimonialsItemPage = () => {
   const { index } = useParams();
-  const { text, icon, heading, info } = cardItems[+(index as string)];
+
+  const { lang } = useContext(Language);
+
+  const { text, icon, heading, info } = testimonialCards[lang].filter(
+    ({ heading }) => heading.indexOf(index as string) !== -1
+  )[0];
   return (
-    <>
-      <Navigation />
-      <SecondDescriptionSection
-        heading={heading}
-        link={`testimonials/${index}`}
-        name={heading}
-      />
+    <Layout>
+      <SecondDescriptionSection heading={heading} />
       <Container>
         <BlogArticle text={info} heading={text} image={icon} date={heading} />
       </Container>
       <SubscribeSection />
-      <FooterSection />
-    </>
+    </Layout>
   );
 };

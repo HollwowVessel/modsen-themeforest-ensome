@@ -2,24 +2,21 @@ import { keyframes } from 'styled-components';
 
 export const slideAnimationOut = keyframes`
     from {
-        transform: translateX(0%);
-        
+        opacity: 0;
     }
 
     to {
-        transform: translateX(-100%);
-        
+        opacity: 1;
     }
 `;
 
 export const slideAnimationIn = keyframes`
     from {
-        transform: translateX(100%);
+        opacity: 1;
         
     }
 
     to {
-        transform: translateX(0);
-        
+        opacity: 0;        
     }
 `;

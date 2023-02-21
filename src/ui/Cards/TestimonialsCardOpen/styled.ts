@@ -1,12 +1,11 @@
 import styled from 'styled-components';
-import { CardProps } from './types';
 
-export const Card = styled.div<CardProps>`
+export const Card = styled.div`
   box-shadow: 0px 4px 12px rgba(12, 68, 204, 0.1);
   max-width: ${({ theme }) => theme.sizes.at(-4)}px;
   position: relative;
   display: flex;
-  animation: ${({ animation }) => animation} 0.5s;
+
   align-items: center;
   gap: ${({ theme }) => theme.gaps[2]}px;
   flex-wrap: wrap;
@@ -31,7 +30,7 @@ export const Name = styled.h4`
 
   font-size: ${({ theme }) => theme.fonts[1]}px;
   line-height: ${({ theme }) => theme.lineHeights[0]}px;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.black};
 `;
 
@@ -51,6 +50,6 @@ export const Description = styled.p`
   line-height: ${({ theme }) => theme.lineHeights[1]}px;
 
   text-align: justify;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.grey};
 `;

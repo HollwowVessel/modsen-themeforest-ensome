@@ -27,7 +27,7 @@ export const Name = styled.h3`
   font-weight: ${({ theme }) => theme.fontWeights[3]};
   font-size: ${({ theme }) => theme.fonts[2]}px;
   line-height: ${({ theme }) => theme.lineHeights[2]}px;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.white};
   padding: 0 ${({ theme }) => theme.paddings[3]}px;
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
@@ -40,7 +40,7 @@ export const Profession = styled.p`
   font-weight: ${({ theme }) => theme.fontWeights[0]};
   font-size: ${({ theme }) => theme.fonts[1]}px;
   line-height: ${({ theme }) => theme.lineHeights[1]}px;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.white};
   padding: 0 ${({ theme }) => theme.paddings[3]}px;
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
@@ -57,8 +57,6 @@ export const Socials = styled.ul`
 export const Social = styled.li``;
 
 export const SocialLink = styled.a``;
-
-export const Icon = styled.img``;
 
 export const TeamLink = styled(Link)`
   width: ${({ theme }) => theme.sizes.at(-6)}px;

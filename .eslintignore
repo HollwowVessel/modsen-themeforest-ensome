@@ -7,3 +7,4 @@ tsconfig.json
 /cypress
 cypress.config.ts
 /build
+/lib

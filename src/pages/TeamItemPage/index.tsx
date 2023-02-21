@@ -1,24 +1,23 @@
+import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import { TeamItem } from '@/components/TeamItem';
-import { Navigation } from '@/ui/Navigation';
-import { SecondDescriptionSection } from '@/ui/Sections/SecondDescriptionSection';
-import { teamCards } from '@/constants/teamCards';
-import { FooterSection } from '@/ui/FooterSection';
+import { SecondDescriptionSection } from 'tired-hollow-lib-modsen';
+
 import { TeamInformation } from '@/components/TeamInformation';
+import { TeamItem } from '@/components/TeamItem';
+import { teamCards } from '@/constants/teamCards';
+import { Layout } from '@/containers/Layout';
+import { Language } from '@/utils/languageContext';
 
 export const TeamItemPage = () => {
   const { index } = useParams();
+  const { lang } = useContext(Language);
 
-  const { name, profession, social, photo } = teamCards[+(index as string)];
+  const { name, profession, social, photo } = teamCards[lang].filter(
+    ({ name }) => name.indexOf(index as string) !== -1
+  )[0];
   return (
-    <>
-      <Navigation />
-      <SecondDescriptionSection
-        heading={name}
-        link={`/elements/${index}`}
-        name={name}
-        secondlink
-      />
+    <Layout>
+      <SecondDescriptionSection heading={name} />
       <TeamItem
         image={photo}
         name={name}
@@ -27,9 +26,8 @@ export const TeamItemPage = () => {
       />
       <TeamInformation
         heading={`Want ${name.split(' ')[0]} to share
-         his expertise with you?`}
+         his/her expertise with you?`}
       />
-      <FooterSection />
-    </>
+    </Layout>
   );
 };

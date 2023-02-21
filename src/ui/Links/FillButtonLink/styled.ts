@@ -8,7 +8,7 @@ export const Fill = styled.button`
   font-size: ${({ theme }) => theme.fonts[1]}px;
   line-height: ${({ theme }) => theme.lineHeights[0]}px;
   color: ${({ theme }) => theme.colors.white};
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   padding: ${({ theme }) => theme.paddings[2]}px
     ${({ theme }) => theme.paddings[5]}px;
   background: ${({ theme }) => theme.colors.primary};

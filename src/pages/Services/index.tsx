@@ -1,28 +1,30 @@
+import { useTranslation } from 'react-i18next';
+import {
+  DescriptionSection,
+  HelpSection,
+  SubscribeSection,
+} from 'tired-hollow-lib-modsen';
+
 import { Overview } from '@/components/Overview';
-import { Navigation } from '@/ui/Navigation';
-import { HelpSection } from '@/ui/Sections/HelpSection';
-import { SubscribeSection } from '@/ui/Sections/SubscribeSection';
-
-import { FooterSection } from '@/ui/FooterSection';
 import { servicesItems } from '@/constants/servicesCard';
+import { Layout } from '@/containers/Layout';
 import { SpecialContainer } from '@/containers/SpecialContainer';
-import { DescriptionSection } from '@/ui/Sections/DescriptionSection';
 
-export const ServicesPage = () => (
-  <>
-    <Navigation />
-    <DescriptionSection
-      description="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-      doloremque laudantium, totam rem aperiam, eaque ipsa quaeab illo
-      inventore."
-      heading="Data Analytics Services"
-      name="Services"
-      link="services"
-    />
-    <SpecialContainer cards={servicesItems} link="/services/" />
-    <Overview />
-    <HelpSection />
-    <SubscribeSection />
-    <FooterSection />
-  </>
-);
+export const ServicesPage = () => {
+  const { t } = useTranslation();
+
+  return (
+    <Layout>
+      <DescriptionSection
+        description={t('Sed ut')}
+        heading={t('Data Analytics')}
+        name={t('Services')}
+        link="services"
+      />
+      <SpecialContainer cards={servicesItems} link="/services/" />
+      <Overview />
+      <HelpSection />
+      <SubscribeSection />
+    </Layout>
+  );
+};

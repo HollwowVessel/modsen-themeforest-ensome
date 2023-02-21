@@ -1,16 +1,19 @@
-import { Navigation } from '@/ui/Navigation';
-import { SubscribeSection } from '@/ui/Sections/SubscribeSection';
+import { useTranslation } from 'react-i18next';
+import {
+  SecondDescriptionSection,
+  SubscribeSection,
+} from 'tired-hollow-lib-modsen';
 
-import { FooterSection } from '@/ui/FooterSection';
 import { BlogContainer } from '@/containers/BlogContainer';
-import { SecondDescriptionSection } from '@/ui/Sections/SecondDescriptionSection';
+import { Layout } from '@/containers/Layout';
 
-export const BlogPage = () => (
-  <>
-    <Navigation />
-    <SecondDescriptionSection heading="Blog Page" link="blog" name="Blog" />
-    <BlogContainer />
-    <SubscribeSection />
-    <FooterSection />
-  </>
-);
+export const BlogPage = () => {
+  const { t } = useTranslation();
+  return (
+    <Layout>
+      <SecondDescriptionSection heading={t('Blog Page')} />
+      <BlogContainer />
+      <SubscribeSection />
+    </Layout>
+  );
+};

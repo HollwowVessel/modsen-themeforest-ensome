@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import { WithIconProps } from './types';
 
 export const WithIcon = styled.button<WithIconProps>`

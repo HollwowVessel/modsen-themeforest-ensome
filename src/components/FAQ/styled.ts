@@ -1,6 +1,8 @@
 import styled from 'styled-components';
-import Plus from '@/assets/images/icons/dropdownMenu/plus.svg';
+
 import Minus from '@/assets/images/icons/dropdownMenu/minus.svg';
+import Plus from '@/assets/images/icons/dropdownMenu/plus.svg';
+
 import { ActiveProp } from './types';
 
 export const Container = styled.section`
@@ -22,6 +24,7 @@ export const Questions = styled.section`
 export const Question = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.grey};
   border-radius: 6px;
+  cursor: pointer;
   padding: ${({ theme }) => theme.paddings[5]}px;
   margin: 0 0 ${({ theme }) => theme.margins[2]}px 0;
   width: ${({ theme }) => theme.sizes[5]}%;
@@ -35,7 +38,7 @@ export const Heading = styled.h3<ActiveProp>`
   font-size: ${({ theme }) => theme.fonts[3]}px;
   width: ${({ theme }) => theme.sizes[5]}%;
   line-height: ${({ theme }) => theme.lineHeights[2]}px;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   display: flex;
   align-items: center;
   color: ${({ active, theme }) =>
@@ -63,7 +66,7 @@ export const Description = styled.p<ActiveProp>`
   line-height: ${({ theme }) => theme.lineHeights[2]}px;
   margin: ${({ theme }) => theme.margins[1]}px 0 0 0;
 
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.grey};
   flex: none;
   order: 1;

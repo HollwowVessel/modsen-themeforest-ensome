@@ -34,7 +34,7 @@ export const Name = styled.p`
   line-height: ${({ theme }) => theme.lineHeights[1]}px;
 
   text-align: center;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   margin: 0;
   padding: 0;
   color: ${({ theme }) => theme.colors.grey};

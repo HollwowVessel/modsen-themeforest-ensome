@@ -16,14 +16,21 @@ export const Heading = styled.h1`
   color: ${({ theme }) => theme.colors.black};
   margin: 0 0 ${({ theme }) => theme.margins[0]}px 0;
 `;
+export const Overview = styled.section`
+  padding: ${({ theme }) => theme.paddings[2]}px
+    ${({ theme }) => theme.paddings[5]}px;
+  background: ${({ theme }) => theme.colors.background};
+  margin: 0 0 ${({ theme }) => theme.margins[4]}px 0;
+`;
 
 export const Description = styled.p`
   font-weight: ${({ theme }) => theme.fontWeights[0]};
   font-size: ${({ theme }) => theme.fonts[0]};
   line-height: ${({ theme }) => theme.lineHeights[2]}px;
   text-align: center;
-  letter-spacing: -0.015em;
-  margin: 0 0 ${({ theme }) => theme.margins[2]}px 0;
+  letter-spacing: 0.03em;
+  margin: ${({ theme }) => theme.margins[2]}px 0
+    ${({ theme }) => theme.margins[2]}px 0;
   color: ${({ theme }) => theme.colors.grey};
 `;
 

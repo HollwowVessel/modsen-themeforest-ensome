@@ -1,17 +1,19 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { ThemeProvider } from 'styled-components';
 import { BrowserRouter } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
+
+import { blogArticles } from '@/constants/blogArticle';
+import { theme } from '@/theme/theme';
+
 import { BlogCard } from './index';
 import { BlogCardProps } from './types';
-import { theme } from '@/theme/theme';
-import { blogArticles } from '@/constants/blogArticle';
 
 export default {
   title: 'Cards/BlogCard',
   component: BlogCard,
 } as ComponentMeta<typeof BlogCard>;
 
-const props = blogArticles[0];
+const props = blogArticles.en[1];
 
 const Template: ComponentStory<typeof BlogCard> = ({
   date,

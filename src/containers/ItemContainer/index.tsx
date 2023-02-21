@@ -1,4 +1,6 @@
-import { useMemo } from 'react';
+import { useContext, useMemo } from 'react';
+
+import { Language } from '@/utils/languageContext';
 
 import { Card, Cards, Description, Heading, Image } from './styled';
 import { ItemContainerProps } from './types';
@@ -8,12 +10,15 @@ export const ItemContainer = ({
   unfilteredItems,
   RenderCard,
 }: ItemContainerProps) => {
+  const { lang } = useContext(Language);
+
   const { img, description, heading } = useMemo(
-    () => unfilteredItems[+(index as string)],
+    () => unfilteredItems[lang][+(index as string)],
     [index]
   );
+
   const items = useMemo(
-    () => unfilteredItems.filter(({ id }) => id !== +(index as string)),
+    () => unfilteredItems[lang].filter(({ id }) => id !== +(index as string)),
     [index]
   );
 
@@ -21,16 +26,16 @@ export const ItemContainer = ({
     <>
       <Card>
         <Heading>{heading}</Heading>
-        <Image src={img} alt={img} loading="lazy" />
+        <Image src={img} alt={img} title="img" />
         <Description>{description}</Description>
       </Card>
       <Cards>
-        {items.map(({ img, heading, description, id }) => (
+        {items.map(({ img, heading, description }) => (
           <RenderCard
             description={description}
             heading={heading}
             img={img}
-            link={`/services/${id}`}
+            link={`/services/${heading}`}
             key={img}
           />
         ))}

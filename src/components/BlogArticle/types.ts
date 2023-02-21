@@ -6,8 +6,8 @@ export interface BlogArticleProps {
   heading: string;
   image: string;
   views?: number;
-  tags?: string[];
-  cards?: typeof blogArticles;
+  tags?: string;
+  cards?: typeof blogArticles.en;
 }
 
 export interface TagProps {

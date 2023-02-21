@@ -1,11 +1,11 @@
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { NavLink } from 'react-router-dom';
-import hamburger from '@/assets/images/icons/general/hamburger.svg';
 import close from '@/assets/images/icons/general/close.svg';
-
+import hamburger from '@/assets/images/icons/general/hamburger.svg';
 import pagesIcon from '@/assets/images/icons/general/pagesIcon.svg';
 import pagesIconUp from '@/assets/images/icons/general/pagesIconUp.svg';
+
 import { MenuItemProps, StyledOpenProps } from './types';
 
 export const Nav = styled.nav`
@@ -42,7 +42,7 @@ export const NavMenu = styled.ul<StyledOpenProps>`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: fixed;
+    position: absolute;
     width: ${({ theme }) => theme.sizes[5]}%;
     height: ${({ theme }) => theme.sizes[5]}%;
     top: 0;
@@ -125,6 +125,12 @@ export const MenuLink = styled(NavLink)<StyledOpenProps>`
       ${({ theme, open }) => (open ? theme.colors.black : 'none')};
     border-radius: 5px;
   }
+
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    &::before {
+      display: none;
+    }
+  }
 `;
 
 export const StyledHamburger = styled.div<StyledOpenProps>`
@@ -177,6 +183,7 @@ export const PagesContainer = styled.div`
   border-radius: 6px;
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
     position: initial;
+    filter: none;
   }
 `;
 

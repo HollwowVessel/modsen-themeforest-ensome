@@ -1,6 +1,8 @@
 import { PayPalButtons } from '@paypal/react-paypal-js';
 import { createPortal } from 'react-dom';
+
 import { createPaypalOrder } from '@/api/paypalApi';
+
 import {
   Advantages,
   Card,

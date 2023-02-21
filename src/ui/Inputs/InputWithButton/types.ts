@@ -1,4 +1,4 @@
-import { ChangeEvent } from 'react';
+import { ChangeEvent, FocusEventHandler } from 'react';
 
 export interface InputProps {
   error?: boolean;
@@ -9,6 +9,7 @@ export interface InputWithButtonProps {
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
   error?: boolean;
+  onBlur?: FocusEventHandler<HTMLInputElement>;
   onClick?: () => void;
   buttonText?: string;
   disabled?: boolean;

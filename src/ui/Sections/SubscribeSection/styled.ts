@@ -46,7 +46,7 @@ export const Subscribe = styled.h3`
   font-weight: ${({ theme }) => theme.fontWeights[4]};
   font-size: ${({ theme }) => theme.fonts.at(-3)}px;
   line-height: ${({ theme }) => theme.lineHeights.at(-2)}px;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.white};
   margin: 0 0 ${({ theme }) => theme.spaces[2]}px 0;
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
@@ -60,7 +60,7 @@ export const Description = styled.p`
   max-width: ${({ theme }) => theme.sizes.at(-5)}px;
   font-size: ${({ theme }) => theme.fonts[2]}px;
   line-height: ${({ theme }) => theme.lineHeights[2]}px;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.white};
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
     display: none;
@@ -82,7 +82,7 @@ export const Email = styled.input`
   font-weight: ${({ theme }) => theme.fontWeights[2]};
   font-size: ${({ theme }) => theme.fonts[0]}px;
   line-height: ${({ theme }) => theme.lineHeights[0]}px;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.black};
   background: ${({ theme }) => theme.colors.helperBlueThree};
   border-radius: 6px;
@@ -99,7 +99,7 @@ export const Email = styled.input`
     font-weight: ${({ theme }) => theme.fontWeights[2]};
     font-size: ${({ theme }) => theme.fonts[0]}px;
     line-height: ${({ theme }) => theme.lineHeights[0]}px;
-    letter-spacing: -0.015em;
+    letter-spacing: 0.03em;
     color: ${({ theme }) => theme.colors.black};
   }
   @media (max-width: ${({ theme }) => theme?.breakPoints?.tablet}px) {

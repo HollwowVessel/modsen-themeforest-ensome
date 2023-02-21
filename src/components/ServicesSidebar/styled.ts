@@ -1,6 +1,8 @@
 import styled from 'styled-components';
+
 import minus from '@/assets/images/icons/dropdownMenu/minus.svg';
 import plus from '@/assets/images/icons/dropdownMenu/plus.svg';
+
 import { ActiveProps } from './types';
 
 export const Container = styled.aside`
@@ -15,7 +17,7 @@ export const Heading = styled.h3`
   font-weight: ${({ theme }) => theme.fontWeights[3]};
   font-size: ${({ theme }) => theme.fonts[3]}px;
   line-height: ${({ theme }) => theme.lineHeights[2]}px;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.black};
   margin: ${({ theme }) => theme.margins[3]}px 0
     ${({ theme }) => theme.margins[3]}px 0;
@@ -29,7 +31,7 @@ export const Category = styled.li<ActiveProps>`
   font-weight: ${({ theme }) => theme.fontWeights[0]};
   font-size: ${({ theme }) => theme.fonts[2]}px;
   line-height: ${({ theme }) => theme.lineHeights[2]}px;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.black};
   padding: ${({ theme }) => theme.paddings[3]}px 0;
   justify-content: center;

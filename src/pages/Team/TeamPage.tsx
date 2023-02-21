@@ -1,5 +1,5 @@
-import { ElementsMobileContainer } from '@/containers/ElementsMobileContainer';
 import { ElementsDesktopContainer } from '@/containers/ElementsDesktopContainer';
+import { ElementsMobileContainer } from '@/containers/ElementsMobileContainer';
 
 export const TeamPage = () => (
   <>

@@ -1,4 +1,5 @@
 import { icon } from 'leaflet';
+
 import markerIcon from '@/assets/images/icons/general/marker.svg';
 
 export const markers = [
@@ -32,5 +33,5 @@ export const tileLayerAttributes = {
 
 export const mapContainerAttributes = {
   center: [55, 30],
-  zoom: 13,
+  zoom: 3,
 };

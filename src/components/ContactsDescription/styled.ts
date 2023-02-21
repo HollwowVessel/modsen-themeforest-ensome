@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+
 import { ContactHeadingProps } from './types';
 
 export const Container = styled.section`
@@ -63,7 +64,7 @@ export const Heading = styled.h1`
   font-weight: ${({ theme }) => theme.fontWeights[4]};
   font-size: ${({ theme }) => theme.fonts.at(-1)}px;
   line-height: ${({ theme }) => theme.lineHeights[5]}%;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.black};
   max-width: ${({ theme }) => theme.sizes.at(-4)}px;
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
@@ -97,20 +98,20 @@ export const Email = styled.input`
   font-weight: ${({ theme }) => theme.fontWeights[2]};
   font-size: ${({ theme }) => theme.fonts[0]}px;
   line-height: ${({ theme }) => theme.lineHeights[0]}px;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.black};
   border: 1px solid ${({ theme }) => theme.colors.grey};
   &::placeholder {
     font-weight: ${({ theme }) => theme.fontWeights[2]};
     font-size: ${({ theme }) => theme.fonts[0]}px;
     line-height: ${({ theme }) => theme.lineHeights[0]}px;
-    letter-spacing: -0.015em;
+    letter-spacing: 0.03em;
     color: ${({ theme }) => theme.colors.black};
   }
 `;
 
 export const Message = styled.textarea`
-  margin: ${({ theme }) => theme.margins[2]}px 0 0 0;
+  margin: 0;
   padding: ${({ theme }) => theme.paddings[2]}px
     ${({ theme }) => theme.paddings[3]}px;
   width: ${({ theme }) => theme.sizes[5]}%;
@@ -121,7 +122,7 @@ export const Message = styled.textarea`
   font-weight: ${({ theme }) => theme.fontWeights[2]};
   font-size: ${({ theme }) => theme.fonts[0]}px;
   line-height: ${({ theme }) => theme.lineHeights[0]}px;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.black};
   border-radius: 6px;
   outline: none;
@@ -134,7 +135,7 @@ export const Message = styled.textarea`
     font-weight: ${({ theme }) => theme.fontWeights[2]};
     font-size: ${({ theme }) => theme.fonts[0]}px;
     line-height: ${({ theme }) => theme.lineHeights[0]}px;
-    letter-spacing: -0.015em;
+    letter-spacing: 0.03em;
     color: ${({ theme }) => theme.colors.black};
   }
 `;
@@ -177,6 +178,10 @@ export const ContactDescription = styled.p`
   font-size: ${({ theme }) => theme.fonts[1]}px;
   line-height: ${({ theme }) => theme.lineHeights[1]}px;
   text-align: right;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.grey};
+`;
+
+export const InfoLink = styled.a`
+  text-decoration: none;
 `;

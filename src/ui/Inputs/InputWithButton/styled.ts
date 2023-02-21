@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import { InputProps } from './types';
 
 export const Input = styled.input<InputProps>`
@@ -10,7 +11,7 @@ export const Input = styled.input<InputProps>`
   font-weight: ${({ theme }) => theme.fontWeights[2]};
   font-size: ${({ theme }) => theme.fonts[0]}px;
   line-height: ${({ theme }) => theme.lineHeights[0]}px;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme, error }) =>
     error ? theme.colors.red : theme.colors.black};
   border: 3px solid
@@ -29,7 +30,7 @@ export const Input = styled.input<InputProps>`
     font-weight: ${({ theme }) => theme.fontWeights[2]};
     font-size: ${({ theme }) => theme.fonts[0]}px;
     line-height: ${({ theme }) => theme.lineHeights[0]}px;
-    letter-spacing: -0.015em;
+    letter-spacing: 0.03em;
     color: ${({ theme }) => theme.colors.grey};
   }
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {

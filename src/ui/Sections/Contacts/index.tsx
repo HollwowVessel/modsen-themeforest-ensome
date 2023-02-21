@@ -1,5 +1,12 @@
-import { Formik } from 'formik';
+import { Field, Formik } from 'formik';
+import { useTranslation } from 'react-i18next';
+
+import { handleSubmit, initialValue } from '@/api/formikApi';
+import { contactSchema } from '@/api/yupSchema';
 import { contacts } from '@/constants/contacts';
+import { FillButton } from '@/ui/Buttons/FillButton';
+import { OpenInput } from '@/ui/Inputs/OpenInput';
+
 import {
   Contact,
   ContactDescription,
@@ -14,37 +21,16 @@ import {
   InteractionDescription,
   Section,
 } from './styled';
-import { FillButton } from '@/ui/Buttons/FillButton';
-import { sendMessage } from '@/api/emailjsApi';
-import { contactSchema } from '@/api/yupSchema';
-import { OpenInput } from '@/ui/Inputs/OpenInput';
-import { initialValue } from '@/api/formikApi';
 
 export const ContactsSection = () => {
-  const handleSubmit = (
-    { email, message, theme, name }: typeof initialValue,
-    {
-      setSubmitting,
-      resetForm,
-    }: { setSubmitting: (arg: boolean) => void; resetForm: () => void }
-  ) => {
-    sendMessage(email, message, theme, name);
-    setSubmitting(false);
-    resetForm();
-  };
+  const { t } = useTranslation();
 
   return (
     <Container>
       <Section>
         <Info>
-          <Heading>
-            Left questions? Contacts us now for a free consultation and free
-            trial!
-          </Heading>
-          <Description>
-            Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
-            suscipit laboriosam, nisi ut aliquid ex ea commodi.
-          </Description>
+          <Heading>{t('Left questions')}</Heading>
+          <Description>{t('Ut enim')}</Description>
           <ContactList>
             {contacts.map(({ heading, description }) => (
               <Contact key={heading}>
@@ -69,8 +55,9 @@ export const ContactsSection = () => {
           }) => (
             <Interaction onSubmit={handleSubmit}>
               <InteractionBlock>
-                <InteractionDescription>Name</InteractionDescription>
-                <OpenInput
+                <InteractionDescription>{t('Name')}</InteractionDescription>
+                <Field
+                  as={OpenInput}
                   placeholder="Andrea"
                   name="name"
                   onChange={handleChange}
@@ -79,8 +66,9 @@ export const ContactsSection = () => {
                 />
               </InteractionBlock>
               <InteractionBlock>
-                <InteractionDescription>Email</InteractionDescription>
-                <OpenInput
+                <InteractionDescription>{t('Email')}</InteractionDescription>
+                <Field
+                  as={OpenInput}
                   placeholder="andrea@gmail.com"
                   name="email"
                   onChange={handleChange}
@@ -92,8 +80,9 @@ export const ContactsSection = () => {
                 />
               </InteractionBlock>
               <InteractionBlock>
-                <InteractionDescription>Theme</InteractionDescription>
-                <OpenInput
+                <InteractionDescription>{t('Theme')}</InteractionDescription>
+                <Field
+                  as={OpenInput}
                   placeholder="Message theme"
                   name="theme"
                   onChange={handleChange}
@@ -102,8 +91,9 @@ export const ContactsSection = () => {
                 />
               </InteractionBlock>
               <InteractionBlock>
-                <InteractionDescription>Message</InteractionDescription>
-                <OpenInput
+                <InteractionDescription>{t('Message')}</InteractionDescription>
+                <Field
+                  as={OpenInput}
                   placeholder="Your message"
                   name="message"
                   onChange={handleChange}

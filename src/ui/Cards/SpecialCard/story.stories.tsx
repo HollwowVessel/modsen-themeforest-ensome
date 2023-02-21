@@ -1,8 +1,10 @@
 import { ComponentMeta } from '@storybook/react';
-import { ThemeProvider } from 'styled-components';
 import { BrowserRouter } from 'react-router-dom';
-import { SpecialCard } from './index';
+import { ThemeProvider } from 'styled-components';
+
 import { theme } from '@/theme/theme';
+
+import { SpecialCard } from './index';
 
 export default {
   title: 'Cards/SpecialCard',

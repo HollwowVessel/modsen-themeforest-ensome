@@ -1,10 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
-import { teamCards } from '@/constants/teamCards';
 import { MAX_HEIGHT, NINE_PERSONS } from '@/constants/general';
+import { teamCards } from '@/constants/teamCards';
+import { Language } from '@/utils/languageContext';
 
 export const useInfinityScrollItems = () => {
-  const [items, setItems] = useState(() => teamCards.slice(0, NINE_PERSONS));
+  const { lang } = useContext(Language);
+  const [items, setItems] = useState(() =>
+    teamCards[lang].slice(0, NINE_PERSONS)
+  );
   const [quantity, setQuantity] = useState(NINE_PERSONS);
 
   const scrollHandler = () => {
@@ -14,17 +18,17 @@ export const useInfinityScrollItems = () => {
     const { innerHeight } = window;
     if (
       scrollHeight - (scrollTop + innerHeight) < MAX_HEIGHT &&
-      teamCards.length > quantity
+      teamCards[lang].length > quantity
     ) {
       setQuantity((prev) => prev + NINE_PERSONS);
     }
   };
 
   useEffect(() => {
-    if (teamCards.length > quantity && quantity > NINE_PERSONS) {
+    if (teamCards[lang].length > quantity && quantity > NINE_PERSONS) {
       setItems((prev) => [
         ...prev,
-        ...teamCards.slice(quantity, quantity + NINE_PERSONS),
+        ...teamCards[lang].slice(quantity, quantity + NINE_PERSONS),
       ]);
     }
   }, [quantity]);

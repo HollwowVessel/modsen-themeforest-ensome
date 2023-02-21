@@ -1,4 +1,4 @@
-export const menuItems = [
+const navigationItemsEN = [
   { name: 'Home', path: '/', components: [] },
   { name: 'Solutions', path: '/solutions', components: [] },
   {
@@ -14,3 +14,25 @@ export const menuItems = [
   { name: 'Blog', path: '/blog', components: [] },
   { name: 'Contacts', path: '/contacts', components: [] },
 ];
+
+const navigationItemsRu = [
+  { name: 'Дом', path: '/', components: [] },
+  { name: 'Решения', path: '/solutions', components: [] },
+  {
+    name: 'Страницы',
+    components: [
+      { name: 'Чаво', path: 'FAQ' },
+      { name: 'Сервисы', path: 'services' },
+      { name: 'Относительно', path: 'about' },
+    ],
+    path: undefined,
+  },
+  { name: 'Элементы', path: '/elements', components: [] },
+  { name: 'Блог', path: '/blog', components: [] },
+  { name: 'Контакты', path: '/contacts', components: [] },
+];
+
+export const navigationItems = {
+  en: [...navigationItemsEN],
+  ru: [...navigationItemsRu],
+};

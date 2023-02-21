@@ -1,32 +1,33 @@
+import { useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
-import { Navigation } from '@/ui/Navigation';
+import {
+  SubscribeSection,
+  ThirdDescriptionSection,
+} from 'tired-hollow-lib-modsen';
 
-import { FooterSection } from '@/ui/FooterSection';
-
-import { servicesItems } from '@/constants/servicesCard';
-import { ThirdDescriptionSection } from '@/ui/Sections/ThirdDescriptionSection';
-import { SubscribeSection } from '@/ui/Sections/SubscribeSection';
 import { ContactInformation } from '@/components/ContactInformation';
+import { servicesItems } from '@/constants/servicesCard';
+import { Layout } from '@/containers/Layout';
 import { ServicesItemContainer } from '@/containers/ServicesItemContainer';
+import { Language } from '@/utils/languageContext';
 
 export const ServicesItemPage = () => {
+  const { t } = useTranslation();
+  const { lang } = useContext(Language);
   const { index } = useParams();
-
+  const { heading } = servicesItems[lang].filter(
+    ({ heading }) => heading.indexOf(index as string) !== -1
+  )[0];
   return (
-    <>
-      <Navigation />
-      <ThirdDescriptionSection
-        heading={servicesItems[+(index as string)].heading}
-        link={`/services/${index}`}
-        text="Sed ut perspiciatis unde omnis iste natus error volupta accusantium doloremque laudantium, totam remiga aperiam, eaque ipsa."
-      />
+    <Layout>
+      <ThirdDescriptionSection heading={heading} text={t('Sed ut')} />
       <ServicesItemContainer />
       <ContactInformation
-        heading="Contact Information"
-        description="Fill up the form and our Team will get back to you with 25 hours."
+        heading={t('Contact Information')}
+        description={t('Fill up')}
       />
       <SubscribeSection />
-      <FooterSection />
-    </>
+    </Layout>
   );
 };

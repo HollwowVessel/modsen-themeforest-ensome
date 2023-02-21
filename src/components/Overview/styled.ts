@@ -18,7 +18,7 @@ export const Heading = styled.h3`
   font-size: ${({ theme }) => theme.fonts.at(-3)}px;
   line-height: ${({ theme }) => theme.lineHeights.at(-2)}px;
   text-align: center;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.black};
   margin: 0 0 ${({ theme }) => theme.spaces[4]}px 0;
 
@@ -59,7 +59,7 @@ export const InfoDescription = styled.p`
 
   font-size: ${({ theme }) => theme.fonts[2]}px;
   line-height: ${({ theme }) => theme.lineHeights[2]}px;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   max-width: ${({ theme }) => theme.sizes.at(-4)}px;
 
   text-align: justify;

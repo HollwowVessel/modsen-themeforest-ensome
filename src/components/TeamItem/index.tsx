@@ -1,5 +1,8 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
+
 import { blogSocials } from '@/constants/blogSocials';
+
 import {
   Container,
   Heading,
@@ -11,44 +14,32 @@ import {
   Socials,
   Text,
 } from './styled';
+import { TeamItemProps } from './types';
 
-export const TeamItem = ({
-  name,
-  position,
-  social,
-  image,
-}: {
-  name: string;
-  position: string;
-  social: string[];
-  image: string;
-}) => {
+export const TeamItem = ({ name, position, social, image }: TeamItemProps) => {
   const socialItems = [];
-  for (let i = 0; i < social.length; i++) {
+
+  for (let i = 0; i < social.length - 1; i++) {
     socialItems.push({ link: social[i], icon: blogSocials[i] });
   }
+  const { t } = useTranslation();
+
   return (
     <Container>
       <Image src={image} alt="person" title="person" />
       <Info>
-        <Heading>Name</Heading>
+        <Heading>{t('Name')}</Heading>
         <Text>{name}</Text>
-        <Heading>Position</Heading>
+        <Heading>{t('Position')}</Heading>
         <Text>{position}</Text>
-        <Heading>Description</Heading>
-        <Text>
-          Phasellus tristique eu nisl eu consectetur. Morbi urna massa,
-          imperdiet in mauris et, euismod vestibulum lacus. Integer enim elit,
-          tincidunt aliquam ligula id, lacinia auctor orci. Sed quis lobortis
-          eros. Fusce id commodo libero. At vero eos et accusamus et iusto odio
-          dignissimos ducimus.
-        </Text>
-        <Heading>Social networks</Heading>
+        <Heading>{t('Description')}</Heading>
+        <Text>{t('Phasellus tristique eu')}</Text>
+        <Heading>{t('Social networks')}</Heading>
         <Socials>
           {socialItems.map(({ link, icon }) => (
             <SocialLink key={link} href={link}>
               <Social>
-                <Icon src={icon} loading="lazy" />
+                <Icon src={icon} alt="icon" title="icon" />
               </Social>
             </SocialLink>
           ))}

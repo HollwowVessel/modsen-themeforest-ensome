@@ -1,13 +1,10 @@
-import { FooterSection } from '@/ui/FooterSection';
-import { Navigation } from '@/ui/Navigation';
-import { Map } from '@/components/Map';
 import { ContactsDescription } from '@/components/ContactsDescription';
+import { Map } from '@/components/Map';
+import { Layout } from '@/containers/Layout';
 
 export const ContactsPage = () => (
-  <>
-    <Navigation />
+  <Layout>
     <ContactsDescription />
     <Map />
-    <FooterSection />
-  </>
+  </Layout>
 );

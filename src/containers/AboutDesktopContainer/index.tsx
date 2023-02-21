@@ -1,32 +1,82 @@
-import { About } from '@/components/About';
-import { Customers } from '@/components/Customers';
-import { Carousel } from '@/ui/Carousel';
-import { FooterSection } from '@/ui/FooterSection';
-import { ContactsSection } from '@/ui/Sections/Contacts';
-import { SecondDescriptionSection } from '@/ui/Sections/SecondDescriptionSection';
-import { SubscribeSection } from '@/ui/Sections/SubscribeSection';
-import { AboutContainer } from '../AboutContainer';
-import { TestimonialsCardOpen } from '@/ui/Cards/TestimonialsCardOpen';
-import { TestimonialsCard } from '@/ui/Cards/TestimonialsCard';
-import { cardItems } from '@/constants/testimonialCards';
-import { AboutDesktopSection } from './styled';
-import { Navigation } from '@/ui/Navigation';
+import { useContext } from 'react';
+import { useTranslation } from 'react-i18next';
+import {
+  Carousel,
+  ContactsSection,
+  SecondDescriptionSection,
+  SubscribeSection,
+  TestimonialsCard,
+  TestimonialsCardOpen,
+} from 'tired-hollow-lib-modsen';
 
-export const AboutDesktopContainer = () => (
-  <AboutDesktopSection>
-    <Navigation />
-    <SecondDescriptionSection heading="About Us" link="about" name="About us" />
-    <About />
-    <AboutContainer />
-    <Customers />
-    <Carousel
-      heading="What our customers say"
-      Card={TestimonialsCardOpen as typeof TestimonialsCard}
-      cards={cardItems}
-      type="open"
-    />
-    <ContactsSection />
-    <SubscribeSection />
-    <FooterSection />
-  </AboutDesktopSection>
-);
+import Mission from '@/assets/images/mission.jpg';
+import Who from '@/assets/images/who.jpg';
+import { AboutContent } from '@/components/AboutContent';
+import { logo } from '@/constants/logo';
+import { testimonialCards } from '@/constants/testimonialCards';
+import { Language } from '@/utils/languageContext';
+
+import { AboutContainer } from '../AboutContainer';
+import { Layout } from '../Layout';
+import {
+  AboutDesktopSection,
+  Companies,
+  CompaniesImage,
+  CompaniesItem,
+  Container,
+  ContainerCustomers,
+  Heading,
+  Info,
+  InfoDescription,
+} from './styled';
+
+export const AboutDesktopContainer = () => {
+  const { t } = useTranslation();
+  const { lang } = useContext(Language);
+
+  return (
+    <AboutDesktopSection>
+      <Layout>
+        <SecondDescriptionSection heading={t('About us')} />
+        <Container>
+          <AboutContent
+            headingText={t('Who we')}
+            textPartOne={t('Sed ut')}
+            img={Who}
+            textPartTwo={t('Donec tincidunt')}
+            reverse={false}
+          />
+          <AboutContent
+            headingText={t('Our mission')}
+            textPartOne={t('Sed ut')}
+            img={Mission}
+            textPartTwo={t('Quisque finibus consequat')}
+            reverse
+          />
+        </Container>
+        <AboutContainer />
+        <ContainerCustomers>
+          <Heading>{t('Our customers')}</Heading>
+          <Info>
+            <InfoDescription>{t('Totam rem')}</InfoDescription>
+          </Info>
+          <Companies>
+            {logo.map((el) => (
+              <CompaniesItem key={el}>
+                <CompaniesImage alt="social" title="element" src={el} />
+              </CompaniesItem>
+            ))}
+          </Companies>
+        </ContainerCustomers>
+        <Carousel
+          heading={t('What our')}
+          Card={TestimonialsCardOpen as typeof TestimonialsCard}
+          cards={testimonialCards[lang]}
+          type="open"
+        />
+        <ContactsSection />
+        <SubscribeSection />
+      </Layout>
+    </AboutDesktopSection>
+  );
+};

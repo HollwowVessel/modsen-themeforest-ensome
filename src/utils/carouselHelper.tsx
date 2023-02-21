@@ -1,11 +1,9 @@
-import { Keyframes } from 'styled-components';
-
-import { ItemLink } from '@/ui/Carousel/styled';
-import { cardItems } from '@/constants/testimonialCards';
 import { blogArticles } from '@/constants/blogArticle';
+import { testimonialCards } from '@/constants/testimonialCards';
+import { BlogCard } from '@/ui/Cards/BlogCard';
 import { TestimonialsCard } from '@/ui/Cards/TestimonialsCard';
 import { TestimonialsCardOpen } from '@/ui/Cards/TestimonialsCardOpen';
-import { BlogCard } from '@/ui/Cards/BlogCard';
+import { ItemLink } from '@/ui/Carousel/styled';
 
 export function carouselHelper<
   T extends
@@ -14,14 +12,13 @@ export function carouselHelper<
     | typeof BlogCard
 >(
   Card: T,
-  cards: typeof blogArticles | typeof cardItems,
+  cards: typeof blogArticles.en | typeof testimonialCards.en,
   type: string,
-  sliderItems: number,
-  animation: Keyframes
+  sliderItems: number
 ) {
   if (type === 'blog') {
     const RenderCard = Card as typeof BlogCard;
-    return (cards as typeof blogArticles)
+    return (cards as unknown as typeof blogArticles.en)
       .slice(sliderItems, sliderItems + 3)
       ?.map(({ icon, info, heading, text }, id) => (
         <RenderCard
@@ -30,7 +27,6 @@ export function carouselHelper<
           text={text}
           image={icon}
           key={id}
-          animation={animation}
           id={id}
         />
       ));
@@ -46,7 +42,6 @@ export function carouselHelper<
           icon={icon}
           name={heading}
           key={id}
-          animation={animation}
           profession={info}
         />
       ));
@@ -57,13 +52,12 @@ export function carouselHelper<
     return cards
       .slice(sliderItems, sliderItems + 2)
       .map(({ icon, info, heading, text }, id) => (
-        <ItemLink to={`/testimonials/${id}`}>
+        <ItemLink to={`/testimonials/${heading.split(' ')[0]}`}>
           <RenderCard
             description={text}
             icon={icon}
             name={heading}
             key={id}
-            animation={animation}
             profession={info}
           />
         </ItemLink>

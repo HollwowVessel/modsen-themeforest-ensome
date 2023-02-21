@@ -1,25 +1,15 @@
 import { memo } from 'react';
-import {
-  Container,
-  Description,
-  Heading,
-  Home,
-  Info,
-  Links,
-  Section,
-  Team,
-  Text,
-} from './styled';
+
+import { BreadCrumbs } from '@/ui/sections/BreadCrumbs';
+
+import { Container, Description, Heading, Info, Section, Text } from './styled';
 import { ThirdDescriptionSectionProps } from './types';
 
 export const ThirdDescriptionSection = memo(
-  ({ link, heading, text, text2 }: ThirdDescriptionSectionProps) => (
+  ({ heading, text, text2 }: ThirdDescriptionSectionProps) => (
     <Container>
       <Section>
-        <Links>
-          <Home to="/">Home</Home>
-          <Team to={link}>{heading}</Team>
-        </Links>
+        <BreadCrumbs textColor="white" />
         <Info>
           <Heading>{heading}</Heading>
           <Description>

@@ -1,6 +1,8 @@
 import YouTube from 'react-youtube';
+
 import { youtubeOptions } from '@/api/youtubeApi';
 import { GreyFill } from '@/components/PricingCard/styled';
+
 import { YoutubeContainer } from './styled';
 import { YoutubeProps } from './types';
 

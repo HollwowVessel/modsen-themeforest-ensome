@@ -1,5 +1,8 @@
 import styled from 'styled-components';
+
 import menuIcon from '@/assets/images/icons/general/menuIcon.svg';
+import menuIconWhite from '@/assets/images/icons/general/menuIconWhite.svg';
+
 import { TimeTypeProps } from './types';
 
 export const Card = styled.div`
@@ -12,6 +15,40 @@ export const Card = styled.div`
   button {
     width: ${({ theme }) => theme.sizes[5]}%;
   }
+
+  &:hover {
+    background: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.white};
+
+    div > button {
+      background: ${({ theme }) => theme.colors.blue};
+      border: 1px solid ${({ theme }) => theme.colors.blue};
+    }
+
+    h4 {
+      color: ${({ theme }) => theme.colors.white};
+    }
+
+    li {
+      color: ${({ theme }) => theme.colors.white};
+
+      &::before {
+        content: '';
+        position: absolute;
+        background: url(${menuIconWhite});
+        background-repeat: no-repeat;
+        left: 0;
+        top: ${({ theme }) => theme.tops[1]};
+        width: ${({ theme }) => theme.sizes[0]}px;
+        height: ${({ theme }) => theme.sizes[0]}px;
+      }
+    }
+    &:hover > button {
+      background: ${({ theme }) => theme.colors.white};
+      color: ${({ theme }) => theme.colors.primary};
+    }
+  }
+
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
     padding: 0 ${({ theme }) => theme.paddings[2]}px;
   }
@@ -22,9 +59,12 @@ export const Heading = styled.h4`
 
   font-size: ${({ theme }) => theme.fonts[1]}px;
   line-height: ${({ theme }) => theme.lineHeights[0]}px;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.black};
   margin: 0 0 ${({ theme }) => theme.spaces[1]}px 0;
+  &:hover {
+    color: ${({ theme }) => theme.colors.white};
+  }
 `;
 
 export const Info = styled.div`
@@ -39,7 +79,7 @@ export const Price = styled.h4`
   font-size: ${({ theme }) => theme.fonts[4]}px;
   line-height: ${({ theme }) => theme.lineHeights[3]}px;
 
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.black};
 `;
 
@@ -74,7 +114,7 @@ export const Advantages = styled.li`
   position: relative;
   font-size: ${({ theme }) => theme.fonts[0]}px;
   line-height: ${({ theme }) => theme.lineHeights[0]}px;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.black};
   margin: 0 0 ${({ theme }) => theme.spaces[0]}px;
   padding: 0 0 0 ${({ theme }) => theme.paddings[3]}px;

@@ -1,6 +1,8 @@
 import { memo } from 'react';
+import { TeamCard } from 'tired-hollow-lib-modsen';
+
 import { useInfinityScrollItems } from '@/hooks/useInifityScrollItems';
-import { TeamCard } from '@/ui/Cards/TeamCard';
+
 import { Cards, Container } from './styled';
 
 export const Team = memo(() => {

@@ -1,10 +1,11 @@
 import { ComponentMeta } from '@storybook/react';
-import { ThemeProvider } from 'styled-components';
 import { BrowserRouter } from 'react-router-dom';
-import { TeamCard } from './index';
+import { ThemeProvider } from 'styled-components';
 
-import { theme } from '@/theme/theme';
 import { useInfinityScrollItems } from '@/hooks/useInifityScrollItems';
+import { theme } from '@/theme/theme';
+
+import { TeamCard } from './index';
 
 export default {
   title: 'Cards/TeamCard',

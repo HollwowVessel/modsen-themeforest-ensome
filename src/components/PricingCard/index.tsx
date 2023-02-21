@@ -1,5 +1,12 @@
 import { MouseEvent, useMemo, useState } from 'react';
-import { FillButton } from '@/ui/Buttons/FillButton';
+import { useTranslation } from 'react-i18next';
+import { FillButton } from 'tired-hollow-lib-modsen';
+
+import { MONTH, YEAR } from '@/constants/general';
+import { timeTypes } from '@/constants/pricingTimeType';
+import { theme } from '@/theme/theme';
+
+import { PricingPopup } from '../PricingPopup';
 import {
   Advantages,
   Buttons,
@@ -11,13 +18,10 @@ import {
   TimeType,
 } from './styled';
 import { PricingCardProps } from './types';
-import { MONTH, YEAR } from '@/constants/general';
-import { timeTypes } from '@/constants/pricingTimeType';
-import { theme } from '@/theme/theme';
-import { PricingPopup } from '../PricingPopup';
 
 export const PricingCard = ({ type, price, options }: PricingCardProps) => {
   const [active, setActive] = useState(0);
+  const { t } = useTranslation();
 
   const [showPopup, setShowPopup] = useState(false);
 
@@ -60,7 +64,7 @@ export const PricingCard = ({ type, price, options }: PricingCardProps) => {
           ))}
         </Buttons>
       </Info>
-      <FillButton text="Choose plan" onClick={handlePopup} />
+      <FillButton text={t('Choose plan')} onClick={handlePopup} />
       <List>
         {options.map((el) => (
           <Advantages key={el}>{el}</Advantages>

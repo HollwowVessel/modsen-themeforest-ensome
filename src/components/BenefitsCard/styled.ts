@@ -5,6 +5,8 @@ export const Card = styled.div`
 
   background: ${({ theme }) => theme.colors.white};
   padding: ${({ theme }) => theme.paddings[3]}px;
+  box-shadow: 0px 4px 12px rgba(12, 68, 204, 0.1);
+  border-radius: 6px;
   &:nth-of-type(even) {
     transform: translateY(56px);
   }
@@ -31,7 +33,7 @@ export const Heading = styled.h4`
 
   font-size: ${({ theme }) => theme.fonts[2]}px;
   line-height: ${({ theme }) => theme.lineHeights[2]}px;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
 
   color: ${({ theme }) => theme.colors.black};
   margin: 0 0 ${({ theme }) => theme.margins[0]}px 0;
@@ -42,6 +44,6 @@ export const Description = styled.p`
 
   font-size: ${({ theme }) => theme.fonts[0]}px;
   line-height: ${({ theme }) => theme.lineHeights[0]}px;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.grey};
 `;

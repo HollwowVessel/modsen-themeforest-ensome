@@ -1,7 +1,7 @@
-import news1 from '@/assets/images/icons/blog/news1.jpg';
-import news2 from '@/assets/images/icons/blog/news2.jpg';
-import news3 from '@/assets/images/icons/blog/news3.jpg';
-import news4 from '@/assets/images/icons/blog/news4.jpg';
+import ISO from '@/assets/images/icons/blog/news1.jpg';
+import Business from '@/assets/images/icons/blog/news2.jpg';
+import Benefits from '@/assets/images/icons/blog/news3.jpg';
+import Web from '@/assets/images/icons/blog/news4.jpg';
 
 export const categories = [
   'Software development',
@@ -32,21 +32,21 @@ export const posts = [
   {
     date: '22 June 2022',
     heading: 'ISO 13485 compliance of medical devices',
-    image: news1,
+    image: ISO,
   },
   {
     date: '22 June 2022',
     heading: 'Business analysis helps you  in finance',
-    image: news2,
+    image: Business,
   },
   {
     date: '22 June 2022',
     heading: 'Benefits of telemedicine in nursing homes',
-    image: news3,
+    image: Benefits,
   },
   {
     date: '22 June 2022',
     heading: '5 web portal examples your business can learn from',
-    image: news4,
+    image: Web,
   },
 ];

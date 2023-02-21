@@ -1,4 +1,5 @@
 import { memo } from 'react';
+
 import { WithIcon } from './styled';
 import { WithIconButtonProps } from './types';
 

@@ -1,8 +1,7 @@
-import { TestimonialsCardProps } from '@/ui/Cards/TestimonialsCard/types';
-import { BlogCardProps } from '@/ui/Cards/BlogCard/types';
-
 import { blogArticles } from '@/constants/blogArticle';
-import { cardItems } from '@/constants/testimonialCards';
+import { testimonialCards } from '@/constants/testimonialCards';
+import { BlogCardProps } from '@/ui/Cards/BlogCard/types';
+import { TestimonialsCardProps } from '@/ui/Cards/TestimonialsCard/types';
 
 export interface CarouselProps {
   heading: string;
@@ -14,6 +13,10 @@ export interface CarouselProps {
         profession,
         description,
       }: TestimonialsCardProps) => JSX.Element);
-  cards: typeof blogArticles | typeof cardItems;
+  cards: typeof blogArticles.en | typeof testimonialCards.en;
   type: string;
+}
+
+export interface CardProp {
+  overflow: 'none' | 'hidden';
 }

@@ -1,6 +1,7 @@
 import { ServicesItemDescription } from '@/components/ServicesItemDescription';
-import { Container } from './styled';
 import { ServicesSidebar } from '@/components/ServicesSidebar';
+
+import { Container } from './styled';
 
 export const ServicesItemContainer = () => (
   <Container>

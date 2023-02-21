@@ -1,14 +1,16 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { ThemeProvider } from 'styled-components';
 import { BrowserRouter } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
+
+import { blogArticles } from '@/constants/blogArticle';
+import { testimonialCards } from '@/constants/testimonialCards';
+import { theme } from '@/theme/theme';
+import { BlogCard } from '@/ui/Cards/BlogCard';
+import { TestimonialsCard } from '@/ui/Cards/TestimonialsCard';
+import { TestimonialsCardOpen } from '@/ui/Cards/TestimonialsCardOpen';
+
 import { Carousel } from './index';
 import { CarouselProps } from './types';
-import { theme } from '@/theme/theme';
-import { blogArticles } from '@/constants/blogArticle';
-import { TestimonialsCard } from '@/ui/Cards/TestimonialsCard';
-import { cardItems } from '@/constants/testimonialCards';
-import { BlogCard } from '@/ui/Cards/BlogCard';
-import { TestimonialsCardOpen } from '@/ui/Cards/TestimonialsCardOpen';
 
 export default {
   title: 'Section/Carousel',
@@ -31,7 +33,7 @@ const Template: ComponentStory<typeof Carousel> = ({
 export const Testimonial = Template.bind({});
 Testimonial.args = {
   Card: TestimonialsCard,
-  cards: cardItems,
+  cards: testimonialCards,
   heading: 'Testimonials',
   type: 'close',
 } as unknown as CarouselProps;
@@ -39,7 +41,7 @@ Testimonial.args = {
 export const OpenTestimonial = Template.bind({});
 OpenTestimonial.args = {
   Card: TestimonialsCardOpen,
-  cards: cardItems,
+  cards: testimonialCards,
   heading: 'OpenTestimonial',
   type: 'open',
 } as unknown as CarouselProps;

@@ -1,4 +1,9 @@
-import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+
+import { Related } from '@/components/Related';
+import { blogArticles } from '@/constants/blogArticle';
+import { blogSocials } from '@/constants/blogSocials';
+import { blogArticleHelper } from '@/utils/blogArticleHelper';
 
 import {
   Author,
@@ -17,11 +22,7 @@ import {
   Text,
   Views,
 } from './styled';
-
-import { blogSocials } from '@/constants/blogSocials';
-import { Related } from '@/components/Related';
 import { BlogArticleProps } from './types';
-import { blogArticles } from '@/constants/blogArticle';
 
 export const BlogArticle = ({
   text,
@@ -32,53 +33,26 @@ export const BlogArticle = ({
   tags,
   cards,
 }: BlogArticleProps) => {
-  const [active, setActive] = useState(0);
-
-  const handleActive = (id: number) => () => {
-    setActive(id);
-  };
-
+  const { t } = useTranslation();
+  const article = blogArticleHelper(t, text);
+  const tag = tags;
   return (
     <Container>
-      <Image src={image} alt={image} loading="lazy" />
+      <Image src={image} alt={image} title="blogImage" />
       <GeneralInfo>
         <Date>{date}</Date>
-        <Author>William Pond</Author>
+        <Author>{t('William Pond')}</Author>
       </GeneralInfo>
       <Heading>{heading}</Heading>
-      <Text>{text}</Text>
-      <Text>
-        Ut sit amet neque vel mauris consequat aliquam at in arcu. Ut vulputate,
-        augue luctus dignissim pretium, elit magna placerat elit, at venenatis
-        lacus arcu eget quam. Fusce nec cursus mi, sed blandit.
-      </Text>
-      <Text>
-        Phasellus tristique eu nisl eu consectetur. Morbi urna massa, imperdiet
-        in mauris et, euismod vestibulum lacus. Integer enim elit, tincidunt
-        aliq uam ligula id, lacinia auctor orci. Sed quis lobortis eros. Fusce
-        id commodo libero. Praesent mollis velit ac accumsan ultrices. Ut
-        convallis ipsum pulvinar ante maximus suscipit.
-      </Text>
-      <Quote>
-        "Morbi urna massa, imperdiet in mauris et, euismod vestibulum lacus.
-        Integer enim elit, tincidunt aliquam ligula id, lacinia auctor orci. Sed
-        quis lobortis eros. Fusce id commodo libero"
-      </Quote>
-      <Text>
-        Mauris purus diam, iaculis non leo nec, ultricies fringilla odio. Fusce
-        feugiat elit facilisis volutpat venenatis. Vestibulum tempor ligula vel
-        orci consectetur, eu euismod augue bibendum. In volutpat libero velit,
-        et mattis tortor placerat eget.
-      </Text>
-      <Text>
-        Ut nec aliquam urna, et varius massa. Praesent eu nisl ac ex maximus
-        iaculis. Sed placerat, ligula vel tempor pellentesque, odio ipsum
-        lobortis orci, sit amet fermentum ex nunc ac diam.
-      </Text>
+      {article.map(({ text, quote }) =>
+        !quote ? <Text>{text}</Text> : <Quote>{text}</Quote>
+      )}
       <Statistics>
-        <Views>{views} Views</Views>
+        <Views>
+          {views} {t('Views')}
+        </Views>
         <Share>
-          Share:
+          {t('Share')}:
           {blogSocials.map((el) => (
             <ShareItem>
               <Social src={el} alt={el} title={el} key={el} />
@@ -86,15 +60,17 @@ export const BlogArticle = ({
           ))}
         </Share>
         <Tags>
-          Tags:
-          {tags?.map((el, id) => (
-            <Tag key={el} onClick={handleActive(id)} active={active === id}>
-              {el}
-            </Tag>
-          ))}
+          {t('Tags')}:<Tag active>{tags}</Tag>
         </Tags>
       </Statistics>
-      <Related cards={cards as typeof blogArticles} />
+
+      <Related
+        cards={
+          cards?.filter(
+            ({ tags }) => tags === tag
+          ) as unknown as typeof blogArticles.en
+        }
+      />
     </Container>
   );
 };

@@ -53,7 +53,7 @@ export const Name = styled.h3`
   font-size: ${({ theme }) => theme.fonts[1]}px;
   line-height: ${({ theme }) => theme.lineHeights[0]}px;
   text-align: center;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.primary};
   margin: 0 0 ${({ theme }) => theme.margins[1]}px 0;
 `;
@@ -63,7 +63,7 @@ export const Heading = styled.h1`
   font-size: ${({ theme }) => theme.fonts[6]}px;
   line-height: ${({ theme }) => theme.lineHeights[4]}px;
   text-align: center;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.black};
   margin: 0 0 ${({ theme }) => theme.margins[1]}px 0;
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
@@ -77,7 +77,7 @@ export const Description = styled.p`
   font-size: ${({ theme }) => theme.fonts[2]}px;
   line-height: ${({ theme }) => theme.lineHeights[2]}px;
   text-align: center;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.grey};
   max-width: ${({ theme }) => theme.sizes.at(-4)}px;
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {

@@ -51,7 +51,7 @@ export const Heading = styled.h1`
   font-weight: ${({ theme }) => theme.fontWeights[4]};
   font-size: ${({ theme }) => theme.fonts[6]}px;
   line-height: ${({ theme }) => theme.lineHeights[4]}px;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.white};
 `;
 
@@ -65,7 +65,7 @@ export const Text = styled.p`
   line-height: ${({ theme }) => theme.lineHeights[0]}px;
   display: flex;
   align-items: center;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.background};
   margin: 0 0 ${({ theme }) => theme.margins[0]}px 0;
 `;

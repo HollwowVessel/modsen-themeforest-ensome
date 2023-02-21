@@ -1,8 +1,10 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeProvider } from 'styled-components';
-import { theme } from '@/theme/theme';
-import { GlobalStyles } from '@/theme/GlobalStyles';
+
 import General from '@/assets/images/icons/general/email.svg';
+import { GlobalStyles } from '@/theme/GlobalStyles';
+import { theme } from '@/theme/theme';
+
 import { WithIconButton } from '.';
 import { WithIconButtonProps } from './types';
 

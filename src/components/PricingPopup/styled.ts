@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import menuIcon from '@/assets/images/icons/general/menuIcon.svg';
 
 export const Card = styled.div`
@@ -21,7 +22,7 @@ export const Heading = styled.h4`
 
   font-size: ${({ theme }) => theme.fonts[1]}px;
   line-height: ${({ theme }) => theme.lineHeights[0]}px;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.black};
   margin: 0 0 ${({ theme }) => theme.spaces[1]}px 0;
 `;
@@ -35,7 +36,7 @@ export const Advantages = styled.li`
   position: relative;
   font-size: ${({ theme }) => theme.fonts[0]}px;
   line-height: ${({ theme }) => theme.lineHeights[0]}px;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.black};
   margin: 0 0 ${({ theme }) => theme.spaces[0]}px;
   padding: 0 0 0 ${({ theme }) => theme.paddings[3]}px;
@@ -103,6 +104,6 @@ export const Price = styled.h4`
   font-size: ${({ theme }) => theme.fonts[4]}px;
   line-height: ${({ theme }) => theme.lineHeights[3]}px;
 
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.black};
 `;

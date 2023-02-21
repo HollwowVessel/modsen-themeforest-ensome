@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-import arrowEnabled from '@/assets/images/icons/buttons/leftArrow.svg';
-import arrowDisabled from '@/assets/images/icons/buttons/leftArrowDisabled.svg';
 import { LeftControlProps } from './types';
 
 export const LeftControl = styled.button<LeftControlProps>`
@@ -14,16 +12,6 @@ export const LeftControl = styled.button<LeftControlProps>`
   margin: 0 0 0 ${({ theme }) => theme.spaces[1]}px;
   position: relative;
   transition: 0.8s;
-  &:after {
-    content: '';
-    background: url(${({ arrow }) =>
-      !arrow ? `${arrowEnabled}` : `${arrowDisabled}`});
-    width: ${({ theme }) => theme.sizes[1]}px;
-    height: ${({ theme }) => theme.sizes[1]}px;
-    position: absolute;
-    top: ${({ theme }) => theme.spaces[0]}px;
-    left: ${({ theme }) => theme.spaces[3]}px;
-  }
 
   &:hover:enabled {
     background: ${({ theme }) => theme.colors.primary};
@@ -31,9 +19,18 @@ export const LeftControl = styled.button<LeftControlProps>`
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
     width: ${({ theme }) => theme.sizes[2]}px;
     height: ${({ theme }) => theme.sizes[2]}px;
-    &::after {
-      left: ${({ theme }) => theme.rights[0]}px;
-      top: ${({ theme }) => theme.tops[2]};
-    }
+  }
+`;
+
+export const Arrow = styled.img`
+  width: ${({ theme }) => theme.sizes[1]}px;
+  height: ${({ theme }) => theme.sizes[1]}px;
+  content: '';
+  position: absolute;
+  top: ${({ theme }) => theme.spaces[0]}px;
+  right: ${({ theme }) => theme.spaces[3]}px;
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    right: ${({ theme }) => theme.rights[1]}px;
+    top: ${({ theme }) => theme.tops[2]};
   }
 `;

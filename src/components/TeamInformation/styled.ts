@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import { ContactHeadingProps } from '@/components/ContactsDescription/types';
 
 export const Form = styled.form`
@@ -36,12 +37,13 @@ export const Heading = styled.h3`
   font-weight: ${({ theme }) => theme.fontWeights.at(-1)};
   font-size: ${({ theme }) => theme.fonts.at(-3)}px;
   line-height: ${({ theme }) => theme.lineHeights.at(-2)}px;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.black};
   max-width: ${({ theme }) => theme.sizes.at(-5)}px;
 
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
     font-size: ${({ theme }) => theme.fonts[2]}px;
+    padding: 0 ${({ theme }) => theme.paddings[0]}px;
   }
 `;
 
@@ -49,7 +51,7 @@ export const Label = styled.label`
   font-weight: ${({ theme }) => theme.fontWeights[2]};
   font-size: ${({ theme }) => theme.fonts[0]}px;
   line-height: ${({ theme }) => theme.lineHeights[0]}px;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.grey};
   margin: ${({ theme }) => theme.margins[2]}px 0 0 0;
   @media (max-width: ${({ theme }) => theme.breakPoints.mobile}px) {
@@ -113,6 +115,6 @@ export const ContactDescription = styled.p`
   font-size: ${({ theme }) => theme.fonts[1]}px;
   line-height: ${({ theme }) => theme.lineHeights[1]}px;
   text-align: right;
-  letter-spacing: -0.015em;
+  letter-spacing: 0.03em;
   color: ${({ theme }) => theme.colors.grey};
 `;

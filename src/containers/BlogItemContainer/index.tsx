@@ -1,28 +1,26 @@
-import { useState } from 'react';
-import { BlogArticle } from '@/components/BlogArticle';
+import { useContext, useState } from 'react';
+import { SecondDescriptionSection } from 'tired-hollow-lib-modsen';
 
+import { BlogArticle } from '@/components/BlogArticle';
 import { Sidebar } from '@/components/Sidebar';
 import { blogArticles } from '@/constants/blogArticle';
-import { SecondDescriptionSection } from '@/ui/Sections/SecondDescriptionSection';
+import { Language } from '@/utils/languageContext';
+
 import { Container } from './styled';
 import { BlogItemContainerProps } from './types';
 
 export const BlogItemContainer = ({ index }: BlogItemContainerProps) => {
-  const { heading, text, icon, info, tags, views } =
-    blogArticles[+(index as string)];
-  const [cards, setCards] = useState(blogArticles);
+  const { lang } = useContext(Language);
 
-  const handleCards = (items: typeof cards) => {
-    setCards(items);
-  };
+  const { heading, text, icon, info, tags, views } = blogArticles[lang].filter(
+    ({ heading }) => heading.indexOf(index) !== -1
+  )[0];
+
+  const [cards, setCards] = useState(blogArticles[lang]);
 
   return (
     <>
-      <SecondDescriptionSection
-        heading={heading}
-        link={`blog/${index}`}
-        name={heading}
-      />
+      <SecondDescriptionSection heading={heading} />
       <Container>
         <BlogArticle
           text={text}
@@ -33,7 +31,7 @@ export const BlogItemContainer = ({ index }: BlogItemContainerProps) => {
           views={views}
           cards={cards}
         />
-        <Sidebar handleCards={handleCards} />
+        <Sidebar />
       </Container>
     </>
   );
