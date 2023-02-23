@@ -1,4 +1,3 @@
-import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import {
   HelpSection,
@@ -9,11 +8,11 @@ import {
 import { SolutionsItemDescription } from '@/components/SolutionsItemDescription';
 import { solutionsItems } from '@/constants/solutions';
 import { Layout } from '@/containers/Layout';
-import { Language } from '@/utils/languageContext';
+import { useLanguage } from '@/hooks/useLanguage';
 
 export const SolutionsItemPage = () => {
   const { index } = useParams();
-  const { lang } = useContext(Language);
+  const lang = useLanguage();
   const { heading } = solutionsItems[lang].filter(
     ({ heading }) => heading.indexOf(index as string) !== -1
   )[0];

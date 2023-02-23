@@ -1,4 +1,3 @@
-import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import {
   SecondDescriptionSection,
@@ -8,14 +7,14 @@ import {
 import { BlogArticle } from '@/components/BlogArticle';
 import { testimonialCards } from '@/constants/testimonialCards';
 import { Layout } from '@/containers/Layout';
-import { Language } from '@/utils/languageContext';
+import { useLanguage } from '@/hooks/useLanguage';
 
 import { Container } from './styled';
 
 export const TestimonialsItemPage = () => {
   const { index } = useParams();
 
-  const { lang } = useContext(Language);
+  const lang = useLanguage();
 
   const { text, icon, heading, info } = testimonialCards[lang].filter(
     ({ heading }) => heading.indexOf(index as string) !== -1

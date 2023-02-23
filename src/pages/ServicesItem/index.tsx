@@ -1,4 +1,3 @@
-import { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import {
@@ -10,11 +9,11 @@ import { ContactInformation } from '@/components/ContactInformation';
 import { servicesItems } from '@/constants/servicesCard';
 import { Layout } from '@/containers/Layout';
 import { ServicesItemContainer } from '@/containers/ServicesItemContainer';
-import { Language } from '@/utils/languageContext';
+import { useLanguage } from '@/hooks/useLanguage';
 
 export const ServicesItemPage = () => {
   const { t } = useTranslation();
-  const { lang } = useContext(Language);
+  const lang = useLanguage();
   const { index } = useParams();
   const { heading } = servicesItems[lang].filter(
     ({ heading }) => heading.indexOf(index as string) !== -1

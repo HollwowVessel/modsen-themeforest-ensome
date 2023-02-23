@@ -1,15 +1,15 @@
-import { memo, useContext } from 'react';
+import { memo } from 'react';
 
 import { BenefitsCard } from '@/components/BenefitsCard';
 import { benefitsCard } from '@/constants/benefitsCard';
-import { Language } from '@/utils/languageContext';
+import { useLanguage } from '@/hooks/useLanguage';
 
 import { Cards, Container, Description, Heading, Info } from './styled';
 import { BenefitsProps } from './types';
 
 export const Benefits = memo(
   ({ heading, description, background }: BenefitsProps) => {
-    const { lang } = useContext(Language);
+    const lang = useLanguage();
 
     return (
       <Container background={background}>

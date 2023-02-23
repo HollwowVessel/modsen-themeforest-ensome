@@ -1,4 +1,3 @@
-import { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
   Carousel,
@@ -13,7 +12,7 @@ import { solutionsAdvantages } from '@/constants/solutionsAdvantages';
 import { testimonialCards } from '@/constants/testimonialCards';
 import { Layout } from '@/containers/Layout';
 import { SpecialContainer } from '@/containers/SpecialContainer';
-import { Language } from '@/utils/languageContext';
+import { useLanguage } from '@/hooks/useLanguage';
 
 import {
   Container,
@@ -29,7 +28,7 @@ import {
 export const SolutionsPage = () => {
   const { t } = useTranslation();
 
-  const { lang } = useContext(Language);
+  const lang = useLanguage();
 
   return (
     <Layout>

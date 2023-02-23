@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { Language } from 'interfaces/languageType';
 import { useTranslation } from 'react-i18next';
 import {
   Carousel,
@@ -12,7 +12,7 @@ import {
 import AboutMobile from '@/assets/images/aboutMobile.png';
 import { Benefits } from '@/components/Benefits';
 import { testimonialCards } from '@/constants/testimonialCards';
-import { Language } from '@/utils/languageContext';
+import { useLanguage } from '@/hooks/useLanguage';
 
 import { Layout } from '../Layout';
 import {
@@ -26,7 +26,7 @@ import {
 export const AboutMobileContainer = () => {
   const { t } = useTranslation();
 
-  const { lang } = useContext(Language);
+  const lang = useLanguage();
 
   return (
     <AboutMobileSection>

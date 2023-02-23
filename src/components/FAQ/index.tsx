@@ -1,14 +1,14 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 
 import { FAQItems } from '@/constants/FAQItem';
-import { Language } from '@/utils/languageContext';
+import { useLanguage } from '@/hooks/useLanguage';
 
 import { Container, Description, Heading, Question, Questions } from './styled';
 
 export const FAQ = () => {
   const [active, setActive] = useState(-1);
 
-  const { lang } = useContext(Language);
+  const lang = useLanguage();
 
   const handleActive = (id: number) => () => {
     if (id !== active) {

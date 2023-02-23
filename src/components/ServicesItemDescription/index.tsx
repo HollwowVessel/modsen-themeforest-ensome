@@ -1,10 +1,9 @@
-import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Customer from '@/assets/images/services.png';
 import Solution from '@/assets/images/servicesSolution.png';
 import { ListItems } from '@/constants/services';
-import { Language } from '@/utils/languageContext';
+import { useLanguage } from '@/hooks/useLanguage';
 
 import {
   Container,
@@ -19,7 +18,7 @@ import {
 
 export const ServicesItemDescription = () => {
   const { t } = useTranslation();
-  const { lang } = useContext(Language);
+  const lang = useLanguage();
 
   return (
     <Container>

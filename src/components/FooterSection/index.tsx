@@ -1,5 +1,6 @@
 import { changeLanguage } from 'i18next';
-import { MouseEvent, useContext, useState } from 'react';
+import { langType, Language } from 'interfaces/languageType';
+import { MouseEvent, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
@@ -7,7 +8,7 @@ import upArrow from '@/assets/images/icons/dropdownMenu/footer.svg';
 import downArrow from '@/assets/images/icons/dropdownMenu/footerSecond.svg';
 import logo from '@/assets/images/logo.svg';
 import { footerMenus, social } from '@/constants/footer';
-import { langType, Language } from '@/utils/languageContext';
+import { useLanguage } from '@/hooks/useLanguage';
 
 import {
   Container,
@@ -36,7 +37,7 @@ import {
 export const FooterSection = () => {
   const [activeMenu, setActiveMenu] = useState(-1);
   const { t } = useTranslation();
-  const { lang, setLang } = useContext(Language);
+  const lang = useLanguage();
 
   const handleMenu = (id: number) => () => {
     if (id === activeMenu) {
@@ -47,9 +48,9 @@ export const FooterSection = () => {
   };
 
   const handleClick = (e: MouseEvent) => {
-    if (setLang && e.target) {
+    if (e.target) {
       const lang = (e.target as HTMLButtonElement).value as langType;
-      setLang(lang);
+
       changeLanguage(lang);
     }
   };

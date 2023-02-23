@@ -1,7 +1,7 @@
 import { blogArticles } from '@/constants/blogArticle';
 import { tags as allTags } from '@/constants/blogSidebar';
 
-import { langType } from './languageContext';
+import { langType } from '../interfaces/languageType';
 
 export const filterCards = (
   search: string,

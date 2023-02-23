@@ -1,13 +1,13 @@
-import { memo, useContext } from 'react';
+import { memo } from 'react';
 import { SpecialCard } from 'tired-hollow-lib-modsen';
 
-import { Language } from '@/utils/languageContext';
+import { useLanguage } from '@/hooks/useLanguage';
 
 import { Cards, Container } from './styled';
 import { SpecialContainerProps } from './types';
 
 export const SpecialContainer = memo(({ cards }: SpecialContainerProps) => {
-  const { lang } = useContext(Language);
+  const lang = useLanguage();
 
   return (
     <Container>

@@ -1,6 +1,6 @@
-import { useContext, useMemo } from 'react';
+import { useMemo } from 'react';
 
-import { Language } from '@/utils/languageContext';
+import { useLanguage } from '@/hooks/useLanguage';
 
 import { Card, Cards, Description, Heading, Image } from './styled';
 import { ItemContainerProps } from './types';
@@ -10,7 +10,7 @@ export const ItemContainer = ({
   unfilteredItems,
   RenderCard,
 }: ItemContainerProps) => {
-  const { lang } = useContext(Language);
+  const lang = useLanguage();
 
   const { img, description, heading } = useMemo(
     () => unfilteredItems[lang][+(index as string)],

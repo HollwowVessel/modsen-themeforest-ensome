@@ -1,4 +1,3 @@
-import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { SecondDescriptionSection } from 'tired-hollow-lib-modsen';
 
@@ -6,11 +5,11 @@ import { TeamInformation } from '@/components/TeamInformation';
 import { TeamItem } from '@/components/TeamItem';
 import { teamCards } from '@/constants/teamCards';
 import { Layout } from '@/containers/Layout';
-import { Language } from '@/utils/languageContext';
+import { useLanguage } from '@/hooks/useLanguage';
 
 export const TeamItemPage = () => {
   const { index } = useParams();
-  const { lang } = useContext(Language);
+  const lang = useLanguage();
 
   const { name, profession, social, photo } = teamCards[lang].filter(
     ({ name }) => name.indexOf(index as string) !== -1

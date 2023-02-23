@@ -1,16 +1,17 @@
-import { memo, useContext } from 'react';
+import { Language } from 'interfaces/languageType';
+import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { PricingCard } from '@/components/PricingCard';
 import { pricingCards } from '@/constants/pricingCards';
-import { Language } from '@/utils/languageContext';
+import { useLanguage } from '@/hooks/useLanguage';
 
 import { Cards, Container, Heading } from './styled';
 
 export const Pricing = memo(() => {
   const { t } = useTranslation();
 
-  const { lang } = useContext(Language);
+  const lang = useLanguage();
 
   return (
     <Container>

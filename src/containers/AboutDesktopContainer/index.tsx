@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { Language } from 'interfaces/languageType';
 import { useTranslation } from 'react-i18next';
 import {
   Carousel,
@@ -14,7 +14,7 @@ import Who from '@/assets/images/who.jpg';
 import { AboutContent } from '@/components/AboutContent';
 import { logo } from '@/constants/logo';
 import { testimonialCards } from '@/constants/testimonialCards';
-import { Language } from '@/utils/languageContext';
+import { useLanguage } from '@/hooks/useLanguage';
 
 import { AboutContainer } from '../AboutContainer';
 import { Layout } from '../Layout';
@@ -32,7 +32,7 @@ import {
 
 export const AboutDesktopContainer = () => {
   const { t } = useTranslation();
-  const { lang } = useContext(Language);
+  const lang = useLanguage();
 
   return (
     <AboutDesktopSection>

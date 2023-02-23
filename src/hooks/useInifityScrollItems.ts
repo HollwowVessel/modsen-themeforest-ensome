@@ -1,11 +1,12 @@
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { MAX_HEIGHT, NINE_PERSONS } from '@/constants/general';
 import { teamCards } from '@/constants/teamCards';
-import { Language } from '@/utils/languageContext';
+
+import { useLanguage } from './useLanguage';
 
 export const useInfinityScrollItems = () => {
-  const { lang } = useContext(Language);
+  const lang = useLanguage();
   const [items, setItems] = useState(() =>
     teamCards[lang].slice(0, NINE_PERSONS)
   );

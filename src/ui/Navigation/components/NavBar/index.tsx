@@ -1,12 +1,12 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
 
 import playButton from '@/assets/images/icons/buttons/play.svg';
 import blueLogo from '@/assets/images/logo_blue.svg';
+import { useLanguage } from '@/hooks/useLanguage';
 import { useTopScroll } from '@/hooks/useTopScroll';
 import { WithIconButton } from '@/ui/Buttons/WithIconButton';
-import { Language } from '@/utils/languageContext';
 import { navigationHelper } from '@/utils/navigationHelper';
 
 import {
@@ -21,7 +21,7 @@ import { NavBarProps } from './types';
 export const NavBar = ({ handleVideo }: NavBarProps) => {
   const [open, setOpen] = useState(true);
   const [openPage, setOpenPage] = useState(false);
-  const { lang } = useContext(Language);
+  const lang = useLanguage();
   const { pathname } = useLocation();
   const { t } = useTranslation();
 

@@ -1,12 +1,12 @@
-import { ChangeEvent, useContext, useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ArrowLink } from 'tired-hollow-lib-modsen';
 
 import { blogArticles } from '@/constants/blogArticle';
 import { categories, tags as allTags } from '@/constants/blogSidebar';
+import { useLanguage } from '@/hooks/useLanguage';
 import { InputWithButton } from '@/ui/Inputs/InputWithButton';
 import { filterCards, filterOnClear } from '@/utils/filterCards';
-import { Language } from '@/utils/languageContext';
 import { makeFourSortedArticles } from '@/utils/makeFourSortedArticles';
 
 import {
@@ -25,7 +25,7 @@ import {
 } from './styled';
 
 export const Sidebar = () => {
-  const { lang } = useContext(Language);
+  const lang = useLanguage();
   const [search, setSearch] = useState('');
   const [cards, setCards] = useState(() =>
     makeFourSortedArticles(blogArticles[lang])

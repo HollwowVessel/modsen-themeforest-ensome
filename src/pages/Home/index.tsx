@@ -1,4 +1,3 @@
-import { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
   BlogCard,
@@ -18,7 +17,7 @@ import { Pricing } from '@/components/Pricing';
 import { blogArticles } from '@/constants/blogArticle';
 import { testimonialCards } from '@/constants/testimonialCards';
 import { Layout } from '@/containers/Layout';
-import { Language } from '@/utils/languageContext';
+import { useLanguage } from '@/hooks/useLanguage';
 
 import {
   ButtonContainer,
@@ -37,10 +36,10 @@ import {
   SolutionsImage,
   SolutionsInfo,
 } from './styled';
-// TODO Refactor info and Solutions components
+
 export const HomePage = () => {
   const { t } = useTranslation();
-  const { lang } = useContext(Language);
+  const lang = useLanguage();
   return (
     <Layout>
       <Container>

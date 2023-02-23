@@ -1,11 +1,11 @@
-import { useContext } from 'react';
+import { Language } from 'interfaces/languageType';
 import { useTranslation } from 'react-i18next';
 
 import Practices from '@/assets/images/solutionsPractices.png';
 import Types from '@/assets/images/solutionsTypes.png';
 import { solutionListItems, tabs } from '@/constants/services';
+import { useLanguage } from '@/hooks/useLanguage';
 import { useScrollProgress } from '@/hooks/useScrollProgress';
-import { Language } from '@/utils/languageContext';
 
 import {
   Bold,
@@ -35,7 +35,7 @@ export const SolutionsItemDescription = ({
   };
 
   const { t } = useTranslation();
-  const { lang } = useContext(Language);
+  const lang = useLanguage();
 
   return (
     <Container>

@@ -1,9 +1,10 @@
-import { ChangeEvent, useContext, useState } from 'react';
+import { Language } from 'interfaces/languageType';
+import { ChangeEvent, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { ServicesItems } from '@/constants/services';
+import { useLanguage } from '@/hooks/useLanguage';
 import { InputWithButton } from '@/ui/Inputs/InputWithButton';
-import { Language } from '@/utils/languageContext';
 
 import { Categories, Category, Container, Heading } from './styled';
 
@@ -11,7 +12,7 @@ export const ServicesSidebar = () => {
   const [search, setSearch] = useState('');
   const [activeCategory, setActiveCategory] = useState(-1);
   const { t } = useTranslation();
-  const { lang } = useContext(Language);
+  const lang = useLanguage();
 
   const searchHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);

@@ -1,16 +1,17 @@
-import { useContext, useState } from 'react';
+import { Language } from 'interfaces/languageType';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { BlogCard, FillButton } from 'tired-hollow-lib-modsen';
 
 import { blogArticles } from '@/constants/blogArticle';
-import { Language } from '@/utils/languageContext';
+import { useLanguage } from '@/hooks/useLanguage';
 
 import { Cards, Container } from './styled';
 
 export const BlogContainer = () => {
   const [newsQuantity, setNews] = useState(9);
 
-  const { lang } = useContext(Language);
+  const lang = useLanguage();
 
   const { t } = useTranslation();
   const handleNews = () => {
