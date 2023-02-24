@@ -5,9 +5,7 @@ import { ThemeProvider } from 'styled-components';
 import { blogArticles } from '@/constants/blogArticle';
 import { testimonialCards } from '@/constants/testimonialCards';
 import { theme } from '@/theme/theme';
-import { BlogCard } from '@/ui/Cards/BlogCard';
-import { TestimonialsCard } from '@/ui/Cards/TestimonialsCard';
-import { TestimonialsCardOpen } from '@/ui/Cards/TestimonialsCardOpen';
+import { blogRender, testimonialsRender } from '@/utils/carouselHelper';
 
 import { Carousel } from './index';
 import { CarouselProps } from './types';
@@ -19,28 +17,33 @@ export default {
 
 const Template: ComponentStory<typeof Carousel> = ({
   heading,
-  Card,
+  renderer,
   cards,
   type,
 }: CarouselProps) => (
   <BrowserRouter>
     <ThemeProvider theme={theme}>
-      <Carousel Card={Card} cards={cards} heading={heading} type={type} />
+      <Carousel
+        renderer={renderer}
+        cards={cards}
+        heading={heading}
+        type={type}
+      />
     </ThemeProvider>
   </BrowserRouter>
 );
 
 export const Testimonial = Template.bind({});
 Testimonial.args = {
-  Card: TestimonialsCard,
+  renderer: testimonialsRender,
   cards: testimonialCards,
   heading: 'Testimonials',
-  type: 'close',
+  type: 'hidden',
 } as unknown as CarouselProps;
 
 export const OpenTestimonial = Template.bind({});
 OpenTestimonial.args = {
-  Card: TestimonialsCardOpen,
+  renderer: testimonialsRender,
   cards: testimonialCards,
   heading: 'OpenTestimonial',
   type: 'open',
@@ -48,7 +51,7 @@ OpenTestimonial.args = {
 
 export const Blog = Template.bind({});
 Blog.args = {
-  Card: BlogCard,
+  renderer: blogRender,
   cards: blogArticles,
   heading: 'Our blog',
   type: 'blog',

@@ -1,4 +1,3 @@
-import { Language } from 'interfaces/languageType';
 import { useTranslation } from 'react-i18next';
 import {
   Carousel,
@@ -15,6 +14,10 @@ import { AboutContent } from '@/components/AboutContent';
 import { logo } from '@/constants/logo';
 import { testimonialCards } from '@/constants/testimonialCards';
 import { useLanguage } from '@/hooks/useLanguage';
+import {
+  testimonialsOpenRender,
+  testimonialsRender,
+} from '@/utils/carouselHelper';
 
 import { AboutContainer } from '../AboutContainer';
 import { Layout } from '../Layout';
@@ -70,7 +73,7 @@ export const AboutDesktopContainer = () => {
         </ContainerCustomers>
         <Carousel
           heading={t('What our')}
-          Card={TestimonialsCardOpen as typeof TestimonialsCard}
+          renderer={testimonialsOpenRender}
           cards={testimonialCards[lang]}
           type="open"
         />

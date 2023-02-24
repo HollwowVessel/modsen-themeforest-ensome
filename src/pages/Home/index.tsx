@@ -1,12 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import {
-  BlogCard,
   Carousel,
   CircleButton,
   FillButtonLink,
   HelpSection,
   SubscribeSection,
-  TestimonialsCard,
 } from 'tired-hollow-lib-modsen';
 
 import features from '@/assets/images/features.png';
@@ -18,6 +16,7 @@ import { blogArticles } from '@/constants/blogArticle';
 import { testimonialCards } from '@/constants/testimonialCards';
 import { Layout } from '@/containers/Layout';
 import { useLanguage } from '@/hooks/useLanguage';
+import { blogRender, testimonialsRender } from '@/utils/carouselHelper';
 
 import {
   ButtonContainer,
@@ -83,17 +82,17 @@ export const HomePage = () => {
         background
       />
       <Carousel
-        Card={TestimonialsCard}
+        renderer={testimonialsRender}
         cards={testimonialCards[lang]}
         heading={t('Testimonials')}
-        type="close"
+        type="hidden"
       />
       <Pricing />
       <Carousel
-        Card={BlogCard}
+        renderer={blogRender}
         cards={blogArticles[lang]}
         heading={t('Our blog')}
-        type="blog"
+        type="hidden"
       />
       <HelpSection />
       <SubscribeSection />

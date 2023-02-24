@@ -2,15 +2,13 @@ import { useState } from 'react';
 
 import { LeftControlButton } from '@/ui/Buttons/LeftControlButton';
 import { RightControlButton } from '@/ui/Buttons/RightControlButton';
-import { carouselHelper } from '@/utils/carouselHelper';
 
+import { FlatList } from '../FlatList';
 import { Buttons, Cards, Container, Heading, Info } from './styled';
 import { CarouselProps } from './types';
 
-export const Carousel = ({ heading, Card, cards, type }: CarouselProps) => {
+export const Carousel = ({ heading, renderer, cards, type }: CarouselProps) => {
   const [sliderItems, setSliderItems] = useState(0);
-
-  const cardItems = carouselHelper(Card, cards, type, sliderItems);
 
   const handleLeft = () => {
     setSliderItems((prev) => prev - 1);
@@ -35,15 +33,14 @@ export const Carousel = ({ heading, Card, cards, type }: CarouselProps) => {
           />
         </Buttons>
       </Info>
-      {type === 'open' ? (
-        <Cards overflow="none" key={sliderItems}>
-          {cardItems}
-        </Cards>
-      ) : (
-        <Cards overflow="hidden" key={sliderItems}>
-          {cardItems}
-        </Cards>
-      )}
+
+      <Cards overflow={type} key={sliderItems}>
+        <FlatList
+          renderer={renderer}
+          items={cards.slice(sliderItems, sliderItems + 3)}
+          type={type}
+        />
+      </Cards>
     </Container>
   );
 };

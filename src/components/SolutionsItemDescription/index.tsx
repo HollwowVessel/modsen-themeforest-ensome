@@ -1,4 +1,3 @@
-import { Language } from 'interfaces/languageType';
 import { useTranslation } from 'react-i18next';
 
 import Practices from '@/assets/images/solutionsPractices.png';

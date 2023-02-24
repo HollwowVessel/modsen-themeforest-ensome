@@ -12339,7 +12339,7 @@ terser-webpack-plugin@^4.2.3:
     terser "^5.3.4"
     webpack-sources "^1.4.3"
 
-terser-webpack-plugin@^5.0.3, terser-webpack-plugin@^5.1.3:
+terser-webpack-plugin@^5.0.3, terser-webpack-plugin@^5.1.3, terser-webpack-plugin@^5.3.6:
   version "5.3.6"
   resolved "https://registry.yarnpkg.com/terser-webpack-plugin/-/terser-webpack-plugin-5.3.6.tgz#5590aec31aa3c6f771ce1b1acca60639eab3195c"
   integrity sha512-kfLFk+PoLUQIbLmB1+PZDMRSZS99Mp+/MHqDNmMA6tOItzRt+Npe3E+fsMs5mfcM0wCtrrdU387UnV+vnSffXQ==
@@ -12418,10 +12418,10 @@ tiny-warning@^1.0.2:
   resolved "https://registry.yarnpkg.com/tiny-warning/-/tiny-warning-1.0.3.tgz#94a30db453df4c643d0fd566060d60a875d84754"
   integrity sha512-lBN9zLN/oAf68o3zNXYrdCt1kP8WsiGW8Oo2ka41b2IM5JL/S1CTyX1rW0mb/zSuJun0ZUrDxx4sqvYS2FWzPA==
 
-tired-hollow-lib-modsen@1.0.14:
-  version "1.0.14"
-  resolved "https://registry.yarnpkg.com/tired-hollow-lib-modsen/-/tired-hollow-lib-modsen-1.0.14.tgz#9bc1739dbe422b92ecf99d153b1ce0e05fc70173"
-  integrity sha512-03gMFmszhiKqVAm3jMTtnXt5T3fi6Ux6sIHsoU9ZkipxffAk8AGodu4ooI+L193F9JTJpkWGgOprYQkmngJwLg==
+tired-hollow-lib-modsen@1.0.16:
+  version "1.0.16"
+  resolved "https://registry.yarnpkg.com/tired-hollow-lib-modsen/-/tired-hollow-lib-modsen-1.0.16.tgz#459eba28baa39f8e3d241a63bab93bc8313af799"
+  integrity sha512-3dwr7vhkol/OT2JyE9qURbQk07+hMJf1fk5GUrELb9cJiz7JB/VWC/edBn72/2jPHOmEZWW2E3BfjOFCEHt8Gg==
   dependencies:
     "@emailjs/browser" "^3.10.0"
     "@paypal/react-paypal-js" "^7.8.2"

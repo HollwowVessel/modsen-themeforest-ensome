@@ -13,6 +13,7 @@ import { testimonialCards } from '@/constants/testimonialCards';
 import { Layout } from '@/containers/Layout';
 import { SpecialContainer } from '@/containers/SpecialContainer';
 import { useLanguage } from '@/hooks/useLanguage';
+import { testimonialsRender } from '@/utils/carouselHelper';
 
 import {
   Container,
@@ -54,10 +55,10 @@ export const SolutionsPage = () => {
         </Info>
       </Container>
       <Carousel
-        Card={TestimonialsCard}
+        renderer={testimonialsRender}
         cards={testimonialCards[lang]}
         heading={t('Testimonials')}
-        type="close"
+        type="hidden"
       />
       <HelpSection />
     </Layout>

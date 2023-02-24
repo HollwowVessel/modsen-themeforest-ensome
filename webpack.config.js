@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const dotenv = require('dotenv');
+const TerserPlugin = require('terser-webpack-plugin');
 
 dotenv.config();
 
@@ -9,12 +10,17 @@ module.exports = {
   entry: './src/index.tsx',
 
   devServer: {
-    host: 'localhost',
-    historyApiFallback: true,
     static: {
-      directory: path.join(__dirname, '/'),
+      directory: path.join(__dirname, 'public'),
+      staticOptions: {
+        redirect: true,
+      },
     },
+
+    historyApiFallback: true,
+    compress: true,
     port: 3000,
+    magicHtml: true,
   },
   module: {
     rules: [
@@ -65,6 +71,23 @@ module.exports = {
       '@/hooks': path.resolve(__dirname, 'src/hooks'),
     },
     extensions: ['.tsx', '.ts', '.js'],
+  },
+  optimization: {
+    minimize: true,
+    splitChunks: {
+      chunks: 'all',
+    },
+    minimizer: [
+      new TerserPlugin({
+        parallel: true,
+
+        terserOptions: {
+          compress: true,
+          mangle: true,
+        },
+      }),
+      
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({

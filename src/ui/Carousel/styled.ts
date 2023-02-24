@@ -40,7 +40,7 @@ export const Cards = styled.div<CardProp>`
   gap: ${({ theme }) => theme.gaps[2]}px;
   margin: 0 0 ${({ theme }) => theme.margins[5]}px 0;
   max-width: ${({ theme }) => theme.sizes[5]}%;
-  overflow: ${({ overflow }) => overflow};
+  overflow: ${({ overflow }) => (overflow === 'hidden' ? 'hidden' : 'initial')};
   animation: 1s ${slideAnimationOut} forwards;
   @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
     justify-content: flex-start;

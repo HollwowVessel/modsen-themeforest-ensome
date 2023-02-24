@@ -1,4 +1,3 @@
-import { Language } from 'interfaces/languageType';
 import { useTranslation } from 'react-i18next';
 import {
   Carousel,
@@ -13,6 +12,7 @@ import AboutMobile from '@/assets/images/aboutMobile.png';
 import { Benefits } from '@/components/Benefits';
 import { testimonialCards } from '@/constants/testimonialCards';
 import { useLanguage } from '@/hooks/useLanguage';
+import { testimonialsRender } from '@/utils/carouselHelper';
 
 import { Layout } from '../Layout';
 import {
@@ -50,10 +50,10 @@ export const AboutMobileContainer = () => {
           heading={t('Why our')}
         />
         <Carousel
-          Card={TestimonialsCard}
+          renderer={testimonialsRender}
           cards={testimonialCards[lang]}
           heading={t('Testimonials')}
-          type="close"
+          type="hidden"
         />
         <HelpSection />
         <SubscribeSection />

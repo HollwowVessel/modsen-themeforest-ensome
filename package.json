@@ -71,6 +71,7 @@
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-svg": "^2.0.0",
     "styled-loader": "^0.0.0",
+    "terser-webpack-plugin": "^5.3.6",
     "ts-loader": "^9.4.2",
     "typescript": "*",
     "url-loader": "^4.1.1",
@@ -101,7 +102,7 @@
     "storybook": "^6.5.15",
     "styled-components": "^5.3.6",
     "tired-hollow-lib": "^1.0.1",
-    "tired-hollow-lib-modsen": "1.0.14",
+    "tired-hollow-lib-modsen": "1.0.16",
     "yup": "^0.32.11"
   },
   "husky": {

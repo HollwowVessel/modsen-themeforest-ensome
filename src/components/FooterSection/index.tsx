@@ -1,5 +1,5 @@
 import { changeLanguage } from 'i18next';
-import { langType, Language } from 'interfaces/languageType';
+import { langType } from 'interfaces/languageType';
 import { MouseEvent, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';

@@ -1,4 +1,3 @@
-import { Language } from 'interfaces/languageType';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
