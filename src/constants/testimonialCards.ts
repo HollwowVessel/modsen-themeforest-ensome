@@ -1,8 +1,8 @@
 import { CardItem } from 'interfaces/cardTypes';
 
-import Alex from '@/assets/images/icons/persons/photo1.svg';
-import Ruben from '@/assets/images/icons/persons/photo2.svg';
-import Tigran from '@/assets/images/icons/persons/photo3.svg';
+import Alex from '@/assets/images/icons/persons/photo1.jpg';
+import Ruben from '@/assets/images/icons/persons/photo2.jpg';
+import Tigran from '@/assets/images/icons/persons/photo3.jpg';
 
 const testimonialCardsEN: CardItem[] = [
   {

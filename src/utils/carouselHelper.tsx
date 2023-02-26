@@ -1,10 +1,6 @@
-import { blogArticles } from '@/constants/blogArticle';
-import { testimonialCards } from '@/constants/testimonialCards';
 import { BlogCard } from '@/ui/Cards/BlogCard';
 import { TestimonialsCard } from '@/ui/Cards/TestimonialsCard';
-import { TestimonialsCardProps } from '@/ui/Cards/TestimonialsCard/types';
 import { TestimonialsCardOpen } from '@/ui/Cards/TestimonialsCardOpen';
-import { ItemLink } from '@/ui/Carousel/styled';
 
 export const testimonialsRender = ({
   heading,

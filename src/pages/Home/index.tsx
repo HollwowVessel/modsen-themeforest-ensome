@@ -68,7 +68,13 @@ export const HomePage = () => {
         <Solutions>
           <SolutionsImage src={features} alt="features" title="features" />
           <SolutionsInfo>
-            <SolutionsImage src={features} alt="features" title="features" />
+            <SolutionsImage
+              src={features}
+              width="715"
+              height="220"
+              alt="features"
+              title="features"
+            />
             <SolutionsHeading>{t('Radically new')}</SolutionsHeading>
             <SolutionsDescription>{t('Lauda, totam')}</SolutionsDescription>
             <FillButtonLink text={t('Learn more')} to="/solutions" />

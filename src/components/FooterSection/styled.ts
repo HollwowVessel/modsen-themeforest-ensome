@@ -259,8 +259,3 @@ export const CopyRightSocial = styled.ul`
     flex-wrap: wrap;
   }
 `;
-export const Languages = styled.div``;
-
-export const LanguageBtn = styled.button`
-  width: ${({ theme }) => theme.sizes[5]}px;
-`;

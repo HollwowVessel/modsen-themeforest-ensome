@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.section`
-  margin: 0 0 ${({ theme }) => theme.spaces.at(-2)}px 0;
   display: flex;
+  margin: 0 0 ${({ theme }) => theme.spaces[3]}px 0;
   justify-content: center;
   align-items: center;
   flex-direction: column;

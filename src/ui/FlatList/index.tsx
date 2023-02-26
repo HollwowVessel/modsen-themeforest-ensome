@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Cards } from './styled';
 import { FlatListProps } from './types';
 

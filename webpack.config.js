@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const dotenv = require('dotenv');
 const TerserPlugin = require('terser-webpack-plugin');
-
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 dotenv.config();
 
 module.exports = {
@@ -74,9 +74,6 @@ module.exports = {
   },
   optimization: {
     minimize: true,
-    splitChunks: {
-      chunks: 'all',
-    },
     minimizer: [
       new TerserPlugin({
         parallel: true,
@@ -86,9 +83,33 @@ module.exports = {
           mangle: true,
         },
       }),
-      
+      new ImageMinimizerPlugin({
+        minimizer: {
+          implementation: ImageMinimizerPlugin.squooshMinify,
+          options: {
+            encodeOptions: {
+              mozjpeg: {
+                // That setting might be close to lossless, but it’s not guaranteed
+                // https://github.com/GoogleChromeLabs/squoosh/issues/85
+                quality: 60,
+              },
+              webp: {
+                lossless: 1,
+              },
+              avif: {
+                // https://github.com/GoogleChromeLabs/squoosh/blob/dev/codecs/avif/enc/README.md
+                cqLevel: 0,
+              },
+              png: {
+                quality: 60,
+              },
+            },
+          },
+        },
+      }),
     ],
   },
+
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, './public', 'index.html'),

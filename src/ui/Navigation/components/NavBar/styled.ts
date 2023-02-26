@@ -195,3 +195,28 @@ export const FillContainer = styled.div`
   top: 0;
   right: 0;
 `;
+
+export const Languages = styled.div`
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: 0;
+  gap: ${({ theme }) => theme.gaps[2]}px;
+  @media (max-width: ${({ theme }) => theme.breakPoints.tablet}px) {
+    display: none;
+  }
+`;
+
+export const LanguageBtn = styled.button<{ active: boolean }>`
+  width: ${({ theme }) => theme.sizes[5]}px;
+  padding: ${({ theme }) => theme.spaces[0]}px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+
+  background: ${({ theme, active }) =>
+    active ? theme.colors.primary : theme.colors.white};
+  color: ${({ theme, active }) =>
+    active ? theme.colors.white : theme.colors.primary};
+`;

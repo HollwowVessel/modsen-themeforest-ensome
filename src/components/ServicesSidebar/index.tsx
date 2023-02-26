@@ -18,7 +18,11 @@ export const ServicesSidebar = () => {
   };
 
   const handleCategory = (id: number) => () => {
-    setActiveCategory(id);
+    if (activeCategory === id) {
+      setActiveCategory(-1);
+    } else {
+      setActiveCategory(id);
+    }
   };
 
   return (

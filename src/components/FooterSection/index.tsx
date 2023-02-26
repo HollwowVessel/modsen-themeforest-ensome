@@ -1,6 +1,4 @@
-import { changeLanguage } from 'i18next';
-import { langType } from 'interfaces/languageType';
-import { MouseEvent, useState } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
@@ -20,8 +18,6 @@ import {
   Icon,
   Info,
   Item,
-  LanguageBtn,
-  Languages,
   LinkItem,
   Links,
   Logo,
@@ -44,14 +40,6 @@ export const FooterSection = () => {
       setActiveMenu(-1);
     } else {
       setActiveMenu(id);
-    }
-  };
-
-  const handleClick = (e: MouseEvent) => {
-    if (e.target) {
-      const lang = (e.target as HTMLButtonElement).value as langType;
-
-      changeLanguage(lang);
     }
   };
 
@@ -112,14 +100,6 @@ export const FooterSection = () => {
       </Container>
       <CopyRight>
         <Ensome>Ensome© 2022 All Rights Reserved</Ensome>
-        <Languages>
-          <LanguageBtn value="ru" onClick={handleClick}>
-            ru
-          </LanguageBtn>
-          <LanguageBtn value="en" onClick={handleClick}>
-            en
-          </LanguageBtn>
-        </Languages>
         <Links>
           <Policy> {t('Privacy policy')}</Policy>
           <Terms>{t('Terms of')}</Terms>
