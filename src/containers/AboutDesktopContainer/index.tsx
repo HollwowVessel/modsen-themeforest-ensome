@@ -4,20 +4,15 @@ import {
   ContactsSection,
   SecondDescriptionSection,
   SubscribeSection,
-  TestimonialsCard,
-  TestimonialsCardOpen,
 } from 'tired-hollow-lib-modsen';
 
-import Mission from '@/assets/images/mission.jpg';
-import Who from '@/assets/images/who.jpg';
+import mission from '@/assets/images/mission.jpg';
+import who from '@/assets/images/who.jpg';
 import { AboutContent } from '@/components/AboutContent';
 import { logo } from '@/constants/logo';
 import { testimonialCards } from '@/constants/testimonialCards';
 import { useLanguage } from '@/hooks/useLanguage';
-import {
-  testimonialsOpenRender,
-  testimonialsRender,
-} from '@/utils/carouselHelper';
+import { testimonialsOpenRender } from '@/utils/carouselHelper';
 
 import { AboutContainer } from '../AboutContainer';
 import { Layout } from '../Layout';
@@ -45,14 +40,14 @@ export const AboutDesktopContainer = () => {
           <AboutContent
             headingText={t('Who we')}
             textPartOne={t('Sed ut')}
-            img={Who}
+            img={who}
             textPartTwo={t('Donec tincidunt')}
             reverse={false}
           />
           <AboutContent
             headingText={t('Our mission')}
             textPartOne={t('Sed ut')}
-            img={Mission}
+            img={mission}
             textPartTwo={t('Quisque finibus consequat')}
             reverse
           />

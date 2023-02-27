@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { DescriptionSection, SubscribeSection } from 'tired-hollow-lib-modsen';
 
-import TeamImage from '@/assets/images/teamImage.png';
+import teamImage from '@/assets/images/teamImage.png';
 import { Team } from '@/components/Team';
 
 import { Layout } from '../Layout';
@@ -29,7 +29,7 @@ export const ElementsMobileContainer = () => {
         <ContainerCloser>
           <Heading>{t('Get to')}</Heading>
           <Description>{t('Sed ut')}</Description>
-          <Image src={TeamImage} alt="team" title="team" />
+          <Image src={teamImage} alt="team" title="team" />
           <Text>{t('Phasellus tristique')}</Text>
           <Text>{t('At vero')}</Text>
         </ContainerCloser>

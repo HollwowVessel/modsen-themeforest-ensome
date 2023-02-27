@@ -1,9 +1,9 @@
-import Facebook from '@/assets/images/icons/social/social1.svg';
-import Twitter from '@/assets/images/icons/social/social2.svg';
-import Linkedin from '@/assets/images/icons/social/social3.svg';
-import Youtube from '@/assets/images/icons/social/social4.svg';
-import Dribble from '@/assets/images/icons/social/social5.svg';
-import Solutions from '@/assets/images/icons/social/social6.svg';
+import facebook from '@/assets/images/icons/social/social1.svg';
+import twitter from '@/assets/images/icons/social/social2.svg';
+import linkedin from '@/assets/images/icons/social/social3.svg';
+import youtube from '@/assets/images/icons/social/social4.svg';
+import dribble from '@/assets/images/icons/social/social5.svg';
+import solutions from '@/assets/images/icons/social/social6.svg';
 
 const linksEN = {
   heading: 'Quick link',
@@ -85,10 +85,10 @@ export const footerMenus = {
 };
 
 export const social = [
-  { el: Facebook, to: 'http://www.facebook.com' },
-  { el: Twitter, to: 'http://www.twitter.com' },
-  { el: Linkedin, to: 'http://www.linkedin.com' },
-  { el: Youtube, to: 'http://www.youtube.com' },
-  { el: Dribble, to: 'http://www.dribble.com' },
-  { el: Solutions, to: 'http://www.solutions.com' },
+  { el: facebook, to: 'http://www.facebook.com' },
+  { el: twitter, to: 'http://www.twitter.com' },
+  { el: linkedin, to: 'http://www.linkedin.com' },
+  { el: youtube, to: 'http://www.youtube.com' },
+  { el: dribble, to: 'http://www.dribble.com' },
+  { el: solutions, to: 'http://www.solutions.com' },
 ];

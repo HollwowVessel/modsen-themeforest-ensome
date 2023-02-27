@@ -69,17 +69,11 @@ export const FooterSection = () => {
               <MenuHeading>{heading}</MenuHeading>
               {items.map(({ name, to }) =>
                 to ? (
-                  <Item
-                    key={name}
-                    display={activeMenu === id ? 'block' : 'none'}
-                  >
+                  <Item key={name} display={activeMenu === id}>
                     <LinkItem to={to}>{name}</LinkItem>
                   </Item>
                 ) : (
-                  <Item
-                    key={name}
-                    display={activeMenu === id ? 'block' : 'none'}
-                  >
+                  <Item key={name} display={activeMenu === id}>
                     {name}
                   </Item>
                 )

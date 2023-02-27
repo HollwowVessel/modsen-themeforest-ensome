@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import Minus from '@/assets/images/icons/dropdownMenu/minus.svg';
-import Plus from '@/assets/images/icons/dropdownMenu/plus.svg';
+import minus from '@/assets/images/icons/dropdownMenu/minus.svg';
+import plus from '@/assets/images/icons/dropdownMenu/plus.svg';
 
 import { ActiveProp } from './types';
 
@@ -48,7 +48,7 @@ export const Heading = styled.h3<ActiveProp>`
     content: '';
     width: ${({ theme }) => theme.sizes[0]}px;
     height: ${({ theme }) => theme.sizes[0]}px;
-    background: url(${({ active }) => (active ? Minus : Plus)});
+    background: url(${({ active }) => (active ? minus : plus)});
     background-repeat: no-repeat;
     position: absolute;
     cursor: pointer;

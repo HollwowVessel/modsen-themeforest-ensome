@@ -16,6 +16,6 @@ export const AboutContent = ({
       <Text>{textPartOne}</Text>
       <Text>{textPartTwo}</Text>
     </Description>
-    <Image src={img} alt={img} title="image" />
+    <Image src={img} alt="about" title="image" />
   </Wrapper>
 );

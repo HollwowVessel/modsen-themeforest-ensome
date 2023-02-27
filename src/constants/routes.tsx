@@ -29,3 +29,14 @@ export const routes = [
   { path: '/elements/:index', element: <TeamItemPage /> },
   { path: '*', element: <NotFoundPage /> },
 ];
+
+export const pathNames = {
+  home: '/',
+  solutions: '/solutions',
+  blog: '/blog',
+  contacts: '/contacts',
+  elements: '/elements',
+  FAQ: '/FAQ',
+  services: '/services',
+  about: '/about',
+};

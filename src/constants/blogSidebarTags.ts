@@ -1,0 +1,16 @@
+export const tags = [
+  'All topics',
+  'App',
+  'Management',
+  'CMR',
+  'Big data',
+  'Media',
+  'Future',
+  'CIO',
+  'Startup',
+  'Team',
+  'Data',
+  'Data analytics',
+  'Information security',
+  'Proxy',
+];

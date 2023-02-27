@@ -1,14 +1,19 @@
 import { changeLanguage } from 'i18next';
 import { langType } from 'interfaces/languageType';
-import { MouseEventHandler, SyntheticEvent, useEffect, useState } from 'react';
+import { MouseEventHandler, SyntheticEvent, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link, useHref, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import playButton from '@/assets/images/icons/buttons/play.svg';
 import blueLogo from '@/assets/images/logo_blue.svg';
+import { pathNames } from '@/constants/routes';
 import { useLanguage } from '@/hooks/useLanguage';
 import { useTopScroll } from '@/hooks/useTopScroll';
 import { WithIconButton } from '@/ui/Buttons/WithIconButton';
+import {
+  localStorageHelperGet,
+  localStorageHelperSet,
+} from '@/utils/localStorageHelper';
 import { navigationHelper } from '@/utils/navigationHelper';
 
 import {
@@ -24,11 +29,10 @@ import { NavBarProps } from './types';
 
 export const NavBar = ({ handleVideo }: NavBarProps) => {
   const [open, setOpen] = useState(true);
-  const navigate = useNavigate();
-  const href = useLocation();
+
   const [openPage, setOpenPage] = useState(false);
 
-  const [btnLang, setBtnLang] = useState('en');
+  const [btnLang, setBtnLang] = useState(localStorageHelperGet());
 
   const handleClick: MouseEventHandler<HTMLButtonElement> = (
     e: SyntheticEvent
@@ -37,6 +41,7 @@ export const NavBar = ({ handleVideo }: NavBarProps) => {
       const lang = (e.target as HTMLButtonElement).value as langType;
       setBtnLang(lang);
       changeLanguage(lang);
+      localStorageHelperSet(lang);
     }
   };
 
@@ -64,7 +69,7 @@ export const NavBar = ({ handleVideo }: NavBarProps) => {
   return (
     <Nav>
       <HamburgerContainer>
-        <Link to="/">
+        <Link to={pathNames.home}>
           <Logo src={blueLogo} alt={blueLogo} title="logo" />
         </Link>
         <StyledHamburger onClick={handleMenu} open={open} />

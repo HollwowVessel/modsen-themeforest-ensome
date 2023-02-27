@@ -5,10 +5,9 @@ import {
   HelpSection,
   OverviewSectionFour,
   SubscribeSection,
-  TestimonialsCard,
 } from 'tired-hollow-lib-modsen';
 
-import AboutMobile from '@/assets/images/aboutMobile.png';
+import aboutMobile from '@/assets/images/aboutMobile.png';
 import { Benefits } from '@/components/Benefits';
 import { testimonialCards } from '@/constants/testimonialCards';
 import { useLanguage } from '@/hooks/useLanguage';
@@ -39,7 +38,7 @@ export const AboutMobileContainer = () => {
         />
         <Heading>{t('We work')}</Heading>
         <Description>{t('Sed ut')}</Description>
-        <Image src={AboutMobile} alt="about" title="about" />
+        <Image src={aboutMobile} alt="about" title="about" />
         <Overview>
           <Heading>{t('We provide')}</Heading>
           <OverviewSectionFour />

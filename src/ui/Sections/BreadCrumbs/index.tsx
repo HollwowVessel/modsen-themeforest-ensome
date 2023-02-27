@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { pathNames } from '@/constants/routes';
+
 import { Current, Home, Links } from './styled';
 import { BreadCrumbProps } from './types';
 
@@ -8,7 +10,7 @@ export const BreadCrumbs = ({ textColor = 'black' }: BreadCrumbProps) => {
 
   return (
     <Links>
-      <Home to="/">Home</Home>
+      <Home to={pathNames.home}>Home</Home>
       {link.map((el) => (
         <Current
           color={textColor}

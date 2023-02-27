@@ -1,6 +1,6 @@
 import { OpenInput } from 'tired-hollow-lib-modsen';
 
-import { FormComponent } from '../FormComponent';
+import { FormComponent } from '../Forms/FormComponent';
 import { Heading, Interaction, Wrapper } from './styled';
 import { TeamInformationProps } from './types';
 

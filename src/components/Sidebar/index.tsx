@@ -3,7 +3,9 @@ import { useTranslation } from 'react-i18next';
 import { ArrowLink } from 'tired-hollow-lib-modsen';
 
 import { blogArticles } from '@/constants/blogArticle';
-import { categories, tags as allTags } from '@/constants/blogSidebar';
+import { categories } from '@/constants/blogSidebarCategories';
+import { tags as allTags } from '@/constants/blogSidebarTags';
+import { pathNames } from '@/constants/routes';
 import { useLanguage } from '@/hooks/useLanguage';
 import { InputWithButton } from '@/ui/Inputs/InputWithButton';
 import { filterCards, filterOnClear } from '@/utils/filterCards';
@@ -82,7 +84,10 @@ export const Sidebar = () => {
               <Title>{heading}</Title>
               <ArrowLink
                 text={t('Read more')}
-                to={`/blog/${heading.split(' ').slice(0, 2).join(' ')}`}
+                to={`${pathNames.blog}/${heading
+                  .split(' ')
+                  .slice(0, 2)
+                  .join(' ')}`}
               />
             </PostDescription>
           </Post>

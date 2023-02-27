@@ -2,7 +2,7 @@ import { OpenInput } from 'tired-hollow-lib-modsen';
 
 import { contactsBlue } from '@/constants/contacts';
 
-import { FormComponent } from '../FormComponent';
+import { FormComponent } from '../Forms/FormComponent';
 import {
   Contact,
   ContactDesc,

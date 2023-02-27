@@ -30,12 +30,12 @@ export const BlogArticle = ({
   heading,
   image,
   views,
-  tags,
+  tags: tag,
   cards,
 }: BlogArticleProps) => {
   const { t } = useTranslation();
   const article = blogArticleHelper(t, text);
-  const tag = tags;
+
   return (
     <Container>
       <Image src={image} alt={image} title="blogImage" />
@@ -60,7 +60,7 @@ export const BlogArticle = ({
           ))}
         </Share>
         <Tags>
-          {t('Tags')}:<Tag active>{tags}</Tag>
+          {t('Tags')}:<Tag active>{tag}</Tag>
         </Tags>
       </Statistics>
 

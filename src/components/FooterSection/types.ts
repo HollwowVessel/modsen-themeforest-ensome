@@ -3,5 +3,5 @@ export interface MenuProps {
 }
 
 export interface ItemProps {
-  display: string;
+  display: boolean;
 }

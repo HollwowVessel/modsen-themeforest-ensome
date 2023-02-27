@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { SecondDescriptionSection } from 'tired-hollow-lib-modsen';
 
 import { BlogArticle } from '@/components/BlogArticle';
@@ -16,8 +15,6 @@ export const BlogItemContainer = ({ index }: BlogItemContainerProps) => {
     ({ heading }) => heading.indexOf(index) !== -1
   )[0];
 
-  const [cards, setCards] = useState(blogArticles[lang]);
-
   return (
     <>
       <SecondDescriptionSection heading={heading} />
@@ -29,7 +26,7 @@ export const BlogItemContainer = ({ index }: BlogItemContainerProps) => {
           date={info}
           tags={tags}
           views={views}
-          cards={cards}
+          cards={blogArticles[lang]}
         />
         <Sidebar />
       </Container>

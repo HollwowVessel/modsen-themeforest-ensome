@@ -3,10 +3,9 @@ import {
   Carousel,
   DescriptionSection,
   HelpSection,
-  TestimonialsCard,
 } from 'tired-hollow-lib-modsen';
 
-import Servers from '@/assets/images/solutions.jpg';
+import servers from '@/assets/images/solutions.jpg';
 import { solutionsItems } from '@/constants/solutions';
 import { solutionsAdvantages } from '@/constants/solutionsAdvantages';
 import { testimonialCards } from '@/constants/testimonialCards';
@@ -41,7 +40,7 @@ export const SolutionsPage = () => {
       />
       <SpecialContainer cards={solutionsItems} link="/solutions/" />
       <Container>
-        <Image src={Servers} alt="servers" title="servers" />
+        <Image src={servers} alt="servers" title="servers" />
         <Info>
           <Heading>{t('Why choose')}</Heading>
           <List>

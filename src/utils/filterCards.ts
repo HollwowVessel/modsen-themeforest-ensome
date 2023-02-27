@@ -1,5 +1,5 @@
 import { blogArticles } from '@/constants/blogArticle';
-import { tags as allTags } from '@/constants/blogSidebar';
+import { tags as allTags } from '@/constants/blogSidebarTags';
 
 import { langType } from '../interfaces/languageType';
 

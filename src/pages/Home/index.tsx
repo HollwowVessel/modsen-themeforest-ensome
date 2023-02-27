@@ -13,6 +13,7 @@ import { Benefits } from '@/components/Benefits';
 import { Overview } from '@/components/Overview';
 import { Pricing } from '@/components/Pricing';
 import { blogArticles } from '@/constants/blogArticle';
+import { pathNames } from '@/constants/routes';
 import { testimonialCards } from '@/constants/testimonialCards';
 import { Layout } from '@/containers/Layout';
 import { useLanguage } from '@/hooks/useLanguage';
@@ -50,7 +51,7 @@ export const HomePage = () => {
         </Info>
         <HeroesContainer>
           <ButtonContainer>
-            <CircleButton text={t('Learn more')} to="/services" />
+            <CircleButton text={t('Learn more')} to={pathNames.services} />
           </ButtonContainer>
           <Image src={hero} alt="hero" title="hero" />
         </HeroesContainer>
@@ -62,22 +63,19 @@ export const HomePage = () => {
           </Heading>
           <Discover>
             <Description>{t('Doloremque laudantium')}</Description>
-            <FillButtonLink text={t('Discover more')} to="/solutions" />
+            <FillButtonLink
+              text={t('Discover more')}
+              to={pathNames.solutions}
+            />
           </Discover>
         </Info>
         <Solutions>
           <SolutionsImage src={features} alt="features" title="features" />
           <SolutionsInfo>
-            <SolutionsImage
-              src={features}
-              width="715"
-              height="220"
-              alt="features"
-              title="features"
-            />
+            <SolutionsImage src={features} alt="features" title="features" />
             <SolutionsHeading>{t('Radically new')}</SolutionsHeading>
             <SolutionsDescription>{t('Lauda, totam')}</SolutionsDescription>
-            <FillButtonLink text={t('Learn more')} to="/solutions" />
+            <FillButtonLink text={t('Learn more')} to={pathNames.solutions} />
           </SolutionsInfo>
         </Solutions>
       </Container>

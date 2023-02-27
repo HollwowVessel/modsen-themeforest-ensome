@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react';
 
-import { theme } from '@/theme/theme';
+import {
+  MOBILE_WIDTH_FOR_CAROUSEL,
+  TABLET_WIDTH_FOR_CAROUSEL,
+} from '@/constants/general';
 
-export const useIsMobile = (breakpoint = theme.breakPoints.tablet) => {
+export const useMediaQuery = () => {
   const checkForDevice = () => ({
-    tablet: document.documentElement.clientWidth < breakpoint,
-    fold: document.documentElement.clientWidth < theme.breakPoints.mobile,
+    tablet: document.documentElement.clientWidth < TABLET_WIDTH_FOR_CAROUSEL,
+    fold: document.documentElement.clientWidth < MOBILE_WIDTH_FOR_CAROUSEL,
   });
   const [{ tablet, fold }, setIsMobile] = useState(() => checkForDevice());
   useEffect(() => {
@@ -31,7 +34,7 @@ export const useIsMobile = (breakpoint = theme.breakPoints.tablet) => {
   }, []);
 
   return {
-    isMobile: tablet,
-    isFold: tablet && !fold,
+    isTablet: tablet,
+    isMobile: fold,
   };
 };

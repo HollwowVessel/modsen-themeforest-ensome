@@ -13946,10 +13946,10 @@ tiny-warning@^1.0.2:
   resolved "https://registry.yarnpkg.com/tiny-warning/-/tiny-warning-1.0.3.tgz#94a30db453df4c643d0fd566060d60a875d84754"
   integrity sha512-lBN9zLN/oAf68o3zNXYrdCt1kP8WsiGW8Oo2ka41b2IM5JL/S1CTyX1rW0mb/zSuJun0ZUrDxx4sqvYS2FWzPA==
 
-tired-hollow-lib-modsen@1.0.16:
-  version "1.0.16"
-  resolved "https://registry.yarnpkg.com/tired-hollow-lib-modsen/-/tired-hollow-lib-modsen-1.0.16.tgz#459eba28baa39f8e3d241a63bab93bc8313af799"
-  integrity sha512-3dwr7vhkol/OT2JyE9qURbQk07+hMJf1fk5GUrELb9cJiz7JB/VWC/edBn72/2jPHOmEZWW2E3BfjOFCEHt8Gg==
+tired-hollow-lib-modsen@1.0.18:
+  version "1.0.18"
+  resolved "https://registry.yarnpkg.com/tired-hollow-lib-modsen/-/tired-hollow-lib-modsen-1.0.18.tgz#07a230a93c7ac76cc425c0921ce2945fbf3bf2b9"
+  integrity sha512-3an3PTsrplF131970xblqeqNGA1X3fp2l7RXRN5igrQo1UvV8r3FH/TwAGs1wFrtSERlSVvhILg0Ffr4ilxwAw==
   dependencies:
     "@emailjs/browser" "^3.10.0"
     "@paypal/react-paypal-js" "^7.8.2"

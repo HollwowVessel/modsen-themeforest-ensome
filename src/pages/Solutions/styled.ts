@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import MenuIcon from '@/assets/images/icons/general/menuIcon.svg';
+import menuIcon from '@/assets/images/icons/general/menuIcon.svg';
 
 export const Container = styled.div`
   display: flex;
@@ -41,7 +41,7 @@ export const Item = styled.li`
     height: ${({ theme }) => theme.sizes[0]}px;
     position: absolute;
 
-    background: url(${MenuIcon});
+    background: url(${menuIcon});
     background-repeat: no-repeat;
     top: ${({ theme }) => theme.tops[0]};
   }

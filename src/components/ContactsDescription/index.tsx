@@ -1,9 +1,9 @@
 import { useTranslation } from 'react-i18next';
+import { CloseInput } from 'tired-hollow-lib-modsen';
 
-import { FormComponent } from '@/components/FormComponent';
+import { FormComponent } from '@/components/Forms/FormComponent';
 import { contacts } from '@/constants/contacts';
-// import { CloseInput } from 'tired-hollow-lib-modsen';
-import { CloseInput } from '@/ui/Inputs/CloseInput';
+import { pathNames } from '@/constants/routes';
 
 import {
   Blue,
@@ -27,8 +27,8 @@ export const ContactsDescription = () => {
   return (
     <Container>
       <Links>
-        <Home to="/">{t('Home')}</Home>
-        <Contacts to="/">{t('Contacts')}</Contacts>
+        <Home to={pathNames.home}>{t('Home')}</Home>
+        <Contacts to={pathNames.home}>{t('Contacts')}</Contacts>
       </Links>
       <Interaction>
         <Heading>

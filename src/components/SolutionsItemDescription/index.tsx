@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 
-import Practices from '@/assets/images/solutionsPractices.png';
-import Types from '@/assets/images/solutionsTypes.png';
+import practices from '@/assets/images/solutionsPractices.png';
+import types from '@/assets/images/solutionsTypes.png';
 import { solutionListItems, tabs } from '@/constants/services';
 import { useLanguage } from '@/hooks/useLanguage';
 import { useScrollProgress } from '@/hooks/useScrollProgress';
@@ -63,7 +63,7 @@ export const SolutionsItemDescription = ({
           <Heading data-content="2">
             {t('Types of')} {lowerCaseName}?
           </Heading>
-          <Image src={Types} alt="Types" title="types" />
+          <Image src={types} alt="Types" title="types" />
           <Text>{t('Vestibulum varius')}</Text>
 
           <List>
@@ -78,7 +78,7 @@ export const SolutionsItemDescription = ({
           <Heading data-content="3">
             {name} {t('practices')}
           </Heading>
-          <Image src={Practices} title="practices" alt="Practices" />
+          <Image src={practices} title="practices" alt="Practices" />
           <Text>{t('Vestibulum varius')}</Text>
           <Text>{t('Phasellus sed')}</Text>
         </DescriptionBlock>

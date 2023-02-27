@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 
+import { pathNames } from '@/constants/routes';
 import { ArrowLink } from '@/ui/Links/ArrowLink';
 
 import { Card, Date, Description, Image, Name } from './styled';
@@ -14,7 +15,7 @@ export const BlogCard = ({ image, date, text, heading }: BlogCardProps) => {
       <Name>{heading}</Name>
       <Description>{text}</Description>
       <ArrowLink
-        to={`/blog/${heading.split(' ').slice(0, 2).join(' ')}`}
+        to={`${pathNames.blog}/${heading.split(' ').slice(0, 2).join(' ')}`}
         text={t('Read more')}
       />
     </Card>

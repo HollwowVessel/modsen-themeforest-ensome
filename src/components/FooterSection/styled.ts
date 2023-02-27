@@ -162,7 +162,7 @@ export const Item = styled.li<ItemProps>`
     max-width: ${({ theme }) => theme.sizes[5]}%;
     padding: ${({ theme }) => theme.paddings[2]}px 0;
 
-    display: ${({ display }) => display};
+    display: ${({ display }) => (display ? 'block' : 'none')};
   }
 `;
 
